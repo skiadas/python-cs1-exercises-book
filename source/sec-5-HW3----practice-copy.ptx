@@ -1,0 +1,1620 @@
+<section xml:id="sec-HW3----practice-copy-1">
+  <title>HW3 -- practice copy</title>
+  <introduction>
+    <p dir="ltr">Ungraded assignment, allows you to practice the HW3 problems as you study for Quiz 3.</p>
+  </introduction>
+  <exercises>
+    <exercise xml:id="exer-range_t1-2" questionId="32419">
+      <title>Print List: 1 through m</title>
+      <statement>
+        <p>Write a program to do the following:</p>
+        <p>  - read a positive integer <alert>m </alert>from standard input</p>
+        <p>  - use the <alert>list </alert>function and the <alert>range </alert>function to print a list of all the positive integers from 1 through <alert>m</alert>.</p>
+        <p>Notice the form of the output is a <alert>list</alert>, which displays as a comma-separated sequence of values enclosed by square brackets.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+# This problem is solved for you as an example of using list(range())
+m = int(input())
+print(list(range(1, m + 1)))
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('5')
+    
+    exec(_program)
+    
+    self.assertEqual('[1, 2, 3, 4, 5]\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('7')
+    
+    exec(_program)
+    
+    self.assertEqual('[1, 2, 3, 4, 5, 6, 7]\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('3')
+    
+    exec(_program)
+    
+    self.assertEqual('[1, 2, 3]\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('15\n')
+    
+    exec(_program)
+    
+    self.assertEqual('[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('8')
+    
+    exec(_program)
+    
+    self.assertEqual('[1, 2, 3, 4, 5, 6, 7, 8]\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('1')
+    
+    exec(_program)
+    
+    self.assertEqual('[1]\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-range_t2-2" questionId="47624">
+      <title>Countdown! Print List: k down to 0</title>
+      <statement>
+        <p>Write a program which will read a positive integer k from standard input. Use the <alert>list </alert>function and the <alert>range </alert>function to print a list of integers from the given integer k down to 0. </p>
+        <p>Notice the form of the output is a list. </p>
+        <p><alert>Hint:</alert> When we give the range function 3 arguments, the third argument is the "step size". A negative step size allows us to count down. For example, range(10, 1, -2) is the sequence 10, 8, 6, 4, 2.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('5')
+    
+    exec(_program)
+    
+    self.assertEqual('[5, 4, 3, 2, 1, 0]\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('0')
+    
+    exec(_program)
+    
+    self.assertEqual('[0]\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('3')
+    
+    exec(_program)
+    
+    self.assertEqual('[3, 2, 1, 0]\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('12\n')
+    
+    exec(_program)
+    
+    self.assertEqual('[12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('8')
+    
+    exec(_program)
+    
+    self.assertEqual('[8, 7, 6, 5, 4, 3, 2, 1, 0]\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('1')
+    
+    exec(_program)
+    
+    self.assertEqual('[1, 0]', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-range_t4-2" questionId="32423">
+      <title>Print List: k down to j</title>
+      <statement>
+        <p>Write a program which will read two integers, j and k, from standard input. Use the <alert>list </alert>function and the <alert>range </alert>function to print a list of integers from k <alert>down to</alert> j (inclusive). </p>
+        <p>Notice the form of the output is a list.</p>
+        <p>You may assume that j is less than or equal to k.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('2\n5')
+    
+    exec(_program)
+    
+    self.assertEqual('[5, 4, 3, 2]\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('0\n0')
+    
+    exec(_program)
+    
+    self.assertEqual('[0]\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('-3\n3\n')
+    
+    exec(_program)
+    
+    self.assertEqual('[3, 2, 1, 0, -1, -2, -3]\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('7\n15\n')
+    
+    exec(_program)
+    
+    self.assertEqual('[15, 14, 13, 12, 11, 10, 9, 8, 7]', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('0\n8')
+    
+    exec(_program)
+    
+    self.assertEqual('[8, 7, 6, 5, 4, 3, 2, 1, 0]\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('41\n42')
+    
+    exec(_program)
+    
+    self.assertEqual('[42, 41]', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('55\n77')
+    
+    exec(_program)
+    
+    self.assertEqual('[77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55]\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-range_b3-2" questionId="32422">
+      <title>Print List of Evens from -10 to k</title>
+      <statement>
+        <p>Write a program which will read an integer k from standard input. Use the <alert>list </alert>function and the <alert>range </alert>function to print a list of the <alert>even</alert> integers from -10 up to k (inclusive). </p>
+        <p>Notice the form of the output is a list.</p>
+        <p>NOTE: If k is less than -10, your range command should automatically produce an empty sequence, resulting in an empty list being printed.  See the provided examples.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('5')
+    
+    exec(_program)
+    
+    self.assertEqual('[-10, -8, -6, -4, -2, 0, 2, 4]\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('-11')
+    
+    exec(_program)
+    
+    self.assertEqual('[]\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('11')
+    
+    exec(_program)
+    
+    self.assertEqual('[-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10]\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('1\n')
+    
+    exec(_program)
+    
+    self.assertEqual('[-10, -8, -6, -4, -2, 0]\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('2')
+    
+    exec(_program)
+    
+    self.assertEqual('[-10, -8, -6, -4, -2, 0, 2]\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('25')
+    
+    exec(_program)
+    
+    self.assertEqual('[-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-for_loop_multiples_of_m-2" questionId="32418">
+      <title>Print Multiples of m</title>
+      <statement>
+        <p>Define a function <c>print_multiples(m)</c> that takes a positive integer parameter, m, and prints all the <em>multiples </em>of m which are  between 1 and 100, inclusive. </p>
+        <p>Use a for loop to print one number per line of output. </p>
+        <p><alert>Hint:</alert> The first multiple of m is m. Then m + m, then m + m + m, etc.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    m = 25
+    print_multiples(m)
+    
+    self.assertEqual('25\n50\n75\n100\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    m = 45
+    print_multiples(m)
+    
+    self.assertEqual('45\n90\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    m = 32
+    print_multiples(m)
+    
+    self.assertEqual('32\n64\n96\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    m = 105
+    print_multiples(m)
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    m = 33
+    print_multiples(m)
+    
+    self.assertEqual('33\n66\n99\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    m = 12
+    print_multiples(m)
+    
+    self.assertEqual('12\n24\n36\n48\n60\n72\n84\n96\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-range_b4-2" questionId="32427">
+      <title>Print List of Integers from 1 through maximum, with a Condition</title>
+      <statement>
+        <p>Read two positive integers, <alert>k </alert>and <alert>maximum</alert>, from standard input.</p>
+        <p>Use the <alert>range </alert>function to print a list of all the integers x between 1 and maximum inclusive such that x % k is 1.</p>
+        <p>Notice the form of the output is a list.</p>
+        <p><alert>Hint: </alert>The first number is 1. The next number (if there is a next number) is 1 + k. Then 1 + k + k, etc. What is the step size for this use of the range function?</p>
+        <p><alert>Note</alert>: DO NOT use an "if" statement, just print the list of a range.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('5\n18\n')
+    
+    exec(_program)
+    
+    self.assertEqual('[1, 6, 11, 16]\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('2\n3')
+    
+    exec(_program)
+    
+    self.assertEqual('[1, 3]', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('7\n25')
+    
+    exec(_program)
+    
+    self.assertEqual('[1, 8, 15, 22]\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('13\n51\n')
+    
+    exec(_program)
+    
+    self.assertEqual('[1, 14, 27, 40]\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('9\n37')
+    
+    exec(_program)
+    
+    self.assertEqual('[1, 10, 19, 28, 37]\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('25\n500')
+    
+    exec(_program)
+    
+    self.assertEqual('[1, 26, 51, 76, 101, 126, 151, 176, 201, 226, 251, 276, 301, 326, 351, 376, 401, 426, 451, 476]\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-count_from_j_to_k-2" questionId="31083">
+      <title>Count from j to k </title>
+      <statement>
+        <p>Write the code needed to get integers j and k from standard input, then use a <alert>for loop</alert> to print out all the integers from j through k. You can assume that k will be more than j. </p>
+        <p>Each number should be printed on a separate line. See the examples for the expected format of the output.</p>
+        <p><alert>Hint</alert>: You need to use a for loop to iterate over a specific sequence of integers. Start by determining a correct call to the range function to create that sequence.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('2\n4\n')
+    
+    exec(_program)
+    
+    self.assertEqual('2\n3\n4\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('-3\n1')
+    
+    exec(_program)
+    
+    self.assertEqual('-3\n-2\n-1\n0\n1\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('5\n6\n')
+    
+    exec(_program)
+    
+    self.assertEqual('5\n6\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('11\n15\n')
+    
+    exec(_program)
+    
+    self.assertEqual('11\n12\n13\n14\n15\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('-3\n3')
+    
+    exec(_program)
+    
+    self.assertEqual('-3\n-2\n-1\n0\n1\n2\n3\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('0\n12')
+    
+    exec(_program)
+    
+    self.assertEqual('0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-for_loop_count_by_twos-2" questionId="31528">
+      <title>For Loop: Count by Twos</title>
+      <statement>
+        <p>Write the code needed to get two integers, j and k, from standard input. Using a <c>for</c> loop and the <c>range</c> function, "count" by twos from j to k (inclusive), one integer per line. You may assume that j is less than or equal to k.</p>
+        <p>{{INSTR_see_examples}}</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('4\n11')
+    
+    exec(_program)
+    
+    self.assertEqual('4\n6\n8\n10\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('1\n5')
+    
+    exec(_program)
+    
+    self.assertEqual('1\n3\n5\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('-3\n3\n')
+    
+    exec(_program)
+    
+    self.assertEqual('-3\n-1\n1\n3\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('20\n29\n')
+    
+    exec(_program)
+    
+    self.assertEqual('20\n22\n24\n26\n28\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('-1\n0')
+    
+    exec(_program)
+    
+    self.assertEqual('-1\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('15\n20')
+    
+    exec(_program)
+    
+    self.assertEqual('15\n17\n19\n', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('8\n16')
+    
+    exec(_program)
+    
+    self.assertEqual('8\n10\n12\n14\n16\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-accum_sum_start_to_stop-2" questionId="31933">
+      <title>Summit</title>
+      <statement>
+        <p>The function <c>summit</c> takes two integer parameters, <c>start</c> and <c>stop</c>, and returns the sum of all integers from <c>start</c> to <c>stop</c>, inclusive. For example, <c>summit(-2, 3)</c><alert>returns </alert>the value of -2 + -1 + 0 + 1 + 2 + 3, which is 3. You may assume that <c>start</c> &lt;= <c>stop</c>. </p>
+        <p>Write a definition for <alert>summit</alert>.</p>
+        <p>Use the <alert>accumulate-a-sum </alert>pattern to solve this problem:</p>
+        <p>  - Initialize the accumulator variable.</p>
+        <p>  - Start a for loop to iterate over the required sequence of integers (make a call to the range function); <c>for num in range(....):</c></p>
+        <p>  - Inside the for loop, update the accumulator by adding <c>num </c>to the accumulator.</p>
+        <p>  - After the for loop, return the value of the accumulator variable.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+def summit(start, stop):
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(summit(1, 3))
+    
+    self.assertEqual('6', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(summit(4, 9))
+    
+    self.assertEqual('39\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(summit(25, 25))
+    
+    self.assertEqual('25', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(summit(10, 11))
+    
+    self.assertEqual('21\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(summit(100, 110))
+    
+    self.assertEqual('1155\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(summit(-10, 23))
+    
+    self.assertEqual('221\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-accum_odds_sum_1_to_n-2" questionId="31932">
+      <title>Sum Odds from 1 to n (accumulate a sum)</title>
+      <statement>
+        <p>The function <c>summation</c> takes a positive integer <c>n</c> and <alert>returns </alert>the sum of all the odd integers from 1 through <c>n</c>.  For example, summation(5) returns 9 since 1 + 3 + 5 equals 9.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(summation(5))
+    
+    self.assertEqual('9\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(summation(10))
+    
+    self.assertEqual('25\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(summation(1))
+    
+    self.assertEqual('1', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(summation(99))
+    
+    self.assertEqual('2500\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(summation(3))
+    
+    self.assertEqual('4\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(summation(1001))
+    
+    self.assertEqual('251001\n', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(summation(23))
+    
+    self.assertEqual('144\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-accum_sum_squares-2" questionId="32037">
+      <title>Sum of Squares (accumulate a sum)</title>
+      <statement>
+        <p id="yui_3_17_2_1_1599507369757_1953">The function <c>sum_of_squares</c> takes a parameter n and returns the sum of squares «math xmlns=¨http://www.w3.org/1998/Math/MathML¨»«msup»«mn»1«/mn»«mn»2«/mn»«/msup»«mo»§#160;«/mo»«mo»+«/mo»«mo»§#160;«/mo»«msup»«mn»2«/mn»«mn»2«/mn»«/msup»«mo»§#160;«/mo»«mo»+«/mo»«mo»§#160;«/mo»«msup»«mn»3«/mn»«mn»2«/mn»«/msup»«mo»§#160;«/mo»«mo»+«/mo»«mo»§#160;«/mo»«mo».«/mo»«mo».«/mo»«mo».«/mo»«mo»§#160;«/mo»«mo»+«/mo»«mo»§#160;«/mo»«msup»«mi»n«/mi»«mn»2«/mn»«/msup»«/math».</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(sum_of_squares(3))
+    
+    self.assertEqual('14\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(sum_of_squares(2))
+    
+    self.assertEqual('5\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(sum_of_squares(1))
+    
+    self.assertEqual('1\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(sum_of_squares(100))
+    
+    self.assertEqual('338350\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(sum_of_squares(1000))
+    
+    self.assertEqual('333833500\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(sum_of_squares(2345))
+    
+    self.assertEqual('4301154445\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-accum_partial_sum-2" questionId="158384">
+      <title>Accumulate the nth partial sum of an infinite series</title>
+      <statement>
+        <p>
+          Write a function <c>partial_sum(n)</c> which accumulates and returns the sum of the first n terms of the infinite sequence
+          <image decorative="yes" source="images/158384-download.svg" width="90%" />
+          <alert>Note</alert>: n will be a positive integer. For example, when n is 3, the return value is  <c>1/2 + 1/4 + 1/8</c>  (the result from adding the first three terms), which equals <c>0.875</c>.<alert>Hint</alert>: Each denominator is twice as large as the previous denominator. The nth denominator is 2&amp;lt;sup&amp;rt;n&amp;lt;/sup&amp;rt;. You might solve this problem using two accumulators: <c>acc </c>could be the accumulated sum so far, and <c>denom </c>could be the value for the denominator of the next term to be added.
+        </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    ans = partial_sum(1)
+    print(ans)
+    
+    self.assertEqual('0.5\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    ans = partial_sum(3)
+    print(ans)
+    
+    self.assertEqual('0.875\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    ans = partial_sum(6)
+    print(ans)
+    
+    self.assertEqual('0.984375\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    ans = partial_sum(7)
+    print(ans)
+    
+    self.assertEqual('0.9921875\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    ans = partial_sum(9)
+    print(ans)
+    
+    self.assertEqual('0.998046875\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-accum_factorial-2" questionId="31931">
+      <title>Factorial Function (accumulate a product)</title>
+      <statement>
+        <p>
+          The function <c>factorial</c> takes a non-negative integer parameter, <c>n</c>, and <alert>returns </alert>the value of n factorial (n!). Note:
+          <ul>
+            <li>When n is positive, n! = 1 * 2 * 3 * ... * n.  For example, 5! = 1 * 2 * 3 * 4 * 5 = 120.</li>
+            <li>When n is zero, n! is defined to be 1. (Function returns 1.)</li>
+          </ul>
+        </p>
+        <p>Note: DO NOT use an "if" statement to check whether n is zero. Your accumulator should automatically find the correct answer in this case (0! = 1).</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(factorial(3))
+    
+    self.assertEqual('6', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(factorial(4))
+    
+    self.assertEqual('24', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(factorial(0))
+    
+    self.assertEqual('1', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(factorial(7))
+    
+    self.assertEqual('5040\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(factorial(8))
+    
+    self.assertEqual('40320\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(factorial(11))
+    
+    self.assertEqual('39916800\n', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(factorial(15))
+    
+    self.assertEqual('1307674368000\n', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(factorial(13))
+    
+    self.assertEqual('6227020800\n', getMyStdOut())
+
+
+  def test9(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(factorial(12))
+    
+    self.assertEqual('479001600', getMyStdOut())
+
+
+  def test10(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(factorial(1))
+    
+    self.assertEqual('1\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+  </exercises>
+</section>

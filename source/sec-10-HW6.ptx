@@ -1,0 +1,1392 @@
+<section xml:id="sec-HW6-1">
+  <title>HW6</title>
+  <introduction>
+    <p dir="ltr">Lists</p>
+  </introduction>
+  <exercises>
+    <exercise xml:id="exer-front_two-1" questionId="31905">
+      <title>Front Two</title>
+      <statement>
+        <p>Given a list, <c>L</c>, the function <c>front_two</c> creates a new list of length 2 out of the first two items in <c>L</c> as follows:</p>
+        <p>
+          <ul>
+            <li>In the new list, the second item becomes the first item, and the first item becomes the second. </li>
+            <li>If <c>L</c> contains only one item, the first item in the new list should be the value <c>None</c>. </li>
+            <li>If <c>L</c> is empty, both items in the new list should be value <c>None</c>. </li>
+            <li>The function returns the new list.</li>
+          </ul>
+        </p>
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+def front_two(L):
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ['a', 'b', 'c', 'd']
+    print(front_two(L))
+    
+    self.assertEqual("['b', 'a']", getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ['one']
+    print(front_two(L))
+    
+    self.assertEqual("[None, 'one']", getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = []
+    print(front_two(L))
+    
+    self.assertEqual('[None, None]', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = [5, 2]
+    print(front_two(L))
+    
+    self.assertEqual('[2, 5]', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = [10, -14, 99, 35, 18, -10]
+    print(front_two(L))
+    
+    self.assertEqual('[-14, 10]', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = [7]
+    print(front_two(L))
+    
+    self.assertEqual('[None, 7]', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-func_print_items_reverse-1" questionId="31906">
+      <title>Print Reverse</title>
+      <statement>
+        <p>The function <c>print_reverse</c> takes one parameter, <c>L</c>, which is a list.  The function then prints the items in the list <alert>in reverse order</alert>, one item per line, <alert>WITHOUT changing the value of <c>L</c></alert>.</p>
+        <p>Write the function definition.</p>
+        <p>Note 1: This function does NOT get anything from standard input.</p>
+        <p>Note 2: This function DOES, however, print to standard output.</p>
+        <p>Note 3: You should NOT return anything from this function (let it return <c>None </c>by default).</p>
+        <p>Hint: Some ideas for iterating over a list in reverse order are given <url href="https://thispointer.com/python-different-ways-to-iterate-over-a-list-in-reverse-order/">here</url>.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ['apple', 'banana', 'cherry']
+    Lcopy = L[:]
+    return_value = print_reverse(L)
+    if return_value != None or L != Lcopy:
+        print("Error")
+    
+    self.assertEqual('cherry\nbanana\napple\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ["hi", "howdy", "hola", "g'day", "bonjour"]
+    Lcopy = L[:]
+    return_value = print_reverse(L)
+    if return_value != None or L != Lcopy:
+        print("Error")
+    
+    self.assertEqual("bonjour\ng'day\nhola\nhowdy\nhi", getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = [2, 4, 6, 8]
+    Lcopy = L[:]
+    return_value = print_reverse(L)
+    if return_value != None or L != Lcopy:
+        print("Error")
+    
+    self.assertEqual('8\n6\n4\n2', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ['happy']
+    Lcopy = L[:]
+    return_value = print_reverse(L)
+    if return_value != None or L != Lcopy:
+        print("Error")
+    
+    self.assertEqual('happy\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = []
+    Lcopy = L[:]
+    return_value = print_reverse(L)
+    if return_value != None or L != Lcopy:
+        print("Error")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ['eanie', 'meanie', 'miney', 'mail', 'catch', 'a', 'python', 'by', 'its', 'TAIL']
+    Lcopy = L[:]
+    return_value = print_reverse(L)
+    if return_value != None or L != Lcopy:
+        print("Error")
+    
+    self.assertEqual('TAIL\nits\nby\npython\na\ncatch\nmail\nminey\nmeanie\neanie\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-sum_evens-1" questionId="31990">
+      <title>Sum Evens</title>
+      <statement>
+        <p>The function <c>sum_evens</c> takes a list of integers and returns the <alert>sum</alert> of all the even integers in the list.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(sum_evens([1, 5, 2, 5, 3, 5, 4]))
+    
+    self.assertEqual('6', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(sum_evens([5, 5, -5, -5]))
+    
+    self.assertEqual('0', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(sum_evens([16, 24, 30]))
+    
+    self.assertEqual('70', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(sum_evens([-1, 0, 0, 0, 1]))
+    
+    self.assertEqual('0', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(sum_evens([-2, 4, -6, 8]))
+    
+    self.assertEqual('4', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(sum_evens([9, 5, 100, 3, 7]))
+    
+    self.assertEqual('100', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(sum_evens([]))
+    
+    self.assertEqual('0', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(sum_evens([2, 5, 0]))
+    
+    self.assertEqual('2', getMyStdOut())
+
+
+  def test9(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(sum_evens([-18]))
+    
+    self.assertEqual('-18', getMyStdOut())
+
+
+  def test10(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(sum_evens([ ]))
+    
+    self.assertEqual('0', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-count_contains_x-1" questionId="32010">
+      <title>Count Contains 'og'</title>
+      <statement>
+        <p>The function <c>count_contains_og </c>takes a list of strings and returns how many strings in the list contain 'og' / 'OG' / 'oG' / 'Og' (check for 'og', ignoring case).</p>
+        <p><alert>Hint</alert>: Use the sequence membership operator <alert>in</alert> to help you check for 'og' in the individual strings. Create a <alert>lower-cased</alert> version of the string (<c>lower</c>), then use the <c>in</c> operator.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    str_list = ['cat', 'dog', 'FROG', 'monkey']
+    print(count_contains_og(str_list))
+    
+    self.assertEqual('2', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    str_list = ['lOg', 'LoG', "FOGGY", "tree", "", "gogogo"]
+    print(count_contains_og(str_list))
+    
+    self.assertEqual('4', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    strlist = ["X", "x"]
+    print(count_contains_og(strlist))
+    
+    self.assertEqual('0\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    empty = []
+    print(count_contains_og(empty))
+    
+    self.assertEqual('0', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    list_of_one = ["UNO"]
+    print(count_contains_og(list_of_one))
+    
+    self.assertEqual('0', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    list_of_one_og = ["Doggie"]
+    print(count_contains_og(list_of_one_og))
+    
+    self.assertEqual('1', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ('DOG  '*10).split()
+    print(count_contains_og(L))
+    
+    self.assertEqual('10\n', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ['go', 'dogs', 'go', 'DOGS', 'GO', 'ods']
+    print(count_contains_og(L))
+    
+    self.assertEqual('2', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-ffirst_negative_trickier-1" questionId="32045">
+      <title>First Negative</title>
+      <statement>
+        <p>Define the function <c>first_negative(nums)</c> takes one parameter. <c>nums</c>, a possibly empty list of numbers. The function then returns the first negative item in <c>numlist</c>. </p>
+        <p>Note: if there are <alert>NO</alert> negative numbers in the list, the function returns the Python object <c>None</c>.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(first_negative([1, 3, 9, -2]))
+    
+    self.assertEqual('-2', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(first_negative([1, 3, 9, 2]))
+    
+    self.assertEqual('None', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(first_negative([1, -3, -9, -2]))
+    
+    self.assertEqual('-3', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(first_negative([0, -1.1, 0, -2.2, 0, -3.3, 0]))
+    
+    self.assertEqual('-1.1', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(first_negative([0.0, 0.0, 0.0, -99.0, -98.0, -97.0]))
+    
+    self.assertEqual('-99.0', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(first_negative([-100]))
+    
+    self.assertEqual('-100', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(first_negative([]))
+    
+    self.assertEqual('None', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(first_negative([-3, -4, -5]))
+    
+    self.assertEqual('-3', getMyStdOut())
+
+
+  def test9(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(first_negative([1.1]))
+    
+    self.assertEqual('None', getMyStdOut())
+
+
+  def test10(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(first_negative([-0.005, 0.005, -0.004]))
+    
+    self.assertEqual('-0.005', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-square_nums_1-1" questionId="32004">
+      <title>((Placeholder title))</title>
+      <statement>
+        <p>
+          <h3>Square Nums 1</h3>
+        </p>
+        <p>Define the function <c>square_nums</c> which takes a list of numbers, <c>numlist</c>, and returns a NEW list containing the squares of the numbers in the original list.  The given list, <c>numlist</c>, should not be changed.</p>
+        <p><alert>Note</alert>: Use the accumulator pattern and <c>newlist.append(item)</c> to solve this problem.  </p>
+        <p>
+          <ul>
+            <li>The accumulator variable, <alert>newlist</alert>, should be initialized to an empty list. </li>
+            <li>Inside a <alert>for loop</alert> which iterates over numlist, use <alert>append</alert> to update the value of newlist.</li>
+          </ul>
+        </p>
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(square_nums([1, 2, 3, 4, 5]))
+    
+    self.assertEqual('[1, 4, 9, 16, 25]', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(square_nums([-5, 0, 6]))
+    
+    self.assertEqual('[25, 0, 36]', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(square_nums([]))
+    
+    self.assertEqual('[]', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(square_nums([11.0, 34.5]))
+    
+    self.assertEqual('[121.0, 1190.25]', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(square_nums([1.2]))
+    
+    self.assertEqual('[1.44]', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(square_nums([-3, -2, -1, 0]))
+    
+    self.assertEqual('[9, 4, 1, 0]', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(square_nums([1, 2, -1, 1, 2, 0, 10, 10, 10, 9, -8]))
+    
+    self.assertEqual('[1, 4, 1, 1, 4, 0, 100, 100, 100, 81, 64]', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-make_list_items_upper_2-1" questionId="31105">
+      <title>Make List Items Uppercase 2</title>
+      <statement>
+        <p>Define the function <c>make_uppercase(mylist)</c>, which takes a list parameter <c>mylist</c> (a list of strings), mutates the list by uppercasing each string in mylist. The function returns <c>None</c>. </p>
+        <p>For example, if <c>mylist</c> is <c>['cat', 'Dog', 'frOG']</c>, then the mutated list should  be <c>['CAT', 'DOG', 'FROG']</c>. </p>
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    mylist = ['cat', 'Dog', 'frOG']
+    result = make_uppercase(mylist)
+    print(mylist)
+    if result != None:
+        print("Error, return value should be None")
+    
+    self.assertEqual("['CAT', 'DOG', 'FROG']\n", getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    mylist = ['baNanas', 'appLes', 'pEAches', 'PEArs']
+    result = make_uppercase(mylist)
+    print(mylist)
+    if result != None:
+        print("Error, return value should be None")
+    
+    self.assertEqual("['BANANAS', 'APPLES', 'PEACHES', 'PEARS']\n", getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    mylist = ['w', 'x', 'y', 'z', 'yes']
+    result = make_uppercase(mylist)
+    print(mylist)
+    if result != None:
+        print("Error, return value should be None")
+    
+    self.assertEqual("['W', 'X', 'Y', 'Z', 'YES']\n", getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    mylist = []
+    result = make_uppercase(mylist)
+    print(mylist)
+    if result != None:
+        print("Error, return value should be None")
+    
+    self.assertEqual('[]\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    mylist = ['cOw', 'HoRse', 'pig', 'BUNNy']
+    result = make_uppercase(mylist)
+    print(mylist)
+    if result != None:
+        print("Error, return value should be None")
+    
+    self.assertEqual("['COW', 'HORSE', 'PIG', 'BUNNY']\n", getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-build_list_from_input-1" questionId="30599">
+      <title>Build List from Input</title>
+      <statement>
+        <p>
+          Write a function, build_list<c>()</c>, to read words from standard input and store them in a list.
+          <ul>
+            <li>You may assume that there will be fewer than 100 words. </li>
+            <li>If the string "STOP" is given as input before 100 words have been added to the list, stop the for loop and return the accumulated list of strings.</li>
+          </ul>
+        </p>
+        <p><alert>Hints:</alert></p>
+        <p>  - Use the accumulate-a-list pattern, with <c>acc_list</c> initialized to the empty list, <c>[]</c>  - Use a for loop to iterate i over <c>range(100)</c>  - When STOP is read from input, <c>break</c> from the for loop; otherwise, <c>append</c> the new word to acc_list before reading the next input  - Return acc_list</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('April\nshowers\nbring\nMay\nflowers\nSTOP\n')
+    
+    L = build_list()
+    print(L)
+    C = ["April", "showers", "bring", "May", "flowers"]
+    if L != C:
+        print("error")
+    
+    self.assertEqual("['April', 'showers', 'bring', 'May', 'flowers']\n", getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('A\nstitch\nin\ntime\nsaves\nnine\nSTOP\n')
+    
+    L = build_list()
+    print(L)
+    C = ["A", "stitch", "in", "time", "saves", "nine"]
+    if L != C:
+        print("error")
+    
+    self.assertEqual("['A', 'stitch', 'in', 'time', 'saves', 'nine']\n", getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('Homecoming Week\nSTOP\n')
+    
+    L = build_list()
+    print(L)
+    C = ["Homecoming Week"]
+    if L != C:
+        print("error")
+    
+    self.assertEqual("['Homecoming Week']\n", getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('STOP\n')
+    
+    L = build_list()
+    print(L)
+    C = []
+    if L != C:
+        print("error")
+    
+    self.assertEqual('[]', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn("If\nit\nain't\nbroke\ndon't\nfix\nit\nSTOP")
+    
+    L = build_list()
+    print(L)
+    C = ["If", "it", "ain't", "broke", "don't", "fix", "it"]
+    if L != C:
+        print("error")
+    
+    self.assertEqual('[\'If\', \'it\', "ain\'t", \'broke\', "don\'t", \'fix\', \'it\']\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-final_substrings-1" questionId="32084">
+      <title>Final Substrings</title>
+      <statement>
+        <p>The function <c>final</c><c>_substrings</c> takes a string parameter <c>inString</c> and returns a list of all the non-empty final substrings of <c>inString</c> (in order by their lengths).</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    inString = "Python!"
+    L = final_substrings(inString)
+    print(L)
+    
+    self.assertEqual("['!', 'n!', 'on!', 'hon!', 'thon!', 'ython!', 'Python!']\n", getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    inString = "dogs"
+    L = final_substrings(inString)
+    print(L)
+    
+    self.assertEqual("['s', 'gs', 'ogs', 'dogs']\n", getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    inString = "mississippi"
+    L = final_substrings(inString)
+    print(L)
+    
+    self.assertEqual("['i', 'pi', 'ppi', 'ippi', 'sippi', 'ssippi', 'issippi', 'sissippi', 'ssissippi', 'ississippi', 'mississippi']\n", getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    inString = ""
+    L = final_substrings(inString)
+    print(L)
+    
+    self.assertEqual('[]\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    inString = "accumulation"
+    L = final_substrings(inString)
+    print(L)
+    
+    self.assertEqual("['n', 'on', 'ion', 'tion', 'ation', 'lation', 'ulation', 'mulation', 'umulation', 'cumulation', 'ccumulation', 'accumulation']\n", getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    inString = "tiger"
+    L = final_substrings(inString)
+    print(L)
+    
+    self.assertEqual("['r', 'er', 'ger', 'iger', 'tiger']\n", getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    inString = "purr"
+    L = final_substrings(inString)
+    print(L)
+    
+    self.assertEqual("['r', 'rr', 'urr', 'purr']\n", getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-interleave_lists-1" questionId="161051">
+      <title>Interleave Lists</title>
+      <statement>
+        <p>The function <c>interleave_lists</c> takes two parameters, <c>L1</c> and <c>L2</c>, both lists. Notice that the lists may have different lengths.</p>
+        <p>The function accumulates a new list by appending alternating items from <c>L1</c> and <c>L2</c> until one list has been exhausted.  The remaining items from the other list are then appended to the end of the new list, and the new list is returned.</p>
+        <p>For example, if <c>L1 = ["hop", "skip", "jump", "rest"]</c> and <c>L2 = ["up", "down"]</c>, then the function would return the list: <c>["hop", "up", "skip", "down", "jump", "rest"]</c>.</p>
+        <p><alert>HINT: </alert>Python has a built-in function<alert> <c>min()</c> </alert>which is helpful here. </p>
+        <p>
+          <ul>
+            <li>Initialize accumulator variable <c>newlist</c> to be an empty list</li>
+            <li>Set <c>min_length = min(len(L1), len(L2))</c>, the smaller of the two list lengths</li>
+            <li>Use a <alert>for loop </alert>to iterate <c>k</c> over <c>range(min_length)</c> to do the first part of this function's work. On each iteration, append to newlist the item from index k in L1, and then append the item from index k in L2 (two appends on each iteration).</li>
+            <li>AFTER the loop finishes, append the remaining items (if any) to newlist; use a decision statement to determine which list has remaining items -- then it just takes one line of code to append those items to newlist (using a slice of L1 or L2)</li>
+            <li><c>return newlist</c></li>
+          </ul>
+        </p>
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L1 = ["hop", "skip", "jump"]
+    L2 = ["A", "B", "C", "D", "E"]
+    print(interleave_lists(L1, L2))
+    
+    self.assertEqual("['hop', 'A', 'skip', 'B', 'jump', 'C', 'D', 'E']", getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L1 = ["dive"]
+    L2 = ["hop", "skip", "jump"]
+    print(interleave_lists(L1, L2))
+    
+    self.assertEqual("['dive', 'hop', 'skip', 'jump']", getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    cats = ["Ziggy", "Troll Boy"]
+    dogs = ["Ruthie", "Ame"]
+    print(interleave_lists(cats, dogs))
+    
+    self.assertEqual("['Ziggy', 'Ruthie', 'Troll Boy', 'Ame']\n", getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    bunnies = ["Flopsy", "Mopsy", "Cottontail"]
+    superpowers = ["leaping", "kicking", "snuggling"]
+    print(interleave_lists(bunnies, superpowers))
+    
+    self.assertEqual("['Flopsy', 'leaping', 'Mopsy', 'kicking', 'Cottontail', 'snuggling']", getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L1 = ["small", "medium", "large"]
+    L2 = []
+    print(interleave_lists(L1, L2))
+    
+    self.assertEqual("['small', 'medium', 'large']", getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L1 = []
+    L2 = ["song", "lyric", "melody", "ballad"]
+    print(interleave_lists(L1, L2))
+    
+    self.assertEqual("['song', 'lyric', 'melody', 'ballad']", getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+  </exercises>
+</section>

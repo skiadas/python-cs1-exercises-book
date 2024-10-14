@@ -1,0 +1,1033 @@
+<section xml:id="sec-HW1-practice-1">
+  <title>HW1 practice</title>
+  <introduction>
+    <p>HWK 1 Practice Copy -- for review purposes</p>
+  </introduction>
+  <exercises>
+    <exercise xml:id="exer-CodeRunner-Overview-2" questionId="145621">
+      <title>((Placeholder title))</title>
+      <statement>
+        <p>CodeRunner is a system for working on coding problems directly within Moodle.  Below is an example of what a CodeRunner problem looks like.
+</p>
+        <p>
+          <image decorative="yes" source="images/145621-Screen%20Shot%202018-01-14%20at%209.57.32%20AM.png" width="90%" />
+        </p>
+        <p />
+        <p />
+        <p />
+        <p />
+        <p />
+        <p />
+        <p />
+        <p />
+        <p />
+        <p />
+        <p />
+        <p />
+        <p />
+        <p />
+        <p>1. The first thing you should do when starting a problem is to <alert>carefully</alert> read the problem description. The problem description tells you what your solution code needs to accomplish, as well as important details about the problem including:</p>
+        <p>
+          <ul>
+            <li>Type of input your code must handle</li>
+            <li>Type of output your code will need to produce</li>
+            <li>Whether your code should produce output (print) or return a value </li>
+          </ul>
+        </p>
+        <alert>If you don't understand the problem, you won't be able to solve the problem; <em>this is the most important step</em>!</alert>
+        <p />
+        <p>2. To help you understand the problem, you will always be given a few examples. Typically, the examples show sample inputs and the result that your code should produce given each input. It's important to understa!d that your solution needs to be <alert>general</alert>.  This means that your goal is to code a solution that will work for any valid input for the problem, not just the given examples.</p>
+        <p>3. Once you understand the problem, you can start coding your solution in the white box. Depending on the problem, there may be some code already there to get you started. When you are ready to check your solution, click the "Check" button.</p>
+        <p>If I were to click the "Check" button for the example problem in the image, here is the feedback that I would get from CodeRunner.</p>
+        <p>
+          <image decorative="yes" source="images/145621-Screen%20Shot%202018-01-14%20at%2010.00.24%20AM.png" width="90%" />
+        </p>
+        <p>For each example input, CodeRunner shows you the correct (<alert>Expected</alert>) result, the result produced by your code (<alert>Got</alert>), and whether your result is correct. Clicking on the "Show differences" button will show you where your result differs from the expected result.</p>
+        <p>4. Use the CodeRunner feedback to try to understand where the problems are in your code, and then work on fixing your solution code. Keep checking and revising your code until you reach the correct solution.</p>
+        <p>Now it is time for you to try solving some CodeRunner problems!</p>
+      </statement>
+    </exercise>
+    <exercise xml:id="exer-output_input-2" questionId="146747">
+      <title>Output the Input</title>
+      <statement>
+        <p>Complete the program below by adding a line of code that will output a message reporting back what is input by the user. {{INSTR_output_format}}</p>
+        <p>{{INSTR_note}} The first line of the program for getting input from the user is provided. <em>Do not change this line.</em></p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+the_input = input()
+# Hint: you'll need to provide two arguments to the print function, 
+# like this:
+# print("{{output}}:", the_input)
+# This will print the part of the message that's unchanging,
+# followed by an automatic space, followed by whatever the input was.
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('{{example1}}!')
+    
+    exec(_program)
+    
+    self.assertEqual('{{output}}: {{example1}}!', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('{{example2}}!')
+    
+    exec(_program)
+    
+    self.assertEqual('{{output}}: {{example2}}!', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('{{example3}}')
+    
+    exec(_program)
+    
+    self.assertEqual('{{output}}: {{example3}}', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('42 is the answer to everything')
+    
+    exec(_program)
+    
+    self.assertEqual('{{output}}: 42 is the answer to everything', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn("That's all, folks!")
+    
+    exec(_program)
+    
+    self.assertEqual("{{output}}: That's all, folks!", getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('99 bottles of beer on the wall')
+    
+    exec(_program)
+    
+    self.assertEqual('{{output}}: 99 bottles of beer on the wall', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-say_greeting-2" questionId="144165">
+      <title>Say {{greeting}}</title>
+      <statement>
+        <p>Write a short program to get a name from the user, then output a message saying {{greeting}} to the user by name. {{INSTR_output_format}}</p>
+        <p>Note: In ALL of your CodeRunner solutions, use the input function with no arguments. For example, in this problem, your first line of code might be: <c>name = input()</c></p>
+        <p>As an experiment, see what happens when you use: <c>name = </c><c>input("Tell me your name: ") </c>and then CHECK your answer.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+# Hint: similar to previous question; need two lines of code.
+# First, get the input.
+# Second, print the message.
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('everyone')
+    
+    exec(_program)
+    
+    self.assertEqual('{{greeting}} everyone', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('coder-in-training')
+    
+    exec(_program)
+    
+    self.assertEqual('{{greeting}} coder-in-training', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('Ziggy')
+    
+    exec(_program)
+    
+    self.assertEqual('{{greeting}} Ziggy', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('Diana')
+    
+    exec(_program)
+    
+    self.assertEqual('{{greeting}} Diana', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('Pythonista')
+    
+    exec(_program)
+    
+    self.assertEqual('{{greeting}} Pythonista', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('Mr. Grey')
+    
+    exec(_program)
+    
+    self.assertEqual('{{greeting}} Mr. Grey', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-simple_addition-2" questionId="147730">
+      <title>Add {{integer}}</title>
+      <statement>
+        <p>Write a program to get an integer value from standard input, <alert>add {{integer}}</alert> to the input value, then output the result. {{INSTR_output_format}}</p>
+        <p>{{INSTR_note}} The first line of the program, for getting input from the user, is provided.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+{{var}} = int(input())
+# Hint: your print function call needs three arguments, 
+# where the part that doesn't change is delimited with 
+# quotes, like "+ 16 =", "+ 8 =", etc.
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('5')
+    
+    exec(_program)
+    
+    self.assertEqual('5 + {{integer}} = {{5 + integer}}', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('-7')
+    
+    exec(_program)
+    
+    self.assertEqual('-7 + {{integer}} = {{ -7 + integer}}', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('0')
+    
+    exec(_program)
+    
+    self.assertEqual('0 + {{integer}} = {{ 0 + integer}}', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('-1999')
+    
+    exec(_program)
+    
+    self.assertEqual('-1999 + {{integer}} = {{ -1999 + integer}}', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('-10')
+    
+    exec(_program)
+    
+    self.assertEqual('-10 + {{integer}} = {{ -10 + integer}}', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('-11')
+    
+    exec(_program)
+    
+    self.assertEqual('-11 + {{integer}} = {{ -11 + integer}}', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-simple_multiplication-2" questionId="147731">
+      <title>Multiply by {{integer}}</title>
+      <statement>
+        <p>Write a short program that will get a decimal value (a float) from standard input, multiply the input value <alert>by {{integer}}</alert>, then output a message with the result. {{INSTR_output_format}}</p>
+        <p>
+          {{INSTR_note}}
+          <ul>
+            <li>{{INSTR_float_input}}</li>
+            <li>{{INSTR_no_input_prompts}}</li>
+          </ul>
+        </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+# The following line reads the user input and converts 
+# it to a float value:
+num = float(input())
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('5.5')
+    
+    exec(_program)
+    
+    self.assertEqual("5.5 * {{integer}} = {{ (5.5 * integer)|number_format(1, '.', '')}}", getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('-8.1')
+    
+    exec(_program)
+    
+    self.assertEqual("-8.1 * {{integer}} = {{ (-8.1 * integer)|number_format(1, '.', '')}}", getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('2.2')
+    
+    exec(_program)
+    
+    self.assertEqual("2.2 * {{integer}} = {{ (2.2 * integer)|number_format(1, '.', '')}}", getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('0.0')
+    
+    exec(_program)
+    
+    self.assertEqual("0.0 * {{integer}} = {{ (0.0 * integer)|number_format(1, '.', '')}}", getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('-200.6')
+    
+    exec(_program)
+    
+    self.assertEqual("-200.6 * {{integer}} = {{ (-200.6 * integer)|number_format(1, '.', '')}}", getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('24.5')
+    
+    exec(_program)
+    
+    self.assertEqual("24.5 * {{integer}} = {{ (24.5 * integer)|number_format(1, '.', '')}}", getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-simple_modulo-2" questionId="147732">
+      <title>Find the Remainder</title>
+      <statement>
+        <p>Write the code that will read an integer input and assign its value to the name <c>num</c>, calculate the remainder when <c>num </c>is divided by 3, and print an informative message. Hint: Use the remainder operator (%).</p>
+        <p>{{INSTR_note}}</p>
+        <p>{{INSTR_no_input_prompts}}</p>
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('11')
+    
+    exec(_program)
+    
+    self.assertEqual('When we divide 11 by 3, the remainder is 2\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('3')
+    
+    exec(_program)
+    
+    self.assertEqual('When we divide 3 by 3, the remainder is 0\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('19')
+    
+    exec(_program)
+    
+    self.assertEqual('When we divide 19 by 3, the remainder is 1\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('112')
+    
+    exec(_program)
+    
+    self.assertEqual('When we divide 112 by 3, the remainder is 1\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('225')
+    
+    exec(_program)
+    
+    self.assertEqual('When we divide 225 by 3, the remainder is 0\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('11111')
+    
+    exec(_program)
+    
+    self.assertEqual('When we divide 11111 by 3, the remainder is 2\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-square_input-2" questionId="147733">
+      <title>Square of Input</title>
+      <statement>
+        <p>Write the code to read an input, convert it to a int value, assign that value to the name <c>x</c>, and print a message regarding the square of the input (i.e., the value of x&amp;lt;sup&amp;rt;2&amp;lt;/sup&amp;rt;).</p>
+        <p>{{INSTR_note}}</p>
+        <p>{{INSTR_no_input_prompts}}</p>
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('2')
+    
+    exec(_program)
+    
+    self.assertEqual('When x = 2 then x^2 = 4\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('24')
+    
+    exec(_program)
+    
+    self.assertEqual('When x = 24 then x^2 = 576\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('-18')
+    
+    exec(_program)
+    
+    self.assertEqual('When x = -18 then x^2 = 324\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('6')
+    
+    exec(_program)
+    
+    self.assertEqual('When x = 6 then x^2 = 36\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('15')
+    
+    exec(_program)
+    
+    self.assertEqual('When x = 15 then x^2 = 225\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('12345')
+    
+    exec(_program)
+    
+    self.assertEqual('When x = 12345 then x^2 = 152399025\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-cylinder_volume-2" questionId="156267">
+      <title>Volume of Cylinder</title>
+      <statement>
+        <p id="yui_3_17_2_1_1704483246360_2027">Suppose we want to calculate the volume (in cubic cm) of a cylinder for which the radius of the base is R cm and the height is H cm. We will use the formula: volume = area of base * H. Rather than making a single large calculation and reporting the result, you should practice dividing the work into stages using two assignment statements.</p>
+        <p id="yui_3_17_2_1_1704483246360_2130">A partial solution is provided, you just need to add a bit more code.</p>
+        <p id="yui_3_17_2_1_1704483246360_2164">Notice that the statement <c>import math</c> makes all the objects in the math module available; your code should use <c>math.pi</c> (Python's name for «math xmlns=¨http://www.w3.org/1998/Math/MathML¨»«mi mathvariant=¨normal¨»§#960;«/mi»«/math»), in calculating the area of the base.</p>
+        <p>{{INSTR_note}}</p>
+        <p id="yui_3_17_2_1_1704483246360_2485">{{INSTR_no_input_prompts}}</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+import math
+
+# Read the radius from input; convert it to a float value and assign to R
+R = 
+# Read the height from input; convert it to a float value and assign to H
+H = 
+# Find the base area using math.pi and R
+baseArea = 
+# Find the volume and print a message
+volume = 
+print( )
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('3\n5')
+    
+    exec(_program)
+    
+    self.assertEqual('R = 3.0 , H = 5.0 , Volume = 141.3716694115407\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('6\n2')
+    
+    exec(_program)
+    
+    self.assertEqual('R = 6.0 , H = 2.0 , Volume = 226.1946710584651\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('2.3\n3.5')
+    
+    exec(_program)
+    
+    self.assertEqual('R = 2.3 , H = 3.5 , Volume = 58.16658798121501\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('0.7\n10.1')
+    
+    exec(_program)
+    
+    self.assertEqual('R = 0.7 , H = 10.1 , Volume = 15.547742042615884\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-convert_minutes-2" questionId="147738">
+      <title>Convert Minutes</title>
+      <statement>
+        <p>We need to convert a number of minutes to hours-and-minutes. For example, 83 minutes is equal to 1 hour and 23 minutes.</p>
+        <p>Write a few lines of code to do the following:</p>
+        <p>
+          <ol>
+            <li>Read an input and convert it to an integer; assign that value to the name <c>total_minutes</c>. (You can assume that the input will have a suitable form for representing a positive integer.)</li>
+            <li>Use integer division (//) to determine how many full hours can fit into the given number of minutes; assign that value to the name <c>hrs</c>.</li>
+            <li>Use the remainder operator (%) to determine how many minutes are "left over" after removing as many whole hours as possible; assign that value to the name <c>mins</c>.</li>
+            <li>Print a message reporting the results of your computation.</li>
+          </ol>
+        </p>
+        <p />
+        <p />
+        <p />
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('314')
+    
+    exec(_program)
+    
+    self.assertEqual('314 minutes equals 5 hours and 14 minutes\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('230')
+    
+    exec(_program)
+    
+    self.assertEqual('230 minutes equals 3 hours and 50 minutes\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('15')
+    
+    exec(_program)
+    
+    self.assertEqual('15 minutes equals 0 hours and 15 minutes\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('120')
+    
+    exec(_program)
+    
+    self.assertEqual('120 minutes equals 2 hours and 0 minutes\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('654')
+    
+    exec(_program)
+    
+    self.assertEqual('654 minutes equals 10 hours and 54 minutes\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('54321')
+    
+    exec(_program)
+    
+    self.assertEqual('54321 minutes equals 905 hours and 21 minutes\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+  </exercises>
+</section>

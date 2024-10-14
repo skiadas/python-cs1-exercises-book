@@ -1,0 +1,28 @@
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <book>
+    <title>Exercises</title>
+    <chapter>
+      <title>Chapter Title</title>
+      <xi:include href="./sec-0-HW1.ptx" />
+      <xi:include href="./sec-1-HW1-practice.ptx" />
+      <xi:include href="./sec-2-HW2.ptx" />
+      <xi:include href="./sec-3-HW2-PRACTICE.ptx" />
+      <xi:include href="./sec-4-HW3.ptx" />
+      <xi:include href="./sec-5-HW3----practice-copy.ptx" />
+      <xi:include href="./sec-6-HW4.ptx" />
+      <xi:include href="./sec-7-HW4-PRACTICE.ptx" />
+      <xi:include href="./sec-8-HW5.ptx" />
+      <xi:include href="./sec-9-HW5-PRACTICE.ptx" />
+      <xi:include href="./sec-10-HW6.ptx" />
+      <xi:include href="./sec-11-HW6-PRACTICE.ptx" />
+      <xi:include href="./sec-12-HW7.ptx" />
+      <xi:include href="./sec-13-HW7-PRACTICE.ptx" />
+      <xi:include href="./sec-14-HW8.ptx" />
+      <xi:include href="./sec-15-HW8-PRACTICE.ptx" />
+      <xi:include href="./sec-16-HW9.ptx" />
+      <xi:include href="./sec-17-HW9-PRACTICE.ptx" />
+      <xi:include href="./sec-18-HW10.ptx" />
+      <xi:include href="./sec-19-HW10-PRACTICE.ptx" />
+    </chapter>
+  </book>
+</pretext>

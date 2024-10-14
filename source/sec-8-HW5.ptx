@@ -1,0 +1,2216 @@
+<section xml:id="sec-HW5-1">
+  <title>HW5</title>
+  <introduction />
+  <exercises>
+    <exercise xml:id="exer-slice_three_from_front-1" questionId="31939">
+      <title>First Three Characters in a String</title>
+      <statement>
+        <p>The function <c>first_three</c> takes one string parameter, <alert>word</alert>, and <alert>returns </alert>a slice of length three from the front of word.  However, if word has length less than three, then the <c>None</c> object is returned instead.</p>
+        <p>Hint: Use an if-else decision and the slicing operator [ : ] to solve this problem.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "happy"
+    if type(first_three(word)) != type("ok"):
+        print("error")
+    else:
+        print(first_three(word))
+    
+    self.assertEqual('hap\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "NO"
+    if type(first_three(word)) != type(None):
+        print("error")
+    else:
+        print(first_three(word))
+    
+    self.assertEqual('None\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "dog"
+    if type(first_three(word)) != type("ok"):
+        print("error")
+    else:
+        print(first_three(word))
+    
+    self.assertEqual('dog\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = ""
+    if type(first_three(word)) != type(None):
+        print("error")
+    else:
+        print(first_three(word))
+    
+    self.assertEqual('None\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "Mississippi"
+    if type(first_three(word)) != type("ok"):
+        print("error")
+    else:
+        print(first_three(word))
+    
+    self.assertEqual('Mis\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "SPAM"
+    if type(first_three(word)) != type("ok"):
+        print("error")
+    else:
+        print(first_three(word))
+    
+    self.assertEqual('SPA\n', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "!@#$%^&amp;*"
+    if type(first_three(word)) != type("ok"):
+        print("error")
+    else:
+        print(first_three(word))
+    
+    self.assertEqual('!@#\n', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "h"
+    if type(first_three(word)) != type(None):
+        print("error")
+    else:
+        print(first_three(word))
+    
+    self.assertEqual('None\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-slice_end-1" questionId="31920">
+      <title />
+      <statement>
+        <h3>Slice the End of a String</h3>
+        <p>The function <c>slice_end</c> takes a string parameter, <alert>word</alert>, and a positive integer <alert>n</alert>; the function <alert>returns </alert>a slice of length n from the end of word.  However, if word has length less than n, then the <alert>None</alert> object is returned instead.</p>
+        <p>Hint: Notice that <em>returning the empty string when n is zero </em>might be a special case. </p>
+        <p>You can use an if-elif-else decision structure and the slicing operator [ : ] to solve this problem.</p>
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "pineapple"
+    n = 5
+    print(slice_end(word, n))
+    
+    self.assertEqual('apple\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "Enchilada"
+    n = 7
+    print(slice_end(word, n))
+    
+    self.assertEqual('chilada\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "too short"
+    n = 20
+    print(slice_end(word, n))
+    
+    self.assertEqual('None\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "llama"
+    n = 0
+    print(slice_end(word, n))
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "Washington"
+    n = 1
+    print(slice_end(word, n))
+    
+    self.assertEqual('n\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "Saturn"
+    n = 6
+    print(slice_end(word, n))
+    
+    self.assertEqual('Saturn\n', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "Hanover College"
+    n = 7
+    print(slice_end(word, n))
+    
+    self.assertEqual('College\n', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "Hanover College"
+    n = len(word) + 1
+    print(slice_end(word, n))
+    
+    self.assertEqual('None\n', getMyStdOut())
+
+
+  def test9(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "Hanover College"
+    n = len(word) - 2
+    print(slice_end(word, n))
+    
+    self.assertEqual('nover College\n', getMyStdOut())
+
+
+  def test10(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    word = "Hanover College"
+    n = 0
+    print(slice_end(word, n))
+    
+    self.assertEqual('', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-slice_middle-1" questionId="31924">
+      <title>((Placeholder title))</title>
+      <statement>
+        <p />
+        <h3>Slice the Middle of a String</h3>
+        <p>The function <c>slice_middle</c> takes a string parameter, <alert><c>word</c>.</alert></p>
+        <p>
+          <ul>
+            <li>If the length of word is less than 3, the function returns the <alert>empty</alert> string.</li>
+            <li>Otherwise, the function returns a substring made of all but the first and last characters in word.</li>
+          </ul>
+        </p>
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(slice_middle("onion"))
+    
+    self.assertEqual('nio\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(slice_middle("dam"))
+    
+    self.assertEqual('a\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(slice_middle("?"))
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(slice_middle("PIZZA"))
+    
+    self.assertEqual('IZZ\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(slice_middle("abracadabra"))
+    
+    self.assertEqual('bracadabr\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(slice_middle("slicing"))
+    
+    self.assertEqual('licin\n', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(slice_middle(""))
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(slice_middle("factorial"))
+    
+    self.assertEqual('actoria\n', getMyStdOut())
+
+
+  def test9(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(slice_middle("pqr"))
+    
+    self.assertEqual('q\n', getMyStdOut())
+
+
+  def test10(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(slice_middle("ab"))
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test11(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(slice_middle("x"))
+    
+    self.assertEqual('', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-add_char_counts-1" questionId="30807">
+      <title>Add Character Counts</title>
+      <statement>
+        <p>The function <c>add_char_counts</c> takes three parameters: a string <c>s</c> and two strings of length 1, <c>char1</c> and <c>char2</c>, and returns the total number of times either char1 or char2 appears in s. </p>
+        <p>For example, the word "scallions" has 2 s's and 1 n, so <c>add_char_counts("scallions", "s", "n")</c> returns 3.</p>
+        <p>Hint: Use a <alert>string method</alert> to help solve this problem (<c>count</c>).  You do not need an accumulator.</p>
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(add_char_counts('Indiana', 'a', 'b'))
+    
+    self.assertEqual('2\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(add_char_counts('BAHAMAS', 'A', 'B'))
+    
+    self.assertEqual('4', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(add_char_counts('Mississippi', 'i', 'M'))
+    
+    self.assertEqual('5\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(add_char_counts('pumpkin', 'e', 'g'))
+    
+    self.assertEqual('0', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(add_char_counts("=:^.^:=", "=", "."))
+    
+    self.assertEqual('3', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(add_char_counts("spam spam spam spam", "s", "p"))
+    
+    self.assertEqual('8\n', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(add_char_counts('soupspoons', 's', 'o'))
+    
+    self.assertEqual('6', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(add_char_counts('honorificabilitudinitatibus', 't', 'i'))
+    
+    self.assertEqual('10', getMyStdOut())
+
+
+  def test9(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(add_char_counts('Twyndyllyngs', 'y', 'z'))
+    
+    self.assertEqual('3', getMyStdOut())
+
+
+  def test10(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(add_char_counts('abracadabra', 'a', 'a'))
+    
+    self.assertEqual('10', getMyStdOut())
+
+
+  def test11(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(add_char_counts('She sells sea shells down by the sea shore.', ' ', 's'))
+    
+    self.assertEqual('15', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-count_words_of_length_ACCUM-1" questionId="31943">
+      <title>Count Words of a Given Length</title>
+      <statement>
+        <p>The function <c>countWordsOfLength</c> takes a list of words L and an integer <c>n</c>, and returns the total number of <alert>words of length n</alert> that appear in the list. For example, <c>countWordsOfLength(["yes", "no", "maybe", "NNOOO"], 5)</c> would return 2 because the given list has two words of length 5.</p>
+        <p>Hint: Use the <alert>accumulator</alert> pattern to solve this problem. Inside the for loop, use an <alert>if </alert>statement to only update the accumulator when the current word has length n.</p>
+        <p>Hint: Instead of using a for loop with a <c>range</c>, you can iterate directly over  the elements of L.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ['a', 'b', 'c', 'de', 'fgh', 'i', 'jkl']
+    print(countWordsOfLength(L, 1))
+    
+    self.assertEqual('4\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ['a', 'b', 'c', 'de', 'fgh', 'i', 'jkl']
+    print(countWordsOfLength(L, 3))
+    
+    self.assertEqual('2\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ['a', 'b', 'c', 'de', 'fgh', 'i', 'jkl']
+    print(countWordsOfLength(L, 5))
+    
+    self.assertEqual('0', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ['bacon', 'onion', 'pepper', 'garlic', 'paprika', 'chipotle chili powder', 'salt', 'black pepper', 'vinegar', 'bbq sauce', 'ketchup', 'mustard', 'brown sugar', 'beans']
+    print(countWordsOfLength(L, 12))
+    
+    self.assertEqual('1', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ['bacon', 'onion', 'pepper', 'garlic', 'paprika', 'chipotle chili powder', 'salt', 'black pepper', 'vinegar', 'bbq sauce', 'ketchup', 'mustard', 'brown sugar', 'beans']
+    print(countWordsOfLength(L, 7))
+    
+    self.assertEqual('4\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ['bacon', 'onion', 'pepper', 'garlic', 'paprika', 'chipotle chili powder', 'salt', 'black pepper', 'vinegar', 'bbq sauce', 'ketchup', 'mustard', 'brown sugar', 'beans']
+    print(countWordsOfLength(L, 5))
+    
+    self.assertEqual('3\n', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ['bacon', 'onion', 'pepper', 'garlic', 'paprika', 'chipotle chili powder', 'salt', 'black pepper', 'vinegar', 'bbq sauce', 'ketchup', 'mustard', 'brown sugar', 'beans']
+    print(countWordsOfLength(L, 0))
+    
+    self.assertEqual('0\n', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = []
+    print(countWordsOfLength(L, 5))
+    
+    self.assertEqual('0\n', getMyStdOut())
+
+
+  def test9(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ["just one thing here"]
+    print(countWordsOfLength(L, 5))
+    
+    self.assertEqual('0\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-make_abbreviation-1" questionId="31995">
+      <title>Make Abbreviation</title>
+      <statement>
+        <p>The function <c>make_abbreviation</c> takes one parameter, <c>wordlist</c>, a list of words, and produces an acronym out of the words in the list, with a period after each initial character.  The function returns the resulting acronym string. </p>
+        <p>For example, the input <c>["International", "Business", "Machines"]</c> would cause the function to return <c>"I.B.M."</c></p>
+        <p>Write a function definition for <c>make_abbreviation</c>.</p>
+        <p>Hint: Use the accumulate-a-string pattern. </p>
+        <p>    - Initialize the accumulator variable to <c>""</c>, the empty string.</p>
+        <p>    - Iterate w over the items <c>wordlist</c></p>
+        <p>    - Inside the <alert>for</alert> loop, update the accumulator variable by concatenating it with the first character in the current word as well as a period.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    wordlist = ["Post", "Meridiem"]
+    print(make_abbreviation(wordlist))
+    
+    self.assertEqual('P.M.', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    wordlist = ["Joint", "Photographic", "Experts", "Group"]
+    print(make_abbreviation(wordlist))
+    
+    self.assertEqual('J.P.E.G.', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    wordlist = ["Subscriber's", "Identification", "Module"]
+    print(make_abbreviation(wordlist))
+    
+    self.assertEqual('S.I.M.', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    wordlist = ["What", "You", "See", "Is", "What", "You", "Get"]
+    print(make_abbreviation(wordlist))
+    
+    self.assertEqual('W.Y.S.I.W.Y.G.', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    wordlist = ["Monsieur"]
+    print(make_abbreviation(wordlist))
+    
+    self.assertEqual('M.', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    wordlist = ["Vital", "Information", "Resources", "Under", "Seige"]
+    print(make_abbreviation(wordlist))
+    
+    self.assertEqual('V.I.R.U.S.', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    wordlist = ["Wonderful", "Exciting", "Interesting", "Real", "Different"]
+    print(make_abbreviation(wordlist))
+    
+    self.assertEqual('W.E.I.R.D.', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    wordlist = ["Bubbly", "Aromatic", "Therapeutic", "Hot"]
+    print(make_abbreviation(wordlist))
+    
+    self.assertEqual('B.A.T.H.', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-accum_count_contains_x-1" questionId="161050">
+      <title>Count Contains 'X' or 'x'</title>
+      <statement>
+        <p>The function <c>count_contains_x</c> takes a list of strings (<c>wordList</c>) and <alert>returns </alert>the count of how many strings in the list contain at least one upper- or lower-case 'x'.</p>
+        <p>Hint: Use the accumulator pattern to accumulate the count.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    wordList = ["xerox", "OXEN", "whiffleball", "XOXOX"]
+    print(count_contains_x(wordList))
+    
+    self.assertEqual('3\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    fish = ["angel", "gold", "cat", "puffer", "damsel"]
+    print(count_contains_x(fish))
+    
+    self.assertEqual('0', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    wordList = ["X", "x"]
+    print(count_contains_x(wordList))
+    
+    self.assertEqual('2', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    empty = []
+    print(count_contains_x(empty))
+    
+    self.assertEqual('0', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ["OXYGEN"]
+    print(count_contains_x(L))
+    
+    self.assertEqual('1', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    list_of_one_x = ["x"]
+    print(count_contains_x(list_of_one_x))
+    
+    self.assertEqual('1', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    instruments = ["Box drum", "Paixiao", "Saxophone", "Txistu", "Xalam", "Xaphoon", "Xun", "Xylophone", "Bari Sax"]
+    print(count_contains_x(instruments))
+    
+    self.assertEqual('9\n', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    wordList = ["atari", "x-box", "nintendo"]
+    print(count_contains_x(wordList))
+    
+    self.assertEqual('1\n', getMyStdOut())
+
+
+  def test9(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    wordList = ['pixxxel', 'Xanadu', 'pEnGuInZ', 'piXXa', 'tomatox', 'alpaca', 'Matrix']
+    print(count_contains_x(wordList))
+    
+    self.assertEqual('5\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-accum_remove_vowels-1" questionId="31997">
+      <title>Remove Vowels</title>
+      <statement>
+        <p>The function <c>remove_vowels</c> takes one parameter, <c>s</c>,<alert> </alert>a string of any length. The function then returns<alert> </alert>a new string that contains all the letters in <c>s</c> except for the vowels: 'a', 'e', 'i', 'o', 'u'. </p>
+        <p>You may assume the string contains no upper-case letters.</p>
+        <p><alert>Hint</alert>: Accumulate the new string. </p>
+        <p>    - Use a for loop to iterate over the characters in s </p>
+        <p>    - Inside the loop, update the accumulator if the current character is not a lowercase vowel ( <c>if ch </c><c>not in 'aeiou'</c> )</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(remove_vowels("giraffe"))
+    
+    self.assertEqual('grff', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(remove_vowels("love bug"))
+    
+    self.assertEqual('lv bg', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(remove_vowels("racecar"))
+    
+    self.assertEqual('rccr', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(remove_vowels("iota"))
+    
+    self.assertEqual('t', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(remove_vowels("queue"))
+    
+    self.assertEqual('q', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(remove_vowels("uoiea"))
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(remove_vowels("alpacas are cute"))
+    
+    self.assertEqual('lpcs r ct\n', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(remove_vowels("gypsy moth"))
+    
+    self.assertEqual('gypsy mth', getMyStdOut())
+
+
+  def test9(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(remove_vowels("cheetah"))
+    
+    self.assertEqual('chth\n', getMyStdOut())
+
+
+  def test10(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(remove_vowels("aieeioouuaiieeaiaoox"))
+    
+    self.assertEqual('x\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-decode_ascii_ACCUM-1" questionId="30808">
+      <title>Decode from ASCII</title>
+      <statement>
+        <p>The function <c>decodeFromAscii</c><c> </c>takes a list <c>L</c> of integers in the range 32 through 126. Each item in L is an ASCII code representing a single printable character. The function accumulates the string of characters represented by the list of ASCII codes and returns that string.</p>
+        <p>For example, <c>decodeFromAscii([78, 105, 99, 101, 33])</c> returns <c>"Nice!"</c> because N is chr(78), i is chr(105), c is chr(99), etc.</p>
+        <p>Note: ASCII was created in the 1960's so programmers could have a standard encoding for common keyboard characters as numbers. It was later expanded to create Unicode so that characters from languages  other than English, mathematical symbols, and many other symbols could also be represented by numerical codes.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(decodeFromAscii([36, 49, 44, 48, 48, 48]))
+    
+    self.assertEqual('$1,000\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(decodeFromAscii([115, 110, 111, 119]))
+    
+    self.assertEqual('snow\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(decodeFromAscii([68, 79, 71, 83]))
+    
+    self.assertEqual('DOGS\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(decodeFromAscii([80, 121, 116, 104, 111, 110]))
+    
+    self.assertEqual('Python\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(decodeFromAscii([65, 115, 107, 32, 113, 117, 101, 115, 116, 105, 111, 110, 115, 46]))
+    
+    self.assertEqual('Ask questions.\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(decodeFromAscii([84, 104, 105, 115, 32, 111, 110, 101, 32, 105, 115, 32, 115, 101, 99, 114, 101, 116, 33, 33, 33]))
+    
+    self.assertEqual('This one is secret!!!\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-concat_alternate_characters_ACCUM-1" questionId="30810">
+      <title>Concatenate Alternating Characters</title>
+      <statement>
+        <p>The function <c>concatAltChars</c> takes a string parameter <c>s</c> and a boolean parameter <c>even</c>; the function concatenates together either the even-position characters of s or the odd-position characters of s, depending on whether even is True, or False, respectively. The accumulated string is returned.</p>
+        <p>For example, the even-indexed characters of "HANOVER" are at indexes 0, 2, 4, and 6:  H N V R. So, <c>concatAltChars("HANOVER", True) </c>returns the string result <c>"HNVR"</c>. </p>
+        <p>But <c>concatAltChars("HANOVER", False)</c> returns the string result <c>"AOE"</c>. </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    s = "goldfinches"
+    print(concatAltChars(s, True))
+    
+    self.assertEqual('glfnhs\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    s = "A"
+    print(concatAltChars(s, True))
+    
+    self.assertEqual('A\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    s = "A"
+    print(concatAltChars(s, False))
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    s = "some popular animals on Google search are shark, bear, and horse"
+    print(concatAltChars(s, True))
+    
+    self.assertEqual('sm oua nml nGol erhaesak er n os\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    s = "some popular animals on Google search are shark, bear, and horse"
+    print(concatAltChars(s, False))
+    
+    self.assertEqual('oepplraiaso ogesac r hr,ba,adhre\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    s = "some popular animals on Google search are not bunny, worm, cow, sheep"
+    print(concatAltChars(s, True))
+    
+    self.assertEqual('sm oua nml nGol erhaentbny om o,sep\n', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    s = "some popular animals on Google search are not bunny, worm, cow, sheep"
+    print(concatAltChars(s, False))
+    
+    self.assertEqual('oepplraiaso ogesac r o un,wr,cw he\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-string_has_repeat-1" questionId="31054">
+      <title>String Has Repeated Character?</title>
+      <statement>
+        <p>Write the code to define a function <c>has_repeat(mystr)</c>, which takes a string parameter and returns a boolean result. </p>
+        <p>   - If mystr has a character that is repeated (<c>count</c> is more than 1 for that character), return <alert>True</alert></p>
+        <p>   - Otherwise, return <alert>False</alert></p>
+        <p>Hint: You can solve this problem by iterating over the characters in mystr and comparing each character's <c>count</c> with 1.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(has_repeat("Happy"))
+    
+    self.assertEqual('True\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(has_repeat("sad"))
+    
+    self.assertEqual('False\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(has_repeat("salmons"))
+    
+    self.assertEqual('True\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(has_repeat("Trouts"))
+    
+    self.assertEqual('False\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (has_repeat("3.14159") is True):
+        print("error")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (has_repeat("dolphin") is False):
+        print("oops")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (has_repeat("") is False):
+        print("problem here")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (has_repeat("1word1") is True):
+        print("ERROR")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test9(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (has_repeat("1word2") is False):
+        print("ERROR!")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-string_has_adjacent_repeats-1" questionId="31055">
+      <title>String Has Adjacent Repeated Characters?</title>
+      <statement>
+        <p>Write the code to define the function <c>has_adjacent_repeats(mystr)</c>, which takes a string parameter and returns a boolean result.</p>
+        <p>  - If mystr has at least one instance of adjacent characters being equal, return True</p>
+        <p>  - Otherwise, return False</p>
+        <p>Hint: You can iterate over the positive indices i for characters in mystr: 1, 2, 3, ...., len(mystr)-1 with a <alert>for</alert> loop. For each i, if the character at index i matches the character at index i - 1, return <alert>True</alert>. Otherwise, if no doubled character is found in the entire string, return <alert>False</alert>.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (has_adjacent_repeats("NOODLES") is True):
+        print("error")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (has_adjacent_repeats("Bananas") is False):
+        print("shwoopsie")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (has_adjacent_repeats("Hanoverr") is True):
+        print("error")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (has_adjacent_repeats("LLAMA") is True):
+        print("error")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (has_adjacent_repeats("information") is False):
+        print("error")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (has_adjacent_repeats("Hanover") is False):
+        print("error")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (has_adjacent_repeats("") is False):
+        print("error")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (has_adjacent_repeats("H") is False):
+        print("error")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test9(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (has_adjacent_repeats("AA") is True):
+        print("error")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test10(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (has_adjacent_repeats("123456788") is True):
+        print("problem!")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test11(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (has_adjacent_repeats("1x2x3x4x5x6x7x8") is False):
+        print("problem!!")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-string_is_numberlike-1" questionId="31056">
+      <title>String is Numberlike?</title>
+      <statement>
+        <p><c>mystr</c> is "numberlike" if:</p>
+        <p>  - <alert>mystr</alert> is not the empty string</p>
+        <p>  - the first character in <alert>mystr</alert> is a digit</p>
+        <p>  - the count of '.' in <alert>mystr</alert> is zero or one (can't have more than one decimal point in a number)</p>
+        <p>  - every character in <alert>mystr</alert> is a digit ('0', '1', '2', ..., '9') or a decimal point ('.')</p>
+        <p>Write the code to define the function <c>is_numberlike(mystr)</c>, which takes a string parameter and returns a boolean result. </p>
+        <p>If mystr is numberlike, the function returns <alert>True</alert>; otherwise, the function returns <alert>False</alert>.</p>
+        <p>Hint: Check the first three requirements with decision statements, then use a <alert>for </alert>loop to iterate over mystr and check the every character is a digit or a dot</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+from string import digits
+
+def is_numberlike(mystr):
+    # Case 1: The empty string is not numberlike
+    if mystr == "":
+        return False
+        
+    ## more code here ##
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (is_numberlike("13.5") is True):
+        print("error")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (is_numberlike("-5532") is False):
+        print("error")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (is_numberlike("175") is True):
+        print("error")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (is_numberlike("3") is True):
+        print("error")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (is_numberlike(".") is False):
+        print("error")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (is_numberlike("") is False):
+        print("oops!")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (is_numberlike("3.141.59") is False):
+        print("oops!")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (is_numberlike("88.59!") is False):
+        print("oops!")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test9(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (is_numberlike("1234B") is False):
+        print("oops!")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test10(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (is_numberlike("1242498792472.9749247") is True):
+        print("oops!")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test11(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (is_numberlike("3344.") is True):
+        print("oops!")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test12(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (is_numberlike("332.2") is True):
+        print("oops!")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test13(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (is_numberlike("54545") is True):
+        print("oops!")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test14(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (is_numberlike("0.") is True):
+        print("oops!")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test15(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    if not (is_numberlike("1.2.3") is False):
+        print("Oops!!!")
+    
+    self.assertEqual('', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-find_max_char-1" questionId="31988">
+      <title>Find Max Char</title>
+      <statement>
+        <p>The function <c>find_</c><c>max_char</c> takes one string parameter, <c>mystr</c>. The function returns the character in <c>mystr</c> with the maximum ordinal value (the character that comes last in the ASCII alphabet, relative to the other characters in <c>mystr</c>). However, if <alert>mystr</alert> is the empty string, the function returns the Python object <alert>None</alert>. </p>
+        <p>Notice that we don't need the ord() function to compare ordinal values; we can use comparison operators. For example, "Z" &gt; "C" is true because Z comes after C in the ASCII alphabet.</p>
+        <p>We need to "accumulate" the correct answer (max_char) and then return it:</p>
+        <p>
+          <ul>
+            <li>First, if mystr is empty, return None</li>
+            <li>Then initialize max_char (accumulator variable) to the first character in mystr</li>
+            <li>Use a for loop to iterate ch over the characters in mystr</li>
+            <li>Each time a new maximum character is found (<c>if ch &gt; max_char</c>), max_char is updated to "remember" that the new maximum is ch</li>
+            <li>Finally, return max_char</li>
+          </ul>
+        </p>
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(find_max_char("naproxen"))
+    
+    self.assertEqual('x\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(find_max_char("Gorilla Glue"))
+    
+    self.assertEqual('u\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(find_max_char(""))
+    
+    self.assertEqual('None', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(find_max_char("X"))
+    
+    self.assertEqual('X\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(find_max_char("!@#$%^&amp;*()"))
+    
+    self.assertEqual('^\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(find_max_char("zebras"))
+    
+    self.assertEqual('z\n', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(find_max_char("7905"))
+    
+    self.assertEqual('9\n', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(find_max_char("Hanover"))
+    
+    self.assertEqual('v\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+  </exercises>
+</section>

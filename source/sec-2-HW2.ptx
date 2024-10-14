@@ -1,0 +1,1246 @@
+<section xml:id="sec-HW2-1">
+  <title>HW2</title>
+  <introduction />
+  <exercises>
+    <exercise xml:id="exer-flip_sign_add_3-1" questionId="31299">
+      <title>Flip Sign and Add Three</title>
+      <statement>
+        <p>Write a short <alert>program</alert> (not a function definition) that will get a decimal value x (type <alert>float</alert>) from standard input and print a message regarding the value of x and the value of 3 - x. {{INSTR_output_format}}</p>
+        <p>
+          {{INSTR_note}}
+          <ul>
+            <li>{{INSTR_float_input}}</li>
+            <li>{{INSTR_no_input_prompts}}</li>
+          </ul>
+        </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('5.5')
+    
+    exec(_program)
+    
+    self.assertEqual('x is 5.5 and 3 - x is -2.5\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('-8.1')
+    
+    exec(_program)
+    
+    self.assertEqual('x is -8.1 and 3 - x is 11.1\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('0.12')
+    
+    exec(_program)
+    
+    self.assertEqual('x is 0.12 and 3 - x is 2.88\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('-200.7')
+    
+    exec(_program)
+    
+    self.assertEqual('x is -200.7 and 3 - x is 203.7\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('24.5')
+    
+    exec(_program)
+    
+    self.assertEqual('x is 24.5 and 3 - x is -21.5\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-calculate_percent_v2-1" questionId="31283">
+      <title>Calculate the Ratio as a Percentage</title>
+      <statement>
+        <p>Write the code needed to get two float values from standard input, A and B. Calculate A as a percentage of B, rounded to one decimal place. For example, if A is 25.0 and B is 75.0, A is about 33.3% of B since 25.0 / 75.0 = 1 / 3 = .3333333... (multiply the ratio by 100 to get the percentage).</p>
+        <p>Print a message to report the result (using the same format as shown in the examples below).</p>
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('5\n15')
+    
+    exec(_program)
+    
+    self.assertEqual('5.0 is about 33.3 percent of 15.0\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('12.5\n28.0')
+    
+    exec(_program)
+    
+    self.assertEqual('12.5 is about 44.6 percent of 28.0\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('2.52\n8.1')
+    
+    exec(_program)
+    
+    self.assertEqual('2.52 is about 31.1 percent of 8.1\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('42.3\n540.7\n')
+    
+    exec(_program)
+    
+    self.assertEqual('42.3 is about 7.8 percent of 540.7\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('10.5\n48.2')
+    
+    exec(_program)
+    
+    self.assertEqual('10.5 is about 21.8 percent of 48.2\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('1.01\n100.1')
+    
+    exec(_program)
+    
+    self.assertEqual('1.01 is about 1.0 percent of 100.1\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-math_sqrt_round-1" questionId="31293">
+      <title>Rounded Square Root</title>
+      <statement>
+        <p>Write the code needed to get an integer value from standard input, calculate the square root of the value <alert>rounded to the nearest hundredth</alert>, then <alert>print</alert> a message with the result. {{INSTR_output_format}}</p>
+        <p><alert>NOTE:</alert> You may assume that the input value will not be negative.</p>
+        <p>
+          {{INSTR_reminder}}
+          <ul>
+            <li>Start by importing the math module.</li>
+            <li>Use the function math.sqrt to calculate a square root.</li>
+            <li>{{INSTR_int_input}}</li>
+            <li>{{INSTR_no_input_prompts}}</li>
+          </ul>
+        </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+import math
+# read the input, as an integer
+# use math.sqrt() to calculate the square root
+# print message
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('11')
+    
+    exec(_program)
+    
+    self.assertEqual('the square root of 11 is about 3.32', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('95')
+    
+    exec(_program)
+    
+    self.assertEqual('the square root of 95 is about 9.75', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('3')
+    
+    exec(_program)
+    
+    self.assertEqual('the square root of 3 is about 1.73', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('1234')
+    
+    exec(_program)
+    
+    self.assertEqual('the square root of 1234 is about 35.13', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('42')
+    
+    exec(_program)
+    
+    self.assertEqual('the square root of 42 is about 6.48', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('255')
+    
+    exec(_program)
+    
+    self.assertEqual('the square root of 255 is about 15.97', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-round_float-1" questionId="31287">
+      <title>Round Float</title>
+      <statement>
+        <p>Write the code needed to get two numbers from standard input:</p>
+        <p>
+          <ul>
+            <li>a decimal value (i.e., a number with a decimal point, which will be read as Python type <alert>float</alert>)</li>
+            <li>an integer value</li>
+          </ul>
+        </p>
+        <p>Assign the decimal value to the variable <c>decimal</c> and the integer value to the variable precision (or other reasonable names).Finally, round the value of <c>decimal</c> to the number of places after the decimal point indicated by <c>precision</c>, and <alert>print</alert> the result.</p>
+        <p />
+        <p>
+          {{INSTR_note}}
+          <ul>
+            <li>{{INSTR_floatint_input}}</li>
+            <li>{{INSTR_no_input_prompts}}</li>
+          </ul>
+        </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('5.555\n1')
+    
+    exec(_program)
+    
+    self.assertEqual('5.6\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('-9.87437\n3')
+    
+    exec(_program)
+    
+    self.assertEqual('-9.874\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('0.900001\n0')
+    
+    exec(_program)
+    
+    self.assertEqual('1.0\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('-42.4444\n1')
+    
+    exec(_program)
+    
+    self.assertEqual('-42.4\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('18.500001\n0')
+    
+    exec(_program)
+    
+    self.assertEqual('19.0\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('12.12345\n4')
+    
+    exec(_program)
+    
+    self.assertEqual('12.1235\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-div_and_mod-1" questionId="31290">
+      <title>Integer Division and Remainder</title>
+      <statement>
+        <p>Write the code needed to get two integer values from standard input, assign the first integer to the variable <c>dividend</c>, and assign the second integer to the variable <c>divisor</c>. Calculate two things and <alert>print</alert> the results:</p>
+        <p>
+          <ol>
+            <li>Use integer division (floor division) to calculate how many times the <c>divisor</c> will go into the <c>dividend</c>, excluding the remainder.</li>
+            <li>Use the remainder operator to calculate the integer remainder that will be left over when the <c>dividend</c> is divided by the <c>divisor</c>.</li>
+          </ol>
+        </p>
+        <p />
+        <p>{{INSTR_reminder}} {{INSTR_no_input_prompts}}</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('10\n7')
+    
+    exec(_program)
+    
+    self.assertEqual('7 goes into 10 1 times with 3 left over\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('100\n35')
+    
+    exec(_program)
+    
+    self.assertEqual('35 goes into 100 2 times with 30 left over\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('10\n5')
+    
+    exec(_program)
+    
+    self.assertEqual('5 goes into 10 2 times with 0 left over\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('25\n7\n')
+    
+    exec(_program)
+    
+    self.assertEqual('7 goes into 25 3 times with 4 left over\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('99\n98')
+    
+    exec(_program)
+    
+    self.assertEqual('98 goes into 99 1 times with 1 left over\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('14\n6')
+    
+    exec(_program)
+    
+    self.assertEqual('6 goes into 14 2 times with 2 left over\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-bookcases-1" questionId="31384">
+      <title>Bookcases</title>
+      <statement>
+        <p>
+          You are planning to add bookcases to a wall in your living room, but you don't know how many bookcases to buy. You decide to write a Python <alert>function</alert>, <c>get_</c><c>num_bookcases</c>, to help. Your function needs to do the following:
+          <ol>
+            <li>Take parameters for the width of the wall (an integer number of feet) and the width of a bookcase (an integer number of inches). (Your function does not read input from the keyboard; it gets its input through named parameters.) </li>
+            <li>Calculate how many whole bookcases will fit on the wall using <alert>modular arithmetic</alert> (use div and/or mod, represented by the operators // and %, as needed to solve the problem).</li>
+            <li><alert>Return </alert>the number of bookcases.</li>
+          </ol>
+        </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+def get_num_bookcases(wall_feet, bookcase_inches):
+    # function body goes here
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(get_num_bookcases(20, 50))
+    
+    self.assertEqual('4\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(get_num_bookcases(8, 15))
+    
+    self.assertEqual('6\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(get_num_bookcases(18, 29))
+    
+    self.assertEqual('7\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(get_num_bookcases(3, 40))
+    
+    self.assertEqual('0\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(get_num_bookcases(4, 45))
+    
+    self.assertEqual('1\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(get_num_bookcases(150, 33))
+    
+    self.assertEqual('54\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-even_odd_2-1" questionId="31385">
+      <title>Detect Even/Odd</title>
+      <statement>
+        <p>Write a function with no parameters, <c>even_or_odd()</c></p>
+        <p>Specifications:</p>
+        <p>
+          <ul>
+            <li>read an integer from standard input</li>
+            <li>return 0 if the integer is even, 1 if the integer is odd</li>
+            <li>do not use a conditional ("if") statement, just use modular arithmetic (such as // or %)</li>
+            <li>do not print the result, <alert>return</alert> it</li>
+          </ul>
+        </p>
+        <p />
+        <p>{{INSTR_hint}} What is the remainder when you divide an even number by 2?  What is the remainder when you divide an odd number by 2?</p>
+        <p>{{INSTR_reminder}} {{INSTR_no_input_prompts}}</p>
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('5')
+    
+    ans = even_or_odd()
+    print(ans)
+    
+    self.assertEqual('1', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('-14')
+    
+    ans = even_or_odd()
+    print(ans)
+    
+    self.assertEqual('0', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('0')
+    
+    ans = even_or_odd()
+    print(ans)
+    
+    self.assertEqual('0', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('99')
+    
+    ans = even_or_odd()
+    print(ans)
+    
+    self.assertEqual('1', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('50')
+    
+    ans = even_or_odd()
+    print(ans)
+    
+    self.assertEqual('0', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('-121')
+    
+    ans = even_or_odd()
+    print(ans)
+    
+    self.assertEqual('1', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('122')
+    
+    ans = even_or_odd()
+    print(ans)
+    
+    self.assertEqual('0', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-for_loop_1_integers_hello_n_times-1" questionId="156280">
+      <title />
+      <statement>
+        <h3>Spam, N Times</h3>
+        <p>Write a function, <c>say_spam(⁠⁠n)</c>; it takes an integer parameter n and prints "Spam!" n times in response.</p>
+        <p>You should assume n &gt; 0 for this function.</p>
+        <p>Hint: Use a simple <c>for</c> loop with a print statement in the body of the loop.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    say_spam(1)
+    
+    self.assertEqual('Spam!\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    say_spam(2)
+    
+    self.assertEqual('Spam!\nSpam!\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    say_spam(5)
+    
+    self.assertEqual('Spam!\nSpam!\nSpam!\nSpam!\nSpam!\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    say_spam(8)
+    
+    self.assertEqual('Spam!\nSpam!\nSpam!\nSpam!\nSpam!\nSpam!\nSpam!\nSpam!\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-for_loop_2_multiples_of_n-1" questionId="82943">
+      <title>Print Integers Less Than n</title>
+      <statement>
+        <p>Write a function, <alert><c>p</c><c>rint_integers_less_than(⁠n)</c></alert>, which takes an integer parameter n and prints each integer k which is at least 0 and is less than n, in ascending order. </p>
+        <p>Hint: use a simple <alert>for</alert> loop.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_integers_less_than(2)
+    
+    self.assertEqual('0\n1\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_integers_less_than(5)
+    
+    self.assertEqual('0\n1\n2\n3\n4\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_integers_less_than(-3)
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_integers_less_than(0)
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_integers_less_than(1)
+    
+    self.assertEqual('0\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_integers_less_than(11)
+    
+    self.assertEqual('0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_integers_less_than(15)
+    
+    self.assertEqual('0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-for_loop_3_print_cubes-1" questionId="156282">
+      <title>Print Perfect Cubes</title>
+      <statement>
+        <p>Write a function, <c>print_perfect_cubes(n)</c>, that takes an integer parameter n and prints the perfect cubes starting from 0&amp;lt;sup&amp;rt;3&amp;lt;/sup&amp;rt; = 0 and ending with n&amp;lt;sup&amp;rt;3&amp;lt;/sup&amp;rt;. When n is negative, the function prints nothing; but do not check for this condition with an "if" statement, it is unneccesary; use a for loop that will automatically print nothing when n &lt; 0.</p>
+        <p><alert>Hint for choosing the right range for your for loop</alert>: In the general case, when n is not negative, your function will need to print n+1 different values.</p>
+        <p><alert>Hint for printing the first part of the output</alert>: Convert n to a string and then concatenate that string with "^3"; assign the result to a variable, <c>the_cube</c>. Make <c>the_cube</c> the first argument in your print function call.</p>
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_perfect_cubes(2)
+    
+    self.assertEqual('0^3 = 0\n1^3 = 1\n2^3 = 8\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_perfect_cubes(5)
+    
+    self.assertEqual('0^3 = 0\n1^3 = 1\n2^3 = 8\n3^3 = 27\n4^3 = 64\n5^3 = 125\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_perfect_cubes(-10)
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_perfect_cubes(1)
+    
+    self.assertEqual('0^3 = 0\n1^3 = 1\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_perfect_cubes(2)
+    
+    self.assertEqual('0^3 = 0\n1^3 = 1\n2^3 = 8\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_perfect_cubes(9)
+    
+    self.assertEqual('0^3 = 0\n1^3 = 1\n2^3 = 8\n3^3 = 27\n4^3 = 64\n5^3 = 125\n6^3 = 216\n7^3 = 343\n8^3 = 512\n9^3 = 729\n', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_perfect_cubes(13)
+    
+    self.assertEqual('0^3 = 0\n1^3 = 1\n2^3 = 8\n3^3 = 27\n4^3 = 64\n5^3 = 125\n6^3 = 216\n7^3 = 343\n8^3 = 512\n9^3 = 729\n10^3 = 1000\n11^3 = 1331\n12^3 = 1728\n13^3 = 2197\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+  </exercises>
+</section>

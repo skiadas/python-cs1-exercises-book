@@ -1,0 +1,1260 @@
+<section xml:id="sec-HW8-PRACTICE-1">
+  <title>HW8 PRACTICE</title>
+  <introduction>
+    <p dir="ltr">  - Ungraded assignment</p>
+  </introduction>
+  <exercises>
+    <exercise xml:id="exer-build_num_list1-2" questionId="32073">
+      <title>Build Num List </title>
+      <statement>
+        <p>Write a function, <c>build_num_list</c>, that has no parameters; the function reads <alert>integers </alert>from standard input, one at a time, stopping when a <c>0</c> is read. </p>
+        <p>Each number read, except the final <c>0</c>, is appended to a new list (initially empty) created by the function. The function should <alert>return</alert> the accumulated list.</p>
+        <p><alert>Hint: </alert>Use a while loop.</p>
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('55\n20\n20\n0')
+    
+    N = build_num_list()
+    print(N)
+    print(type(N), type(N[0]))
+    
+    self.assertEqual("[55, 20, 20]\n&lt;class 'list'&gt; &lt;class 'int'&gt;\n", getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('0\n1\n1')
+    
+    N = build_num_list()
+    print(N)
+    print(type(N))
+    
+    self.assertEqual("[]\n&lt;class 'list'&gt;\n", getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('99\n-15\n11\n0\n5\n1\n1')
+    
+    N = build_num_list()
+    print(N)
+    print(type(N), type(N[0]))
+    
+    self.assertEqual("[99, -15, 11]\n&lt;class 'list'&gt; &lt;class 'int'&gt;\n", getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('100\n2\n1\n-1\n-2\n0\n-2\n-1')
+    
+    N = build_num_list()
+    print(N)
+    print(type(N), type(N[0]))
+    
+    self.assertEqual("[100, 2, 1, -1, -2]\n&lt;class 'list'&gt; &lt;class 'int'&gt;\n", getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('10\n0\n20\n30\n40\n50\n60\n70\n80\n90\n100')
+    
+    N = build_num_list()
+    print(N)
+    print(type(N), type(N[0]))
+    
+    self.assertEqual("[10]\n&lt;class 'list'&gt; &lt;class 'int'&gt;\n", getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-get_pos_input-2" questionId="32046">
+      <title>Get Positive Input</title>
+      <statement>
+        <p>The function <c>get_pos_input</c> takes no parameters. Instead, it reads integers one at a time from standard input until a <alert>positive</alert> integer is read. Once a positive integer has been read, that integer is <alert>returned</alert>.</p>
+        <p>Add Python code to implement the <c>get_pos_input</c> function.</p>
+        <p><alert>Hint</alert>: Use a while loop.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('-3\n-352034\n-42342\n-42455222\n17\n25\n3\n-2\n')
+    
+    print(get_pos_input())
+    
+    self.assertEqual('17', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('0\n12')
+    
+    print(get_pos_input())
+    
+    self.assertEqual('12', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('1492\n2')
+    
+    print(get_pos_input())
+    
+    self.assertEqual('1492', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('-1\n-2\n-3\n-4\n0\n99\n2')
+    
+    print(get_pos_input())
+    
+    self.assertEqual('99', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('-10\n-15\n-3\n-999\n-12\n-100\n98765')
+    
+    print(get_pos_input())
+    
+    self.assertEqual('98765', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-sum_nonneg_input-2" questionId="32050">
+      <title>Sum Nonnegative Input</title>
+      <statement>
+        <p>The function <c>sum_nonneg_input</c> takes no parameters. Instead, it reads <alert>integers </alert>one at a time from standard input, maintaining a running sum of numbers entered, until a negative integer is read. Once a negative integer is read, the function returns the current sum. Note: the negative number is not included in the sum.</p>
+        <p>Write Python code to implement the <c>sum_nonneg_input</c> function.</p>
+        <p><alert>Hint</alert>: Use a while loop.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('3\n35\n42\n-17\n25\n3\n-2\n')
+    
+    print(sum_nonneg_input())
+    
+    self.assertEqual('80', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('-8\n2')
+    
+    print(sum_nonneg_input())
+    
+    self.assertEqual('0', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('1492\n0\n100\n-1\n')
+    
+    print(sum_nonneg_input())
+    
+    self.assertEqual('1592', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('1\n2\n3\n4\n-99')
+    
+    print(sum_nonneg_input())
+    
+    self.assertEqual('10', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('1\n4\n9\n16\n25\n36\n49\n64\n-81')
+    
+    print(sum_nonneg_input())
+    
+    self.assertEqual('204\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-max_float_input_with_sentinel-2" questionId="32049">
+      <title>Max Float Input</title>
+      <statement>
+        <p>
+          The function <c>max_float_input</c> takes no parameters. Instead, it reads strings from standard input, one at a time, until the string "<alert>stop</alert>" is read.
+          <ul>
+            <li>If the string is not "<alert>stop</alert>", the string is converted to a floating point value (type <c>float</c>) and compared to the largest previous float value entered (if any).</li>
+            <li>Otherwise, the function stops and returns the <alert>largest floating point value</alert> that was entered so far.</li>
+          </ul>
+        </p>
+        <p><alert>Note</alert>: If the <alert>first </alert>string entered is "<alert>stop</alert>", the function simply returns the Python object <c>None</c>.</p>
+        <p>Add Python code to implement the <c>max_float_input</c> function.</p>
+        <p><alert>Hint</alert>: Use a while loop.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('2938.3\n294184.2\n2982.003\n3\n-23482498.5\nstop\n')
+    
+    print(max_float_input())
+    
+    self.assertEqual('294184.2', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('stop')
+    
+    print(max_float_input())
+    
+    self.assertEqual('None\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('52.0\n41.2\n73.7\n53.9\n-34.6\nstop')
+    
+    print(max_float_input())
+    
+    self.assertEqual('73.7', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('152.0\n41.2\n73.7\n53.9\n-34.6\nstop')
+    
+    print(max_float_input())
+    
+    self.assertEqual('152.0', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('10.0\n-6.0\n6.0\n19.1\nstop')
+    
+    print(max_float_input())
+    
+    self.assertEqual('19.1', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('-5.6\n-2.6\n-9.9\n-8.7\nstop\n')
+    
+    print(max_float_input())
+    
+    self.assertEqual('-2.6', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('-7.9\n-9.9\n1.0\n7.1\n9.6\n-4.5\n-4.5\n-7.6\nstop\n')
+    
+    print(max_float_input())
+    
+    self.assertEqual('9.6', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-multiplication_quiz_while-2" questionId="32047">
+      <title>Multiplication Quiz</title>
+      <statement>
+        <p>The function <c>multiplication_quiz(a, b)</c> takes two integer parameters, <c>a</c> and <c>b</c>. The function prompts the user (just once) to enter the product of a times b, and uses a loop to keep checking the input for the correct answer. </p>
+        <p>The function keeps a count of how many attempts were needed to get the right answer. When the correct answer is read, the function returns the count.</p>
+        <p>Write the code needed to implement this function.</p>
+        <p><alert>Hint</alert>: Use a while loop. </p>
+        <p><alert>Note</alert>: You should assume that every input can be converted to an integer.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('17\n9\n84\n83\n99')
+    
+    n = multiplication_quiz(12, 7)
+    print("count =", n)
+    
+    self.assertEqual('What is 12 times 7 ?\ncount = 3\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('55\n44\n2')
+    
+    n = multiplication_quiz(5, 11)
+    print("count =", n)
+    
+    self.assertEqual('What is 5 times 11 ?\ncount = 1\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('10\n9\n8\n7\n6\n5\n4')
+    
+    n = multiplication_quiz(2, 3)
+    print("count =", n)
+    
+    self.assertEqual('What is 2 times 3 ?\ncount = 5\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('60\n65\n70\n75')
+    
+    n = multiplication_quiz(13, 5)
+    print("count =", n)
+    
+    self.assertEqual('What is 13 times 5 ?\ncount = 2\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('33\n11\n12\n13\n44\n144\n155\n')
+    
+    n = multiplication_quiz(12, 12)
+    print("count =", n)
+    
+    self.assertEqual('What is 12 times 12 ?\ncount = 6\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-list_has_repeat_using_set-2" questionId="32048">
+      <title>List Has Repeat (using set)</title>
+      <statement>
+        <p>Write a definition for the function <c>has_repeat(L)</c>. The parameter L is a list of immutable items. The function returns True if L has at least one repeated item, otherwise it returns False.</p>
+        <p><alert>Hint</alert>: If the set of items in L has a shorter length than L itself, return True; otherwise, return False.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = list('hello')
+    print(has_repeat(L), type(has_repeat(L)))
+    
+    self.assertEqual("True &lt;class 'bool'&gt;\n", getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = list('Maybe')
+    print(has_repeat(L), type(has_repeat(L)))
+    
+    self.assertEqual("False &lt;class 'bool'&gt;\n", getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = list('banana')
+    print(has_repeat(L), type(has_repeat(L)))
+    
+    self.assertEqual("True &lt;class 'bool'&gt;\n", getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = []
+    print(has_repeat(L), type(has_repeat(L)))
+    
+    self.assertEqual("False &lt;class 'bool'&gt;\n", getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ['banana']
+    print(has_repeat(L), type(has_repeat(L)))
+    
+    self.assertEqual("False &lt;class 'bool'&gt;\n", getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = ['cat', 'dog', 'cat']
+    print(has_repeat(L), type(has_repeat(L)))
+    
+    self.assertEqual("True &lt;class 'bool'&gt;\n", getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = list('abcdefg')
+    print(has_repeat(L), type(has_repeat(L)))
+    
+    self.assertEqual("False &lt;class 'bool'&gt;\n", getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-number_of_distinct_elements-2" questionId="32051">
+      <title>Number of Distinct Elements (using set)</title>
+      <statement>
+        <p>Implement the function <c>num_distinct_elements(C)</c>. The function takes the parameter C, a collection of type list, string, or tuple, and returns the number of distinct items in C. For example, if C is the list [1, 2, 3, 3, 2, 1, 2, 3, 3, 10], the return value would be 4 (since 1, 2, 3, 10 are the "distinct" elements). </p>
+        <p>HINT: The body of the function requires just one or two lines of code. </p>
+        <p><alert>NOTE</alert>: Use <c>set</c> in your code.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    C = [1, 2, 3, 2, 2, 2, 1, 1, 1, 1]
+    print(num_distinct_elements(C))
+    
+    self.assertEqual('3', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    C = "She sells sea shells by the sea shore."
+    print(num_distinct_elements(C))
+    
+    self.assertEqual('13\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    C = ('b', 'a', 'b', 'b', 'l', 'e')
+    print(num_distinct_elements(C))
+    
+    self.assertEqual('4\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    C = [2, 3, 5, 7, 11, 13, 15]
+    print(num_distinct_elements(C))
+    
+    self.assertEqual('7', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    C = []
+    print(num_distinct_elements(C))
+    
+    self.assertEqual('0\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    C = "aaaaaaaaaaaaaaaaaa"
+    print(num_distinct_elements(C))
+    
+    self.assertEqual('1\n', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    C = list("mississippi river")
+    print(num_distinct_elements(C))
+    
+    self.assertEqual('8\n', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    C = "Hanover College Panthers!"
+    print(num_distinct_elements(C))
+    
+    self.assertEqual('16\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-distinct_elements_in_nested_collection-2" questionId="32391">
+      <title>Get Distinct From Nested</title>
+      <statement>
+        <p>Write a definition for the function <c>get_distinct_from_nested(C)</c>, where the parameter C is a sequence of sequences (e.g.,  a list of strings or a list of lists of integers). The job of the function is to use set operations to find and return the <alert>sorted </alert>list of unique elements in the nested collection C.</p>
+        <p><alert>Hint</alert>: If S is a set, <c>sorted(S)</c> is a sorted list of the elements in S. </p>
+        <p><alert>Another Hint</alert>: Use set union to accumulate the set S of distinct inner elements using a single for loop: </p>
+        <p>
+          <ul>
+            <li>iterate <c>seq </c>over the top-level elements of C</li>
+            <li>use <c>S = S.union(seq)</c> to update S with additional items from <c>seq</c></li>
+          </ul>
+          This only requires about 5 lines of code.
+        </p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    C = ['Java', 'Jumble', 'BlackJack']
+    print(get_distinct_from_nested(C))
+    
+    self.assertEqual("['B', 'J', 'a', 'b', 'c', 'e', 'k', 'l', 'm', 'u', 'v']\n", getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    C = ['app', 'ban', 'can', 'def']
+    print(get_distinct_from_nested(C))
+    
+    self.assertEqual("['a', 'b', 'c', 'd', 'e', 'f', 'n', 'p']\n", getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    C = ['!', '!!', '!!!', '!!!!', '!!!!!']
+    print(get_distinct_from_nested(C))
+    
+    self.assertEqual("['!']\n", getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    C = ['']
+    print(get_distinct_from_nested(C))
+    
+    self.assertEqual('[]\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    C = [list('zig'), list('zag'), list('bagpipes')]
+    print(get_distinct_from_nested(C))
+    
+    self.assertEqual("['a', 'b', 'e', 'g', 'i', 'p', 's', 'z']\n", getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    C = ['apple', 'banana', 'candy', 'donut', 'eggs']
+    print(get_distinct_from_nested(C))
+    
+    self.assertEqual("['a', 'b', 'c', 'd', 'e', 'g', 'l', 'n', 'o', 'p', 's', 't', 'u', 'y']\n", getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-string_intersection_with_set-2" questionId="31949">
+      <title>String Intersection</title>
+      <statement>
+        <p>Write the definition for a function <c>string_intersection(str1, str2)</c>, which takes two string parameters and returns a sorted list of the characters the two strings have in common.</p>
+        <p><alert>Hint</alert>: Use set intersection and the sorted() function.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = string_intersection("cats", "caterpillar")
+    print(L)
+    
+    self.assertEqual("['a', 'c', 't']\n", getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = string_intersection("cats", "dogs")
+    print(L)
+    
+    self.assertEqual("['s']\n", getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = string_intersection("banana", "xylem")
+    print(L)
+    
+    self.assertEqual('[]\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = string_intersection("dog-eared", "dog tails")
+    print(L)
+    
+    self.assertEqual("['a', 'd', 'g', 'o']\n", getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = string_intersection("Venus", "Mars")
+    print(L)
+    
+    self.assertEqual("['s']\n", getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = string_intersection("axbxcxd", "xaxcxfx")
+    print(L)
+    
+    self.assertEqual("['a', 'c', 'x']\n", getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-anagram_checker-2" questionId="103915">
+      <title>Write a Program to Check for Anagrams</title>
+      <statement>
+        <p>Write the code to read two strings (str1, str2) from standard input and print a message regarding whether or not the strings are anagrams (rearrangements) of each other.</p>
+        <p><alert>Hint</alert>: Compare sorted lists of characters for the two strings.</p>
+        <p>In addition, if the strings are NOT anagrams of each other, give one of the following explanations: "They do not have the same character sets.", or "They do not have the same character frequencies."</p>
+        <p>For example, "DOGS" and "GODS" are anagrams. "DOGS" and "HANOVER" do not have the same character sets, while "HANOVER" and "HANOOOVER" do not have the same character frequencies.</p>
+        <p>Use set operations to determine if two non-anagrams have the same character set; if they do share the same set of characters, then you may conclude that their character frequencies are the only difference.</p>
+        <p>Your code might be about 12 lines long.</p>
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('pizzzzzza\npiizzaaaa')
+    
+    exec(_program)
+    
+    self.assertEqual('pizzzzzza and piizzaaaa are NOT anagrams.\nThey do not have the same character frequencies.\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('pizza\npasta')
+    
+    exec(_program)
+    
+    self.assertEqual('pizza and pasta are NOT anagrams.\nThey do not have the same character sets.\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('maps\nspam\n')
+    
+    exec(_program)
+    
+    self.assertEqual('maps and spam are anagrams!\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('HEY\nYEH')
+    
+    exec(_program)
+    
+    self.assertEqual('HEY and YEH are anagrams!\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('monkey\nmonkee')
+    
+    exec(_program)
+    
+    self.assertEqual('monkey and monkee are NOT anagrams.\nThey do not have the same character sets.\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('jambaaaaa\njaammbbaa')
+    
+    exec(_program)
+    
+    self.assertEqual('jambaaaaa and jaammbbaa are NOT anagrams.\nThey do not have the same character frequencies.\n', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('abacad\naaadcb')
+    
+    exec(_program)
+    
+    self.assertEqual('abacad and aaadcb are anagrams!\n', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('aaabbb\naaacbb')
+    
+    exec(_program)
+    
+    self.assertEqual('aaabbb and aaacbb are NOT anagrams.\nThey do not have the same character sets.\n', getMyStdOut())
+
+
+  def test9(self):
+    resetMyStdOut()
+    setMyStdIn('aabbaa\nbbaabb')
+    
+    exec(_program)
+    
+    self.assertEqual('aabbaa and bbaabb are NOT anagrams.\nThey do not have the same character frequencies.\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+  </exercises>
+</section>

@@ -1,0 +1,1121 @@
+<section xml:id="sec-HW9-PRACTICE-1">
+  <title>HW9 PRACTICE</title>
+  <introduction>
+    <p />
+    <alert>  - Ungraded Assignment</alert>
+    <p />
+  </introduction>
+  <exercises>
+    <exercise xml:id="exer-file_reading_match-2" questionId="31856">
+      <title>((Placeholder title))</title>
+      <statement>
+        <p>Suppose <alert>pet_names.txt</alert> is the name of a text file in our current directory, and we successfully opened the file for reading by executing the following statement:</p>
+        <p />
+        <c>pets = open('pet_names.txt', 'r')</c>
+        <p>.</p>
+        <p />
+        <p>Each of the code chunks below uses file object, <c>pets</c>. Match each code chunk with the correct description of the result produced by executing the code.</p>
+      </statement>
+      <matches>
+        <match>
+          <premise>
+            <pre>x = pets.readlines()  # NOTICE the 's' on readlines
+
+            </pre>
+          </premise>
+          <response>
+            <p>x is a list of strings; each item in x is a line from pet_names.txt.</p>
+          </response>
+        </match>
+        <match>
+          <premise>
+            <pre>x = pets.read()
+
+            </pre>
+          </premise>
+          <response>
+            <p>x is a single string containing the entire contents of pet_names.txt.</p>
+          </response>
+        </match>
+        <match>
+          <premise>
+            <pre>x = pets.readline()
+
+            </pre>
+          </premise>
+          <response>
+            <p>x is the first line of pet_names.txt.</p>
+          </response>
+        </match>
+        <match>
+          <premise>
+            <pre>x = len(pets.readlines())  # NOTICE the 's' on readlines
+
+            </pre>
+          </premise>
+          <response>
+            <p>x is the number of lines in pet_names.txt</p>
+          </response>
+        </match>
+        <match>
+          <premise>
+            <pre>acc = 0
+for line in pets:
+    acc = acc + len(line)
+x = acc
+            </pre>
+          </premise>
+          <response>
+            <p>x is the number of characters in pet_names.txt, including newline characters</p>
+          </response>
+        </match>
+        <match>
+          <premise />
+          <response>
+            <p>x is the number of characters in pet_names.txt, NOT including newline characters</p>
+          </response>
+        </match>
+        <match>
+          <premise>
+            <pre>for line in pets:
+    print("hello")
+x = line
+            </pre>
+          </premise>
+          <response>
+            <p>x is the last line of pet_names.txt</p>
+          </response>
+        </match>
+      </matches>
+    </exercise>
+    <exercise xml:id="exer-print_first_line-2" questionId="32177">
+      <title>Print First Line</title>
+      <statement>
+        <p>The function <c>print_first_line</c> takes one parameter, <c>fname</c>, the name of a text file. The function should open the file for reading, print the first line from the file, and close the file.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_first_line("wordlist1.txt")
+    
+    self.assertEqual('happy', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_first_line("random1.txt")
+    
+    self.assertEqual('77635', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_first_line("jazzscales.txt")
+    
+    self.assertEqual('Play a major pent scale in Ab with attack on the 3rd string', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_first_line("clocktimes.txt")
+    
+    self.assertEqual('09:05', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_first_line("cards.txt")
+    
+    self.assertEqual('Three of Clubs', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_first_line("strings1.txt")
+    
+    self.assertEqual('43XkyLl3QO', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-file_get_second_line-2" questionId="32165">
+      <title>Get Second Line</title>
+      <statement>
+        <p>The function <c>get_second_line</c> takes one parameter, <c>fname</c>, the name of a text file. The function should open the file for reading, determine the <alert>second </alert>line of the file, close the file, and return the second line (a string).</p>
+        <p>NOTE: You may assume the file will have at least two lines.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    x = get_second_line("wordlist1.txt")
+    print(x)
+    
+    self.assertEqual('sad', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    x = get_second_line("random1.txt")
+    print(x)
+    
+    self.assertEqual('51437', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    x = get_second_line("jazzscales.txt")
+    print(x)
+    
+    self.assertEqual('Play a 7th pent scale in C# (Db) with attack on the 1st string', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    x = get_second_line("clocktimes.txt")
+    print(x)
+    
+    self.assertEqual('09:15\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    x = get_second_line("cards.txt")
+    print(x)
+    
+    self.assertEqual('Six of Diamonds\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    x = get_second_line("strings1.txt")
+    print(x)
+    
+    self.assertEqual('KgYH4yZ9vp\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-file_iteration_introduction-2" questionId="104015">
+      <title>File Iteration: Introduction</title>
+      <statement>
+        <p>A text file is essentially a sequence of lines. Here is a <alert>typical coding pattern</alert> for processing each line of a file in turn:</p>
+        <p>
+          <ul>
+            <li>Open the file for reading.</li>
+            <li>Use a <alert>for loop</alert> to iterate over the lines of text, executing a block of one or more statements to process each line.</li>
+            <li>Close the file.</li>
+            <li>Finish processing (print, return, etc.) if needed</li>
+          </ul>
+        </p>
+        <p />
+        <p>NOTE: You will need to use this pattern, or some variation of it, to solve the remaining coding problems in this assignment.</p>
+        <p>As the following for loop iterates through each line of the file, the loop variable (`line`) represents the current line of the file as a string of characters.</p>
+        <pre>myFile = open("someTextFile.txt", "r")
+for line in myFile:
+    do something on each iteration
+    do a second thing on each iteration
+    etc...
+myFile.close()
+        </pre>
+        <p><alert>PROBLEM</alert>: Read a string from standard input. Then, iterate over a text file called "cards.txt" and, for each line of the file that starts with the string read from standard input, print that line. </p>
+        <p>
+          <alert>TO DO:</alert>
+          <ul>
+            <li>Add the missing bits of code to complete the partial solution that is provided (replace the _________ s). </li>
+            <li><em>Follow the coding pattern described above.</em></li>
+          </ul>
+        </p>
+        <p />
+        <p><alert>NOTE</alert>: If there are no lines in the file beginning with the given string, there should be no output.</p>
+        <p />
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+_program = """
+
+
+^^^^
+# read the string from input
+matchString = ____________
+
+# open the file and assign the file object to a variable
+myFile = _____________
+
+# iterate over the lines of the file, watching for lines
+# which begin with matchString
+for line in _____________
+    if line[0:len(matchString)] == matchString:
+        # print here
+        __________________
+myFile.close()
+        </input>
+        <tests>
+
+"""
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('Ace')
+    
+    exec(_program)
+    
+    self.assertEqual('Ace of Hearts\n\nAce of Spades\n\nAce of Clubs\n\nAce of Diamonds\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('Jack')
+    
+    exec(_program)
+    
+    self.assertEqual('Jack of Clubs\n\nJack of Diamonds\n\nJack of Hearts\n\nJack of Spades\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('queen')
+    
+    exec(_program)
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('Five')
+    
+    exec(_program)
+    
+    self.assertEqual('Five of Spades\n\nFive of Hearts\n\nFive of Clubs\n\nFive of Diamonds\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('5')
+    
+    exec(_program)
+    
+    self.assertEqual('', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('Nine')
+    
+    exec(_program)
+    
+    self.assertEqual('Nine of Clubs\n\nNine of Spades\n\nNine of Diamonds\n\nNine of Hearts\n', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('T')
+    
+    exec(_program)
+    
+    self.assertEqual('Three of Clubs\n\nTen of Hearts\n\nTwo of Clubs\n\nThree of Diamonds\n\nTwo of Spades\n\nTen of Spades\n\nThree of Spades\n\nTwo of Diamonds\n\nTwo of Hearts\n\nTen of Diamonds\n\nThree of Hearts\n\nTen of Clubs\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-file_first_chars-2" questionId="32176">
+      <title>File First Chars</title>
+      <statement>
+        <p>The function <c>file_first_chars</c> takes one parameter, <c>fname</c>, the name of a text file, and <alert>returns </alert>a string made up of the first character from each line in the file.  You may assume there are no blank lines in the file.</p>
+        <p><alert>Hint</alert>: Use a <alert>for </alert>loop to iterate over the lines of the file and accumulate the string of first characters.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(file_first_chars("wordlist1.txt"))
+    
+    self.assertEqual('hsaem', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(file_first_chars("random1.txt"))
+    
+    self.assertEqual('752128978396557591217', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(file_first_chars("jazzscales.txt"))
+    
+    self.assertEqual('PPP', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(file_first_chars("clocktimes.txt"))
+    
+    self.assertEqual('000011111111111111111111111111111111111111', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(file_first_chars("cards.txt"))
+    
+    self.assertEqual('TSTETSETQTKFJFFNFTTJNSESFQJKSFAQTKTAFFNSESKSANJTQTTA\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print(file_first_chars("strings1.txt"))
+    
+    self.assertEqual('4KB3PaQCbyJwDQMvahL96VIdR', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-file_first_words-2" questionId="32145">
+      <title>File First Words</title>
+      <statement>
+        <p>The function <c>first_words</c> takes one parameter, <c>fname</c>, the name of a text file, and returns a list containing the first word from each line of the file. For example, if the file contents are:
+</p>
+        <pre>apples are red
+bananas are yellow
+limes are green
+        </pre>
+        <p>
+then the list <c>["apples", "bananas", "limes"]</c> should be returned.NOTE: You may assume the file will contain no blank lines.BIG HINT: If <c>line </c>is a string representing a line of text (inside of a for loop!), then <c>L = line.split()</c> creates a list of the words in the line.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = first_words("wordlist1.txt")
+    print(L)
+    
+    self.assertEqual("['happy', 'sad', 'angsty', 'euphoric', 'maudlin']\n", getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = first_words("random1.txt")
+    print(L)
+    
+    self.assertEqual("['77635', '51437', '25094', '13874', '24429', '88575', '90277', '72340', '8826', '36166', '99144', '6920', '56237', '58141', '77661', '51028', '93722', '14354', '26125', '10151', '75322']\n", getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = first_words("snakes.txt")
+    print(L)
+    
+    self.assertEqual("['Cottonmouth', 'Timber', 'Black', 'Tiger', 'Copperhead', 'Eastern', 'Western', 'Eastern', 'Prairie', 'Mojave']\n", getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = first_words("clocktimes.txt")
+    print(L)
+    
+    self.assertEqual("['09:05', '09:15', '09:20', '09:30', '10:20', '10:25', '10:30', '10:40', '10:45', '11:00', '11:15', '11:30', '11:35', '11:55', '12:00', '12:05', '12:10', '12:45', '12:50', '12:55', '13:05', '13:20', '13:35', '14:00', '14:10', '14:15', '14:20', '14:25', '14:35', '14:45', '14:50', '15:00', '15:55', '16:00', '16:05', '16:20', '16:25', '16:30', '16:35', '16:40', '16:50', '16:55']\n", getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = first_words("cards.txt")
+    print(L)
+    
+    self.assertEqual("['Three', 'Six', 'Ten', 'Eight', 'Two', 'Six', 'Eight', 'Three', 'Queen', 'Two', 'King', 'Five', 'Jack', 'Five', 'Four', 'Nine', 'Five', 'Ten', 'Three', 'Jack', 'Nine', 'Seven', 'Eight', 'Seven', 'Five', 'Queen', 'Jack', 'King', 'Six', 'Four', 'Ace', 'Queen', 'Two', 'King', 'Two', 'Ace', 'Four', 'Four', 'Nine', 'Seven', 'Eight', 'Seven', 'King', 'Six', 'Ace', 'Nine', 'Jack', 'Ten', 'Queen', 'Three', 'Ten', 'Ace']\n", getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = first_words("strings1.txt")
+    print(L)
+    
+    self.assertEqual("['43XkyLl3QO', 'KgYH4yZ9vp', 'B9z0d27BWf', '3lVimQBNOl', 'PZF1FkRCC0', 'aodmjRnbSM', 'QinMgOKyJ3', 'CIRpxzuBov', 'bl2VB97vGe', 'ypinbN0yjw', 'JotIY4A9GC', 'wjlureOXLy', 'DlHXQlUuhv', 'QHvicuwzKp', 'MzORTv2BYU', 'vVnuElBS0s', 'aezB6hMOqj', 'hipsag5OAM', 'LhgNsYqWhB', '9b3yi6e29s', '6fx3eADW4n', 'V28c1LIoQC', 'IsN0xS6bZ4', 'd1e0b2hJX6', 'RwXQZcECRu']\n", getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-print_last_line-2" questionId="32179">
+      <title>Print Last Line and Count of Lines</title>
+      <statement>
+        <p>The function <c>print_last_line</c> takes one parameter, <c>fname</c>, the name of a text file. The function should open the file for reading, read the lines of the file until it reaches the end, print out the last line in the file, report the number of lines contained in the file, and close the file.</p>
+        <p><alert>Hint</alert>: Use a <alert>for </alert>loop to iterate over the lines and accumulate the count.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_last_line("wordlist1.txt")
+    
+    self.assertEqual('maudlin\n\nThe file has 5 lines.\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_last_line("random1.txt")
+    
+    self.assertEqual('75322\n\nThe file has 21 lines.\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_last_line("jazzscales.txt")
+    
+    self.assertEqual('Play a major scale in B with attack on the 1st string\n\nThe file has 3 lines.\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_last_line("clocktimes.txt")
+    
+    self.assertEqual('16:55\n\nThe file has 42 lines.\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_last_line("cards.txt")
+    
+    self.assertEqual('Ace of Diamonds\n\nThe file has 52 lines.\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_last_line("strings1.txt")
+    
+    self.assertEqual('RwXQZcECRu\n\nThe file has 25 lines.\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-file_last_words-2" questionId="31853">
+      <title>File Last Words</title>
+      <statement>
+        <p>The function <alert>last_words </alert>takes one parameter, <c>fname</c>, the name of a text file, and returns a list containing the last word from each line of the file. For example, if the file contents are:
+</p>
+        <pre>apples are red
+bananas are yellow
+limes are green
+        </pre>
+        <p>then the list <c>["red", "yellow", "green"]</c> should be returned.</p>
+        <p><alert>NOTE:</alert> You may assume the file will contain no blank lines.</p>
+        <p><alert>BIG HINT:</alert> 
+If <c>line </c>is a string representing a line of text (inside a for loop!), then <c>L = line.split()</c> creates a list of the words in the line.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = last_words("wordlist1.txt")
+    print(L)
+    
+    self.assertEqual("['happy', 'sad', 'angsty', 'euphoric', 'maudlin']\n", getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = last_words("random1.txt")
+    print(L)
+    
+    self.assertEqual("['77635', '51437', '25094', '13874', '24429', '88575', '90277', '72340', '8826', '36166', '99144', '6920', '56237', '58141', '77661', '51028', '93722', '14354', '26125', '10151', '75322']\n", getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = last_words("jazzscales.txt")
+    print(L)
+    
+    self.assertEqual("['string', 'string', 'string']\n", getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = last_words("clocktimes.txt")
+    print(L)
+    
+    self.assertEqual("['09:05', '09:15', '09:20', '09:30', '10:20', '10:25', '10:30', '10:40', '10:45', '11:00', '11:15', '11:30', '11:35', '11:55', '12:00', '12:05', '12:10', '12:45', '12:50', '12:55', '13:05', '13:20', '13:35', '14:00', '14:10', '14:15', '14:20', '14:25', '14:35', '14:45', '14:50', '15:00', '15:55', '16:00', '16:05', '16:20', '16:25', '16:30', '16:35', '16:40', '16:50', '16:55']\n", getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = last_words("cards.txt")
+    print(L)
+    
+    self.assertEqual("['Clubs', 'Diamonds', 'Hearts', 'Clubs', 'Clubs', 'Spades', 'Spades', 'Diamonds', 'Diamonds', 'Spades', 'Spades', 'Spades', 'Clubs', 'Hearts', 'Clubs', 'Clubs', 'Clubs', 'Spades', 'Spades', 'Diamonds', 'Spades', 'Hearts', 'Diamonds', 'Clubs', 'Diamonds', 'Clubs', 'Hearts', 'Diamonds', 'Hearts', 'Diamonds', 'Hearts', 'Hearts', 'Diamonds', 'Clubs', 'Hearts', 'Spades', 'Hearts', 'Spades', 'Diamonds', 'Spades', 'Hearts', 'Diamonds', 'Hearts', 'Clubs', 'Clubs', 'Hearts', 'Spades', 'Diamonds', 'Spades', 'Hearts', 'Clubs', 'Diamonds']\n", getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    L = last_words("strings1.txt")
+    print(L)
+    
+    self.assertEqual("['43XkyLl3QO', 'KgYH4yZ9vp', 'B9z0d27BWf', '3lVimQBNOl', 'PZF1FkRCC0', 'aodmjRnbSM', 'QinMgOKyJ3', 'CIRpxzuBov', 'bl2VB97vGe', 'ypinbN0yjw', 'JotIY4A9GC', 'wjlureOXLy', 'DlHXQlUuhv', 'QHvicuwzKp', 'MzORTv2BYU', 'vVnuElBS0s', 'aezB6hMOqj', 'hipsag5OAM', 'LhgNsYqWhB', '9b3yi6e29s', '6fx3eADW4n', 'V28c1LIoQC', 'IsN0xS6bZ4', 'd1e0b2hJX6', 'RwXQZcECRu']\n", getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+    <exercise xml:id="exer-file_print_line_if_exists-2" questionId="32166">
+      <title>Print Line If It Exists</title>
+      <statement>
+        <p>The function <c>print_line_if_exists</c> takes two parameters, <c>fname </c>(a string, the name of a text file) and <c>line_num</c> (a non-negative integer, supposedly indexing a line in the file). </p>
+        <p>
+          <ul>
+            <li>The function should open the file for reading, print the indicated line from the file, and close the file. </li>
+            <li>However, if <c>line_num</c> is greater than or equal to the number of lines in the file, a warning message should printed instead.</li>
+          </ul>
+        </p>
+        <p />
+        <p><alert>NOTE:</alert><c>line_num</c> begins indexing at 0; line_num = 0 refers to the FIRST line of the file, line_num = 1 refers to the SECOND line, and so on.</p>
+      </statement>
+      <program interactive="activecode" language="python">
+        <input>_my_out = ""
+_my_in = []
+
+def getMyStdOut():
+  global _my_out
+  return _my_out
+
+def setMyStdIn(s = None):
+  global _my_in
+  if s is None:
+    _my_in = []
+  else:
+    _my_in = s.split('\n')
+    _my_in.reverse()
+
+def resetMyStdOut():
+  global _my_out
+  _my_out = ''
+
+def print(*args, sep=' ', end='\n', file=None, flush=False):
+  global _my_out
+  if file is not None:
+    raise RuntimeError("Cannot use this version of print on files")
+  _my_out += sep.join(map(str, args)) + end
+
+def input(prompt=None):
+  global _my_in
+  if prompt is not None:
+    print(prompt, end='')
+  if _my_in == []:
+    raise EOFError()
+  return _my_in.pop()
+
+
+
+
+
+^^^^
+
+        </input>
+        <tests>
+
+
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+
+
+  def test1(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_line_if_exists("wordlist1.txt", 5)
+    
+    self.assertEqual('Warning! line_num = 5 is not valid\n', getMyStdOut())
+
+
+  def test2(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_line_if_exists("random1.txt", 0)
+    
+    self.assertEqual('77635\n', getMyStdOut())
+
+
+  def test3(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_line_if_exists("jazzscales.txt", 12)
+    
+    self.assertEqual('Warning! line_num = 12 is not valid\n', getMyStdOut())
+
+
+  def test4(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_line_if_exists("clocktimes.txt", 7)
+    
+    self.assertEqual('10:40\n', getMyStdOut())
+
+
+  def test5(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_line_if_exists("cards.txt", 51)
+    
+    self.assertEqual('Ace of Diamonds\n', getMyStdOut())
+
+
+  def test6(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_line_if_exists("cards.txt", 52)
+    
+    self.assertEqual('Warning! line_num = 52 is not valid\n', getMyStdOut())
+
+
+  def test7(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_line_if_exists("strings1.txt", 3)
+    
+    self.assertEqual('3lVimQBNOl\n', getMyStdOut())
+
+
+  def test8(self):
+    resetMyStdOut()
+    setMyStdIn('')
+    
+    print_line_if_exists("strings1.txt", 3000)
+    
+    self.assertEqual('Warning! line_num = 3000 is not valid\n', getMyStdOut())
+
+
+
+myTests().main()        </tests>
+      </program>
+    </exercise>
+  </exercises>
+</section>
