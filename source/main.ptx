@@ -1,5 +1,4 @@
 <pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <xi:include href="./docinfo.ptx" />
   <book>
     <title>Exercises</title>
     <chapter>

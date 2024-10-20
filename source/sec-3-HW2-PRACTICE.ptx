@@ -894,9 +894,8 @@ myTests().main()        </tests>
       </program>
     </exercise>
     <exercise xml:id="exer-for_loop_1_integers_hello_n_times-2" questionId="156280">
-      <title />
+      <title>Spam, N Times</title>
       <statement>
-        <h3>Spam, N Times</h3>
         <p>Write a function, <c>say_spam(⁠⁠n)</c>; it takes an integer parameter n and prints "Spam!" n times in response.</p>
         <p>You should assume n &gt; 0 for this function.</p>
         <p>Hint: Use a simple <c>for</c> loop with a print statement in the body of the loop.</p>

@@ -719,11 +719,9 @@ myTests().main()        </tests>
       </program>
     </exercise>
     <exercise xml:id="exer-square_nums_1-2" questionId="32004">
-      <title>((Placeholder title))</title>
+      <title>Square Nums 1</title>
       <statement>
-        <p>
-          <h3>Square Nums 1</h3>
-        </p>
+        <p />
         <p>Define the function <c>square_nums</c> which takes a list of numbers, <c>numlist</c>, and returns a NEW list containing the squares of the numbers in the original list.  The given list, <c>numlist</c>, should not be changed.</p>
         <p><alert>Note</alert>: Use the accumulator pattern and <c>newlist.append(item)</c> to solve this problem.  </p>
         <p>

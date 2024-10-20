@@ -344,10 +344,9 @@ myTests().main()        </tests>
       </program>
     </exercise>
     <exercise xml:id="exer-slice_middle-2" questionId="31924">
-      <title>((Placeholder title))</title>
+      <title>Slice the Middle of a String</title>
       <statement>
         <p />
-        <h3>Slice the Middle of a String</h3>
         <p>The function <c>slice_middle</c> takes a string parameter, <alert><c>word</c>.</alert></p>
         <p>
           <ul>

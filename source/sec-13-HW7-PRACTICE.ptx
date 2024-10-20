@@ -303,11 +303,9 @@ myTests().main()        </tests>
       </program>
     </exercise>
     <exercise xml:id="exer-square_nums_2-2" questionId="161273">
-      <title>((Placeholder title))</title>
+      <title>Square Nums 2</title>
       <statement>
-        <p>
-          <h3>Square Nums 2</h3>
-        </p>
+        <p />
         <p>Define the function <c>square_nums_2</c> which takes a list of numbers, <alert>L</alert>, and mutates <alert>L</alert> so that each original item is now squared. For example, if L is <c>[2, -5, 9]</c> then, after calling <c>square_nums_2(L)</c>, <c>L == [4, 25, 81]</c>. </p>
         <p>Nothing is printed and None is returned.</p>
         <p />
