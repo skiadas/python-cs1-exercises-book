@@ -2,7 +2,7 @@
   <title>HW5</title>
   <introduction />
   <exercises>
-    <exercise xml:id="exer-slice_three_from_front-1" questionId="31939">
+    <exercise xml:id="exer-slice_three_from_front-1" label="31939">
       <title>First Three Characters in a String</title>
       <statement>
         <p>The function <c>first_three</c> takes one string parameter, <alert>word</alert>, and <alert>returns </alert>a slice of length three from the front of word.  However, if word has length less than three, then the <c>None</c> object is returned instead.</p>
@@ -167,7 +167,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-slice_end-1" questionId="31920">
+    <exercise xml:id="exer-slice_end-1" label="31920">
       <title />
       <statement>
         <h3>Slice the End of a String</h3>
@@ -341,7 +341,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-slice_middle-1" questionId="31924">
+    <exercise xml:id="exer-slice_middle-1" label="31924">
       <title>Slice the Middle of a String</title>
       <statement>
         <p />
@@ -508,7 +508,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-add_char_counts-1" questionId="30807">
+    <exercise xml:id="exer-add_char_counts-1" label="30807">
       <title>Add Character Counts</title>
       <statement>
         <p>The function <c>add_char_counts</c> takes three parameters: a string <c>s</c> and two strings of length 1, <c>char1</c> and <c>char2</c>, and returns the total number of times either char1 or char2 appears in s. </p>
@@ -670,7 +670,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-count_words_of_length_ACCUM-1" questionId="31943">
+    <exercise xml:id="exer-count_words_of_length_ACCUM-1" label="31943">
       <title>Count Words of a Given Length</title>
       <statement>
         <p>The function <c>countWordsOfLength</c> takes a list of words L and an integer <c>n</c>, and returns the total number of <alert>words of length n</alert> that appear in the list. For example, <c>countWordsOfLength(["yes", "no", "maybe", "NNOOO"], 5)</c> would return 2 because the given list has two words of length 5.</p>
@@ -822,7 +822,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-make_abbreviation-1" questionId="31995">
+    <exercise xml:id="exer-make_abbreviation-1" label="31995">
       <title>Make Abbreviation</title>
       <statement>
         <p>The function <c>make_abbreviation</c> takes one parameter, <c>wordlist</c>, a list of words, and produces an acronym out of the words in the list, with a period after each initial character.  The function returns the resulting acronym string. </p>
@@ -968,7 +968,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-accum_count_contains_x-1" questionId="161050">
+    <exercise xml:id="exer-accum_count_contains_x-1" label="161050">
       <title>Count Contains 'X' or 'x'</title>
       <statement>
         <p>The function <c>count_contains_x</c> takes a list of strings (<c>wordList</c>) and <alert>returns </alert>the count of how many strings in the list contain at least one upper- or lower-case 'x'.</p>
@@ -1119,7 +1119,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-accum_remove_vowels-1" questionId="31997">
+    <exercise xml:id="exer-accum_remove_vowels-1" label="31997">
       <title>Remove Vowels</title>
       <statement>
         <p>The function <c>remove_vowels</c> takes one parameter, <c>s</c>,<alert> </alert>a string of any length. The function then returns<alert> </alert>a new string that contains all the letters in <c>s</c> except for the vowels: 'a', 'e', 'i', 'o', 'u'. </p>
@@ -1273,7 +1273,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-decode_ascii_ACCUM-1" questionId="30808">
+    <exercise xml:id="exer-decode_ascii_ACCUM-1" label="30808">
       <title>Decode from ASCII</title>
       <statement>
         <p>The function <c>decodeFromAscii</c><c> </c>takes a list <c>L</c> of integers in the range 32 through 126. Each item in L is an ASCII code representing a single printable character. The function accumulates the string of characters represented by the list of ASCII codes and returns that string.</p>
@@ -1389,7 +1389,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-concat_alternate_characters_ACCUM-1" questionId="30810">
+    <exercise xml:id="exer-concat_alternate_characters_ACCUM-1" label="30810">
       <title>Concatenate Alternating Characters</title>
       <statement>
         <p>The function <c>concatAltChars</c> takes a string parameter <c>s</c> and a boolean parameter <c>even</c>; the function concatenates together either the even-position characters of s or the odd-position characters of s, depending on whether even is True, or False, respectively. The accumulated string is returned.</p>
@@ -1521,7 +1521,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-string_has_repeat-1" questionId="31054">
+    <exercise xml:id="exer-string_has_repeat-1" label="31054">
       <title>String Has Repeated Character?</title>
       <statement>
         <p>Write the code to define a function <c>has_repeat(mystr)</c>, which takes a string parameter and returns a boolean result. </p>
@@ -1670,7 +1670,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-string_has_adjacent_repeats-1" questionId="31055">
+    <exercise xml:id="exer-string_has_adjacent_repeats-1" label="31055">
       <title>String Has Adjacent Repeated Characters?</title>
       <statement>
         <p>Write the code to define the function <c>has_adjacent_repeats(mystr)</c>, which takes a string parameter and returns a boolean result.</p>
@@ -1843,7 +1843,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-string_is_numberlike-1" questionId="31056">
+    <exercise xml:id="exer-string_is_numberlike-1" label="31056">
       <title>String is Numberlike?</title>
       <statement>
         <p><c>mystr</c> is "numberlike" if:</p>
@@ -2067,7 +2067,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-find_max_char-1" questionId="31988">
+    <exercise xml:id="exer-find_max_char-1" label="31988">
       <title>Find Max Char</title>
       <statement>
         <p>The function <c>find_</c><c>max_char</c> takes one string parameter, <c>mystr</c>. The function returns the character in <c>mystr</c> with the maximum ordinal value (the character that comes last in the ASCII alphabet, relative to the other characters in <c>mystr</c>). However, if <alert>mystr</alert> is the empty string, the function returns the Python object <alert>None</alert>. </p>

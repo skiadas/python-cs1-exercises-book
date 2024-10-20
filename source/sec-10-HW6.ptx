@@ -4,7 +4,7 @@
     <p dir="ltr">Lists</p>
   </introduction>
   <exercises>
-    <exercise xml:id="exer-front_two-1" questionId="31905">
+    <exercise xml:id="exer-front_two-1" label="31905">
       <title>Front Two</title>
       <statement>
         <p>Given a list, <c>L</c>, the function <c>front_two</c> creates a new list of length 2 out of the first two items in <c>L</c> as follows:</p>
@@ -133,7 +133,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-func_print_items_reverse-1" questionId="31906">
+    <exercise xml:id="exer-func_print_items_reverse-1" label="31906">
       <title>Print Reverse</title>
       <statement>
         <p>The function <c>print_reverse</c> takes one parameter, <c>L</c>, which is a list.  The function then prints the items in the list <alert>in reverse order</alert>, one item per line, <alert>WITHOUT changing the value of <c>L</c></alert>.</p>
@@ -276,7 +276,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-sum_evens-1" questionId="31990">
+    <exercise xml:id="exer-sum_evens-1" label="31990">
       <title>Sum Evens</title>
       <statement>
         <p>The function <c>sum_evens</c> takes a list of integers and returns the <alert>sum</alert> of all the even integers in the list.</p>
@@ -426,7 +426,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-count_contains_x-1" questionId="32010">
+    <exercise xml:id="exer-count_contains_x-1" label="32010">
       <title>Count Contains 'og'</title>
       <statement>
         <p>The function <c>count_contains_og </c>takes a list of strings and returns how many strings in the list contain 'og' / 'OG' / 'oG' / 'Og' (check for 'og', ignoring case).</p>
@@ -567,7 +567,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-ffirst_negative_trickier-1" questionId="32045">
+    <exercise xml:id="exer-ffirst_negative_trickier-1" label="32045">
       <title>First Negative</title>
       <statement>
         <p>Define the function <c>first_negative(nums)</c> takes one parameter. <c>nums</c>, a possibly empty list of numbers. The function then returns the first negative item in <c>numlist</c>. </p>
@@ -718,7 +718,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-square_nums_1-1" questionId="32004">
+    <exercise xml:id="exer-square_nums_1-1" label="32004">
       <title>Square Nums 1</title>
       <statement>
         <p />
@@ -850,7 +850,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-make_list_items_upper_2-1" questionId="31105">
+    <exercise xml:id="exer-make_list_items_upper_2-1" label="31105">
       <title>Make List Items Uppercase 2</title>
       <statement>
         <p>Define the function <c>make_uppercase(mylist)</c>, which takes a list parameter <c>mylist</c> (a list of strings), mutates the list by uppercasing each string in mylist. The function returns <c>None</c>. </p>
@@ -977,7 +977,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-build_list_from_input-1" questionId="30599">
+    <exercise xml:id="exer-build_list_from_input-1" label="30599">
       <title>Build List from Input</title>
       <statement>
         <p>
@@ -1110,7 +1110,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-final_substrings-1" questionId="32084">
+    <exercise xml:id="exer-final_substrings-1" label="32084">
       <title>Final Substrings</title>
       <statement>
         <p>The function <c>final</c><c>_substrings</c> takes a string parameter <c>inString</c> and returns a list of all the non-empty final substrings of <c>inString</c> (in order by their lengths).</p>
@@ -1247,7 +1247,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-interleave_lists-1" questionId="161051">
+    <exercise xml:id="exer-interleave_lists-1" label="161051">
       <title>Interleave Lists</title>
       <statement>
         <p>The function <c>interleave_lists</c> takes two parameters, <c>L1</c> and <c>L2</c>, both lists. Notice that the lists may have different lengths.</p>
