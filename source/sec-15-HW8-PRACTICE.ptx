@@ -4,7 +4,7 @@
     <p dir="ltr">  - Ungraded assignment</p>
   </introduction>
   <exercises>
-    <exercise xml:id="exer-build_num_list1-2" label="32073">
+    <exercise xml:id="exer-build_num_list1-2" label="32073-80220">
       <title>Build Num List </title>
       <statement>
         <p>Write a function, <c>build_num_list</c>, that has no parameters; the function reads <alert>integers </alert>from standard input, one at a time, stopping when a <c>0</c> is read. </p>
@@ -121,7 +121,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-get_pos_input-2" label="32046">
+    <exercise xml:id="exer-get_pos_input-2" label="32046-498403">
       <title>Get Positive Input</title>
       <statement>
         <p>The function <c>get_pos_input</c> takes no parameters. Instead, it reads integers one at a time from standard input until a <alert>positive</alert> integer is read. Once a positive integer has been read, that integer is <alert>returned</alert>.</p>
@@ -228,7 +228,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-sum_nonneg_input-2" label="32050">
+    <exercise xml:id="exer-sum_nonneg_input-2" label="32050-513937">
       <title>Sum Nonnegative Input</title>
       <statement>
         <p>The function <c>sum_nonneg_input</c> takes no parameters. Instead, it reads <alert>integers </alert>one at a time from standard input, maintaining a running sum of numbers entered, until a negative integer is read. Once a negative integer is read, the function returns the current sum. Note: the negative number is not included in the sum.</p>
@@ -335,7 +335,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-max_float_input_with_sentinel-2" label="32049">
+    <exercise xml:id="exer-max_float_input_with_sentinel-2" label="32049-584323">
       <title>Max Float Input</title>
       <statement>
         <p>
@@ -467,7 +467,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-multiplication_quiz_while-2" label="32047">
+    <exercise xml:id="exer-multiplication_quiz_while-2" label="32047-392515">
       <title>Multiplication Quiz</title>
       <statement>
         <p>The function <c>multiplication_quiz(a, b)</c> takes two integer parameters, <c>a</c> and <c>b</c>. The function prompts the user (just once) to enter the product of a times b, and uses a loop to keep checking the input for the correct answer. </p>
@@ -581,7 +581,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-list_has_repeat_using_set-2" label="32048">
+    <exercise xml:id="exer-list_has_repeat_using_set-2" label="32048-343558">
       <title>List Has Repeat (using set)</title>
       <statement>
         <p>Write a definition for the function <c>has_repeat(L)</c>. The parameter L is a list of immutable items. The function returns True if L has at least one repeated item, otherwise it returns False.</p>
@@ -712,7 +712,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-number_of_distinct_elements-2" label="32051">
+    <exercise xml:id="exer-number_of_distinct_elements-2" label="32051-755881">
       <title>Number of Distinct Elements (using set)</title>
       <statement>
         <p>Implement the function <c>num_distinct_elements(C)</c>. The function takes the parameter C, a collection of type list, string, or tuple, and returns the number of distinct items in C. For example, if C is the list [1, 2, 3, 3, 2, 1, 2, 3, 3, 10], the return value would be 4 (since 1, 2, 3, 10 are the "distinct" elements). </p>
@@ -854,7 +854,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-distinct_elements_in_nested_collection-2" label="32391">
+    <exercise xml:id="exer-distinct_elements_in_nested_collection-2" label="32391-138938">
       <title>Get Distinct From Nested</title>
       <statement>
         <p>Write a definition for the function <c>get_distinct_from_nested(C)</c>, where the parameter C is a sequence of sequences (e.g.,  a list of strings or a list of lists of integers). The job of the function is to use set operations to find and return the <alert>sorted </alert>list of unique elements in the nested collection C.</p>
@@ -983,7 +983,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-string_intersection_with_set-2" label="31949">
+    <exercise xml:id="exer-string_intersection_with_set-2" label="31949-124443">
       <title>String Intersection</title>
       <statement>
         <p>Write the definition for a function <c>string_intersection(str1, str2)</c>, which takes two string parameters and returns a sorted list of the characters the two strings have in common.</p>
@@ -1104,7 +1104,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-anagram_checker-2" label="103915">
+    <exercise xml:id="exer-anagram_checker-2" label="103915-598526">
       <title>Write a Program to Check for Anagrams</title>
       <statement>
         <p>Write the code to read two strings (str1, str2) from standard input and print a message regarding whether or not the strings are anagrams (rearrangements) of each other.</p>

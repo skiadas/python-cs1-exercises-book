@@ -2,7 +2,7 @@
   <title>HW2 PRACTICE</title>
   <introduction />
   <exercises>
-    <exercise xml:id="exer-flip_sign_add_3-2" label="31299">
+    <exercise xml:id="exer-flip_sign_add_3-2" label="31299-485075">
       <title>Flip Sign and Add Three</title>
       <statement>
         <p>Write a short <alert>program</alert> (not a function definition) that will get a decimal value x (type <alert>float</alert>) from standard input and print a message regarding the value of x and the value of 3 - x. {{INSTR_output_format}}</p>
@@ -118,7 +118,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-calculate_percent_v2-2" label="31283">
+    <exercise xml:id="exer-calculate_percent_v2-2" label="31283-633404">
       <title>Calculate the Ratio as a Percentage</title>
       <statement>
         <p>Write the code needed to get two float values from standard input, A and B. Calculate A as a percentage of B, rounded to one decimal place. For example, if A is 25.0 and B is 75.0, A is about 33.3% of B since 25.0 / 75.0 = 1 / 3 = .3333333... (multiply the ratio by 100 to get the percentage).</p>
@@ -237,7 +237,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-math_sqrt_round-2" label="31293">
+    <exercise xml:id="exer-math_sqrt_round-2" label="31293-312417">
       <title>Rounded Square Root</title>
       <statement>
         <p>Write the code needed to get an integer value from standard input, calculate the square root of the value <alert>rounded to the nearest hundredth</alert>, then <alert>print</alert> a message with the result. {{INSTR_output_format}}</p>
@@ -368,7 +368,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-round_float-2" label="31287">
+    <exercise xml:id="exer-round_float-2" label="31287-7609">
       <title>Round Float</title>
       <statement>
         <p>Write the code needed to get two numbers from standard input:</p>
@@ -500,7 +500,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-div_and_mod-2" label="31290">
+    <exercise xml:id="exer-div_and_mod-2" label="31290-3818">
       <title>Integer Division and Remainder</title>
       <statement>
         <p>Write the code needed to get two integer values from standard input, assign the first integer to the variable <c>dividend</c>, and assign the second integer to the variable <c>divisor</c>. Calculate two things and <alert>print</alert> the results:</p>
@@ -625,7 +625,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-bookcases-2" label="31384">
+    <exercise xml:id="exer-bookcases-2" label="31384-920014">
       <title>Bookcases</title>
       <statement>
         <p>
@@ -747,7 +747,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-even_odd_2-2" label="31385">
+    <exercise xml:id="exer-even_odd_2-2" label="31385-293363">
       <title>Detect Even/Odd</title>
       <statement>
         <p>Write a function with no parameters, <c>even_or_odd()</c></p>
@@ -888,7 +888,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-for_loop_1_integers_hello_n_times-2" label="156280">
+    <exercise xml:id="exer-for_loop_1_integers_hello_n_times-2" label="156280-578202">
       <title>Spam, N Times</title>
       <statement>
         <p>Write a function, <c>say_spam(⁠⁠n)</c>; it takes an integer parameter n and prints "Spam!" n times in response.</p>
@@ -986,7 +986,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-for_loop_2_multiples_of_n-2" label="82943">
+    <exercise xml:id="exer-for_loop_2_multiples_of_n-2" label="82943-25380">
       <title>Print Integers Less Than n</title>
       <statement>
         <p>Write a function, <alert><c>p</c><c>rint_integers_less_than(⁠n)</c></alert>, which takes an integer parameter n and prints each integer k which is at least 0 and is less than n, in ascending order. </p>
@@ -1110,7 +1110,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-for_loop_3_print_cubes-2" label="156282">
+    <exercise xml:id="exer-for_loop_3_print_cubes-2" label="156282-401359">
       <title>Print Perfect Cubes</title>
       <statement>
         <p>Write a function, <c>print_perfect_cubes(n)</c>, that takes an integer parameter n and prints the perfect cubes starting from 0&amp;lt;sup&amp;rt;3&amp;lt;/sup&amp;rt; = 0 and ending with n&amp;lt;sup&amp;rt;3&amp;lt;/sup&amp;rt;. When n is negative, the function prints nothing; but do not check for this condition with an "if" statement, it is unneccesary; use a for loop that will automatically print nothing when n &lt; 0.</p>

@@ -4,7 +4,7 @@
     <p>HWK 1 Practice Copy -- for review purposes</p>
   </introduction>
   <exercises>
-    <exercise xml:id="exer-CodeRunner-Overview-2" label="145621">
+    <exercise xml:id="exer-CodeRunner-Overview-2" label="145621-309781">
       <title>((Placeholder title))</title>
       <statement>
         <p>CodeRunner is a system for working on coding problems directly within Moodle.  Below is an example of what a CodeRunner problem looks like.
@@ -32,7 +32,7 @@
         <p>Now it is time for you to try solving some CodeRunner problems!</p>
       </statement>
     </exercise>
-    <exercise xml:id="exer-output_input-2" label="146747">
+    <exercise xml:id="exer-output_input-2" label="146747-909604">
       <title>Output the Input</title>
       <statement>
         <p>Complete the program below by adding a line of code that will output a message reporting back what is input by the user. {{INSTR_output_format}}</p>
@@ -156,7 +156,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-say_greeting-2" label="144165">
+    <exercise xml:id="exer-say_greeting-2" label="144165-130547">
       <title>Say {{greeting}}</title>
       <statement>
         <p>Write a short program to get a name from the user, then output a message saying {{greeting}} to the user by name. {{INSTR_output_format}}</p>
@@ -278,7 +278,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-simple_addition-2" label="147730">
+    <exercise xml:id="exer-simple_addition-2" label="147730-709791">
       <title>Add {{integer}}</title>
       <statement>
         <p>Write a program to get an integer value from standard input, <alert>add {{integer}}</alert> to the input value, then output the result. {{INSTR_output_format}}</p>
@@ -400,7 +400,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-simple_multiplication-2" label="147731">
+    <exercise xml:id="exer-simple_multiplication-2" label="147731-640339">
       <title>Multiply by {{integer}}</title>
       <statement>
         <p>Write a short program that will get a decimal value (a float) from standard input, multiply the input value <alert>by {{integer}}</alert>, then output a message with the result. {{INSTR_output_format}}</p>
@@ -527,7 +527,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-simple_modulo-2" label="147732">
+    <exercise xml:id="exer-simple_modulo-2" label="147732-767115">
       <title>Find the Remainder</title>
       <statement>
         <p>Write the code that will read an integer input and assign its value to the name <c>num</c>, calculate the remainder when <c>num </c>is divided by 3, and print an informative message. Hint: Use the remainder operator (%).</p>
@@ -647,7 +647,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-square_input-2" label="147733">
+    <exercise xml:id="exer-square_input-2" label="147733-65921">
       <title>Square of Input</title>
       <statement>
         <p>Write the code to read an input, convert it to a int value, assign that value to the name <c>x</c>, and print a message regarding the square of the input (i.e., the value of x&amp;lt;sup&amp;rt;2&amp;lt;/sup&amp;rt;).</p>
@@ -767,7 +767,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-cylinder_volume-2" label="156267">
+    <exercise xml:id="exer-cylinder_volume-2" label="156267-61969">
       <title>Volume of Cylinder</title>
       <statement>
         <p id="yui_3_17_2_1_1704483246360_2027">Suppose we want to calculate the volume (in cubic cm) of a cylinder for which the radius of the base is R cm and the height is H cm. We will use the formula: volume = area of base * H. Rather than making a single large calculation and reporting the result, you should practice dividing the work into stages using two assignment statements.</p>
@@ -881,7 +881,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-convert_minutes-2" label="147738">
+    <exercise xml:id="exer-convert_minutes-2" label="147738-576840">
       <title>Convert Minutes</title>
       <statement>
         <p>We need to convert a number of minutes to hours-and-minutes. For example, 83 minutes is equal to 1 hour and 23 minutes.</p>
