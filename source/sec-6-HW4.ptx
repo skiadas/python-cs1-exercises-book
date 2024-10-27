@@ -2,7 +2,7 @@
   <title>HW4</title>
   <introduction />
   <exercises>
-    <exercise xml:id="exer-func_between_zero_one-1" label="160093-355161">
+    <exercise xml:id="exer-func_between_zero_one-1" label="160093-316365">
       <title>Between 0 and 1</title>
       <statement>
         <p>Write a function called <alert>between_zero_and_one </alert>that takes a parameter num; num we be a number at run time.  The function should return True if num falls strictly between 0 and 1; otherwise, it should return False.</p>
@@ -137,7 +137,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-basic_conditional_divides-1" label="31644-774550">
+    <exercise xml:id="exer-basic_conditional_divides-1" label="31644-289012">
       <title>Divides</title>
       <statement>
         <p>Define a function <alert>divides </alert>that takes integer parameters <alert>n</alert>  and <alert>d</alert>.</p>
@@ -282,7 +282,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-num_is_even_basic_conditional-1" label="31642-370481">
+    <exercise xml:id="exer-num_is_even_basic_conditional-1" label="31642-2894">
       <title>Num Is Even</title>
       <statement>
         <p>The function <c>isEven </c>takes one parameter, n (an integer).  <c>isEven</c> returns a boolean result.</p>
@@ -403,7 +403,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-num_is_positive_simple_conditional-1" label="31643-6286">
+    <exercise xml:id="exer-num_is_positive_simple_conditional-1" label="31643-558499">
       <title>isPositive</title>
       <statement>
         <p>The function <c>isPositive </c>takes one parameter, n (a number). </p>
@@ -525,7 +525,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-divisible_by_3_or_5_nested_decision-1" label="31701-46750">
+    <exercise xml:id="exer-divisible_by_3_or_5_nested_decision-1" label="31701-603590">
       <title>Divisible by 3 or 5</title>
       <statement>
         <p>This problem requires a short program, not a function definition.</p>
@@ -663,7 +663,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-func_inside_unit_circle-1" label="160469-91303">
+    <exercise xml:id="exer-func_inside_unit_circle-1" label="160469-316378">
       <title>Is In Unit Circle</title>
       <statement>
         <p>Write a function called is_in_unit_circle that takes two parameters, <alert>x</alert> and <alert>y</alert> (floats), the coordinates of a point in the x-y plane.</p>
@@ -784,7 +784,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-sum_over_a_list_Basic_accumulator-1" label="31564-276319">
+    <exercise xml:id="exer-sum_over_a_list_Basic_accumulator-1" label="31564-375603">
       <title>Sum over a list</title>
       <statement>
         <p>Define the function list_sum(L); it takes one parameter L, a list of numbers, and returns the sum of all the items in L.</p>
@@ -905,7 +905,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-accumulate_list_product-1" label="31638-868773">
+    <exercise xml:id="exer-accumulate_list_product-1" label="31638-236937">
       <title>List Product</title>
       <statement>
         <p>Define a function list_product(L) which takes a parameter L, a list of numbers, and returns the product of all the items in L.</p>
@@ -1016,7 +1016,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-count_negatives_1-1" label="31647-935214">
+    <exercise xml:id="exer-count_negatives_1-1" label="31647-147789">
       <title>Count Negatives in a list</title>
       <statement>
         <p>Define a function count_negatives(L), which takes a list of numbers, L, as its parameter. The function returns an integer count telling how many of the items in L are negative (less than zero).</p>
@@ -1152,7 +1152,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-count_spam-1" label="31640-196845">
+    <exercise xml:id="exer-count_spam-1" label="31640-166707">
       <title>Count SPAM in list</title>
       <statement>
         <p>Define the function count_SPAM(L), which takes a list of strings, L, as its parameter. The function returns a count of how many times the word "SPAM" occurs as an item in L.</p>
@@ -1293,7 +1293,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-accumulator_count_divisors-1" label="31648-500547">
+    <exercise xml:id="exer-accumulator_count_divisors-1" label="31648-474275">
       <title>Count Divisors</title>
       <statement>
         <p>Write a short program, approximately 12 lines of code, to read a positive integer n from the keyboard, count the number of  positive integer divisors of n, and print a message reporting that count. In addition, if n is prime, also print, "That's a prime number!".  HINT: A positive integer n is prime provided n has exactly two positive integer divisors, 1 and n.</p>
@@ -1441,7 +1441,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-accum_fib_20-1" label="160096-133560">
+    <exercise xml:id="exer-accum_fib_20-1" label="160096-179517">
       <title>Accumulate Nth Fibonacci</title>
       <statement>
         <p>Write a function <c>F </c>to compute the Nth Fibonnaci number, where N is an integer parameter. </p>

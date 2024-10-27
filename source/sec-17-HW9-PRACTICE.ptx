@@ -6,7 +6,7 @@
     <p />
   </introduction>
   <exercises>
-    <exercise xml:id="exer-file_reading_match-2" label="31856-21222">
+    <exercise xml:id="exer-file_reading_match-2" label="31856-820306">
       <title>((Placeholder title))</title>
       <statement>
         <p>Suppose <alert>pet_names.txt</alert> is the name of a text file in our current directory, and we successfully opened the file for reading by executing the following statement:</p>
@@ -87,7 +87,7 @@ x = line
         </match>
       </matches>
     </exercise>
-    <exercise xml:id="exer-print_first_line-2" label="32177-818371">
+    <exercise xml:id="exer-print_first_line-2" label="32177-843436">
       <title>Print First Line</title>
       <statement>
         <p>The function <c>print_first_line</c> takes one parameter, <c>fname</c>, the name of a text file. The function should open the file for reading, print the first line from the file, and close the file.</p>
@@ -201,7 +201,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-file_get_second_line-2" label="32165-431048">
+    <exercise xml:id="exer-file_get_second_line-2" label="32165-506732">
       <title>Get Second Line</title>
       <statement>
         <p>The function <c>get_second_line</c> takes one parameter, <c>fname</c>, the name of a text file. The function should open the file for reading, determine the <alert>second </alert>line of the file, close the file, and return the second line (a string).</p>
@@ -322,7 +322,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-file_iteration_introduction-2" label="104015-396320">
+    <exercise xml:id="exer-file_iteration_introduction-2" label="104015-94473">
       <title>File Iteration: Introduction</title>
       <statement>
         <p>A text file is essentially a sequence of lines. Here is a <alert>typical coding pattern</alert> for processing each line of a file in turn:</p>
@@ -487,7 +487,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-file_first_chars-2" label="32176-620581">
+    <exercise xml:id="exer-file_first_chars-2" label="32176-207830">
       <title>File First Chars</title>
       <statement>
         <p>The function <c>file_first_chars</c> takes one parameter, <c>fname</c>, the name of a text file, and <alert>returns </alert>a string made up of the first character from each line in the file.  You may assume there are no blank lines in the file.</p>
@@ -602,7 +602,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-file_first_words-2" label="32145-883263">
+    <exercise xml:id="exer-file_first_words-2" label="32145-941171">
       <title>File First Words</title>
       <statement>
         <p>The function <c>first_words</c> takes one parameter, <c>fname</c>, the name of a text file, and returns a list containing the first word from each line of the file. For example, if the file contents are:
@@ -729,7 +729,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-print_last_line-2" label="32179-961041">
+    <exercise xml:id="exer-print_last_line-2" label="32179-457559">
       <title>Print Last Line and Count of Lines</title>
       <statement>
         <p>The function <c>print_last_line</c> takes one parameter, <c>fname</c>, the name of a text file. The function should open the file for reading, read the lines of the file until it reaches the end, print out the last line in the file, report the number of lines contained in the file, and close the file.</p>
@@ -844,7 +844,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-file_last_words-2" label="31853-741038">
+    <exercise xml:id="exer-file_last_words-2" label="31853-214244">
       <title>File Last Words</title>
       <statement>
         <p>The function <alert>last_words </alert>takes one parameter, <c>fname</c>, the name of a text file, and returns a list containing the last word from each line of the file. For example, if the file contents are:
@@ -973,7 +973,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-file_print_line_if_exists-2" label="32166-322389">
+    <exercise xml:id="exer-file_print_line_if_exists-2" label="32166-65696">
       <title>Print Line If It Exists</title>
       <statement>
         <p>The function <c>print_line_if_exists</c> takes two parameters, <c>fname </c>(a string, the name of a text file) and <c>line_num</c> (a non-negative integer, supposedly indexing a line in the file). </p>
