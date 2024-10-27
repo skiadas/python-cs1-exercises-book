@@ -4,7 +4,7 @@
     <p dir="ltr">  - Ungraded assignment, use it to practice for Quiz 7</p>
   </introduction>
   <exercises>
-    <exercise xml:id="exer-swap_list_ends-2" label="143722-595974">
+    <exercise xml:id="exer-swap_list_ends-2" label="exe-sec-HW7-PRACTICE-1-143722">
       <title>Swap List Ends</title>
       <statement>
         <p>The function <c>swap_list_ends</c>, takes one parameter, <c>L</c>, which is a list. The function then swaps the first and last items in <c>L</c> and returns the object <c>None</c>.  Notice that since <c>L</c> is mutable, the changes the function makes to <c>L</c> are <em>visible back in the calling program</em>.</p>
@@ -175,7 +175,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-make_list_items_upper_2-4" label="144077-424944">
+    <exercise xml:id="exer-make_list_items_upper_2-4" label="exe-sec-HW7-PRACTICE-1-144077">
       <title>Make List Items Uppercase 2</title>
       <statement>
         <p>Define the function <c>make_uppercase(mylist)</c>, which takes a list parameter <c>mylist</c> (a list of strings), mutates the list by uppercasing each string in mylist. The function returns <c>None</c>. </p>
@@ -301,7 +301,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-square_nums_2-2" label="161273-486517">
+    <exercise xml:id="exer-square_nums_2-2" label="exe-sec-HW7-PRACTICE-1-161273">
       <title>Square Nums 2</title>
       <statement>
         <p>Define the function <c>square_nums_2</c> which takes a list of numbers, <alert>L</alert>, and mutates <alert>L</alert> so that each original item is now squared. For example, if L is <c>[2, -5, 9]</c> then, after calling <c>square_nums_2(L)</c>, <c>L == [4, 25, 81]</c>. </p>
@@ -428,7 +428,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-nested_accum_hyphenated_pairs-2" label="145020-221919">
+    <exercise xml:id="exer-nested_accum_hyphenated_pairs-2" label="exe-sec-HW7-PRACTICE-1-145020">
       <title>Hyphenated Pairs with Nested Loop</title>
       <statement>
         <p>Define the function <c>get_pairs</c>, which takes a list L of strings, such as </p>
@@ -571,7 +571,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-print_stars_grid_nested_loop-2" label="145082-485992">
+    <exercise xml:id="exer-print_stars_grid_nested_loop-2" label="exe-sec-HW7-PRACTICE-1-145082">
       <title>Print Grid of Asterisks with a Nested Loop</title>
       <statement>
         <p>Define a function <c>print_star_grid(rows, cols)</c>, which takes two positive integers as parameters and prints a rectangular grid of asterisks in response. <alert>rows</alert> indicates the number of rows to be printed, and <alert>cols</alert> indicates the number of columns (i.e., the length of each row).</p>
@@ -686,7 +686,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-print_X_O_grid_nested_loop-2" label="145084-590888">
+    <exercise xml:id="exer-print_X_O_grid_nested_loop-2" label="exe-sec-HW7-PRACTICE-1-145084">
       <title>Print X's and O's in a Grid with a Nested Loop</title>
       <statement>
         <p>Define a function <c>print_XO_grid(rows, cols)</c>, which takes two positive integers as parameters and prints a rectangular grid of X's and O's in response. rows indicates the number of rows to be printed, and cols indicates the number of columns (i.e., the length of each row).</p>
@@ -810,7 +810,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-nested_list_sum_up_all_items-2" label="144561-47846">
+    <exercise xml:id="exer-nested_list_sum_up_all_items-2" label="exe-sec-HW7-PRACTICE-1-144561">
       <title>Sum of Nested List Items</title>
       <statement>
         <p>Define the function <c>sum_nested(L)</c>, which takes parameter L (a list of lists of integers) and returns the sum of all the elements of all the inner lists of L.  </p>
@@ -933,7 +933,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-gen_triples-2" label="161274-460980">
+    <exercise xml:id="exer-gen_triples-2" label="exe-sec-HW7-PRACTICE-1-161274">
       <title>Generate Triples</title>
       <statement>
         <p>The function <alert>gen_triples</alert> function takes one parameter, a list `L` of characters. The function then returns a list of all possible 3-character strings that can be made from the characters in `L`.</p>
@@ -1040,7 +1040,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-add_entry_to_dictionary-2" label="145104-27606">
+    <exercise xml:id="exer-add_entry_to_dictionary-2" label="exe-sec-HW7-PRACTICE-1-145104">
       <title>Add Entry</title>
       <statement>
         <p>The function <c>add_entry</c> takes a dictionary <c>D</c>, and two additional parameters, <c>key</c> and <c>val</c>, The function adds <c>key</c> to the dictionary, using <c>val</c> for the value of <c>key</c>.</p>
@@ -1178,7 +1178,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-delete_entry_from_dictionary-2" label="145152-266089">
+    <exercise xml:id="exer-delete_entry_from_dictionary-2" label="exe-sec-HW7-PRACTICE-1-145152">
       <title>Delete Entry</title>
       <statement>
         <p>The function <c>delete_entry</c> takes a parameter <c>D</c> (a dictionary) and a parameter <c>k</c> (a supposed key in <c>D</c>).  </p>
@@ -1326,7 +1326,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-dictionary_has_key-2" label="145107-731123">
+    <exercise xml:id="exer-dictionary_has_key-2" label="exe-sec-HW7-PRACTICE-1-145107">
       <title>Has Key</title>
       <statement>
         <p>The function <c>has_key</c> takes two parameters: <c>D</c> and <c>k</c>, where <c>D</c> is a dictionary and <c>k</c> is a possible key in <c>D</c>. The function returns <c>True</c> if <c>k</c> is a <em>key</em> in the dictionary <c>D</c> and <c>False</c> otherwise.</p>
@@ -1456,7 +1456,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-dictionary_has_value-2" label="145140-312290">
+    <exercise xml:id="exer-dictionary_has_value-2" label="exe-sec-HW7-PRACTICE-1-145140">
       <title>Has Value</title>
       <statement>
         <p>The function <c>has_value</c> takes two parameters: a dictionary <c>D</c> and a number <c>num</c>. The function returns <c>True</c> if <c>num</c> is a <em>value</em> in dictionary <c>D</c>; otherwise, it returns <c>False</c>.</p>
@@ -1569,7 +1569,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-dictionary_num_pairs-2" label="145129-576100">
+    <exercise xml:id="exer-dictionary_num_pairs-2" label="exe-sec-HW7-PRACTICE-1-145129">
       <title>Get Num Entries</title>
       <statement>
         <p>The function <c>get_num_pairs</c> takes one parameter, <c>D</c>, which is a dictionary. The function returns the <alert>number </alert>of key-value pairs in <c>D</c>.</p>
@@ -1697,7 +1697,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-build_dictionary-2" label="161275-241432">
+    <exercise xml:id="exer-build_dictionary-2" label="exe-sec-HW7-PRACTICE-1-161275">
       <title>Build Dictionary</title>
       <statement>
         <p>The function <alert>build_dictionary</alert> takes two parameters, `key_list` and `value_list`.  Both lists have the same length. The two lists are organized such that each item in `key_list` can be matched up with the item at the corresponding index in `value_list` to form a key-value pair for a dictionary. Write the function so that it creates a new dictionary using `key_list` and `value_list`. The new dictionary should be returned by the function.</p>
@@ -1839,7 +1839,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-find_frequencies_dictionary_of_list-2" label="144954-479775">
+    <exercise xml:id="exer-find_frequencies_dictionary_of_list-2" label="exe-sec-HW7-PRACTICE-1-144954">
       <title>Accumulate Frequencies Dictionary</title>
       <statement>
         <p>The function <c>get_freq_dict(L)</c> takes a list of integers and <alert>returns </alert>a dictionary D such that for each number x in L, D[x] is the frequency of x in L.</p>
@@ -1995,7 +1995,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-dict_find_mode_of_list-2" label="145015-578203">
+    <exercise xml:id="exer-dict_find_mode_of_list-2" label="exe-sec-HW7-PRACTICE-1-145015">
       <title>Calculate Mode of List (using a dictionary)</title>
       <statement>
         <p>The function <c>get_</c><c>mode(L)</c> takes one parameter, <alert>L</alert>, a list of integers. <c>get_mode</c> builds a dictionary of frequencies to determine how often each number in the list occurs. Then it returns the <em>mode</em> of the list, that is, the number in L which occurs with the highest frequency.</p>
@@ -2126,7 +2126,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-Counting-by-k-2" label="160712-798692">
+    <exercise xml:id="exer-Counting-by-k-2" label="exe-sec-HW7-PRACTICE-1-160712">
       <title>Counting by k</title>
       <statement>
         <p>Write a 6-line Python script (not a function definition). The purpose of the program is to read a positive integer n from standard input and then show how to "count by k" for k = 0, 1, 2, ..., n. </p>

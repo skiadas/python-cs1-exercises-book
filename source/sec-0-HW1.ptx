@@ -6,7 +6,7 @@
     <p dir="ltr">  - Due 1/16, 9 AM. Please email Prof. Wahl (wahl@hanover.edu) if you need a 1-week extension (10% late deduction).</p>
   </introduction>
   <exercises>
-    <exercise xml:id="exer-CodeRunner-Overview-1" label="145621-705268">
+    <exercise xml:id="exer-CodeRunner-Overview-1" label="exe-sec-HW1-1-145621">
       <title>((Placeholder title))</title>
       <statement>
         <p>CodeRunner is a system for working on coding problems directly within Moodle.  Below is an example of what a CodeRunner problem looks like.
@@ -34,7 +34,7 @@
         <p>Now it is time for you to try solving some CodeRunner problems!</p>
       </statement>
     </exercise>
-    <exercise xml:id="exer-output_input-1" label="146747-587720">
+    <exercise xml:id="exer-output_input-1" label="exe-sec-HW1-1-146747">
       <title>Output the Input</title>
       <statement>
         <p>Complete the program below by adding a line of code that will output a message reporting back what is input by the user. {{INSTR_output_format}}</p>
@@ -158,7 +158,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-say_greeting-1" label="144165-552092">
+    <exercise xml:id="exer-say_greeting-1" label="exe-sec-HW1-1-144165">
       <title>Say {{greeting}}</title>
       <statement>
         <p>Write a short program to get a name from the user, then output a message saying {{greeting}} to the user by name. {{INSTR_output_format}}</p>
@@ -280,7 +280,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-simple_addition-1" label="147730-604655">
+    <exercise xml:id="exer-simple_addition-1" label="exe-sec-HW1-1-147730">
       <title>Add {{integer}}</title>
       <statement>
         <p>Write a program to get an integer value from standard input, <alert>add {{integer}}</alert> to the input value, then output the result. {{INSTR_output_format}}</p>
@@ -402,7 +402,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-simple_multiplication-1" label="147731-773437">
+    <exercise xml:id="exer-simple_multiplication-1" label="exe-sec-HW1-1-147731">
       <title>Multiply by {{integer}}</title>
       <statement>
         <p>Write a short program that will get a decimal value (a float) from standard input, multiply the input value <alert>by {{integer}}</alert>, then output a message with the result. {{INSTR_output_format}}</p>
@@ -529,7 +529,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-simple_modulo-1" label="147732-396699">
+    <exercise xml:id="exer-simple_modulo-1" label="exe-sec-HW1-1-147732">
       <title>Find the Remainder</title>
       <statement>
         <p>Write the code that will read an integer input and assign its value to the name <c>num</c>, calculate the remainder when <c>num </c>is divided by 3, and print an informative message. Hint: Use the remainder operator (%).</p>
@@ -649,7 +649,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-square_input-1" label="147733-101374">
+    <exercise xml:id="exer-square_input-1" label="exe-sec-HW1-1-147733">
       <title>Square of Input</title>
       <statement>
         <p>Write the code to read an input, convert it to a int value, assign that value to the name <c>x</c>, and print a message regarding the square of the input (i.e., the value of x&amp;lt;sup&amp;rt;2&amp;lt;/sup&amp;rt;).</p>
@@ -769,7 +769,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-cylinder_volume-1" label="156267-432646">
+    <exercise xml:id="exer-cylinder_volume-1" label="exe-sec-HW1-1-156267">
       <title>Volume of Cylinder</title>
       <statement>
         <p id="yui_3_17_2_1_1704483246360_2027">Suppose we want to calculate the volume (in cubic cm) of a cylinder for which the radius of the base is R cm and the height is H cm. We will use the formula: volume = area of base * H. Rather than making a single large calculation and reporting the result, you should practice dividing the work into stages using two assignment statements.</p>
@@ -883,7 +883,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-convert_minutes-1" label="147738-152846">
+    <exercise xml:id="exer-convert_minutes-1" label="exe-sec-HW1-1-147738">
       <title>Convert Minutes</title>
       <statement>
         <p>We need to convert a number of minutes to hours-and-minutes. For example, 83 minutes is equal to 1 hour and 23 minutes.</p>

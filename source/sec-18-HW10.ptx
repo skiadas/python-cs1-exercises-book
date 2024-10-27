@@ -4,7 +4,7 @@
     <p dir="ltr">Creating classes</p>
   </introduction>
   <exercises>
-    <exercise xml:id="exer-defining_classes_intro-1" label="32302-555996">
+    <exercise xml:id="exer-defining_classes_intro-1" label="exe-sec-HW10-1-32302">
       <title>Defining Classes</title>
       <statement>
         <p>Previously, you have used built-in types in Python like <c>dict</c>, <c>str</c>, and <c>list</c>. Each of these types comes with its own methods, such as <c>keys</c>, <c>lower</c>, and <c>append</c>. </p>
@@ -13,7 +13,7 @@
         <p>Our goal in this assignment is to learn how to <em>create new data types</em> by defining our own classes. </p>
       </statement>
     </exercise>
-    <exercise xml:id="exer-pogil_1a_classname-1" label="32303-703215">
+    <exercise xml:id="exer-pogil_1a_classname-1" label="exe-sec-HW10-1-32303">
       <title>((Placeholder title))</title>
       <statement>
         <p>What is the <alert>name </alert>of the class being defined here:</p>
@@ -22,7 +22,7 @@
         </p>
       </statement>
     </exercise>
-    <exercise xml:id="exer-pogil_1b_methods-1" label="32304-268303">
+    <exercise xml:id="exer-pogil_1b_methods-1" label="exe-sec-HW10-1-32304">
       <title>((Placeholder title))</title>
       <statement>
         <p>How many <alert>methods </alert>are in the class being defined here:</p>
@@ -31,7 +31,7 @@
         </p>
       </statement>
     </exercise>
-    <exercise xml:id="exer-pogil_1c_self-1" label="32305-668142">
+    <exercise xml:id="exer-pogil_1c_self-1" label="exe-sec-HW10-1-32305">
       <title>((Placeholder title))</title>
       <statement>
         <p>What is the <alert>name of the first parameter</alert> in all the methods?</p>
@@ -40,7 +40,7 @@
         </p>
       </statement>
     </exercise>
-    <exercise xml:id="exer-pogil_2a_main_num_objects-1" label="32340-137551">
+    <exercise xml:id="exer-pogil_2a_main_num_objects-1" label="exe-sec-HW10-1-32340">
       <title>((Placeholder title))</title>
       <statement>
         <p>In the <c>"__main__"</c> code block below, how many different <c>Sentence </c>objects are created by activating the class constructor?</p>
@@ -49,7 +49,7 @@
         </p>
       </statement>
     </exercise>
-    <exercise xml:id="exer-pogil_2d_method_parameters-1" label="32308-126499">
+    <exercise xml:id="exer-pogil_2d_method_parameters-1" label="exe-sec-HW10-1-32308">
       <title>((Placeholder title))</title>
       <statement>
         <p><alert>How many parameters</alert> does the <c>convert_to</c> method have?</p>
@@ -58,7 +58,7 @@
         </p>
       </statement>
     </exercise>
-    <exercise xml:id="exer-pogil_2e_method_call_arguments-1" label="32309-822716">
+    <exercise xml:id="exer-pogil_2e_method_call_arguments-1" label="exe-sec-HW10-1-32309">
       <title>((Placeholder title))</title>
       <statement>
         <p>The <c>convert_to</c> method is called on lines 31 and 38. What is the <alert>number of arguments</alert> for a <c>convert_to</c> method call?</p>
@@ -67,7 +67,7 @@
         </p>
       </statement>
     </exercise>
-    <exercise xml:id="exer-pogil_2f_arguments_vs_parameters-1" label="32326-117373">
+    <exercise xml:id="exer-pogil_2f_arguments_vs_parameters-1" label="exe-sec-HW10-1-32326">
       <title>((Placeholder title))</title>
       <statement>
         <p>Based on your previous answers, how does the number of arguments for each method <em>call </em><alert>differ from</alert> the number of parameters specified in the method's <em>definition</em>?</p>
@@ -99,7 +99,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise xml:id="exer-timer_class-multi1-1" label="32329-598726">
+    <exercise xml:id="exer-timer_class-multi1-1" label="exe-sec-HW10-1-32329">
       <title>Class Constructor</title>
       <statement>
         <p>Consider the following class definition.</p>
@@ -140,7 +140,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise xml:id="exer-timer_class-multi2-1" label="32316-933603">
+    <exercise xml:id="exer-timer_class-multi2-1" label="exe-sec-HW10-1-32316">
       <title>Creating Objects</title>
       <statement>
         <p>Consider the following class definition.</p>
@@ -199,7 +199,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise xml:id="exer-timer_class-multi4-1" label="32319-923393">
+    <exercise xml:id="exer-timer_class-multi4-1" label="exe-sec-HW10-1-32319">
       <title>Calling Methods 1</title>
       <statement>
         <p>Consider the following class definition.</p>
@@ -264,7 +264,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise xml:id="exer-timer_class-multi3-1" label="104213-846406">
+    <exercise xml:id="exer-timer_class-multi3-1" label="exe-sec-HW10-1-104213">
       <title>Setting Attributes</title>
       <statement>
         <p>Consider the following class definition.</p>
@@ -322,7 +322,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise xml:id="exer-timer_class-multi5-1" label="32320-425944">
+    <exercise xml:id="exer-timer_class-multi5-1" label="exe-sec-HW10-1-32320">
       <title>Calling Methods 2</title>
       <statement>
         <p>Consider the following class definition.</p>
@@ -396,7 +396,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise xml:id="exer-timer_class-multi6-1" label="32342-287435">
+    <exercise xml:id="exer-timer_class-multi6-1" label="exe-sec-HW10-1-32342">
       <title>Writing Methods</title>
       <statement>
         <p>Consider the following class definition.</p>
@@ -461,7 +461,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise xml:id="exer-timer_class-call_set_short-1" label="32321-396869">
+    <exercise xml:id="exer-timer_class-call_set_short-1" label="exe-sec-HW10-1-32321">
       <title>Calling the Set Method</title>
       <statement>
         <p>Consider the following class definition.</p>
@@ -482,7 +482,7 @@
         <p>Suppose <c>t1</c> is a newly created instance of the the <c>Timer</c> class (i.e., a <c>Timer</c> object). Give the line of code that will call the <c>set</c> method, as described in the previous question, to set <c>t1</c> to 5 hours, 17 minutes, 51 seconds.</p>
       </statement>
     </exercise>
-    <exercise xml:id="exer-timer_class-convert_to_seconds_method-1" label="161517-179596">
+    <exercise xml:id="exer-timer_class-convert_to_seconds_method-1" label="exe-sec-HW10-1-161517">
       <title>Convert to Seconds</title>
       <statement>
         <p> Implement a method for the Timer class, convert_to_seconds. For a given Timer, the method returns the equivalent number of seconds. For example, if Timer <c>t1</c> is currently 0:1:15 (0 hours, 1 minute, 15 seconds), then the call <c>t1.convert_to_seconds()</c> will return 75.</p>
@@ -637,7 +637,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-timer_class-add_timers-1" label="32341-334143">
+    <exercise xml:id="exer-timer_class-add_timers-1" label="exe-sec-HW10-1-32341">
       <title>Add Two Timers</title>
       <statement>
         <p> Write a function, add_timers, that takes two <c>Timer</c> objects, <c>t1</c> and <c>t2</c>, and returns a new <c>Timer</c> object that is the sum of <c>t1</c> and <c>t2</c>. Neither of the original <c>Timer</c> objects should be changed.</p>
@@ -827,7 +827,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-implement_comp_oper_info-1" label="32322-558253">
+    <exercise xml:id="exer-implement_comp_oper_info-1" label="exe-sec-HW10-1-32322">
       <title>Implementing the Comparison Operators</title>
       <statement>
         <p>Python has "magic" methods to make the comparison operators work with objects. The six comparison operators (&lt;, &lt;=, &gt;, &gt;=, == and !=) are enabled simply by implementing the following special methods: <c>__lt__, __le__, __gt__, __ge__, __eq__ and __ne__</c></p>
@@ -841,7 +841,7 @@ myTests().main()        </tests>
         </pre>
       </statement>
     </exercise>
-    <exercise xml:id="exer-timer_class-equivalence_operator_overload-1" label="32324-129538">
+    <exercise xml:id="exer-timer_class-equivalence_operator_overload-1" label="exe-sec-HW10-1-32324">
       <title>Equivalence and Inequivalence Operators: ==, !=</title>
       <statement>
         <p>Two Timer objects are <alert>equivalent </alert>exactly when they represent the same amount of time. Implement the  <c>__eq__</c> and <c>__ne__</c> methods (i.e., == and != operators) for the <c>Timer </c>class. </p>
