@@ -19,7 +19,6 @@
         <p />
         <c>pets = open('pet_names.txt', 'r')</c>
         <p>.</p>
-        <p />
         <p>Each of the code chunks below uses file object, <c>pets</c>. Match each code chunk with the correct description of the result produced by executing the code.</p>
       </statement>
       <matches>
@@ -341,7 +340,6 @@ myTests().main()        </tests>
             <li>Finish processing (print, return, etc.) if needed</li>
           </ul>
         </p>
-        <p />
         <p>NOTE: You will need to use this pattern, or some variation of it, to solve the remaining coding problems in this assignment.</p>
         <p>As the following for loop iterates through each line of the file, the loop variable (`line`) represents the current line of the file as a string of characters.</p>
         <pre>myFile = open("someTextFile.txt", "r")
@@ -359,9 +357,7 @@ myFile.close()
             <li><em>Follow the coding pattern described above.</em></li>
           </ul>
         </p>
-        <p />
         <p><alert>NOTE</alert>: If there are no lines in the file beginning with the given string, there should be no output.</p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -993,7 +989,6 @@ myTests().main()        </tests>
             <li>However, if <c>line_num</c> is greater than or equal to the number of lines in the file, a warning message should printed instead.</li>
           </ul>
         </p>
-        <p />
         <p><alert>NOTE:</alert><c>line_num</c> begins indexing at 0; line_num = 0 refers to the FIRST line of the file, line_num = 1 refers to the SECOND line, and so on.</p>
       </statement>
       <program interactive="activecode" language="python">

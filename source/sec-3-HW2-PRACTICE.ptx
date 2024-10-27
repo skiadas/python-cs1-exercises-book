@@ -123,7 +123,6 @@ myTests().main()        </tests>
       <statement>
         <p>Write the code needed to get two float values from standard input, A and B. Calculate A as a percentage of B, rounded to one decimal place. For example, if A is 25.0 and B is 75.0, A is about 33.3% of B since 25.0 / 75.0 = 1 / 3 = .3333333... (multiply the ratio by 100 to get the percentage).</p>
         <p>Print a message to report the result (using the same format as shown in the examples below).</p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -380,7 +379,6 @@ myTests().main()        </tests>
           </ul>
         </p>
         <p>Assign the decimal value to the variable <c>decimal</c> and the integer value to the variable precision (or other reasonable names).Finally, round the value of <c>decimal</c> to the number of places after the decimal point indicated by <c>precision</c>, and <alert>print</alert> the result.</p>
-        <p />
         <p>
           {{INSTR_note}}
           <ul>
@@ -512,7 +510,6 @@ myTests().main()        </tests>
             <li>Use the remainder operator to calculate the integer remainder that will be left over when the <c>dividend</c> is divided by the <c>divisor</c>.</li>
           </ol>
         </p>
-        <p />
         <p>{{INSTR_reminder}} {{INSTR_no_input_prompts}}</p>
       </statement>
       <program interactive="activecode" language="python">
@@ -763,10 +760,8 @@ myTests().main()        </tests>
             <li>do not print the result, <alert>return</alert> it</li>
           </ul>
         </p>
-        <p />
         <p>{{INSTR_hint}} What is the remainder when you divide an even number by 2?  What is the remainder when you divide an odd number by 2?</p>
         <p>{{INSTR_reminder}} {{INSTR_no_input_prompts}}</p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -1121,7 +1116,6 @@ myTests().main()        </tests>
         <p>Write a function, <c>print_perfect_cubes(n)</c>, that takes an integer parameter n and prints the perfect cubes starting from 0&amp;lt;sup&amp;rt;3&amp;lt;/sup&amp;rt; = 0 and ending with n&amp;lt;sup&amp;rt;3&amp;lt;/sup&amp;rt;. When n is negative, the function prints nothing; but do not check for this condition with an "if" statement, it is unneccesary; use a for loop that will automatically print nothing when n &lt; 0.</p>
         <p><alert>Hint for choosing the right range for your for loop</alert>: In the general case, when n is not negative, your function will need to print n+1 different values.</p>
         <p><alert>Hint for printing the first part of the output</alert>: Convert n to a string and then concatenate that string with "^3"; assign the result to a variable, <c>the_cube</c>. Make <c>the_cube</c> the first argument in your print function call.</p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""

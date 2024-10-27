@@ -832,7 +832,6 @@ myTests().main()        </tests>
       <title>Implementing the Comparison Operators</title>
       <statement>
         <p />
-        <p />
         <p>Python has "magic" methods to make the comparison operators work with objects. The six comparison operators (&lt;, &lt;=, &gt;, &gt;=, == and !=) are enabled simply by implementing the following special methods: <c>__lt__, __le__, __gt__, __ge__, __eq__ and __ne__</c></p>
         <p>See:  <em><url href="https://www.tutorialspoint.com/How-to-overload-Python-comparison-operators">https://www.tutorialspoint.com/How-to-overload-Python-comparison-operators</url></em></p>
         <p>For example, here is the code to implement <c>__lt__</c> (the &lt; or "less than" operator) for the <c>Timer </c>class. Notice we start by converting both Timers to an integer number of seconds, then simply compare those numbers of seconds. Comparing two Timers reduces to the problem of comparing two integers.</p>
@@ -849,7 +848,6 @@ myTests().main()        </tests>
       <statement>
         <p>Two Timer objects are <alert>equivalent </alert>exactly when they represent the same amount of time. Implement the  <c>__eq__</c> and <c>__ne__</c> methods (i.e., == and != operators) for the <c>Timer </c>class. </p>
         <p><alert>Hint</alert>: Assume the <c>convert_to_seconds</c> method has already been implemented.</p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""

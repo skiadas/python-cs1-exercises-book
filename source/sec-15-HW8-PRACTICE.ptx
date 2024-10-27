@@ -10,7 +10,6 @@
         <p>Write a function, <c>build_num_list</c>, that has no parameters; the function reads <alert>integers </alert>from standard input, one at a time, stopping when a <c>0</c> is read. </p>
         <p>Each number read, except the final <c>0</c>, is appended to a new list (initially empty) created by the function. The function should <alert>return</alert> the accumulated list.</p>
         <p><alert>Hint: </alert>Use a while loop.</p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -1114,7 +1113,6 @@ myTests().main()        </tests>
         <p>For example, "DOGS" and "GODS" are anagrams. "DOGS" and "HANOVER" do not have the same character sets, while "HANOVER" and "HANOOOVER" do not have the same character frequencies.</p>
         <p>Use set operations to determine if two non-anagrams have the same character set; if they do share the same set of characters, then you may conclude that their character frequencies are the only difference.</p>
         <p>Your code might be about 12 lines long.</p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""

@@ -180,7 +180,6 @@ myTests().main()        </tests>
       <statement>
         <p>Define the function <c>make_uppercase(mylist)</c>, which takes a list parameter <c>mylist</c> (a list of strings), mutates the list by uppercasing each string in mylist. The function returns <c>None</c>. </p>
         <p>For example, if <c>mylist</c> is <c>['cat', 'Dog', 'frOG']</c>, then the mutated list should  be <c>['CAT', 'DOG', 'FROG']</c>. </p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -308,7 +307,6 @@ myTests().main()        </tests>
         <p />
         <p>Define the function <c>square_nums_2</c> which takes a list of numbers, <alert>L</alert>, and mutates <alert>L</alert> so that each original item is now squared. For example, if L is <c>[2, -5, 9]</c> then, after calling <c>square_nums_2(L)</c>, <c>L == [4, 25, 81]</c>. </p>
         <p>Nothing is printed and None is returned.</p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -587,9 +585,7 @@ myTests().main()        </tests>
             <li>Make a call to <alert>print() with no arguments</alert> each time the inner loop finishes (to make the end of a row).</li>
           </ul>
         </p>
-        <p />
         <p><alert>Note</alert>: This function does NOT explicitly return a value.</p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -704,7 +700,6 @@ myTests().main()        </tests>
             <li>Make a call to <alert>print() with no arguments</alert> each time the inner loop finishes (to make the end of a row).</li>
           </ul>
         </p>
-        <p />
         <p><alert>Note</alert>: This function does NOT explicitly return a value.</p>
       </statement>
       <program interactive="activecode" language="python">
@@ -1194,7 +1189,6 @@ myTests().main()        </tests>
             <li><em>However</em>, if <c>k</c> is <alert>not </alert>a key in <c>D</c>, the function leaves <c>D</c> unchanged and returns the value <c>None</c>.</li>
           </ul>
         </p>
-        <p />
         <p>Hint: <c>D.pop(k)</c> is helpful here, but first you need to handle the case where k is <alert>not</alert> a key in D. You can search online to learn more, using search string:   <em>python dictionary delete item</em></p>
       </statement>
       <program interactive="activecode" language="python">
@@ -1867,7 +1861,6 @@ myTests().main()        </tests>
             <li>When the loop has finished, return D.</li>
           </ol>
         </p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -2016,7 +2009,6 @@ myTests().main()        </tests>
           </ul>
         </p>
         <p>Because  8 has the highest frequency, <alert>get_mode</alert> would return 8  for this example.</p>
-        <p />
         <p>Note: You may assume that L will not be empty and there will be a single mode in L (no ties for most frequent).</p>
         <p>Tip: Suppose D is a dictionary with integer values. The following code will determine the maximum value in D: <c>max_value = max(D.values())</c></p>
       </statement>
@@ -2140,7 +2132,6 @@ myTests().main()        </tests>
       <statement>
         <p>Write a 6-line Python script (not a function definition). The purpose of the program is to read a positive integer n from standard input and then show how to "count by k" for k = 0, 1, 2, ..., n. </p>
         <p>Hint: Use a nested for loop.</p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""

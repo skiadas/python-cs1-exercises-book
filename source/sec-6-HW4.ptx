@@ -531,7 +531,6 @@ myTests().main()        </tests>
         <p>This problem requires a short program, not a function definition.</p>
         <p>Write the code needed to get an integer from standard input.  Then, write a simple decision statement that will output a message reporting whether the number is evenly divisible by 3, or by 5, or both, or neither.  You might need about 10 lines of code.</p>
         <p><em>See the examples for the expected format of the output.</em></p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -672,7 +671,6 @@ myTests().main()        </tests>
         <p>  - Otherwise, the function returns <alert>False</alert></p>
         <p><alert>Hint: </alert>Use the distance formula to calculate the distance (or the square of the distance) from (x, y) to (0, 0). Then compare that distance with 1.  </p>
         <p><alert>D</alert><alert>istance between two points = √((x&amp;lt;sub&amp;rt;2&amp;lt;/sub&amp;rt; – x&amp;lt;sub&amp;rt;1&amp;lt;/sub&amp;rt;)² + (y&amp;lt;sub&amp;rt;2&amp;lt;/sub&amp;rt; – y&amp;lt;sub&amp;rt;1&amp;lt;/sub&amp;rt;)²)</alert></p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -1465,8 +1463,6 @@ myTests().main()        </tests>
             <li>When the for loop ends, return <alert>current.</alert></li>
           </ul>
         </p>
-        <p />
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""

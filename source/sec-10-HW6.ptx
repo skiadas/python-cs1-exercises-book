@@ -16,7 +16,6 @@
             <li>The function returns the new list.</li>
           </ul>
         </p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -730,7 +729,6 @@ myTests().main()        </tests>
             <li>Inside a <alert>for loop</alert> which iterates over numlist, use <alert>append</alert> to update the value of newlist.</li>
           </ul>
         </p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -855,7 +853,6 @@ myTests().main()        </tests>
       <statement>
         <p>Define the function <c>make_uppercase(mylist)</c>, which takes a list parameter <c>mylist</c> (a list of strings), mutates the list by uppercasing each string in mylist. The function returns <c>None</c>. </p>
         <p>For example, if <c>mylist</c> is <c>['cat', 'Dog', 'frOG']</c>, then the mutated list should  be <c>['CAT', 'DOG', 'FROG']</c>. </p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -1263,7 +1260,6 @@ myTests().main()        </tests>
             <li><c>return newlist</c></li>
           </ul>
         </p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""

@@ -14,20 +14,6 @@
         <p>
           <image decorative="yes" source="images/145621-Screen%20Shot%202018-01-14%20at%209.57.32%20AM.png" width="90%" />
         </p>
-        <p />
-        <p />
-        <p />
-        <p />
-        <p />
-        <p />
-        <p />
-        <p />
-        <p />
-        <p />
-        <p />
-        <p />
-        <p />
-        <p />
         <p>1. The first thing you should do when starting a problem is to <alert>carefully</alert> read the problem description. The problem description tells you what your solution code needs to accomplish, as well as important details about the problem including:</p>
         <p>
           <ul>
@@ -37,7 +23,6 @@
           </ul>
         </p>
         <alert>If you don't understand the problem, you won't be able to solve the problem; <em>this is the most important step</em>!</alert>
-        <p />
         <p>2. To help you understand the problem, you will always be given a few examples. Typically, the examples show sample inputs and the result that your code should produce given each input. It's important to understa!d that your solution needs to be <alert>general</alert>.  This means that your goal is to code a solution that will work for any valid input for the problem, not just the given examples.</p>
         <p>3. Once you understand the problem, you can start coding your solution in the white box. Depending on the problem, there may be some code already there to get you started. When you are ready to check your solution, click the "Check" button.</p>
         <p>If I were to click the "Check" button for the example problem in the image, here is the feedback that I would get from CodeRunner.</p>
@@ -550,7 +535,6 @@ myTests().main()        </tests>
         <p>Write the code that will read an integer input and assign its value to the name <c>num</c>, calculate the remainder when <c>num </c>is divided by 3, and print an informative message. Hint: Use the remainder operator (%).</p>
         <p>{{INSTR_note}}</p>
         <p>{{INSTR_no_input_prompts}}</p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -671,7 +655,6 @@ myTests().main()        </tests>
         <p>Write the code to read an input, convert it to a int value, assign that value to the name <c>x</c>, and print a message regarding the square of the input (i.e., the value of x&amp;lt;sup&amp;rt;2&amp;lt;/sup&amp;rt;).</p>
         <p>{{INSTR_note}}</p>
         <p>{{INSTR_no_input_prompts}}</p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -913,10 +896,6 @@ myTests().main()        </tests>
             <li>Print a message reporting the results of your computation.</li>
           </ol>
         </p>
-        <p />
-        <p />
-        <p />
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""

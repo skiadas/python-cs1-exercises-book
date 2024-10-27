@@ -176,7 +176,6 @@ myTests().main()        </tests>
         <p>The function <c>slice_end</c> takes a string parameter, <alert>word</alert>, and a positive integer <alert>n</alert>; the function <alert>returns </alert>a slice of length n from the end of word.  However, if word has length less than n, then the <alert>None</alert> object is returned instead.</p>
         <p>Hint: Notice that <em>returning the empty string when n is zero </em>might be a special case. </p>
         <p>You can use an if-elif-else decision structure and the slicing operator [ : ] to solve this problem.</p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -346,7 +345,6 @@ myTests().main()        </tests>
     <exercise xml:id="exer-slice_middle-2" label="31924">
       <title>Slice the Middle of a String</title>
       <statement>
-        <p />
         <p>The function <c>slice_middle</c> takes a string parameter, <alert><c>word</c>.</alert></p>
         <p>
           <ul>
@@ -354,7 +352,6 @@ myTests().main()        </tests>
             <li>Otherwise, the function returns a substring made of all but the first and last characters in word.</li>
           </ul>
         </p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -516,7 +513,6 @@ myTests().main()        </tests>
         <p>The function <c>add_char_counts</c> takes three parameters: a string <c>s</c> and two strings of length 1, <c>char1</c> and <c>char2</c>, and returns the total number of times either char1 or char2 appears in s. </p>
         <p>For example, the word "scallions" has 2 s's and 1 n, so <c>add_char_counts("scallions", "s", "n")</c> returns 3.</p>
         <p>Hint: Use a <alert>string method</alert> to help solve this problem (<c>count</c>).  You do not need an accumulator.</p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
@@ -2084,7 +2080,6 @@ myTests().main()        </tests>
             <li>Finally, return max_char</li>
           </ul>
         </p>
-        <p />
       </statement>
       <program interactive="activecode" language="python">
         <input>_my_out = ""
