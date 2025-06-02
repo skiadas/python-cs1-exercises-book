@@ -9,10 +9,134 @@
       <statement>
         <p>The function <c>first_three</c> takes one string parameter, <alert>word</alert>, and <alert>returns </alert>a slice of length three from the front of word.  However, if word has length less than three, then the <c>None</c> object is returned instead.</p>
         <p>Hint: Use an if-else decision and the slicing operator [ : ] to solve this problem.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  word = "happy"
+if type(first_three(word)) != type("ok"):
+    print("error")
+else:
+    print(first_three(word))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  hap
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  word = "dog"
+if type(first_three(word)) != type("ok"):
+    print("error")
+else:
+    print(first_three(word))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  dog
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  word = ""
+if type(first_three(word)) != type(None):
+    print("error")
+else:
+    print(first_three(word))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  None
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -44,15 +168,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -71,7 +194,7 @@ class myTests(TestCaseGui):
     else:
         print(first_three(word))
     
-    self.assertEqual('hap\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'hap\n'.strip(), "Test: " + 'word = "happy"\nif type(first_three(word)) != type("ok"):\n    print("error")\nelse:\n    print(first_three(word))')
 
 
   def test2(self):
@@ -84,7 +207,7 @@ class myTests(TestCaseGui):
     else:
         print(first_three(word))
     
-    self.assertEqual('None\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'None\n'.strip(), "Test: " + 'word = "NO"\nif type(first_three(word)) != type(None):\n    print("error")\nelse:\n    print(first_three(word))')
 
 
   def test3(self):
@@ -97,7 +220,7 @@ class myTests(TestCaseGui):
     else:
         print(first_three(word))
     
-    self.assertEqual('dog\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'dog\n'.strip(), "Test: " + 'word = "dog"\nif type(first_three(word)) != type("ok"):\n    print("error")\nelse:\n    print(first_three(word))')
 
 
   def test4(self):
@@ -110,7 +233,7 @@ class myTests(TestCaseGui):
     else:
         print(first_three(word))
     
-    self.assertEqual('None\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'None\n'.strip(), "Test: " + 'word = ""\nif type(first_three(word)) != type(None):\n    print("error")\nelse:\n    print(first_three(word))')
 
 
   def test5(self):
@@ -123,7 +246,7 @@ class myTests(TestCaseGui):
     else:
         print(first_three(word))
     
-    self.assertEqual('Mis\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Mis\n'.strip(), "Test: " + 'word = "Mississippi"\nif type(first_three(word)) != type("ok"):\n    print("error")\nelse:\n    print(first_three(word))')
 
 
   def test6(self):
@@ -136,7 +259,7 @@ class myTests(TestCaseGui):
     else:
         print(first_three(word))
     
-    self.assertEqual('SPA\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'SPA\n'.strip(), "Test: " + 'word = "SPAM"\nif type(first_three(word)) != type("ok"):\n    print("error")\nelse:\n    print(first_three(word))')
 
 
   def test7(self):
@@ -149,7 +272,7 @@ class myTests(TestCaseGui):
     else:
         print(first_three(word))
     
-    self.assertEqual('!@#\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '!@#\n'.strip(), "Test: " + 'word = "!@#$%^&amp;*"\nif type(first_three(word)) != type("ok"):\n    print("error")\nelse:\n    print(first_three(word))')
 
 
   def test8(self):
@@ -162,7 +285,7 @@ class myTests(TestCaseGui):
     else:
         print(first_three(word))
     
-    self.assertEqual('None\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'None\n'.strip(), "Test: " + 'word = "h"\nif type(first_three(word)) != type(None):\n    print("error")\nelse:\n    print(first_three(word))')
 
 
 
@@ -176,10 +299,144 @@ myTests().main()        </tests>
         <p>The function <c>slice_end</c> takes a string parameter, <alert>word</alert>, and a positive integer <alert>n</alert>; the function <alert>returns </alert>a slice of length n from the end of word.  However, if word has length less than n, then the <alert>None</alert> object is returned instead.</p>
         <p>Hint: Notice that <em>returning the empty string when n is zero </em>might be a special case. </p>
         <p>You can use an if-elif-else decision structure and the slicing operator [ : ] to solve this problem.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  word = "pineapple"
+n = 5
+print(slice_end(word, n))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  apple
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  word = "too short"
+n = 20
+print(slice_end(word, n))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  None
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  word = "llama"
+n = 0
+print(slice_end(word, n))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd></cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  word = "Saturn"
+n = 6
+print(slice_end(word, n))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  Saturn
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -211,15 +468,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -236,7 +492,7 @@ class myTests(TestCaseGui):
     n = 5
     print(slice_end(word, n))
     
-    self.assertEqual('apple\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'apple\n'.strip(), "Test: " + 'word = "pineapple"\nn = 5\nprint(slice_end(word, n))')
 
 
   def test2(self):
@@ -247,7 +503,7 @@ class myTests(TestCaseGui):
     n = 7
     print(slice_end(word, n))
     
-    self.assertEqual('chilada\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'chilada\n'.strip(), "Test: " + 'word = "Enchilada"\nn = 7\nprint(slice_end(word, n))')
 
 
   def test3(self):
@@ -258,7 +514,7 @@ class myTests(TestCaseGui):
     n = 20
     print(slice_end(word, n))
     
-    self.assertEqual('None\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'None\n'.strip(), "Test: " + 'word = "too short"\nn = 20\nprint(slice_end(word, n))')
 
 
   def test4(self):
@@ -269,7 +525,7 @@ class myTests(TestCaseGui):
     n = 0
     print(slice_end(word, n))
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'word = "llama"\nn = 0\nprint(slice_end(word, n))')
 
 
   def test5(self):
@@ -280,7 +536,7 @@ class myTests(TestCaseGui):
     n = 1
     print(slice_end(word, n))
     
-    self.assertEqual('n\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'n\n'.strip(), "Test: " + 'word = "Washington"\nn = 1\nprint(slice_end(word, n))')
 
 
   def test6(self):
@@ -291,7 +547,7 @@ class myTests(TestCaseGui):
     n = 6
     print(slice_end(word, n))
     
-    self.assertEqual('Saturn\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Saturn\n'.strip(), "Test: " + 'word = "Saturn"\nn = 6\nprint(slice_end(word, n))')
 
 
   def test7(self):
@@ -302,7 +558,7 @@ class myTests(TestCaseGui):
     n = 7
     print(slice_end(word, n))
     
-    self.assertEqual('College\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'College\n'.strip(), "Test: " + 'word = "Hanover College"\nn = 7\nprint(slice_end(word, n))')
 
 
   def test8(self):
@@ -313,7 +569,7 @@ class myTests(TestCaseGui):
     n = len(word) + 1
     print(slice_end(word, n))
     
-    self.assertEqual('None\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'None\n'.strip(), "Test: " + 'word = "Hanover College"\nn = len(word) + 1\nprint(slice_end(word, n))')
 
 
   def test9(self):
@@ -324,7 +580,7 @@ class myTests(TestCaseGui):
     n = len(word) - 2
     print(slice_end(word, n))
     
-    self.assertEqual('nover College\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'nover College\n'.strip(), "Test: " + 'word = "Hanover College"\nn = len(word) - 2\nprint(slice_end(word, n))')
 
 
   def test10(self):
@@ -335,7 +591,7 @@ class myTests(TestCaseGui):
     n = 0
     print(slice_end(word, n))
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'word = "Hanover College"\nn = 0\nprint(slice_end(word, n))')
 
 
 
@@ -352,10 +608,120 @@ myTests().main()        </tests>
             <li>Otherwise, the function returns a substring made of all but the first and last characters in word.</li>
           </ul>
         </p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(slice_middle("onion"))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  nio
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(slice_middle("?"))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd></cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(slice_middle("slicing"))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  licin
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -387,15 +753,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -410,7 +775,7 @@ class myTests(TestCaseGui):
     
     print(slice_middle("onion"))
     
-    self.assertEqual('nio\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'nio\n'.strip(), "Test: " + 'print(slice_middle("onion"))')
 
 
   def test2(self):
@@ -419,7 +784,7 @@ class myTests(TestCaseGui):
     
     print(slice_middle("dam"))
     
-    self.assertEqual('a\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'a\n'.strip(), "Test: " + 'print(slice_middle("dam"))')
 
 
   def test3(self):
@@ -428,7 +793,7 @@ class myTests(TestCaseGui):
     
     print(slice_middle("?"))
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'print(slice_middle("?"))')
 
 
   def test4(self):
@@ -437,7 +802,7 @@ class myTests(TestCaseGui):
     
     print(slice_middle("PIZZA"))
     
-    self.assertEqual('IZZ\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'IZZ\n'.strip(), "Test: " + 'print(slice_middle("PIZZA"))')
 
 
   def test5(self):
@@ -446,7 +811,7 @@ class myTests(TestCaseGui):
     
     print(slice_middle("abracadabra"))
     
-    self.assertEqual('bracadabr\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'bracadabr\n'.strip(), "Test: " + 'print(slice_middle("abracadabra"))')
 
 
   def test6(self):
@@ -455,7 +820,7 @@ class myTests(TestCaseGui):
     
     print(slice_middle("slicing"))
     
-    self.assertEqual('licin\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'licin\n'.strip(), "Test: " + 'print(slice_middle("slicing"))')
 
 
   def test7(self):
@@ -464,7 +829,7 @@ class myTests(TestCaseGui):
     
     print(slice_middle(""))
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'print(slice_middle(""))')
 
 
   def test8(self):
@@ -473,7 +838,7 @@ class myTests(TestCaseGui):
     
     print(slice_middle("factorial"))
     
-    self.assertEqual('actoria\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'actoria\n'.strip(), "Test: " + 'print(slice_middle("factorial"))')
 
 
   def test9(self):
@@ -482,7 +847,7 @@ class myTests(TestCaseGui):
     
     print(slice_middle("pqr"))
     
-    self.assertEqual('q\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'q\n'.strip(), "Test: " + 'print(slice_middle("pqr"))')
 
 
   def test10(self):
@@ -491,7 +856,7 @@ class myTests(TestCaseGui):
     
     print(slice_middle("ab"))
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'print(slice_middle("ab"))')
 
 
   def test11(self):
@@ -500,7 +865,7 @@ class myTests(TestCaseGui):
     
     print(slice_middle("x"))
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'print(slice_middle("x"))')
 
 
 
@@ -513,10 +878,138 @@ myTests().main()        </tests>
         <p>The function <c>add_char_counts</c> takes three parameters: a string <c>s</c> and two strings of length 1, <c>char1</c> and <c>char2</c>, and returns the total number of times either char1 or char2 appears in s. </p>
         <p>For example, the word "scallions" has 2 s's and 1 n, so <c>add_char_counts("scallions", "s", "n")</c> returns 3.</p>
         <p>Hint: Use a <alert>string method</alert> to help solve this problem (<c>count</c>).  You do not need an accumulator.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(add_char_counts('Indiana', 'a', 'b'))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  2
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(add_char_counts('BAHAMAS', 'A', 'B'))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  4
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(add_char_counts('Mississippi', 'i', 'M'))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  5
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(add_char_counts("spam spam spam spam", "s", "p"))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  8
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -548,15 +1041,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -571,7 +1063,7 @@ class myTests(TestCaseGui):
     
     print(add_char_counts('Indiana', 'a', 'b'))
     
-    self.assertEqual('2\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '2\n'.strip(), "Test: " + "print(add_char_counts('Indiana', 'a', 'b'))")
 
 
   def test2(self):
@@ -580,7 +1072,7 @@ class myTests(TestCaseGui):
     
     print(add_char_counts('BAHAMAS', 'A', 'B'))
     
-    self.assertEqual('4', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4'.strip(), "Test: " + "print(add_char_counts('BAHAMAS', 'A', 'B'))")
 
 
   def test3(self):
@@ -589,7 +1081,7 @@ class myTests(TestCaseGui):
     
     print(add_char_counts('Mississippi', 'i', 'M'))
     
-    self.assertEqual('5\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '5\n'.strip(), "Test: " + "print(add_char_counts('Mississippi', 'i', 'M'))")
 
 
   def test4(self):
@@ -598,7 +1090,7 @@ class myTests(TestCaseGui):
     
     print(add_char_counts('pumpkin', 'e', 'g'))
     
-    self.assertEqual('0', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0'.strip(), "Test: " + "print(add_char_counts('pumpkin', 'e', 'g'))")
 
 
   def test5(self):
@@ -607,7 +1099,7 @@ class myTests(TestCaseGui):
     
     print(add_char_counts("=:^.^:=", "=", "."))
     
-    self.assertEqual('3', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3'.strip(), "Test: " + 'print(add_char_counts("=:^.^:=", "=", "."))')
 
 
   def test6(self):
@@ -616,7 +1108,7 @@ class myTests(TestCaseGui):
     
     print(add_char_counts("spam spam spam spam", "s", "p"))
     
-    self.assertEqual('8\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '8\n'.strip(), "Test: " + 'print(add_char_counts("spam spam spam spam", "s", "p"))')
 
 
   def test7(self):
@@ -625,7 +1117,7 @@ class myTests(TestCaseGui):
     
     print(add_char_counts('soupspoons', 's', 'o'))
     
-    self.assertEqual('6', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '6'.strip(), "Test: " + "print(add_char_counts('soupspoons', 's', 'o'))")
 
 
   def test8(self):
@@ -634,7 +1126,7 @@ class myTests(TestCaseGui):
     
     print(add_char_counts('honorificabilitudinitatibus', 't', 'i'))
     
-    self.assertEqual('10', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '10'.strip(), "Test: " + "print(add_char_counts('honorificabilitudinitatibus', 't', 'i'))")
 
 
   def test9(self):
@@ -643,7 +1135,7 @@ class myTests(TestCaseGui):
     
     print(add_char_counts('Twyndyllyngs', 'y', 'z'))
     
-    self.assertEqual('3', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3'.strip(), "Test: " + "print(add_char_counts('Twyndyllyngs', 'y', 'z'))")
 
 
   def test10(self):
@@ -652,7 +1144,7 @@ class myTests(TestCaseGui):
     
     print(add_char_counts('abracadabra', 'a', 'a'))
     
-    self.assertEqual('10', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '10'.strip(), "Test: " + "print(add_char_counts('abracadabra', 'a', 'a'))")
 
 
   def test11(self):
@@ -661,7 +1153,7 @@ class myTests(TestCaseGui):
     
     print(add_char_counts('She sells sea shells down by the sea shore.', ' ', 's'))
     
-    self.assertEqual('15', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '15'.strip(), "Test: " + "print(add_char_counts('She sells sea shells down by the sea shore.', ' ', 's'))")
 
 
 
@@ -674,10 +1166,125 @@ myTests().main()        </tests>
         <p>The function <c>countWordsOfLength</c> takes a list of words L and an integer <c>n</c>, and returns the total number of <alert>words of length n</alert> that appear in the list. For example, <c>countWordsOfLength(["yes", "no", "maybe", "NNOOO"], 5)</c> would return 2 because the given list has two words of length 5.</p>
         <p>Hint: Use the <alert>accumulator</alert> pattern to solve this problem. Inside the for loop, use an <alert>if </alert>statement to only update the accumulator when the current word has length n.</p>
         <p>Hint: Instead of using a for loop with a <c>range</c>, you can iterate directly over  the elements of L.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  L = ['a', 'b', 'c', 'de', 'fgh', 'i', 'jkl']
+print(countWordsOfLength(L, 1))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  4
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  L = ['a', 'b', 'c', 'de', 'fgh', 'i', 'jkl']
+print(countWordsOfLength(L, 5))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  0
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  L = ['bacon', 'onion', 'pepper', 'garlic', 'paprika', 'chipotle chili powder', 'salt', 'black pepper', 'vinegar', 'bbq sauce', 'ketchup', 'mustard', 'brown sugar', 'beans']
+print(countWordsOfLength(L, 5))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  3
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -709,15 +1316,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -733,7 +1339,7 @@ class myTests(TestCaseGui):
     L = ['a', 'b', 'c', 'de', 'fgh', 'i', 'jkl']
     print(countWordsOfLength(L, 1))
     
-    self.assertEqual('4\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4\n'.strip(), "Test: " + "L = ['a', 'b', 'c', 'de', 'fgh', 'i', 'jkl']\nprint(countWordsOfLength(L, 1))")
 
 
   def test2(self):
@@ -743,7 +1349,7 @@ class myTests(TestCaseGui):
     L = ['a', 'b', 'c', 'de', 'fgh', 'i', 'jkl']
     print(countWordsOfLength(L, 3))
     
-    self.assertEqual('2\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '2\n'.strip(), "Test: " + "L = ['a', 'b', 'c', 'de', 'fgh', 'i', 'jkl']\nprint(countWordsOfLength(L, 3))")
 
 
   def test3(self):
@@ -753,7 +1359,7 @@ class myTests(TestCaseGui):
     L = ['a', 'b', 'c', 'de', 'fgh', 'i', 'jkl']
     print(countWordsOfLength(L, 5))
     
-    self.assertEqual('0', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0'.strip(), "Test: " + "L = ['a', 'b', 'c', 'de', 'fgh', 'i', 'jkl']\nprint(countWordsOfLength(L, 5))")
 
 
   def test4(self):
@@ -763,7 +1369,7 @@ class myTests(TestCaseGui):
     L = ['bacon', 'onion', 'pepper', 'garlic', 'paprika', 'chipotle chili powder', 'salt', 'black pepper', 'vinegar', 'bbq sauce', 'ketchup', 'mustard', 'brown sugar', 'beans']
     print(countWordsOfLength(L, 12))
     
-    self.assertEqual('1', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1'.strip(), "Test: " + "L = ['bacon', 'onion', 'pepper', 'garlic', 'paprika', 'chipotle chili powder', 'salt', 'black pepper', 'vinegar', 'bbq sauce', 'ketchup', 'mustard', 'brown sugar', 'beans']\nprint(countWordsOfLength(L, 12))")
 
 
   def test5(self):
@@ -773,7 +1379,7 @@ class myTests(TestCaseGui):
     L = ['bacon', 'onion', 'pepper', 'garlic', 'paprika', 'chipotle chili powder', 'salt', 'black pepper', 'vinegar', 'bbq sauce', 'ketchup', 'mustard', 'brown sugar', 'beans']
     print(countWordsOfLength(L, 7))
     
-    self.assertEqual('4\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4\n'.strip(), "Test: " + "L = ['bacon', 'onion', 'pepper', 'garlic', 'paprika', 'chipotle chili powder', 'salt', 'black pepper', 'vinegar', 'bbq sauce', 'ketchup', 'mustard', 'brown sugar', 'beans']\nprint(countWordsOfLength(L, 7))")
 
 
   def test6(self):
@@ -783,7 +1389,7 @@ class myTests(TestCaseGui):
     L = ['bacon', 'onion', 'pepper', 'garlic', 'paprika', 'chipotle chili powder', 'salt', 'black pepper', 'vinegar', 'bbq sauce', 'ketchup', 'mustard', 'brown sugar', 'beans']
     print(countWordsOfLength(L, 5))
     
-    self.assertEqual('3\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3\n'.strip(), "Test: " + "L = ['bacon', 'onion', 'pepper', 'garlic', 'paprika', 'chipotle chili powder', 'salt', 'black pepper', 'vinegar', 'bbq sauce', 'ketchup', 'mustard', 'brown sugar', 'beans']\nprint(countWordsOfLength(L, 5))")
 
 
   def test7(self):
@@ -793,7 +1399,7 @@ class myTests(TestCaseGui):
     L = ['bacon', 'onion', 'pepper', 'garlic', 'paprika', 'chipotle chili powder', 'salt', 'black pepper', 'vinegar', 'bbq sauce', 'ketchup', 'mustard', 'brown sugar', 'beans']
     print(countWordsOfLength(L, 0))
     
-    self.assertEqual('0\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n'.strip(), "Test: " + "L = ['bacon', 'onion', 'pepper', 'garlic', 'paprika', 'chipotle chili powder', 'salt', 'black pepper', 'vinegar', 'bbq sauce', 'ketchup', 'mustard', 'brown sugar', 'beans']\nprint(countWordsOfLength(L, 0))")
 
 
   def test8(self):
@@ -803,7 +1409,7 @@ class myTests(TestCaseGui):
     L = []
     print(countWordsOfLength(L, 5))
     
-    self.assertEqual('0\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n'.strip(), "Test: " + 'L = []\nprint(countWordsOfLength(L, 5))')
 
 
   def test9(self):
@@ -813,7 +1419,7 @@ class myTests(TestCaseGui):
     L = ["just one thing here"]
     print(countWordsOfLength(L, 5))
     
-    self.assertEqual('0\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n'.strip(), "Test: " + 'L = ["just one thing here"]\nprint(countWordsOfLength(L, 5))')
 
 
 
@@ -830,10 +1436,108 @@ myTests().main()        </tests>
         <p>    - Initialize the accumulator variable to <c>""</c>, the empty string.</p>
         <p>    - Iterate w over the items <c>wordlist</c></p>
         <p>    - Inside the <alert>for</alert> loop, update the accumulator variable by concatenating it with the first character in the current word as well as a period.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  wordlist = ["Post", "Meridiem"]
+print(make_abbreviation(wordlist))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  P.M.
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  wordlist = ["Joint", "Photographic", "Experts", "Group"]
+print(make_abbreviation(wordlist))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  J.P.E.G.
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -865,15 +1569,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -889,7 +1592,7 @@ class myTests(TestCaseGui):
     wordlist = ["Post", "Meridiem"]
     print(make_abbreviation(wordlist))
     
-    self.assertEqual('P.M.', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'P.M.'.strip(), "Test: " + 'wordlist = ["Post", "Meridiem"]\nprint(make_abbreviation(wordlist))')
 
 
   def test2(self):
@@ -899,7 +1602,7 @@ class myTests(TestCaseGui):
     wordlist = ["Joint", "Photographic", "Experts", "Group"]
     print(make_abbreviation(wordlist))
     
-    self.assertEqual('J.P.E.G.', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'J.P.E.G.'.strip(), "Test: " + 'wordlist = ["Joint", "Photographic", "Experts", "Group"]\nprint(make_abbreviation(wordlist))')
 
 
   def test3(self):
@@ -909,7 +1612,7 @@ class myTests(TestCaseGui):
     wordlist = ["Subscriber's", "Identification", "Module"]
     print(make_abbreviation(wordlist))
     
-    self.assertEqual('S.I.M.', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'S.I.M.'.strip(), "Test: " + 'wordlist = ["Subscriber\'s", "Identification", "Module"]\nprint(make_abbreviation(wordlist))')
 
 
   def test4(self):
@@ -919,7 +1622,7 @@ class myTests(TestCaseGui):
     wordlist = ["What", "You", "See", "Is", "What", "You", "Get"]
     print(make_abbreviation(wordlist))
     
-    self.assertEqual('W.Y.S.I.W.Y.G.', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'W.Y.S.I.W.Y.G.'.strip(), "Test: " + 'wordlist = ["What", "You", "See", "Is", "What", "You", "Get"]\nprint(make_abbreviation(wordlist))')
 
 
   def test5(self):
@@ -929,7 +1632,7 @@ class myTests(TestCaseGui):
     wordlist = ["Monsieur"]
     print(make_abbreviation(wordlist))
     
-    self.assertEqual('M.', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'M.'.strip(), "Test: " + 'wordlist = ["Monsieur"]\nprint(make_abbreviation(wordlist))')
 
 
   def test6(self):
@@ -939,7 +1642,7 @@ class myTests(TestCaseGui):
     wordlist = ["Vital", "Information", "Resources", "Under", "Seige"]
     print(make_abbreviation(wordlist))
     
-    self.assertEqual('V.I.R.U.S.', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'V.I.R.U.S.'.strip(), "Test: " + 'wordlist = ["Vital", "Information", "Resources", "Under", "Seige"]\nprint(make_abbreviation(wordlist))')
 
 
   def test7(self):
@@ -949,7 +1652,7 @@ class myTests(TestCaseGui):
     wordlist = ["Wonderful", "Exciting", "Interesting", "Real", "Different"]
     print(make_abbreviation(wordlist))
     
-    self.assertEqual('W.E.I.R.D.', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'W.E.I.R.D.'.strip(), "Test: " + 'wordlist = ["Wonderful", "Exciting", "Interesting", "Real", "Different"]\nprint(make_abbreviation(wordlist))')
 
 
   def test8(self):
@@ -959,7 +1662,7 @@ class myTests(TestCaseGui):
     wordlist = ["Bubbly", "Aromatic", "Therapeutic", "Hot"]
     print(make_abbreviation(wordlist))
     
-    self.assertEqual('B.A.T.H.', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'B.A.T.H.'.strip(), "Test: " + 'wordlist = ["Bubbly", "Aromatic", "Therapeutic", "Hot"]\nprint(make_abbreviation(wordlist))')
 
 
 
@@ -971,10 +1674,142 @@ myTests().main()        </tests>
       <statement>
         <p>The function <c>count_contains_x</c> takes a list of strings (<c>wordList</c>) and <alert>returns </alert>the count of how many strings in the list contain at least one upper- or lower-case 'x'.</p>
         <p>Hint: Use the accumulator pattern to accumulate the count.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  wordList = ["xerox", "OXEN", "whiffleball", "XOXOX"]
+print(count_contains_x(wordList))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  3
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  fish = ["angel", "gold", "cat", "puffer", "damsel"]
+print(count_contains_x(fish))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  0
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  wordList = ["X", "x"]
+print(count_contains_x(wordList))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  2
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  list_of_one_x = ["x"]
+print(count_contains_x(list_of_one_x))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  1
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -1006,15 +1841,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1030,7 +1864,7 @@ class myTests(TestCaseGui):
     wordList = ["xerox", "OXEN", "whiffleball", "XOXOX"]
     print(count_contains_x(wordList))
     
-    self.assertEqual('3\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3\n'.strip(), "Test: " + 'wordList = ["xerox", "OXEN", "whiffleball", "XOXOX"]\nprint(count_contains_x(wordList))')
 
 
   def test2(self):
@@ -1040,7 +1874,7 @@ class myTests(TestCaseGui):
     fish = ["angel", "gold", "cat", "puffer", "damsel"]
     print(count_contains_x(fish))
     
-    self.assertEqual('0', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0'.strip(), "Test: " + 'fish = ["angel", "gold", "cat", "puffer", "damsel"]\nprint(count_contains_x(fish))')
 
 
   def test3(self):
@@ -1050,7 +1884,7 @@ class myTests(TestCaseGui):
     wordList = ["X", "x"]
     print(count_contains_x(wordList))
     
-    self.assertEqual('2', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '2'.strip(), "Test: " + 'wordList = ["X", "x"]\nprint(count_contains_x(wordList))')
 
 
   def test4(self):
@@ -1060,7 +1894,7 @@ class myTests(TestCaseGui):
     empty = []
     print(count_contains_x(empty))
     
-    self.assertEqual('0', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0'.strip(), "Test: " + 'empty = []\nprint(count_contains_x(empty))')
 
 
   def test5(self):
@@ -1070,7 +1904,7 @@ class myTests(TestCaseGui):
     L = ["OXYGEN"]
     print(count_contains_x(L))
     
-    self.assertEqual('1', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1'.strip(), "Test: " + 'L = ["OXYGEN"]\nprint(count_contains_x(L))')
 
 
   def test6(self):
@@ -1080,7 +1914,7 @@ class myTests(TestCaseGui):
     list_of_one_x = ["x"]
     print(count_contains_x(list_of_one_x))
     
-    self.assertEqual('1', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1'.strip(), "Test: " + 'list_of_one_x = ["x"]\nprint(count_contains_x(list_of_one_x))')
 
 
   def test7(self):
@@ -1090,7 +1924,7 @@ class myTests(TestCaseGui):
     instruments = ["Box drum", "Paixiao", "Saxophone", "Txistu", "Xalam", "Xaphoon", "Xun", "Xylophone", "Bari Sax"]
     print(count_contains_x(instruments))
     
-    self.assertEqual('9\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '9\n'.strip(), "Test: " + 'instruments = ["Box drum", "Paixiao", "Saxophone", "Txistu", "Xalam", "Xaphoon", "Xun", "Xylophone", "Bari Sax"]\nprint(count_contains_x(instruments))')
 
 
   def test8(self):
@@ -1100,7 +1934,7 @@ class myTests(TestCaseGui):
     wordList = ["atari", "x-box", "nintendo"]
     print(count_contains_x(wordList))
     
-    self.assertEqual('1\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1\n'.strip(), "Test: " + 'wordList = ["atari", "x-box", "nintendo"]\nprint(count_contains_x(wordList))')
 
 
   def test9(self):
@@ -1110,7 +1944,7 @@ class myTests(TestCaseGui):
     wordList = ['pixxxel', 'Xanadu', 'pEnGuInZ', 'piXXa', 'tomatox', 'alpaca', 'Matrix']
     print(count_contains_x(wordList))
     
-    self.assertEqual('5\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '5\n'.strip(), "Test: " + "wordList = ['pixxxel', 'Xanadu', 'pEnGuInZ', 'piXXa', 'tomatox', 'alpaca', 'Matrix']\nprint(count_contains_x(wordList))")
 
 
 
@@ -1125,10 +1959,136 @@ myTests().main()        </tests>
         <p><alert>Hint</alert>: Accumulate the new string. </p>
         <p>    - Use a for loop to iterate over the characters in s </p>
         <p>    - Inside the loop, update the accumulator if the current character is not a lowercase vowel ( <c>if ch </c><c>not in 'aeiou'</c> )</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(remove_vowels("giraffe"))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  grff
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(remove_vowels("love bug"))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  lv bg
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(remove_vowels("racecar"))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  rccr
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(remove_vowels("uoiea"))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd></cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -1160,15 +2120,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1183,7 +2142,7 @@ class myTests(TestCaseGui):
     
     print(remove_vowels("giraffe"))
     
-    self.assertEqual('grff', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'grff'.strip(), "Test: " + 'print(remove_vowels("giraffe"))')
 
 
   def test2(self):
@@ -1192,7 +2151,7 @@ class myTests(TestCaseGui):
     
     print(remove_vowels("love bug"))
     
-    self.assertEqual('lv bg', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'lv bg'.strip(), "Test: " + 'print(remove_vowels("love bug"))')
 
 
   def test3(self):
@@ -1201,7 +2160,7 @@ class myTests(TestCaseGui):
     
     print(remove_vowels("racecar"))
     
-    self.assertEqual('rccr', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'rccr'.strip(), "Test: " + 'print(remove_vowels("racecar"))')
 
 
   def test4(self):
@@ -1210,7 +2169,7 @@ class myTests(TestCaseGui):
     
     print(remove_vowels("iota"))
     
-    self.assertEqual('t', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 't'.strip(), "Test: " + 'print(remove_vowels("iota"))')
 
 
   def test5(self):
@@ -1219,7 +2178,7 @@ class myTests(TestCaseGui):
     
     print(remove_vowels("queue"))
     
-    self.assertEqual('q', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'q'.strip(), "Test: " + 'print(remove_vowels("queue"))')
 
 
   def test6(self):
@@ -1228,7 +2187,7 @@ class myTests(TestCaseGui):
     
     print(remove_vowels("uoiea"))
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'print(remove_vowels("uoiea"))')
 
 
   def test7(self):
@@ -1237,7 +2196,7 @@ class myTests(TestCaseGui):
     
     print(remove_vowels("alpacas are cute"))
     
-    self.assertEqual('lpcs r ct\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'lpcs r ct\n'.strip(), "Test: " + 'print(remove_vowels("alpacas are cute"))')
 
 
   def test8(self):
@@ -1246,7 +2205,7 @@ class myTests(TestCaseGui):
     
     print(remove_vowels("gypsy moth"))
     
-    self.assertEqual('gypsy mth', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'gypsy mth'.strip(), "Test: " + 'print(remove_vowels("gypsy moth"))')
 
 
   def test9(self):
@@ -1255,7 +2214,7 @@ class myTests(TestCaseGui):
     
     print(remove_vowels("cheetah"))
     
-    self.assertEqual('chth\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'chth\n'.strip(), "Test: " + 'print(remove_vowels("cheetah"))')
 
 
   def test10(self):
@@ -1264,7 +2223,7 @@ class myTests(TestCaseGui):
     
     print(remove_vowels("aieeioouuaiieeaiaoox"))
     
-    self.assertEqual('x\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'x\n'.strip(), "Test: " + 'print(remove_vowels("aieeioouuaiieeaiaoox"))')
 
 
 
@@ -1277,10 +2236,106 @@ myTests().main()        </tests>
         <p>The function <c>decodeFromAscii</c><c> </c>takes a list <c>L</c> of integers in the range 32 through 126. Each item in L is an ASCII code representing a single printable character. The function accumulates the string of characters represented by the list of ASCII codes and returns that string.</p>
         <p>For example, <c>decodeFromAscii([78, 105, 99, 101, 33])</c> returns <c>"Nice!"</c> because N is chr(78), i is chr(105), c is chr(99), etc.</p>
         <p>Note: ASCII was created in the 1960's so programmers could have a standard encoding for common keyboard characters as numbers. It was later expanded to create Unicode so that characters from languages  other than English, mathematical symbols, and many other symbols could also be represented by numerical codes.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(decodeFromAscii([36, 49, 44, 48, 48, 48]))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  $1,000
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(decodeFromAscii([115, 110, 111, 119]))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  snow
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -1312,15 +2367,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1335,7 +2389,7 @@ class myTests(TestCaseGui):
     
     print(decodeFromAscii([36, 49, 44, 48, 48, 48]))
     
-    self.assertEqual('$1,000\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '$1,000\n'.strip(), "Test: " + 'print(decodeFromAscii([36, 49, 44, 48, 48, 48]))')
 
 
   def test2(self):
@@ -1344,7 +2398,7 @@ class myTests(TestCaseGui):
     
     print(decodeFromAscii([115, 110, 111, 119]))
     
-    self.assertEqual('snow\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'snow\n'.strip(), "Test: " + 'print(decodeFromAscii([115, 110, 111, 119]))')
 
 
   def test3(self):
@@ -1353,7 +2407,7 @@ class myTests(TestCaseGui):
     
     print(decodeFromAscii([68, 79, 71, 83]))
     
-    self.assertEqual('DOGS\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'DOGS\n'.strip(), "Test: " + 'print(decodeFromAscii([68, 79, 71, 83]))')
 
 
   def test4(self):
@@ -1362,7 +2416,7 @@ class myTests(TestCaseGui):
     
     print(decodeFromAscii([80, 121, 116, 104, 111, 110]))
     
-    self.assertEqual('Python\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Python\n'.strip(), "Test: " + 'print(decodeFromAscii([80, 121, 116, 104, 111, 110]))')
 
 
   def test5(self):
@@ -1371,7 +2425,7 @@ class myTests(TestCaseGui):
     
     print(decodeFromAscii([65, 115, 107, 32, 113, 117, 101, 115, 116, 105, 111, 110, 115, 46]))
     
-    self.assertEqual('Ask questions.\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Ask questions.\n'.strip(), "Test: " + 'print(decodeFromAscii([65, 115, 107, 32, 113, 117, 101, 115, 116, 105, 111, 110, 115, 46]))')
 
 
   def test6(self):
@@ -1380,7 +2434,7 @@ class myTests(TestCaseGui):
     
     print(decodeFromAscii([84, 104, 105, 115, 32, 111, 110, 101, 32, 105, 115, 32, 115, 101, 99, 114, 101, 116, 33, 33, 33]))
     
-    self.assertEqual('This one is secret!!!\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'This one is secret!!!\n'.strip(), "Test: " + 'print(decodeFromAscii([84, 104, 105, 115, 32, 111, 110, 101, 32, 105, 115, 32, 115, 101, 99, 114, 101, 116, 33, 33, 33]))')
 
 
 
@@ -1393,10 +2447,123 @@ myTests().main()        </tests>
         <p>The function <c>concatAltChars</c> takes a string parameter <c>s</c> and a boolean parameter <c>even</c>; the function concatenates together either the even-position characters of s or the odd-position characters of s, depending on whether even is True, or False, respectively. The accumulated string is returned.</p>
         <p>For example, the even-indexed characters of "HANOVER" are at indexes 0, 2, 4, and 6:  H N V R. So, <c>concatAltChars("HANOVER", True) </c>returns the string result <c>"HNVR"</c>. </p>
         <p>But <c>concatAltChars("HANOVER", False)</c> returns the string result <c>"AOE"</c>. </p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  s = "goldfinches"
+print(concatAltChars(s, True))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  glfnhs
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  s = "A"
+print(concatAltChars(s, True))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  A
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  s = "A"
+print(concatAltChars(s, False))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd></cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -1428,15 +2595,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1452,7 +2618,7 @@ class myTests(TestCaseGui):
     s = "goldfinches"
     print(concatAltChars(s, True))
     
-    self.assertEqual('glfnhs\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'glfnhs\n'.strip(), "Test: " + 's = "goldfinches"\nprint(concatAltChars(s, True))')
 
 
   def test2(self):
@@ -1462,7 +2628,7 @@ class myTests(TestCaseGui):
     s = "A"
     print(concatAltChars(s, True))
     
-    self.assertEqual('A\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'A\n'.strip(), "Test: " + 's = "A"\nprint(concatAltChars(s, True))')
 
 
   def test3(self):
@@ -1472,7 +2638,7 @@ class myTests(TestCaseGui):
     s = "A"
     print(concatAltChars(s, False))
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 's = "A"\nprint(concatAltChars(s, False))')
 
 
   def test4(self):
@@ -1482,7 +2648,7 @@ class myTests(TestCaseGui):
     s = "some popular animals on Google search are shark, bear, and horse"
     print(concatAltChars(s, True))
     
-    self.assertEqual('sm oua nml nGol erhaesak er n os\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'sm oua nml nGol erhaesak er n os\n'.strip(), "Test: " + 's = "some popular animals on Google search are shark, bear, and horse"\nprint(concatAltChars(s, True))')
 
 
   def test5(self):
@@ -1492,7 +2658,7 @@ class myTests(TestCaseGui):
     s = "some popular animals on Google search are shark, bear, and horse"
     print(concatAltChars(s, False))
     
-    self.assertEqual('oepplraiaso ogesac r hr,ba,adhre\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'oepplraiaso ogesac r hr,ba,adhre\n'.strip(), "Test: " + 's = "some popular animals on Google search are shark, bear, and horse"\nprint(concatAltChars(s, False))')
 
 
   def test6(self):
@@ -1502,7 +2668,7 @@ class myTests(TestCaseGui):
     s = "some popular animals on Google search are not bunny, worm, cow, sheep"
     print(concatAltChars(s, True))
     
-    self.assertEqual('sm oua nml nGol erhaentbny om o,sep\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'sm oua nml nGol erhaentbny om o,sep\n'.strip(), "Test: " + 's = "some popular animals on Google search are not bunny, worm, cow, sheep"\nprint(concatAltChars(s, True))')
 
 
   def test7(self):
@@ -1512,7 +2678,7 @@ class myTests(TestCaseGui):
     s = "some popular animals on Google search are not bunny, worm, cow, sheep"
     print(concatAltChars(s, False))
     
-    self.assertEqual('oepplraiaso ogesac r o un,wr,cw he\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'oepplraiaso ogesac r o un,wr,cw he\n'.strip(), "Test: " + 's = "some popular animals on Google search are not bunny, worm, cow, sheep"\nprint(concatAltChars(s, False))')
 
 
 
@@ -1526,10 +2692,138 @@ myTests().main()        </tests>
         <p>   - If mystr has a character that is repeated (<c>count</c> is more than 1 for that character), return <alert>True</alert></p>
         <p>   - Otherwise, return <alert>False</alert></p>
         <p>Hint: You can solve this problem by iterating over the characters in mystr and comparing each character's <c>count</c> with 1.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(has_repeat("Happy"))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  True
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(has_repeat("sad"))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  False
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(has_repeat("salmons"))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  True
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(has_repeat("Trouts"))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  False
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -1561,15 +2855,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1584,7 +2877,7 @@ class myTests(TestCaseGui):
     
     print(has_repeat("Happy"))
     
-    self.assertEqual('True\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True\n'.strip(), "Test: " + 'print(has_repeat("Happy"))')
 
 
   def test2(self):
@@ -1593,7 +2886,7 @@ class myTests(TestCaseGui):
     
     print(has_repeat("sad"))
     
-    self.assertEqual('False\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False\n'.strip(), "Test: " + 'print(has_repeat("sad"))')
 
 
   def test3(self):
@@ -1602,7 +2895,7 @@ class myTests(TestCaseGui):
     
     print(has_repeat("salmons"))
     
-    self.assertEqual('True\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True\n'.strip(), "Test: " + 'print(has_repeat("salmons"))')
 
 
   def test4(self):
@@ -1611,7 +2904,7 @@ class myTests(TestCaseGui):
     
     print(has_repeat("Trouts"))
     
-    self.assertEqual('False\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False\n'.strip(), "Test: " + 'print(has_repeat("Trouts"))')
 
 
   def test5(self):
@@ -1621,7 +2914,7 @@ class myTests(TestCaseGui):
     if not (has_repeat("3.14159") is True):
         print("error")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (has_repeat("3.14159") is True):\n    print("error")')
 
 
   def test6(self):
@@ -1631,7 +2924,7 @@ class myTests(TestCaseGui):
     if not (has_repeat("dolphin") is False):
         print("oops")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (has_repeat("dolphin") is False):\n    print("oops")')
 
 
   def test7(self):
@@ -1641,7 +2934,7 @@ class myTests(TestCaseGui):
     if not (has_repeat("") is False):
         print("problem here")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (has_repeat("") is False):\n    print("problem here")')
 
 
   def test8(self):
@@ -1651,7 +2944,7 @@ class myTests(TestCaseGui):
     if not (has_repeat("1word1") is True):
         print("ERROR")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (has_repeat("1word1") is True):\n    print("ERROR")')
 
 
   def test9(self):
@@ -1661,7 +2954,7 @@ class myTests(TestCaseGui):
     if not (has_repeat("1word2") is False):
         print("ERROR!")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (has_repeat("1word2") is False):\n    print("ERROR!")')
 
 
 
@@ -1675,10 +2968,119 @@ myTests().main()        </tests>
         <p>  - If mystr has at least one instance of adjacent characters being equal, return True</p>
         <p>  - Otherwise, return False</p>
         <p>Hint: You can iterate over the positive indices i for characters in mystr: 1, 2, 3, ...., len(mystr)-1 with a <alert>for</alert> loop. For each i, if the character at index i matches the character at index i - 1, return <alert>True</alert>. Otherwise, if no doubled character is found in the entire string, return <alert>False</alert>.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  if not (has_adjacent_repeats("NOODLES") is True):
+    print("error")
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd></cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  if not (has_adjacent_repeats("Bananas") is False):
+    print("shwoopsie")
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd></cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  if not (has_adjacent_repeats("Hanoverr") is True):
+    print("error")
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd></cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -1710,15 +3112,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1734,7 +3135,7 @@ class myTests(TestCaseGui):
     if not (has_adjacent_repeats("NOODLES") is True):
         print("error")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (has_adjacent_repeats("NOODLES") is True):\n    print("error")')
 
 
   def test2(self):
@@ -1744,7 +3145,7 @@ class myTests(TestCaseGui):
     if not (has_adjacent_repeats("Bananas") is False):
         print("shwoopsie")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (has_adjacent_repeats("Bananas") is False):\n    print("shwoopsie")')
 
 
   def test3(self):
@@ -1754,7 +3155,7 @@ class myTests(TestCaseGui):
     if not (has_adjacent_repeats("Hanoverr") is True):
         print("error")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (has_adjacent_repeats("Hanoverr") is True):\n    print("error")')
 
 
   def test4(self):
@@ -1764,7 +3165,7 @@ class myTests(TestCaseGui):
     if not (has_adjacent_repeats("LLAMA") is True):
         print("error")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (has_adjacent_repeats("LLAMA") is True):\n    print("error")')
 
 
   def test5(self):
@@ -1774,7 +3175,7 @@ class myTests(TestCaseGui):
     if not (has_adjacent_repeats("information") is False):
         print("error")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (has_adjacent_repeats("information") is False):\n    print("error")')
 
 
   def test6(self):
@@ -1784,7 +3185,7 @@ class myTests(TestCaseGui):
     if not (has_adjacent_repeats("Hanover") is False):
         print("error")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (has_adjacent_repeats("Hanover") is False):\n    print("error")')
 
 
   def test7(self):
@@ -1794,7 +3195,7 @@ class myTests(TestCaseGui):
     if not (has_adjacent_repeats("") is False):
         print("error")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (has_adjacent_repeats("") is False):\n    print("error")')
 
 
   def test8(self):
@@ -1804,7 +3205,7 @@ class myTests(TestCaseGui):
     if not (has_adjacent_repeats("H") is False):
         print("error")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (has_adjacent_repeats("H") is False):\n    print("error")')
 
 
   def test9(self):
@@ -1814,7 +3215,7 @@ class myTests(TestCaseGui):
     if not (has_adjacent_repeats("AA") is True):
         print("error")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (has_adjacent_repeats("AA") is True):\n    print("error")')
 
 
   def test10(self):
@@ -1824,7 +3225,7 @@ class myTests(TestCaseGui):
     if not (has_adjacent_repeats("123456788") is True):
         print("problem!")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (has_adjacent_repeats("123456788") is True):\n    print("problem!")')
 
 
   def test11(self):
@@ -1834,7 +3235,7 @@ class myTests(TestCaseGui):
     if not (has_adjacent_repeats("1x2x3x4x5x6x7x8") is False):
         print("problem!!")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (has_adjacent_repeats("1x2x3x4x5x6x7x8") is False):\n    print("problem!!")')
 
 
 
@@ -1852,10 +3253,119 @@ myTests().main()        </tests>
         <p>Write the code to define the function <c>is_numberlike(mystr)</c>, which takes a string parameter and returns a boolean result. </p>
         <p>If mystr is numberlike, the function returns <alert>True</alert>; otherwise, the function returns <alert>False</alert>.</p>
         <p>Hint: Check the first three requirements with decision statements, then use a <alert>for </alert>loop to iterate over mystr and check the every character is a digit or a dot</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  if not (is_numberlike("13.5") is True):
+    print("error")
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd></cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  if not (is_numberlike("-5532") is False):
+    print("error")
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd></cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  if not (is_numberlike("175") is True):
+    print("error")
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd></cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -1887,11 +3397,10 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
-
-
-
-^^^^
+</preamble>
+        <code>
 from string import digits
 
 def is_numberlike(mystr):
@@ -1900,9 +3409,11 @@ def is_numberlike(mystr):
         return False
         
     ## more code here ##
-        </input>
-        <tests>
+</code>
+        <postamble visible="no" />
+        <tests>import re
 
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1918,7 +3429,7 @@ class myTests(TestCaseGui):
     if not (is_numberlike("13.5") is True):
         print("error")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (is_numberlike("13.5") is True):\n    print("error")')
 
 
   def test2(self):
@@ -1928,7 +3439,7 @@ class myTests(TestCaseGui):
     if not (is_numberlike("-5532") is False):
         print("error")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (is_numberlike("-5532") is False):\n    print("error")')
 
 
   def test3(self):
@@ -1938,7 +3449,7 @@ class myTests(TestCaseGui):
     if not (is_numberlike("175") is True):
         print("error")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (is_numberlike("175") is True):\n    print("error")')
 
 
   def test4(self):
@@ -1948,7 +3459,7 @@ class myTests(TestCaseGui):
     if not (is_numberlike("3") is True):
         print("error")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (is_numberlike("3") is True):\n    print("error")')
 
 
   def test5(self):
@@ -1958,7 +3469,7 @@ class myTests(TestCaseGui):
     if not (is_numberlike(".") is False):
         print("error")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (is_numberlike(".") is False):\n    print("error")')
 
 
   def test6(self):
@@ -1968,7 +3479,7 @@ class myTests(TestCaseGui):
     if not (is_numberlike("") is False):
         print("oops!")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (is_numberlike("") is False):\n    print("oops!")')
 
 
   def test7(self):
@@ -1978,7 +3489,7 @@ class myTests(TestCaseGui):
     if not (is_numberlike("3.141.59") is False):
         print("oops!")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (is_numberlike("3.141.59") is False):\n    print("oops!")')
 
 
   def test8(self):
@@ -1988,7 +3499,7 @@ class myTests(TestCaseGui):
     if not (is_numberlike("88.59!") is False):
         print("oops!")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (is_numberlike("88.59!") is False):\n    print("oops!")')
 
 
   def test9(self):
@@ -1998,7 +3509,7 @@ class myTests(TestCaseGui):
     if not (is_numberlike("1234B") is False):
         print("oops!")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (is_numberlike("1234B") is False):\n    print("oops!")')
 
 
   def test10(self):
@@ -2008,7 +3519,7 @@ class myTests(TestCaseGui):
     if not (is_numberlike("1242498792472.9749247") is True):
         print("oops!")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (is_numberlike("1242498792472.9749247") is True):\n    print("oops!")')
 
 
   def test11(self):
@@ -2018,7 +3529,7 @@ class myTests(TestCaseGui):
     if not (is_numberlike("3344.") is True):
         print("oops!")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (is_numberlike("3344.") is True):\n    print("oops!")')
 
 
   def test12(self):
@@ -2028,7 +3539,7 @@ class myTests(TestCaseGui):
     if not (is_numberlike("332.2") is True):
         print("oops!")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (is_numberlike("332.2") is True):\n    print("oops!")')
 
 
   def test13(self):
@@ -2038,7 +3549,7 @@ class myTests(TestCaseGui):
     if not (is_numberlike("54545") is True):
         print("oops!")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (is_numberlike("54545") is True):\n    print("oops!")')
 
 
   def test14(self):
@@ -2048,7 +3559,7 @@ class myTests(TestCaseGui):
     if not (is_numberlike("0.") is True):
         print("oops!")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (is_numberlike("0.") is True):\n    print("oops!")')
 
 
   def test15(self):
@@ -2058,7 +3569,7 @@ class myTests(TestCaseGui):
     if not (is_numberlike("1.2.3") is False):
         print("Oops!!!")
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'if not (is_numberlike("1.2.3") is False):\n    print("Oops!!!")')
 
 
 
@@ -2080,10 +3591,122 @@ myTests().main()        </tests>
             <li>Finally, return max_char</li>
           </ul>
         </p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(find_max_char("naproxen"))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  x
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(find_max_char("Gorilla Glue"))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  u
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(find_max_char(""))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  None
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -2115,15 +3738,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -2138,7 +3760,7 @@ class myTests(TestCaseGui):
     
     print(find_max_char("naproxen"))
     
-    self.assertEqual('x\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'x\n'.strip(), "Test: " + 'print(find_max_char("naproxen"))')
 
 
   def test2(self):
@@ -2147,7 +3769,7 @@ class myTests(TestCaseGui):
     
     print(find_max_char("Gorilla Glue"))
     
-    self.assertEqual('u\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'u\n'.strip(), "Test: " + 'print(find_max_char("Gorilla Glue"))')
 
 
   def test3(self):
@@ -2156,7 +3778,7 @@ class myTests(TestCaseGui):
     
     print(find_max_char(""))
     
-    self.assertEqual('None', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'None'.strip(), "Test: " + 'print(find_max_char(""))')
 
 
   def test4(self):
@@ -2165,7 +3787,7 @@ class myTests(TestCaseGui):
     
     print(find_max_char("X"))
     
-    self.assertEqual('X\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X\n'.strip(), "Test: " + 'print(find_max_char("X"))')
 
 
   def test5(self):
@@ -2174,7 +3796,7 @@ class myTests(TestCaseGui):
     
     print(find_max_char("!@#$%^&amp;*()"))
     
-    self.assertEqual('^\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '^\n'.strip(), "Test: " + 'print(find_max_char("!@#$%^&amp;*()"))')
 
 
   def test6(self):
@@ -2183,7 +3805,7 @@ class myTests(TestCaseGui):
     
     print(find_max_char("zebras"))
     
-    self.assertEqual('z\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'z\n'.strip(), "Test: " + 'print(find_max_char("zebras"))')
 
 
   def test7(self):
@@ -2192,7 +3814,7 @@ class myTests(TestCaseGui):
     
     print(find_max_char("7905"))
     
-    self.assertEqual('9\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '9\n'.strip(), "Test: " + 'print(find_max_char("7905"))')
 
 
   def test8(self):
@@ -2201,7 +3823,7 @@ class myTests(TestCaseGui):
     
     print(find_max_char("Hanover"))
     
-    self.assertEqual('v\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'v\n'.strip(), "Test: " + 'print(find_max_char("Hanover"))')
 
 
 

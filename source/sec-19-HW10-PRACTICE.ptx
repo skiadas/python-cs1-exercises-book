@@ -72,10 +72,12 @@
       <statement>
         <p>Based on your previous answers, how does the number of arguments for each method <em>call </em><alert>differ from</alert> the number of parameters specified in the method's <em>definition</em>?</p>
       </statement>
-      <choices multiple-correct="no">
+      <choices multiple-correct="no" randomize="yes">
         <choice correct="yes">
           <statement>
-            <p>There is one less argument.</p>
+            <p>
+              <p>There is one less argument.</p>
+            </p>
           </statement>
           <feedback>
             <p>Yes! We do not provide an argument for the "self" parameter.</p>
@@ -83,7 +85,9 @@
         </choice>
         <choice correct="no">
           <statement>
-            <p>There is no difference.</p>
+            <p>
+              <p>There is no difference.</p>
+            </p>
           </statement>
           <feedback>
             <p>Review your answers to the previous two questions.</p>
@@ -91,7 +95,9 @@
         </choice>
         <choice correct="no">
           <statement>
-            <p>There is one less parameter.</p>
+            <p>
+              <p>There is one less parameter.</p>
+            </p>
           </statement>
           <feedback>
             <p>Review your answers to the previous two questions.</p>
@@ -119,22 +125,28 @@
           return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)        </pre>
         <p>Which of the methods in the function is the class <alert>constructor</alert>, responsible for initializing the instance variables (attributes) of the class?</p>
       </statement>
-      <choices multiple-correct="no">
+      <choices multiple-correct="no" randomize="yes">
         <choice correct="yes">
           <statement>
-            <p><c>__init__</c></p>
+            <p>
+              <p><c>__init__</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>__str__</c></p>
+            <p>
+              <p><c>__str__</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>print_with_labels</c></p>
+            <p>
+              <p><c>print_with_labels</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
@@ -160,40 +172,52 @@
           return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)        </pre>
         <p>Which of the following lines of code will create a new Timer object set to 0 seconds, 0 minutes, and 0 hours, and assign it to the variable <c>timer1</c>?</p>
       </statement>
-      <choices multiple-correct="no">
+      <choices multiple-correct="no" randomize="yes">
         <choice correct="yes">
           <statement>
-            <p><c>timer1 = Timer()</c></p>
+            <p>
+              <p><c>timer1 = Timer()</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>timer1 = Timer(0, 0, 0)</c></p>
+            <p>
+              <p><c>timer1 = Timer(0, 0, 0)</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>timer1.__init__(self)</c></p>
+            <p>
+              <p><c>timer1.__init__(self)</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>timer1.Timer()</c></p>
+            <p>
+              <p><c>timer1.Timer()</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>timer1.Timer(0, 0, 0)</c></p>
+            <p>
+              <p><c>timer1.Timer(0, 0, 0)</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>timer1.__init__()</c></p>
+            <p>
+              <p><c>timer1.__init__()</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
@@ -225,40 +249,52 @@
     print(t2)
         </pre>
       </statement>
-      <choices multiple-correct="no">
+      <choices multiple-correct="no" randomize="yes">
         <choice correct="yes">
           <statement>
-            <p><c>0:7:15</c></p>
+            <p>
+              <p><c>0:7:15</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>0 7 15</c></p>
+            <p>
+              <p><c>0 7 15</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>Hours: 0 Minutes: 7 Seconds: 15</c></p>
+            <p>
+              <p><c>Hours: 0 Minutes: 7 Seconds: 15</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><alert><c>Hours: 15 </c><c>Minutes: 7 Seconds: 0</c></alert></p>
+            <p>
+              <p><alert><c>Hours: 15 </c><c>Minutes: 7 Seconds: 0</c></alert></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>15:7:0</c></p>
+            <p>
+              <p><c>15:7:0</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>15  7  0</c></p>
+            <p>
+              <p><c>15  7  0</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
@@ -297,27 +333,35 @@
       print(t1)
         </pre>
       </statement>
-      <choices multiple-correct="no">
+      <choices multiple-correct="no" randomize="yes">
         <choice correct="yes">
           <statement>
-            <p><c>7:0:0</c></p>
+            <p>
+              <p><c>7:0:0</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>7  0 0</c></p>
+            <p>
+              <p><c>7  0 0</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>0:0:7</c></p>
+            <p>
+              <p><c>0:0:7</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
-          <statement><c>0 0 7</c></statement>
+          <statement>
+            <p><c>0 0 7</c></p>
+          </statement>
           <feedback />
         </choice>
       </choices>
@@ -357,40 +401,52 @@
     t2.print_with_labels()
         </pre>
       </statement>
-      <choices multiple-correct="no">
+      <choices multiple-correct="no" randomize="yes">
         <choice correct="no">
           <statement>
-            <p><c>14:27:0</c></p>
+            <p>
+              <p><c>14:27:0</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>14:55:27</c></p>
+            <p>
+              <p><c>14:55:27</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="yes">
           <statement>
-            <p><c>Hours: 14 Minutes: 27 Seconds: 0</c></p>
+            <p>
+              <p><c>Hours: 14 Minutes: 27 Seconds: 0</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>Hours: 14 Minutes: 55 Seconds: 27</c></p>
+            <p>
+              <p><c>Hours: 14 Minutes: 55 Seconds: 27</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>Hours: 15 Minutes: 22 Seconds: 0</c></p>
+            <p>
+              <p><c>Hours: 15 Minutes: 22 Seconds: 0</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <p><c>15:22:0</c></p>
+            <p>
+              <p><c>15:22:0</c></p>
+            </p>
           </statement>
           <feedback />
         </choice>
@@ -416,22 +472,26 @@
           return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)        </pre>
         <p>Which of the following is the correct definition for a new <c>Timer</c> class method called <c>set</c> that will take three integer values representing hours, minutes, and seconds. and set the object's instance variables (attributes) appropriately?</p>
       </statement>
-      <choices multiple-correct="no">
+      <choices multiple-correct="no" randomize="yes">
         <choice correct="yes">
           <statement>
-            <pre>def set(self, h, m, s):
+            <p>
+              <pre>def set(self, h, m, s):
     self.__hours = h
     self.__minutes = m
-    self.__seconds = s            </pre>
+    self.__seconds = s              </pre>
+            </p>
           </statement>
           <feedback />
         </choice>
         <choice correct="no">
           <statement>
-            <pre>def set(h, m, s):
+            <p>
+              <pre>def set(h, m, s):
     self.__hours = h
     self.__minutes = m
-    self.__seconds = s            </pre>
+    self.__seconds = s              </pre>
+            </p>
           </statement>
           <feedback>
             <p>Remember, when writing a method for a class, you always need to include <c>self</c> as the first parameter.</p>
@@ -439,10 +499,12 @@
         </choice>
         <choice correct="no">
           <statement>
-            <pre>def set(self):
+            <p>
+              <pre>def set(self):
     self.__hours = h
     self.__minutes = m
-    self.__seconds = s            </pre>
+    self.__seconds = s              </pre>
+            </p>
           </statement>
           <feedback>
             <p>To be able give new values to the object's <c>hours</c> and <c>minutes</c>, you give the method parameters to hold those values.</p>
@@ -450,10 +512,12 @@
         </choice>
         <choice correct="no">
           <statement>
-            <pre>def set(self, h, m, s):
+            <p>
+              <pre>def set(self, h, m, s):
     __hours = h
     __minutes = m
-    __seconds = s            </pre>
+    __seconds = s              </pre>
+            </p>
           </statement>
           <feedback>
             <p>You need to assign the new values to the object's attributes.</p>
@@ -502,10 +566,92 @@
 
         def __str__(self):
             print(self.__hours + ':' + self.__minutes + ':' self.__seconds)        </pre>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  timer1 = Timer(0, 5, 30)
+ans = timer1.convert_to_seconds()
+print(ans)
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  330
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -537,17 +683,33 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+class Timer:
+    """ A class that represents a timer. """
+    def __init__(self, h, m, s):
+        self.__hours = h
+        self.__minutes = m
+        self.__seconds= s
+
+    def print_with_labels(self):
+        print('Hours:', self.__hours, end=' ')
+        print('Minutes:', self.__minutes, end=' ')
+        print('Seconds:', self.__seconds)
+
+    def __str__(self):
+        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)
+    
 
 
-
-
-^^^^
+</preamble>
+        <code>
 # NOTE: Do not change the indentation! It is required because the
 # code will be pasted into the Timer class definition body.
     def convert_to_seconds(self):
-        </input>
-        <tests>
+</code>
+        <postamble visible="no" />
+        <tests>import re
 
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -564,7 +726,7 @@ class myTests(TestCaseGui):
     ans = timer1.convert_to_seconds()
     print(ans)
     
-    self.assertEqual('330\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '330\n'.strip(), "Test: " + 'timer1 = Timer(0, 5, 30)\nans = timer1.convert_to_seconds()\nprint(ans)')
 
 
   def test2(self):
@@ -575,7 +737,7 @@ class myTests(TestCaseGui):
     ans = timer1.convert_to_seconds()
     print(ans)
     
-    self.assertEqual('330\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '330\n'.strip(), "Test: " + 'timer1 = Timer(0, 5, 30)\nans = timer1.convert_to_seconds()\nprint(ans)')
 
 
   def test3(self):
@@ -586,7 +748,7 @@ class myTests(TestCaseGui):
     ans = timer1.convert_to_seconds()
     print(ans)
     
-    self.assertEqual('3330\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3330\n'.strip(), "Test: " + 'timer1 = Timer(0, 55, 30)\nans = timer1.convert_to_seconds()\nprint(ans)')
 
 
   def test4(self):
@@ -597,7 +759,7 @@ class myTests(TestCaseGui):
     ans = timer1.convert_to_seconds()
     print(ans)
     
-    self.assertEqual('52830\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '52830\n'.strip(), "Test: " + 'timer1 = Timer(14, 40, 30)\nans = timer1.convert_to_seconds()\nprint(ans)')
 
 
   def test5(self):
@@ -608,7 +770,7 @@ class myTests(TestCaseGui):
     ans = timer1.convert_to_seconds()
     print(ans)
     
-    self.assertEqual('3723\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3723\n'.strip(), "Test: " + 'timer1 = Timer(1, 2, 3)\nans = timer1.convert_to_seconds()\nprint(ans)')
 
 
   def test6(self):
@@ -619,7 +781,7 @@ class myTests(TestCaseGui):
     ans = timer1.convert_to_seconds()
     print(ans)
     
-    self.assertEqual('38759\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '38759\n'.strip(), "Test: " + 'timer1 = Timer(10, 45, 59)\nans = timer1.convert_to_seconds()\nprint(ans)')
 
 
   def test7(self):
@@ -630,7 +792,7 @@ class myTests(TestCaseGui):
     ans = timer1.convert_to_seconds()
     print(ans)
     
-    self.assertEqual('362158\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '362158\n'.strip(), "Test: " + 'timer1 = Timer(100, 35, 58)\nans = timer1.convert_to_seconds()\nprint(ans)')
 
 
 
@@ -668,10 +830,114 @@ myTests().main()        </tests>
 
         def __str__(self):
             print(self.__hours + ':' + self.__minutes + ':' self.__seconds)        </pre>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  timer1 = Timer(0, 5, 30)
+timer2 = Timer(2, 19, 0)
+timer3 = add_timers(timer1, timer2)
+print(timer3)
+if(str(timer3) != "2:24:30"):  print("Should be: 2:24:30")
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  2:24:30
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  timer1 = Timer(1, 51, 41)
+timer2 = Timer(4, 48, 59)
+timer3 = add_timers(timer1, timer2)
+print(timer3)
+if(str(timer3) != "6:40:40"):  print("Should be: 6:40:40")
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  6:40:40
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -703,15 +969,40 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+class Timer:
+    """ A class that represents a timer. """
+    def __init__(self, h, m, s):
+        self.__hours = h
+        self.__minutes = m
+        self.__seconds= s
+
+    def print_with_labels(self):
+        print('Hours:', self.__hours, end=' ')
+        print('Minutes:', self.__minutes, end=' ')
+        print('Seconds:', self.__seconds)
+        
+    def get_seconds(self):
+        return self.__seconds
+        
+    def get_minutes(self):
+        return self.__minutes
+        
+    def get_hours(self):
+        return self.__hours
+
+    def __str__(self):
+        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)
+    
 
 
-
-
-^^^^
+</preamble>
+        <code>
 def add_timers(t1, t2):
-        </input>
-        <tests>
+</code>
+        <postamble visible="no" />
+        <tests>import re
 
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -730,7 +1021,7 @@ class myTests(TestCaseGui):
     print(timer3)
     if(str(timer3) != "2:24:30"):  print("Should be: 2:24:30")
     
-    self.assertEqual('2:24:30\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '2:24:30\n'.strip(), "Test: " + 'timer1 = Timer(0, 5, 30)\ntimer2 = Timer(2, 19, 0)\ntimer3 = add_timers(timer1, timer2)\nprint(timer3)\nif(str(timer3) != "2:24:30"):  print("Should be: 2:24:30")')
 
 
   def test2(self):
@@ -743,7 +1034,7 @@ class myTests(TestCaseGui):
     print(timer3)
     if(str(timer3) != "2:25:5"):  print("Should be: 2:25:5")
     
-    self.assertEqual('2:25:5\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '2:25:5\n'.strip(), "Test: " + 'timer1 = Timer(0, 5, 30)\ntimer2 = Timer(2, 19, 35)\ntimer3 = add_timers(timer1, timer2)\nprint(timer3)\nif(str(timer3) != "2:25:5"):  print("Should be: 2:25:5")')
 
 
   def test3(self):
@@ -756,7 +1047,7 @@ class myTests(TestCaseGui):
     print(timer3)
     if(str(timer3) != "3:5:30"):  print("Should be: 3:5:30")
     
-    self.assertEqual('3:5:30\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3:5:30\n'.strip(), "Test: " + 'timer1 = Timer(0, 55, 30)\ntimer2 = Timer(2, 10, 0)\ntimer3 = add_timers(timer1, timer2)\nprint(timer3)\nif(str(timer3) != "3:5:30"):  print("Should be: 3:5:30")')
 
 
   def test4(self):
@@ -769,7 +1060,7 @@ class myTests(TestCaseGui):
     print(timer3)
     if(str(timer3) != "20:51:15"):  print("Should be: 20:51:15")
     
-    self.assertEqual('20:51:15\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '20:51:15\n'.strip(), "Test: " + 'timer1 = Timer(14, 40, 30)\ntimer2 = Timer(6, 10, 45)\ntimer3 = add_timers(timer1, timer2)\nprint(timer3)\nif(str(timer3) != "20:51:15"):  print("Should be: 20:51:15")')
 
 
   def test5(self):
@@ -782,7 +1073,7 @@ class myTests(TestCaseGui):
     print(timer3)
     if(str(timer3) != "6:40:40"):  print("Should be: 6:40:40")
     
-    self.assertEqual('6:40:40', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '6:40:40'.strip(), "Test: " + 'timer1 = Timer(1, 51, 41)\ntimer2 = Timer(4, 48, 59)\ntimer3 = add_timers(timer1, timer2)\nprint(timer3)\nif(str(timer3) != "6:40:40"):  print("Should be: 6:40:40")')
 
 
   def test6(self):
@@ -795,7 +1086,7 @@ class myTests(TestCaseGui):
     print(timer3)
     if(str(timer3) != "41:40:49"):  print("Should be: 41:40:49")
     
-    self.assertEqual('41:40:49', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '41:40:49'.strip(), "Test: " + 'timer1 = Timer(10, 45, 59)\ntimer2 = Timer(30, 54, 50)\ntimer3 = add_timers(timer1, timer2)\nprint(timer3)\nif(str(timer3) != "41:40:49"):  print("Should be: 41:40:49")')
 
 
   def test7(self):
@@ -808,7 +1099,7 @@ class myTests(TestCaseGui):
     print(timer3)
     if(str(timer3) != "231:35:35"):  print("Should be: 231:35:35")
     
-    self.assertEqual('231:35:35\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '231:35:35\n'.strip(), "Test: " + 'timer1 = Timer(100, 35, 58)\ntimer2 = Timer(130, 59, 37)\ntimer3 = add_timers(timer1, timer2)\nprint(timer3)\nif(str(timer3) != "231:35:35"):  print("Should be: 231:35:35")')
 
 
   def test8(self):
@@ -820,7 +1111,7 @@ class myTests(TestCaseGui):
     timer3 = add_timers(timer1, timer2)
     print(timer3)
     
-    self.assertEqual('531:35:58\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '531:35:58\n'.strip(), "Test: " + 'timer1 = Timer(200, 36, 59)\ntimer2 = Timer(330, 58, 59)\ntimer3 = add_timers(timer1, timer2)\nprint(timer3)')
 
 
 
@@ -846,10 +1137,114 @@ myTests().main()        </tests>
       <statement>
         <p>Two Timer objects are <alert>equivalent </alert>exactly when they represent the same amount of time. Implement the  <c>__eq__</c> and <c>__ne__</c> methods (i.e., == and != operators) for the <c>Timer </c>class. </p>
         <p><alert>Hint</alert>: Assume the <c>convert_to_seconds</c> method has already been implemented.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  timer1 = Timer(0, 5, 30)
+timer2 = Timer(0, 5, 30)
+ans1 = timer1 == timer2
+ans2 = timer1 != timer2
+print(ans1, ans2)
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  True False
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  timer1 = Timer(1, 5, 30)
+timer2 = Timer(0, 5, 30)
+ans = timer1 == timer2
+ans2 = timer1 != timer2
+print(ans, ans2)
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  False True
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -881,20 +1276,48 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+class Timer:
+    """ A class that represents a timer. """
+    def __init__(self, h, m, s):
+        self.__hours = h
+        self.__minutes = m
+        self.__seconds = s
+
+    def print_with_labels(self):
+        print('Hours:', self.__hours, end=' ')
+        print('Minutes:', self.__minutes, end=' ')
+        print('Seconds:', self.__seconds)
+        
+    def get_seconds(self):
+        return self.__seconds
+        
+    def get_minutes(self):
+        return self.__minutes
+        
+    def get_hours(self):
+        return self.__hours
+
+    def convert_to_seconds(self):
+        return self.__seconds + 60*self.__minutes + 3600*self.__hours
+        
+    def __str__(self):
+        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)
 
 
 
-
-^^^^
+</preamble>
+        <code>
 # NOTE: Do not change the indentation! It is required because the
 # code will be pasted into the Timer class definition body.
     def __eq__(self, other):
         
         
     def __ne__(self, other):
-        </input>
-        <tests>
+</code>
+        <postamble visible="no" />
+        <tests>import re
 
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -913,7 +1336,7 @@ class myTests(TestCaseGui):
     ans2 = timer1 != timer2
     print(ans1, ans2)
     
-    self.assertEqual('True False\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True False\n'.strip(), "Test: " + 'timer1 = Timer(0, 5, 30)\ntimer2 = Timer(0, 5, 30)\nans1 = timer1 == timer2\nans2 = timer1 != timer2\nprint(ans1, ans2)')
 
 
   def test2(self):
@@ -926,7 +1349,7 @@ class myTests(TestCaseGui):
     ans2 = timer1 != timer2
     print(ans, ans2)
     
-    self.assertEqual('False True\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False True\n'.strip(), "Test: " + 'timer1 = Timer(1, 5, 30)\ntimer2 = Timer(0, 5, 30)\nans = timer1 == timer2\nans2 = timer1 != timer2\nprint(ans, ans2)')
 
 
   def test3(self):
@@ -939,7 +1362,7 @@ class myTests(TestCaseGui):
     ans2 = timer1 != timer2
     print(ans, ans2)
     
-    self.assertEqual('False True\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False True\n'.strip(), "Test: " + 'timer1 = Timer(1, 5, 30)\ntimer2 = Timer(1, 4, 30)\nans = timer1 == timer2\nans2 = timer1 != timer2\nprint(ans, ans2)')
 
 
   def test4(self):
@@ -952,7 +1375,7 @@ class myTests(TestCaseGui):
     ans2 = timer1 != timer2
     print(ans, ans2)
     
-    self.assertEqual('False True\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False True\n'.strip(), "Test: " + 'timer1 = Timer(1, 5, 30)\ntimer2 = Timer(0, 5, 32)\nans = timer1 == timer2\nans2 = timer1 != timer2\nprint(ans, ans2)')
 
 
   def test5(self):
@@ -965,7 +1388,7 @@ class myTests(TestCaseGui):
     ans2 = timer1 != timer2
     print(ans, ans2)
     
-    self.assertEqual('True False\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True False\n'.strip(), "Test: " + 'timer1 = Timer(10, 50, 40)\ntimer2 = Timer(10, 50, 40)\nans = timer1 == timer2\nans2 = timer1 != timer2\nprint(ans, ans2)')
 
 
   def test6(self):
@@ -978,7 +1401,7 @@ class myTests(TestCaseGui):
     ans2 = timer1 != timer2
     print(ans, ans2)
     
-    self.assertEqual('False True\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False True\n'.strip(), "Test: " + 'timer1 = Timer(10, 50, 40)\ntimer2 = Timer(10, 50, 41)\nans = timer1 == timer2\nans2 = timer1 != timer2\nprint(ans, ans2)')
 
 
   def test7(self):
@@ -991,7 +1414,7 @@ class myTests(TestCaseGui):
     ans2 = timer1 != timer2
     print(ans, ans2)
     
-    self.assertEqual('False True\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False True\n'.strip(), "Test: " + 'timer1 = Timer(10, 50, 40)\ntimer2 = Timer(11, 50, 40)\nans = timer1 == timer2\nans2 = timer1 != timer2\nprint(ans, ans2)')
 
 
 

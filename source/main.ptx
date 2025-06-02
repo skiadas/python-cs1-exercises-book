@@ -1,5 +1,4 @@
 <pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <xi:include href="./docinfo.ptx" />
   <book>
     <title>Exercises</title>
     <chapter>
@@ -9,7 +8,7 @@
       <xi:include href="./sec-2-HW2.ptx" />
       <xi:include href="./sec-3-HW2-PRACTICE.ptx" />
       <xi:include href="./sec-4-HW3.ptx" />
-      <xi:include href="./sec-5-HW3----practice-copy.ptx" />
+      <xi:include href="./sec-5-HW3-practice-copy.ptx" />
       <xi:include href="./sec-6-HW4.ptx" />
       <xi:include href="./sec-7-HW4-PRACTICE.ptx" />
       <xi:include href="./sec-8-HW5.ptx" />

@@ -11,10 +11,122 @@
         <p>  - read a positive integer <alert>m </alert>from standard input</p>
         <p>  - use the <alert>list </alert>function and the <alert>range </alert>function to print a list of all the positive integers from 1 through <alert>m</alert>.</p>
         <p>Notice the form of the output is a <alert>list</alert>, which displays as a comma-separated sequence of values enclosed by square brackets.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="30%" />
+          <col top="minor" width="70%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Input</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  5
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  [1, 2, 3, 4, 5]
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  7
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  [1, 2, 3, 4, 5, 6, 7]
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  3
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  [1, 2, 3]
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -46,21 +158,23 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-
+None
 
 
 _program = """
-
-
-^^^^
+</preamble>
+        <code>
 # This problem is solved for you as an example of using list(range())
 m = int(input())
 print(list(range(1, m + 1)))
-        </input>
-        <tests>
+</code>
+        <postamble visible="no">
 
 """
+</postamble>
+        <tests>import re
 
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -75,7 +189,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[1, 2, 3, 4, 5]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 2, 3, 4, 5]\n'.strip(), "Input: " + '5')
 
 
   def test2(self):
@@ -84,7 +198,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[1, 2, 3, 4, 5, 6, 7]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 2, 3, 4, 5, 6, 7]\n'.strip(), "Input: " + '7')
 
 
   def test3(self):
@@ -93,7 +207,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[1, 2, 3]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 2, 3]\n'.strip(), "Input: " + '3')
 
 
   def test4(self):
@@ -102,7 +216,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]\n'.strip(), "Input: " + '15\n')
 
 
   def test5(self):
@@ -111,7 +225,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[1, 2, 3, 4, 5, 6, 7, 8]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 2, 3, 4, 5, 6, 7, 8]\n'.strip(), "Input: " + '8')
 
 
   def test6(self):
@@ -120,7 +234,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[1]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1]\n'.strip(), "Input: " + '1')
 
 
 
@@ -133,10 +247,122 @@ myTests().main()        </tests>
         <p>Write a program which will read a positive integer k from standard input. Use the <alert>list </alert>function and the <alert>range </alert>function to print a list of integers from the given integer k down to 0. </p>
         <p>Notice the form of the output is a list. </p>
         <p><alert>Hint:</alert> When we give the range function 3 arguments, the third argument is the "step size". A negative step size allows us to count down. For example, range(10, 1, -2) is the sequence 10, 8, 6, 4, 2.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="30%" />
+          <col top="minor" width="70%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Input</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  5
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  [5, 4, 3, 2, 1, 0]
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  0
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  [0]
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  3
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  [3, 2, 1, 0]
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -168,19 +394,19 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-
+None
 
 
 _program = """
-
-
-^^^^
-
-        </input>
-        <tests>
+</preamble>
+        <code />
+        <postamble visible="no">
 
 """
+</postamble>
+        <tests>import re
 
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -195,7 +421,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[5, 4, 3, 2, 1, 0]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[5, 4, 3, 2, 1, 0]\n'.strip(), "Input: " + '5')
 
 
   def test2(self):
@@ -204,7 +430,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[0]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[0]\n'.strip(), "Input: " + '0')
 
 
   def test3(self):
@@ -213,7 +439,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[3, 2, 1, 0]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[3, 2, 1, 0]\n'.strip(), "Input: " + '3')
 
 
   def test4(self):
@@ -222,7 +448,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]'.strip(), "Input: " + '12\n')
 
 
   def test5(self):
@@ -231,7 +457,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[8, 7, 6, 5, 4, 3, 2, 1, 0]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[8, 7, 6, 5, 4, 3, 2, 1, 0]\n'.strip(), "Input: " + '8')
 
 
   def test6(self):
@@ -240,7 +466,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[1, 0]', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 0]'.strip(), "Input: " + '1')
 
 
 
@@ -253,10 +479,125 @@ myTests().main()        </tests>
         <p>Write a program which will read two integers, j and k, from standard input. Use the <alert>list </alert>function and the <alert>range </alert>function to print a list of integers from k <alert>down to</alert> j (inclusive). </p>
         <p>Notice the form of the output is a list.</p>
         <p>You may assume that j is less than or equal to k.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="30%" />
+          <col top="minor" width="70%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Input</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  2
+5
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  [5, 4, 3, 2]
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  0
+0
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  [0]
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  -3
+3
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  [3, 2, 1, 0, -1, -2, -3]
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -288,19 +629,19 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-
+None
 
 
 _program = """
-
-
-^^^^
-
-        </input>
-        <tests>
+</preamble>
+        <code />
+        <postamble visible="no">
 
 """
+</postamble>
+        <tests>import re
 
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -315,7 +656,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[5, 4, 3, 2]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[5, 4, 3, 2]\n'.strip(), "Input: " + '2\n5')
 
 
   def test2(self):
@@ -324,7 +665,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[0]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[0]\n'.strip(), "Input: " + '0\n0')
 
 
   def test3(self):
@@ -333,7 +674,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[3, 2, 1, 0, -1, -2, -3]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[3, 2, 1, 0, -1, -2, -3]\n'.strip(), "Input: " + '-3\n3\n')
 
 
   def test4(self):
@@ -342,7 +683,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[15, 14, 13, 12, 11, 10, 9, 8, 7]', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[15, 14, 13, 12, 11, 10, 9, 8, 7]'.strip(), "Input: " + '7\n15\n')
 
 
   def test5(self):
@@ -351,7 +692,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[8, 7, 6, 5, 4, 3, 2, 1, 0]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[8, 7, 6, 5, 4, 3, 2, 1, 0]\n'.strip(), "Input: " + '0\n8')
 
 
   def test6(self):
@@ -360,7 +701,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[42, 41]', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[42, 41]'.strip(), "Input: " + '41\n42')
 
 
   def test7(self):
@@ -369,7 +710,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55]\n'.strip(), "Input: " + '55\n77')
 
 
 
@@ -382,10 +723,138 @@ myTests().main()        </tests>
         <p>Write a program which will read an integer k from standard input. Use the <alert>list </alert>function and the <alert>range </alert>function to print a list of the <alert>even</alert> integers from -10 up to k (inclusive). </p>
         <p>Notice the form of the output is a list.</p>
         <p>NOTE: If k is less than -10, your range command should automatically produce an empty sequence, resulting in an empty list being printed.  See the provided examples.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="30%" />
+          <col top="minor" width="70%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Input</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  5
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  [-10, -8, -6, -4, -2, 0, 2, 4]
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  -11
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  []
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  11
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  [-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10]
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  2
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  [-10, -8, -6, -4, -2, 0, 2]
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -417,19 +886,19 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-
+None
 
 
 _program = """
-
-
-^^^^
-
-        </input>
-        <tests>
+</preamble>
+        <code />
+        <postamble visible="no">
 
 """
+</postamble>
+        <tests>import re
 
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -444,7 +913,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[-10, -8, -6, -4, -2, 0, 2, 4]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[-10, -8, -6, -4, -2, 0, 2, 4]\n'.strip(), "Input: " + '5')
 
 
   def test2(self):
@@ -453,7 +922,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]\n'.strip(), "Input: " + '-11')
 
 
   def test3(self):
@@ -462,7 +931,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10]\n'.strip(), "Input: " + '11')
 
 
   def test4(self):
@@ -471,7 +940,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[-10, -8, -6, -4, -2, 0]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[-10, -8, -6, -4, -2, 0]\n'.strip(), "Input: " + '1\n')
 
 
   def test5(self):
@@ -480,7 +949,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[-10, -8, -6, -4, -2, 0, 2]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[-10, -8, -6, -4, -2, 0, 2]\n'.strip(), "Input: " + '2')
 
 
   def test6(self):
@@ -489,7 +958,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]\n'.strip(), "Input: " + '25')
 
 
 
@@ -502,10 +971,131 @@ myTests().main()        </tests>
         <p>Define a function <c>print_multiples(m)</c> that takes a positive integer parameter, m, and prints all the <em>multiples </em>of m which are  between 1 and 100, inclusive. </p>
         <p>Use a for loop to print one number per line of output. </p>
         <p><alert>Hint:</alert> The first multiple of m is m. Then m + m, then m + m + m, etc.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  m = 25
+print_multiples(m)
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  25
+50
+75
+100
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  m = 45
+print_multiples(m)
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  45
+90
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  m = 32
+print_multiples(m)
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  32
+64
+96
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -537,15 +1127,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -561,7 +1150,7 @@ class myTests(TestCaseGui):
     m = 25
     print_multiples(m)
     
-    self.assertEqual('25\n50\n75\n100\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '25\n50\n75\n100\n'.strip(), "Test: " + 'm = 25\nprint_multiples(m)')
 
 
   def test2(self):
@@ -571,7 +1160,7 @@ class myTests(TestCaseGui):
     m = 45
     print_multiples(m)
     
-    self.assertEqual('45\n90\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '45\n90\n'.strip(), "Test: " + 'm = 45\nprint_multiples(m)')
 
 
   def test3(self):
@@ -581,7 +1170,7 @@ class myTests(TestCaseGui):
     m = 32
     print_multiples(m)
     
-    self.assertEqual('32\n64\n96\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '32\n64\n96\n'.strip(), "Test: " + 'm = 32\nprint_multiples(m)')
 
 
   def test4(self):
@@ -591,7 +1180,7 @@ class myTests(TestCaseGui):
     m = 105
     print_multiples(m)
     
-    self.assertEqual('', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'm = 105\nprint_multiples(m)')
 
 
   def test5(self):
@@ -601,7 +1190,7 @@ class myTests(TestCaseGui):
     m = 33
     print_multiples(m)
     
-    self.assertEqual('33\n66\n99\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '33\n66\n99\n'.strip(), "Test: " + 'm = 33\nprint_multiples(m)')
 
 
   def test6(self):
@@ -611,7 +1200,7 @@ class myTests(TestCaseGui):
     m = 12
     print_multiples(m)
     
-    self.assertEqual('12\n24\n36\n48\n60\n72\n84\n96\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '12\n24\n36\n48\n60\n72\n84\n96\n'.strip(), "Test: " + 'm = 12\nprint_multiples(m)')
 
 
 
@@ -626,10 +1215,125 @@ myTests().main()        </tests>
         <p>Notice the form of the output is a list.</p>
         <p><alert>Hint: </alert>The first number is 1. The next number (if there is a next number) is 1 + k. Then 1 + k + k, etc. What is the step size for this use of the range function?</p>
         <p><alert>Note</alert>: DO NOT use an "if" statement, just print the list of a range.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="30%" />
+          <col top="minor" width="70%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Input</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  5
+18
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  [1, 6, 11, 16]
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  2
+3
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  [1, 3]
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  7
+25
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  [1, 8, 15, 22]
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -661,19 +1365,19 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-
+None
 
 
 _program = """
-
-
-^^^^
-
-        </input>
-        <tests>
+</preamble>
+        <code />
+        <postamble visible="no">
 
 """
+</postamble>
+        <tests>import re
 
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -688,7 +1392,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[1, 6, 11, 16]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 6, 11, 16]\n'.strip(), "Input: " + '5\n18\n')
 
 
   def test2(self):
@@ -697,7 +1401,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[1, 3]', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 3]'.strip(), "Input: " + '2\n3')
 
 
   def test3(self):
@@ -706,7 +1410,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[1, 8, 15, 22]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 8, 15, 22]\n'.strip(), "Input: " + '7\n25')
 
 
   def test4(self):
@@ -715,7 +1419,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[1, 14, 27, 40]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 14, 27, 40]\n'.strip(), "Input: " + '13\n51\n')
 
 
   def test5(self):
@@ -724,7 +1428,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[1, 10, 19, 28, 37]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 10, 19, 28, 37]\n'.strip(), "Input: " + '9\n37')
 
 
   def test6(self):
@@ -733,7 +1437,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('[1, 26, 51, 76, 101, 126, 151, 176, 201, 226, 251, 276, 301, 326, 351, 376, 401, 426, 451, 476]\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 26, 51, 76, 101, 126, 151, 176, 201, 226, 251, 276, 301, 326, 351, 376, 401, 426, 451, 476]\n'.strip(), "Input: " + '25\n500')
 
 
 
@@ -746,10 +1450,132 @@ myTests().main()        </tests>
         <p>Write the code needed to get integers j and k from standard input, then use a <alert>for loop</alert> to print out all the integers from j through k. You can assume that k will be more than j. </p>
         <p>Each number should be printed on a separate line. See the examples for the expected format of the output.</p>
         <p><alert>Hint</alert>: You need to use a for loop to iterate over a specific sequence of integers. Start by determining a correct call to the range function to create that sequence.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="30%" />
+          <col top="minor" width="70%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Input</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  2
+4
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  2
+3
+4
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  -3
+1
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  -3
+-2
+-1
+0
+1
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  5
+6
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  5
+6
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -781,19 +1607,19 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-
+None
 
 
 _program = """
-
-
-^^^^
-
-        </input>
-        <tests>
+</preamble>
+        <code />
+        <postamble visible="no">
 
 """
+</postamble>
+        <tests>import re
 
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -808,7 +1634,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('2\n3\n4\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '2\n3\n4\n'.strip(), "Input: " + '2\n4\n')
 
 
   def test2(self):
@@ -817,7 +1643,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('-3\n-2\n-1\n0\n1\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-3\n-2\n-1\n0\n1\n'.strip(), "Input: " + '-3\n1')
 
 
   def test3(self):
@@ -826,7 +1652,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('5\n6\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '5\n6\n'.strip(), "Input: " + '5\n6\n')
 
 
   def test4(self):
@@ -835,7 +1661,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('11\n12\n13\n14\n15\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '11\n12\n13\n14\n15\n'.strip(), "Input: " + '11\n15\n')
 
 
   def test5(self):
@@ -844,7 +1670,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('-3\n-2\n-1\n0\n1\n2\n3\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-3\n-2\n-1\n0\n1\n2\n3\n'.strip(), "Input: " + '-3\n3')
 
 
   def test6(self):
@@ -853,22 +1679,165 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n'.strip(), "Input: " + '0\n12')
 
 
 
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-for_loop_count_by_twos-1" label="exe-sec-HW3-1-31528">
+    <exercise xml:id="exer-for_loop_count_by_twos-1" label="exe-sec-HW3-1-269760">
       <title>For Loop: Count by Twos</title>
       <statement>
         <p>Write the code needed to get two integers, j and k, from standard input. Using a <c>for</c> loop and the <c>range</c> function, "count" by twos from j to k (inclusive), one integer per line. You may assume that j is less than or equal to k.</p>
-        <p>{{INSTR_see_examples}}</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="30%" />
+          <col top="minor" width="70%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Input</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  4
+11
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  4
+6
+8
+10
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  1
+5
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  1
+3
+5
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  -3
+3
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  -3
+-1
+1
+3
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  8
+16
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  8
+10
+12
+14
+16
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -900,19 +1869,19 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-
+None
 
 
 _program = """
-
-
-^^^^
-
-        </input>
-        <tests>
+</preamble>
+        <code />
+        <postamble visible="no">
 
 """
+</postamble>
+        <tests>import re
 
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -927,7 +1896,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('4\n6\n8\n10\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4\n6\n8\n10\n'.strip(), "Input: " + '4\n11')
 
 
   def test2(self):
@@ -936,7 +1905,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('1\n3\n5\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1\n3\n5\n'.strip(), "Input: " + '1\n5')
 
 
   def test3(self):
@@ -945,7 +1914,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('-3\n-1\n1\n3\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-3\n-1\n1\n3\n'.strip(), "Input: " + '-3\n3\n')
 
 
   def test4(self):
@@ -954,7 +1923,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('20\n22\n24\n26\n28\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '20\n22\n24\n26\n28\n'.strip(), "Input: " + '20\n29\n')
 
 
   def test5(self):
@@ -963,7 +1932,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('-1\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-1\n'.strip(), "Input: " + '-1\n0')
 
 
   def test6(self):
@@ -972,7 +1941,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('15\n17\n19\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '15\n17\n19\n'.strip(), "Input: " + '15\n20')
 
 
   def test7(self):
@@ -981,7 +1950,7 @@ class myTests(TestCaseGui):
     
     exec(_program)
     
-    self.assertEqual('8\n10\n12\n14\n16\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '8\n10\n12\n14\n16\n'.strip(), "Input: " + '8\n16')
 
 
 
@@ -998,10 +1967,138 @@ myTests().main()        </tests>
         <p>  - Start a for loop to iterate over the required sequence of integers (make a call to the range function); <c>for num in range(....):</c></p>
         <p>  - Inside the for loop, update the accumulator by adding <c>num </c>to the accumulator.</p>
         <p>  - After the for loop, return the value of the accumulator variable.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(summit(1, 3))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  6
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(summit(4, 9))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  39
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(summit(25, 25))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  25
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(summit(-10, 23))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  221
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -1033,15 +2130,16 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
-
-
-
-^^^^
+</preamble>
+        <code>
 def summit(start, stop):
-        </input>
-        <tests>
+</code>
+        <postamble visible="no" />
+        <tests>import re
 
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1056,7 +2154,7 @@ class myTests(TestCaseGui):
     
     print(summit(1, 3))
     
-    self.assertEqual('6', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '6'.strip(), "Test: " + 'print(summit(1, 3))')
 
 
   def test2(self):
@@ -1065,7 +2163,7 @@ class myTests(TestCaseGui):
     
     print(summit(4, 9))
     
-    self.assertEqual('39\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '39\n'.strip(), "Test: " + 'print(summit(4, 9))')
 
 
   def test3(self):
@@ -1074,7 +2172,7 @@ class myTests(TestCaseGui):
     
     print(summit(25, 25))
     
-    self.assertEqual('25', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '25'.strip(), "Test: " + 'print(summit(25, 25))')
 
 
   def test4(self):
@@ -1083,7 +2181,7 @@ class myTests(TestCaseGui):
     
     print(summit(10, 11))
     
-    self.assertEqual('21\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '21\n'.strip(), "Test: " + 'print(summit(10, 11))')
 
 
   def test5(self):
@@ -1092,7 +2190,7 @@ class myTests(TestCaseGui):
     
     print(summit(100, 110))
     
-    self.assertEqual('1155\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1155\n'.strip(), "Test: " + 'print(summit(100, 110))')
 
 
   def test6(self):
@@ -1101,7 +2199,7 @@ class myTests(TestCaseGui):
     
     print(summit(-10, 23))
     
-    self.assertEqual('221\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '221\n'.strip(), "Test: " + 'print(summit(-10, 23))')
 
 
 
@@ -1112,10 +2210,122 @@ myTests().main()        </tests>
       <title>Sum Odds from 1 to n (accumulate a sum)</title>
       <statement>
         <p>The function <c>summation</c> takes a positive integer <c>n</c> and <alert>returns </alert>the sum of all the odd integers from 1 through <c>n</c>.  For example, summation(5) returns 9 since 1 + 3 + 5 equals 9.</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(summation(5))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  9
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(summation(1))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  1
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(summation(1001))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  251001
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -1147,15 +2357,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1170,7 +2379,7 @@ class myTests(TestCaseGui):
     
     print(summation(5))
     
-    self.assertEqual('9\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '9\n'.strip(), "Test: " + 'print(summation(5))')
 
 
   def test2(self):
@@ -1179,7 +2388,7 @@ class myTests(TestCaseGui):
     
     print(summation(10))
     
-    self.assertEqual('25\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '25\n'.strip(), "Test: " + 'print(summation(10))')
 
 
   def test3(self):
@@ -1188,7 +2397,7 @@ class myTests(TestCaseGui):
     
     print(summation(1))
     
-    self.assertEqual('1', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1'.strip(), "Test: " + 'print(summation(1))')
 
 
   def test4(self):
@@ -1197,7 +2406,7 @@ class myTests(TestCaseGui):
     
     print(summation(99))
     
-    self.assertEqual('2500\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '2500\n'.strip(), "Test: " + 'print(summation(99))')
 
 
   def test5(self):
@@ -1206,7 +2415,7 @@ class myTests(TestCaseGui):
     
     print(summation(3))
     
-    self.assertEqual('4\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4\n'.strip(), "Test: " + 'print(summation(3))')
 
 
   def test6(self):
@@ -1215,7 +2424,7 @@ class myTests(TestCaseGui):
     
     print(summation(1001))
     
-    self.assertEqual('251001\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '251001\n'.strip(), "Test: " + 'print(summation(1001))')
 
 
   def test7(self):
@@ -1224,7 +2433,7 @@ class myTests(TestCaseGui):
     
     print(summation(23))
     
-    self.assertEqual('144\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '144\n'.strip(), "Test: " + 'print(summation(23))')
 
 
 
@@ -1235,10 +2444,106 @@ myTests().main()        </tests>
       <title>Sum of Squares (accumulate a sum)</title>
       <statement>
         <p id="yui_3_17_2_1_1599507369757_1953">The function <c>sum_of_squares</c> takes a parameter n and returns the sum of squares «math xmlns=¨http://www.w3.org/1998/Math/MathML¨»«msup»«mn»1«/mn»«mn»2«/mn»«/msup»«mo»§#160;«/mo»«mo»+«/mo»«mo»§#160;«/mo»«msup»«mn»2«/mn»«mn»2«/mn»«/msup»«mo»§#160;«/mo»«mo»+«/mo»«mo»§#160;«/mo»«msup»«mn»3«/mn»«mn»2«/mn»«/msup»«mo»§#160;«/mo»«mo»+«/mo»«mo»§#160;«/mo»«mo».«/mo»«mo».«/mo»«mo».«/mo»«mo»§#160;«/mo»«mo»+«/mo»«mo»§#160;«/mo»«msup»«mi»n«/mi»«mn»2«/mn»«/msup»«/math».</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(sum_of_squares(3))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  14
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(sum_of_squares(2))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  5
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -1270,15 +2575,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1293,7 +2597,7 @@ class myTests(TestCaseGui):
     
     print(sum_of_squares(3))
     
-    self.assertEqual('14\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '14\n'.strip(), "Test: " + 'print(sum_of_squares(3))')
 
 
   def test2(self):
@@ -1302,7 +2606,7 @@ class myTests(TestCaseGui):
     
     print(sum_of_squares(2))
     
-    self.assertEqual('5\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '5\n'.strip(), "Test: " + 'print(sum_of_squares(2))')
 
 
   def test3(self):
@@ -1311,7 +2615,7 @@ class myTests(TestCaseGui):
     
     print(sum_of_squares(1))
     
-    self.assertEqual('1\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1\n'.strip(), "Test: " + 'print(sum_of_squares(1))')
 
 
   def test4(self):
@@ -1320,7 +2624,7 @@ class myTests(TestCaseGui):
     
     print(sum_of_squares(100))
     
-    self.assertEqual('338350\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '338350\n'.strip(), "Test: " + 'print(sum_of_squares(100))')
 
 
   def test5(self):
@@ -1329,7 +2633,7 @@ class myTests(TestCaseGui):
     
     print(sum_of_squares(1000))
     
-    self.assertEqual('333833500\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '333833500\n'.strip(), "Test: " + 'print(sum_of_squares(1000))')
 
 
   def test6(self):
@@ -1338,7 +2642,7 @@ class myTests(TestCaseGui):
     
     print(sum_of_squares(2345))
     
-    self.assertEqual('4301154445\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4301154445\n'.strip(), "Test: " + 'print(sum_of_squares(2345))')
 
 
 
@@ -1353,10 +2657,125 @@ myTests().main()        </tests>
           <image decorative="yes" source="images/158384-download.svg" width="90%" />
           <alert>Note</alert>: n will be a positive integer. For example, when n is 3, the return value is  <c>1/2 + 1/4 + 1/8</c>  (the result from adding the first three terms), which equals <c>0.875</c>.<alert>Hint</alert>: Each denominator is twice as large as the previous denominator. The nth denominator is 2&amp;lt;sup&amp;rt;n&amp;lt;/sup&amp;rt;. You might solve this problem using two accumulators: <c>acc </c>could be the accumulated sum so far, and <c>denom </c>could be the value for the denominator of the next term to be added.
         </p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  ans = partial_sum(3)
+print(ans)
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  0.875
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  ans = partial_sum(6)
+print(ans)
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  0.984375
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  ans = partial_sum(9)
+print(ans)
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  0.998046875
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -1388,15 +2807,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1412,7 +2830,7 @@ class myTests(TestCaseGui):
     ans = partial_sum(1)
     print(ans)
     
-    self.assertEqual('0.5\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0.5\n'.strip(), "Test: " + 'ans = partial_sum(1)\nprint(ans)')
 
 
   def test2(self):
@@ -1422,7 +2840,7 @@ class myTests(TestCaseGui):
     ans = partial_sum(3)
     print(ans)
     
-    self.assertEqual('0.875\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0.875\n'.strip(), "Test: " + 'ans = partial_sum(3)\nprint(ans)')
 
 
   def test3(self):
@@ -1432,7 +2850,7 @@ class myTests(TestCaseGui):
     ans = partial_sum(6)
     print(ans)
     
-    self.assertEqual('0.984375\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0.984375\n'.strip(), "Test: " + 'ans = partial_sum(6)\nprint(ans)')
 
 
   def test4(self):
@@ -1442,7 +2860,7 @@ class myTests(TestCaseGui):
     ans = partial_sum(7)
     print(ans)
     
-    self.assertEqual('0.9921875\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0.9921875\n'.strip(), "Test: " + 'ans = partial_sum(7)\nprint(ans)')
 
 
   def test5(self):
@@ -1452,14 +2870,14 @@ class myTests(TestCaseGui):
     ans = partial_sum(9)
     print(ans)
     
-    self.assertEqual('0.998046875\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0.998046875\n'.strip(), "Test: " + 'ans = partial_sum(9)\nprint(ans)')
 
 
 
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-accum_factorial-1" label="exe-sec-HW3-1-31931">
+    <exercise xml:id="exer-accum_factorial-1" label="exe-sec-HW3-1-269761">
       <title>Factorial Function (accumulate a product)</title>
       <statement>
         <p>
@@ -1470,10 +2888,122 @@ myTests().main()        </tests>
           </ul>
         </p>
         <p>Note: DO NOT use an "if" statement to check whether n is zero. Your accumulator should automatically find the correct answer in this case (0! = 1).</p>
+        <p>For example:</p>
+        <tabular>
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
+          <row header="yes" left="minor">
+            <cell bottom="minor" right="minor">Test</cell>
+            <cell bottom="minor" right="minor">Result</cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(factorial(3))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  6
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(factorial(4))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  24
+                </cd>
+              </p>
+            </cell>
+          </row>
+          <row header="no" left="minor">
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  print(factorial(0))
+                </cd>
+              </p>
+            </cell>
+            <cell bottom="minor" right="minor">
+              <p>
+                <cd>
+                  1
+                </cd>
+              </p>
+            </cell>
+          </row>
+        </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <input>_my_out = ""
+        <preamble visible="no">_my_out = ""
 _my_in = []
+_datafiles = {}
+
+# Start of FileLike
+class FileLike:
+  def __init__(self, contents):
+    self.contents = contents
+    self.cursor = 0
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.close()
+
+  def tell(self):
+    return self.cursor
+
+  def seek(self, n):
+    self.cursor = n
+
+  def read(self):
+    n = self.cursor
+    self.cursor = max(n, len(self.contents))
+    return self.contents[n:]
+
+  def readline(self):
+    n = self.cursor
+    rest = self.contents[n:]
+    index = rest.find("\n")
+    if index == -1:
+      self.cursor = len(self.contents)
+      return rest
+    index += 1
+    self.cursor = n + index
+    return rest[:index]
+
+  def readlines(self):
+    results = []
+    while True:
+      line = self.readline()
+      if line == '':
+        return results
+      results.append(line)
+
+  def close(self):
+    pass
+
+# End of FileLike
+
+def open(fname, mode = "r"):
+  """our own open"""
+  if fname in _datafiles:
+    return FileLike(_datafiles[fname])
+  raise BaseException(f"File not found: {fname}")
+
 
 def getMyStdOut():
   global _my_out
@@ -1505,15 +3035,14 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
+None
 
+</preamble>
+        <code />
+        <postamble visible="no" />
+        <tests>import re
 
-
-
-^^^^
-
-        </input>
-        <tests>
-
+RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1528,7 +3057,7 @@ class myTests(TestCaseGui):
     
     print(factorial(3))
     
-    self.assertEqual('6', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '6'.strip(), "Test: " + 'print(factorial(3))')
 
 
   def test2(self):
@@ -1537,7 +3066,7 @@ class myTests(TestCaseGui):
     
     print(factorial(4))
     
-    self.assertEqual('24', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '24'.strip(), "Test: " + 'print(factorial(4))')
 
 
   def test3(self):
@@ -1546,7 +3075,7 @@ class myTests(TestCaseGui):
     
     print(factorial(0))
     
-    self.assertEqual('1', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1'.strip(), "Test: " + 'print(factorial(0))')
 
 
   def test4(self):
@@ -1555,7 +3084,7 @@ class myTests(TestCaseGui):
     
     print(factorial(7))
     
-    self.assertEqual('5040\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '5040\n'.strip(), "Test: " + 'print(factorial(7))')
 
 
   def test5(self):
@@ -1564,7 +3093,7 @@ class myTests(TestCaseGui):
     
     print(factorial(8))
     
-    self.assertEqual('40320\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '40320\n'.strip(), "Test: " + 'print(factorial(8))')
 
 
   def test6(self):
@@ -1573,7 +3102,7 @@ class myTests(TestCaseGui):
     
     print(factorial(11))
     
-    self.assertEqual('39916800\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '39916800\n'.strip(), "Test: " + 'print(factorial(11))')
 
 
   def test7(self):
@@ -1582,7 +3111,7 @@ class myTests(TestCaseGui):
     
     print(factorial(15))
     
-    self.assertEqual('1307674368000\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1307674368000\n'.strip(), "Test: " + 'print(factorial(15))')
 
 
   def test8(self):
@@ -1591,7 +3120,7 @@ class myTests(TestCaseGui):
     
     print(factorial(13))
     
-    self.assertEqual('6227020800\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '6227020800\n'.strip(), "Test: " + 'print(factorial(13))')
 
 
   def test9(self):
@@ -1600,7 +3129,7 @@ class myTests(TestCaseGui):
     
     print(factorial(12))
     
-    self.assertEqual('479001600', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '479001600'.strip(), "Test: " + 'print(factorial(12))')
 
 
   def test10(self):
@@ -1609,7 +3138,7 @@ class myTests(TestCaseGui):
     
     print(factorial(1))
     
-    self.assertEqual('1\n', getMyStdOut())
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1\n'.strip(), "Test: " + 'print(factorial(1))')
 
 
 
