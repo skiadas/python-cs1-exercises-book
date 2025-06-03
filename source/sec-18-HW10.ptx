@@ -20,7 +20,22 @@
         <p>
           <image decorative="yes" source="images/32303-image.png" width="90%" />
         </p>
+        <fillin answer="Sentence" width="16" />
       </statement>
+      <evaluation>
+        <evaluate>
+          <test correct="yes">
+            <strcmp value="Sentence" />
+            <feedback />
+          </test>
+          <test>
+            <strcmp value="sentence" />
+            <feedback>
+              <p>Spell it exactly right, including capitalization.</p>
+            </feedback>
+          </test>
+        </evaluate>
+      </evaluation>
     </exercise>
     <exercise xml:id="exer-pogil_1b_methods-1" label="exe-sec-HW10-1-32304">
       <title>((Placeholder title))</title>
@@ -29,7 +44,18 @@
         <p>
           <image decorative="yes" source="images/32304-image.png" width="90%" />
         </p>
+        <fillin answer="3.0" width="16" />
       </statement>
+      <evaluation>
+        <evaluate>
+          <test correct="yes">
+            <numcmp tolerance="0.0" value="3.0" />
+            <feedback>
+              <p>Correct! The three methods are <alert>__init__, getChars, setChars</alert>.</p>
+            </feedback>
+          </test>
+        </evaluate>
+      </evaluation>
     </exercise>
     <exercise xml:id="exer-pogil_1c_self-1" label="exe-sec-HW10-1-32305">
       <title>((Placeholder title))</title>
@@ -38,7 +64,24 @@
         <p>
           <image decorative="yes" source="images/32305-Length.png" width="90%" />
         </p>
+        <fillin answer="self" width="16" />
       </statement>
+      <evaluation>
+        <evaluate>
+          <test correct="yes">
+            <strcmp value="self" />
+            <feedback>
+              <p>Correct. The first parameter, <c>self</c>, refers to the Length object which activated the method.</p>
+            </feedback>
+          </test>
+          <test>
+            <strcmp value="Self" />
+            <feedback>
+              <p>Spell it exactly right, including capitalization.</p>
+            </feedback>
+          </test>
+        </evaluate>
+      </evaluation>
     </exercise>
     <exercise xml:id="exer-pogil_2a_main_num_objects-1" label="exe-sec-HW10-1-32340">
       <title>((Placeholder title))</title>
@@ -47,7 +90,18 @@
         <p>
           <image decorative="yes" source="images/32340-image%20%281%29.png" width="90%" />
         </p>
+        <fillin answer="4.0" width="16" />
       </statement>
+      <evaluation>
+        <evaluate>
+          <test correct="yes">
+            <numcmp tolerance="0.0" value="4.0" />
+            <feedback>
+              <p>Correct! The four Sentence objects are<alert> greeting, question, name, and another.</alert></p>
+            </feedback>
+          </test>
+        </evaluate>
+      </evaluation>
     </exercise>
     <exercise xml:id="exer-pogil_2d_method_parameters-1" label="exe-sec-HW10-1-32308">
       <title>((Placeholder title))</title>
@@ -56,7 +110,18 @@
         <p>
           <image decorative="yes" source="images/32308-convert_to.png" width="90%" />
         </p>
+        <fillin answer="2.0" width="16" />
       </statement>
+      <evaluation>
+        <evaluate>
+          <test correct="yes">
+            <numcmp tolerance="0.0" value="2.0" />
+            <feedback>
+              <p>Correct! The two parameters are <c>self </c>and <c>new_unit</c>.</p>
+            </feedback>
+          </test>
+        </evaluate>
+      </evaluation>
     </exercise>
     <exercise xml:id="exer-pogil_2e_method_call_arguments-1" label="exe-sec-HW10-1-32309">
       <title>((Placeholder title))</title>
@@ -65,7 +130,18 @@
         <p>
           <image decorative="yes" source="images/32309-length_main.png" width="90%" />
         </p>
+        <fillin answer="1.0" width="16" />
       </statement>
+      <evaluation>
+        <evaluate>
+          <test correct="yes">
+            <numcmp tolerance="0.0" value="1.0" />
+            <feedback>
+              <p>Correct! When we call convert_to on a Length object, we provide one argument, the new_unit.</p>
+            </feedback>
+          </test>
+        </evaluate>
+      </evaluation>
     </exercise>
     <exercise xml:id="exer-pogil_2f_arguments_vs_parameters-1" label="exe-sec-HW10-1-32326">
       <title>((Placeholder title))</title>
@@ -544,7 +620,28 @@
       def __str__(self):
           return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)        </pre>
         <p>Suppose <c>t1</c> is a newly created instance of the the <c>Timer</c> class (i.e., a <c>Timer</c> object). Give the line of code that will call the <c>set</c> method, as described in the previous question, to set <c>t1</c> to 5 hours, 17 minutes, 51 seconds.</p>
+        <fillin answer="t1.set(5, 17, 51)" width="16" />
       </statement>
+      <evaluation>
+        <evaluate>
+          <test correct="yes">
+            <strcmp value="t1.set(5, 17, 51)" />
+            <feedback />
+          </test>
+          <test>
+            <strcmp value="t1.set(5,17,51)" />
+            <feedback />
+          </test>
+          <test>
+            <strcmp value="t1.set(5, 17,51)" />
+            <feedback />
+          </test>
+          <test>
+            <strcmp value="t1.set(5,17, 51)" />
+            <feedback />
+          </test>
+        </evaluate>
+      </evaluation>
     </exercise>
     <exercise xml:id="exer-timer_class-convert_to_seconds_method-1" label="exe-sec-HW10-1-161517">
       <title>Convert to Seconds</title>
