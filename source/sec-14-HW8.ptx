@@ -1,16 +1,16 @@
 <section xml:id="sec-HW8-1">
   <title>HW8</title>
   <introduction>
-    <p dir="ltr">  - while loops</p>
-    <p dir="ltr">  - sets</p>
+    <p dir="ltr">- while loops</p>
+    <p dir="ltr">- sets</p>
   </introduction>
   <exercises>
     <exercise xml:id="exer-build_num_list1-1" label="exe-sec-HW8-1-32073">
-      <title>Build Num List </title>
+      <title>Build Num List</title>
       <statement>
-        <p>Write a function, <c>build_num_list</c>, that has no parameters; the function reads <alert>integers </alert>from standard input, one at a time, stopping when a <c>0</c> is read. </p>
+        <p>Write a function, <c>build_num_list</c>, that has no parameters; the function reads <alert>integers</alert>from standard input, one at a time, stopping when a <c>0</c> is read.</p>
         <p>Each number read, except the final <c>0</c>, is appended to a new list (initially empty) created by the function. The function should <alert>return</alert> the accumulated list.</p>
-        <p><alert>Hint: </alert>Use a while loop.</p>
+        <p><alert>Hint:</alert>Use a while loop.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -24,57 +24,45 @@
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  N = build_num_list()
+                <cd>N = build_num_list()
 print(N)
-print(type(N), type(N[0]))
-                </cd>
+print(type(N), type(N[0]))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  55
+                <cd>55
 20
 20
-0
-                </cd>
+0                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [55, 20, 20]
-&lt;class 'list'&gt; &lt;class 'int'&gt;
-                </cd>
+                <cd>[55, 20, 20]
+&lt;class 'list'&gt; &lt;class 'int'&gt;                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  N = build_num_list()
+                <cd>N = build_num_list()
 print(N)
-print(type(N))
-                </cd>
+print(type(N))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0
+                <cd>0
 1
-1
-                </cd>
+1                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  []
-&lt;class 'list'&gt;
-                </cd>
+                <cd>[]
+&lt;class 'list'&gt;                </cd>
               </p>
             </cell>
           </row>
@@ -169,11 +157,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -248,7 +234,7 @@ myTests().main()        </tests>
       <title>Get Positive Input</title>
       <statement>
         <p>The function <c>get_pos_input</c> takes no parameters. Instead, it reads integers one at a time from standard input until a <alert>positive</alert> integer is read. Once a positive integer has been read, that integer is <alert>returned</alert>.</p>
-        <p>Add Python code to implement the <c>get_pos_input</c> function.</p>
+        <p>Add Python code to implement the <c>get_pos_input</c> function.</p>
         <p><alert>Hint</alert>: Use a while loop.</p>
         <p>For example:</p>
         <tabular>
@@ -263,15 +249,12 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(get_pos_input())
-                </cd>
+                <cd>print(get_pos_input())</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -3
+                <cd>-3
 -352034
 -42342
 -42455222
@@ -284,33 +267,25 @@ myTests().main()        </tests>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  17
-                </cd>
+                <cd>17</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(get_pos_input())
-                </cd>
+                <cd>print(get_pos_input())</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0
-12
-                </cd>
+                <cd>0
+12                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  12
-                </cd>
+                <cd>12</cd>
               </p>
             </cell>
           </row>
@@ -405,11 +380,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -473,8 +446,8 @@ myTests().main()        </tests>
     <exercise xml:id="exer-sum_nonneg_input-1" label="exe-sec-HW8-1-32050">
       <title>Sum Nonnegative Input</title>
       <statement>
-        <p>The function <c>sum_nonneg_input</c> takes no parameters. Instead, it reads <alert>integers </alert>one at a time from standard input, maintaining a running sum of numbers entered, until a negative integer is read. Once a negative integer is read, the function returns the current sum. Note: the negative number is not included in the sum.</p>
-        <p>Write Python code to implement the <c>sum_nonneg_input</c> function.</p>
+        <p>The function <c>sum_nonneg_input</c> takes no parameters. Instead, it reads <alert>integers</alert>one at a time from standard input, maintaining a running sum of numbers entered, until a negative integer is read. Once a negative integer is read, the function returns the current sum. Note: the negative number is not included in the sum.</p>
+        <p>Write Python code to implement the <c>sum_nonneg_input</c> function.</p>
         <p><alert>Hint</alert>: Use a while loop.</p>
         <p>For example:</p>
         <tabular>
@@ -489,15 +462,12 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(sum_nonneg_input())
-                </cd>
+                <cd>print(sum_nonneg_input())</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  3
+                <cd>3
 35
 42
 -17
@@ -509,9 +479,7 @@ myTests().main()        </tests>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  80
-                </cd>
+                <cd>80</cd>
               </p>
             </cell>
           </row>
@@ -606,11 +574,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -675,14 +641,14 @@ myTests().main()        </tests>
       <title>Max Float Input</title>
       <statement>
         <p>
-          The function <c>max_float_input</c> takes no parameters. Instead, it reads strings from standard input, one at a time, until the string "<alert>stop</alert>" is read.
+          The function <c>max_float_input</c> takes no parameters. Instead, it reads strings from standard input, one at a time, until the string "<alert>stop</alert>" is read.
           <ul>
             <li>If the string is not "<alert>stop</alert>", the string is converted to a floating point value (type <c>float</c>) and compared to the largest previous float value entered (if any).</li>
             <li>Otherwise, the function stops and returns the <alert>largest floating point value</alert> that was entered so far.</li>
           </ul>
         </p>
-        <p><alert>Note</alert>: If the <alert>first </alert>string entered is "<alert>stop</alert>", the function simply returns the Python object <c>None</c>.</p>
-        <p>Add Python code to implement the <c>max_float_input</c> function.</p>
+        <p><alert>Note</alert>: If the <alert>first</alert>string entered is "<alert>stop</alert>", the function simply returns the Python object <c>None</c>.</p>
+        <p>Add Python code to implement the <c>max_float_input</c> function.</p>
         <p><alert>Hint</alert>: Use a while loop.</p>
         <p>For example:</p>
         <tabular>
@@ -697,15 +663,12 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(max_float_input())
-                </cd>
+                <cd>print(max_float_input())</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  2938.3
+                <cd>2938.3
 294184.2
 2982.003
 3
@@ -716,32 +679,24 @@ stop
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  294184.2
-                </cd>
+                <cd>294184.2</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(max_float_input())
-                </cd>
+                <cd>print(max_float_input())</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  stop
-                </cd>
+                <cd>stop</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  None
-                </cd>
+                <cd>None</cd>
               </p>
             </cell>
           </row>
@@ -836,11 +791,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -922,10 +875,10 @@ myTests().main()        </tests>
     <exercise xml:id="exer-multiplication_quiz_while-1" label="exe-sec-HW8-1-32047">
       <title>Multiplication Quiz</title>
       <statement>
-        <p>The function <c>multiplication_quiz(a, b)</c> takes two integer parameters, <c>a</c> and <c>b</c>. The function prompts the user (just once) to enter the product of a times b, and uses a loop to keep checking the input for the correct answer. </p>
+        <p>The function <c>multiplication_quiz(a, b)</c> takes two integer parameters, <c>a</c> and <c>b</c>. The function prompts the user (just once) to enter the product of a times b, and uses a loop to keep checking the input for the correct answer.</p>
         <p>The function keeps a count of how many attempts were needed to get the right answer. When the correct answer is read, the function returns the count.</p>
         <p>Write the code needed to implement this function.</p>
-        <p><alert>Hint</alert>: Use a while loop. </p>
+        <p><alert>Hint</alert>: Use a while loop.</p>
         <p><alert>Note</alert>: You should assume that every input can be converted to an integer.</p>
         <p>For example:</p>
         <tabular>
@@ -940,60 +893,48 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  n = multiplication_quiz(12, 7)
-print("count =", n)
-                </cd>
+                <cd>n = multiplication_quiz(12, 7)
+print("count =", n)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  17
+                <cd>17
 9
 84
 83
-99
-                </cd>
+99                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  What is 12 times 7 ?
-count = 3
-                </cd>
+                <cd>What is 12 times 7 ?
+count = 3                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  n = multiplication_quiz(2, 3)
-print("count =", n)
-                </cd>
+                <cd>n = multiplication_quiz(2, 3)
+print("count =", n)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  10
+                <cd>10
 9
 8
 7
 6
 5
-4
-                </cd>
+4                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  What is 2 times 3 ?
-count = 5
-                </cd>
+                <cd>What is 2 times 3 ?
+count = 5                </cd>
               </p>
             </cell>
           </row>
@@ -1088,11 +1029,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1174,34 +1113,26 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = list('hello')
-print(has_repeat(L), type(has_repeat(L)))
-                </cd>
+                <cd>L = list('hello')
+print(has_repeat(L), type(has_repeat(L)))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  True &lt;class 'bool'&gt;
-                </cd>
+                <cd>True &lt;class 'bool'&gt;</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = list('Maybe')
-print(has_repeat(L), type(has_repeat(L)))
-                </cd>
+                <cd>L = list('Maybe')
+print(has_repeat(L), type(has_repeat(L)))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  False &lt;class 'bool'&gt;
-                </cd>
+                <cd>False &lt;class 'bool'&gt;</cd>
               </p>
             </cell>
           </row>
@@ -1296,11 +1227,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1389,8 +1318,8 @@ myTests().main()        </tests>
     <exercise xml:id="exer-number_of_distinct_elements-1" label="exe-sec-HW8-1-32051">
       <title>Number of Distinct Elements (using set)</title>
       <statement>
-        <p>Implement the function <c>num_distinct_elements(C)</c>. The function takes the parameter C, a collection of type list, string, or tuple, and returns the number of distinct items in C. For example, if C is the list [1, 2, 3, 3, 2, 1, 2, 3, 3, 10], the return value would be 4 (since 1, 2, 3, 10 are the "distinct" elements). </p>
-        <p>HINT: The body of the function requires just one or two lines of code. </p>
+        <p>Implement the function <c>num_distinct_elements(C)</c>. The function takes the parameter C, a collection of type list, string, or tuple, and returns the number of distinct items in C. For example, if C is the list [1, 2, 3, 3, 2, 1, 2, 3, 3, 10], the return value would be 4 (since 1, 2, 3, 10 are the "distinct" elements).</p>
+        <p>HINT: The body of the function requires just one or two lines of code.</p>
         <p><alert>NOTE</alert>: Use <c>set</c> in your code.</p>
         <p>For example:</p>
         <tabular>
@@ -1403,51 +1332,39 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  C = [1, 2, 3, 2, 2, 2, 1, 1, 1, 1]
-print(num_distinct_elements(C))
-                </cd>
+                <cd>C = [1, 2, 3, 2, 2, 2, 1, 1, 1, 1]
+print(num_distinct_elements(C))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  3
-                </cd>
+                <cd>3</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  C = "She sells sea shells by the sea shore."
-print(num_distinct_elements(C))
-                </cd>
+                <cd>C = "She sells sea shells by the sea shore."
+print(num_distinct_elements(C))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  13
-                </cd>
+                <cd>13</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  C = ('b', 'a', 'b', 'b', 'l', 'e')
-print(num_distinct_elements(C))
-                </cd>
+                <cd>C = ('b', 'a', 'b', 'b', 'l', 'e')
+print(num_distinct_elements(C))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  4
-                </cd>
+                <cd>4</cd>
               </p>
             </cell>
           </row>
@@ -1542,11 +1459,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1645,12 +1560,12 @@ myTests().main()        </tests>
     <exercise xml:id="exer-distinct_elements_in_nested_collection-1" label="exe-sec-HW8-1-32391">
       <title>Get Distinct From Nested</title>
       <statement>
-        <p>Write a definition for the function <c>get_distinct_from_nested(C)</c>, where the parameter C is a sequence of sequences (e.g.,  a list of strings or a list of lists of integers). The job of the function is to use set operations to find and return the <alert>sorted </alert>list of unique elements in the nested collection C.</p>
-        <p><alert>Hint</alert>: If S is a set, <c>sorted(S)</c> is a sorted list of the elements in S. </p>
-        <p><alert>Another Hint</alert>: Use set union to accumulate the set S of distinct inner elements using a single for loop: </p>
+        <p>Write a definition for the function <c>get_distinct_from_nested(C)</c>, where the parameter C is a sequence of sequences (e.g.,  a list of strings or a list of lists of integers). The job of the function is to use set operations to find and return the <alert>sorted</alert>list of unique elements in the nested collection C.</p>
+        <p><alert>Hint</alert>: If S is a set, <c>sorted(S)</c> is a sorted list of the elements in S.</p>
+        <p><alert>Another Hint</alert>: Use set union to accumulate the set S of distinct inner elements using a single for loop:</p>
         <p>
           <ul>
-            <li>iterate <c>seq </c>over the top-level elements of C</li>
+            <li>iterate <c>seq</c>over the top-level elements of C</li>
             <li>use <c>S = S.union(seq)</c> to update S with additional items from <c>seq</c></li>
           </ul>
           This only requires about 5 lines of code.
@@ -1666,51 +1581,39 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  C = ['Java', 'Jumble', 'BlackJack']
-print(get_distinct_from_nested(C))
-                </cd>
+                <cd>C = ['Java', 'Jumble', 'BlackJack']
+print(get_distinct_from_nested(C))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['B', 'J', 'a', 'b', 'c', 'e', 'k', 'l', 'm', 'u', 'v']
-                </cd>
+                <cd>['B', 'J', 'a', 'b', 'c', 'e', 'k', 'l', 'm', 'u', 'v']</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  C = ['app', 'ban', 'can', 'def']
-print(get_distinct_from_nested(C))
-                </cd>
+                <cd>C = ['app', 'ban', 'can', 'def']
+print(get_distinct_from_nested(C))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['a', 'b', 'c', 'd', 'e', 'f', 'n', 'p']
-                </cd>
+                <cd>['a', 'b', 'c', 'd', 'e', 'f', 'n', 'p']</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  C = ['!', '!!', '!!!', '!!!!', '!!!!!']
-print(get_distinct_from_nested(C))
-                </cd>
+                <cd>C = ['!', '!!', '!!!', '!!!!', '!!!!!']
+print(get_distinct_from_nested(C))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['!']
-                </cd>
+                <cd>['!']</cd>
               </p>
             </cell>
           </row>
@@ -1805,11 +1708,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1901,51 +1802,39 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = string_intersection("cats", "caterpillar")
-print(L)
-                </cd>
+                <cd>L = string_intersection("cats", "caterpillar")
+print(L)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['a', 'c', 't']
-                </cd>
+                <cd>['a', 'c', 't']</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = string_intersection("cats", "dogs")
-print(L)
-                </cd>
+                <cd>L = string_intersection("cats", "dogs")
+print(L)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['s']
-                </cd>
+                <cd>['s']</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = string_intersection("banana", "xylem")
-print(L)
-                </cd>
+                <cd>L = string_intersection("banana", "xylem")
+print(L)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  []
-                </cd>
+                <cd>[]</cd>
               </p>
             </cell>
           </row>
@@ -2040,11 +1929,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2140,53 +2027,42 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  pizzzzzza
-piizzaaaa
-                </cd>
+                <cd>pizzzzzza
+piizzaaaa                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  pizzzzzza and piizzaaaa are NOT anagrams.
-They do not have the same character frequencies.
-                </cd>
+                <cd>pizzzzzza and piizzaaaa are NOT anagrams.
+They do not have the same character frequencies.                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  pizza
-pasta
-                </cd>
+                <cd>pizza
+pasta                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  pizza and pasta are NOT anagrams.
-They do not have the same character sets.
-                </cd>
+                <cd>pizza and pasta are NOT anagrams.
+They do not have the same character sets.                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  maps
+                <cd>maps
 spam
                 </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  maps and spam are anagrams!
-                </cd>
+                <cd>maps and spam are anagrams!</cd>
               </p>
             </cell>
           </row>
@@ -2284,13 +2160,9 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code />
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code></code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")

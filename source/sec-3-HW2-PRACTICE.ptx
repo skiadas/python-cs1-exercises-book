@@ -5,7 +5,7 @@
     <exercise xml:id="exer-flip_sign_add_3-2" label="exe-sec-HW2-PRACTICE-1-269753">
       <title>Flip Sign and Add Three</title>
       <statement>
-        <p>Write a short <alert>program</alert> (not a function definition) that will get a decimal value x (type <alert>float</alert>) from standard input and print a message regarding the value of x and the value of 3 - x. </p>
+        <p>Write a short <alert>program</alert> (not a function definition) that will get a decimal value x (type <alert>float</alert>) from standard input and print a message regarding the value of x and the value of 3 - x.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="30%" />
@@ -17,48 +17,36 @@
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5.5
-                </cd>
+                <cd>5.5</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  x is 5.5 and 3 - x is -2.5
-                </cd>
+                <cd>x is 5.5 and 3 - x is -2.5</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -8.1
-                </cd>
+                <cd>-8.1</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  x is -8.1 and 3 - x is 11.1
-                </cd>
+                <cd>x is -8.1 and 3 - x is 11.1</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0.12
-                </cd>
+                <cd>0.12</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  x is 0.12 and 3 - x is 2.88
-                </cd>
+                <cd>x is 0.12 and 3 - x is 2.88</cd>
               </p>
             </cell>
           </row>
@@ -156,13 +144,9 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code />
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code></code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -239,51 +223,39 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5
-15
-                </cd>
+                <cd>5
+15                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5.0 is about 33.3 percent of 15.0
-                </cd>
+                <cd>5.0 is about 33.3 percent of 15.0</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  12.5
-28.0
-                </cd>
+                <cd>12.5
+28.0                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  12.5 is about 44.6 percent of 28.0
-                </cd>
+                <cd>12.5 is about 44.6 percent of 28.0</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  2.52
-8.1
-                </cd>
+                <cd>2.52
+8.1                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  2.52 is about 31.1 percent of 8.1
-                </cd>
+                <cd>2.52 is about 31.1 percent of 8.1</cd>
               </p>
             </cell>
           </row>
@@ -381,13 +353,9 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code />
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code></code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -480,48 +448,36 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  11
-                </cd>
+                <cd>11</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  the square root of 11 is about 3.32
-                </cd>
+                <cd>the square root of 11 is about 3.32</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  95
-                </cd>
+                <cd>95</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  the square root of 95 is about 9.75
-                </cd>
+                <cd>the square root of 95 is about 9.75</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  3
-                </cd>
+                <cd>3</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  the square root of 3 is about 1.73
-                </cd>
+                <cd>the square root of 3 is about 1.73</cd>
               </p>
             </cell>
           </row>
@@ -619,18 +575,12 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code>
-import math
+_program = """</preamble>
+        <code>import math
 # read the input, as an integer
 # use math.sqrt() to calculate the square root
-# print message
-</code>
-        <postamble visible="no">
-
-"""
-</postamble>
+# print message</code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -722,68 +672,52 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5.555
-1
-                </cd>
+                <cd>5.555
+1                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5.6
-                </cd>
+                <cd>5.6</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -9.87437
-3
-                </cd>
+                <cd>-9.87437
+3                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -9.874
-                </cd>
+                <cd>-9.874</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0.900001
-0
-                </cd>
+                <cd>0.900001
+0                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  1.0
-                </cd>
+                <cd>1.0</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -42.4444
-1
-                </cd>
+                <cd>-42.4444
+1                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -42.4
-                </cd>
+                <cd>-42.4</cd>
               </p>
             </cell>
           </row>
@@ -881,13 +815,9 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code />
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code></code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -978,51 +908,39 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  10
-7
-                </cd>
+                <cd>10
+7                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  7 goes into 10 1 times with 3 left over
-                </cd>
+                <cd>7 goes into 10 1 times with 3 left over</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  100
-35
-                </cd>
+                <cd>100
+35                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  35 goes into 100 2 times with 30 left over
-                </cd>
+                <cd>35 goes into 100 2 times with 30 left over</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  10
-5
-                </cd>
+                <cd>10
+5                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5 goes into 10 2 times with 0 left over
-                </cd>
+                <cd>5 goes into 10 2 times with 0 left over</cd>
               </p>
             </cell>
           </row>
@@ -1120,13 +1038,9 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code />
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code></code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1202,9 +1116,9 @@ myTests().main()        </tests>
         <p>
           You are planning to add bookcases to a wall in your living room, but you don't know how many bookcases to buy. You decide to write a Python <alert>function</alert>, <c>get_</c><c>num_bookcases</c>, to help. Your function needs to do the following:
           <ol>
-            <li>Take parameters for the width of the wall (an integer number of feet) and the width of a bookcase (an integer number of inches). (Your function does not read input from the keyboard; it gets its input through named parameters.) </li>
+            <li>Take parameters for the width of the wall (an integer number of feet) and the width of a bookcase (an integer number of inches). (Your function does not read input from the keyboard; it gets its input through named parameters.)</li>
             <li>Calculate how many whole bookcases will fit on the wall using <alert>modular arithmetic</alert> (use div and/or mod, represented by the operators // and %, as needed to solve the problem).</li>
-            <li><alert>Return </alert>the number of bookcases.</li>
+            <li><alert>Return</alert>the number of bookcases.</li>
           </ol>
         </p>
         <p>For example:</p>
@@ -1218,48 +1132,36 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(get_num_bookcases(20, 50))
-                </cd>
+                <cd>print(get_num_bookcases(20, 50))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  4
-                </cd>
+                <cd>4</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(get_num_bookcases(8, 15))
-                </cd>
+                <cd>print(get_num_bookcases(8, 15))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  6
-                </cd>
+                <cd>6</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(get_num_bookcases(3, 40))
-                </cd>
+                <cd>print(get_num_bookcases(3, 40))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0
-                </cd>
+                <cd>0</cd>
               </p>
             </cell>
           </row>
@@ -1354,14 +1256,10 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code>
-def get_num_bookcases(wall_feet, bookcase_inches):
-    # function body goes here
-</code>
-        <postamble visible="no" />
+None</preamble>
+        <code>def get_num_bookcases(wall_feet, bookcase_inches):
+    # function body goes here</code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1458,96 +1356,72 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ans = even_or_odd()
-print(ans)
-                </cd>
+                <cd>ans = even_or_odd()
+print(ans)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5
-                </cd>
+                <cd>5</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  1
-                </cd>
+                <cd>1</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ans = even_or_odd()
-print(ans)
-                </cd>
+                <cd>ans = even_or_odd()
+print(ans)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -14
-                </cd>
+                <cd>-14</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0
-                </cd>
+                <cd>0</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ans = even_or_odd()
-print(ans)
-                </cd>
+                <cd>ans = even_or_odd()
+print(ans)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0
-                </cd>
+                <cd>0</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0
-                </cd>
+                <cd>0</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ans = even_or_odd()
-print(ans)
-                </cd>
+                <cd>ans = even_or_odd()
+print(ans)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  99
-                </cd>
+                <cd>99</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  1
-                </cd>
+                <cd>1</cd>
               </p>
             </cell>
           </row>
@@ -1642,11 +1516,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1749,53 +1621,41 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  say_spam(1)
-                </cd>
+                <cd>say_spam(1)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  Spam!
-                </cd>
+                <cd>Spam!</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  say_spam(2)
-                </cd>
+                <cd>say_spam(2)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  Spam!
-Spam!
-                </cd>
+                <cd>Spam!
+Spam!                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  say_spam(5)
-                </cd>
+                <cd>say_spam(5)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  Spam!
+                <cd>Spam!
 Spam!
 Spam!
 Spam!
-Spam!
-                </cd>
+Spam!                </cd>
               </p>
             </cell>
           </row>
@@ -1890,11 +1750,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1949,7 +1807,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-for_loop_2_multiples_of_n-2" label="exe-sec-HW2-PRACTICE-1-82943">
       <title>Print Integers Less Than n</title>
       <statement>
-        <p>Write a function, <alert><c>p</c><c>rint_integers_less_than(⁠n)</c></alert>, which takes an integer parameter n and prints each integer k which is at least 0 and is less than n, in ascending order. </p>
+        <p>Write a function, <alert><c>p</c><c>rint_integers_less_than(⁠n)</c></alert>, which takes an integer parameter n and prints each integer k which is at least 0 and is less than n, in ascending order.</p>
         <p>Hint: use a simple <alert>for</alert> loop.</p>
         <p>For example:</p>
         <tabular>
@@ -1962,51 +1820,41 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print_integers_less_than(2)
-                </cd>
+                <cd>print_integers_less_than(2)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0
-1
-                </cd>
+                <cd>0
+1                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print_integers_less_than(5)
-                </cd>
+                <cd>print_integers_less_than(5)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0
+                <cd>0
 1
 2
 3
-4
-                </cd>
+4                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print_integers_less_than(-3)
-                </cd>
+                <cd>print_integers_less_than(-3)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd></cd>
+                <cd />
               </p>
             </cell>
           </row>
@@ -2101,11 +1949,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2201,53 +2047,43 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print_perfect_cubes(2)
-                </cd>
+                <cd>print_perfect_cubes(2)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0^3 = 0
+                <cd>0^3 = 0
 1^3 = 1
-2^3 = 8
-                </cd>
+2^3 = 8                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print_perfect_cubes(5)
-                </cd>
+                <cd>print_perfect_cubes(5)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0^3 = 0
+                <cd>0^3 = 0
 1^3 = 1
 2^3 = 8
 3^3 = 27
 4^3 = 64
-5^3 = 125
-                </cd>
+5^3 = 125                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print_perfect_cubes(-10)
-                </cd>
+                <cd>print_perfect_cubes(-10)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd></cd>
+                <cd />
               </p>
             </cell>
           </row>
@@ -2342,11 +2178,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")

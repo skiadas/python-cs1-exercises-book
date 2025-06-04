@@ -2,15 +2,13 @@
   <title>HW1</title>
   <introduction>
     <p>CodeRunner Tutorial</p>
-    <p dir="ltr">  - Moodle calls this a "Quiz" but it's really a <alert>homework assignment</alert>.</p>
-    <p dir="ltr">  - Due 1/16, 9 AM. Please email Prof. Wahl (wahl@hanover.edu) if you need a 1-week extension (10% late deduction).</p>
+    <p dir="ltr">- Moodle calls this a "Quiz" but it's really a <alert>homework assignment</alert>.</p>
+    <p dir="ltr">- Due 1/16, 9 AM. Please email Prof. Wahl (wahl@hanover.edu) if you need a 1-week extension (10% late deduction).</p>
   </introduction>
   <exercises>
     <exercise xml:id="exer-CodeRunner-Overview-1" label="exe-sec-HW1-1-145621">
-      <title>((Placeholder title))</title>
       <statement>
-        <p>CodeRunner is a system for working on coding problems directly within Moodle.  Below is an example of what a CodeRunner problem looks like.
-</p>
+        <p>CodeRunner is a system for working on coding problems directly within Moodle.  Below is an example of what a CodeRunner problem looks like.</p>
         <p>
           <image decorative="yes" source="images/145621-Screen%20Shot%202018-01-14%20at%209.57.32%20AM.png" width="90%" />
         </p>
@@ -19,7 +17,7 @@
           <ul>
             <li>Type of input your code must handle</li>
             <li>Type of output your code will need to produce</li>
-            <li>Whether your code should produce output (print) or return a value </li>
+            <li>Whether your code should produce output (print) or return a value</li>
           </ul>
         </p>
         <alert>If you don't understand the problem, you won't be able to solve the problem; <em>this is the most important step</em>!</alert>
@@ -37,7 +35,7 @@
     <exercise xml:id="exer-output_input-1" label="exe-sec-HW1-1-269746">
       <title>Output the Input</title>
       <statement>
-        <p>Complete the program below by adding a line of code that will output a message reporting back what is input by the user. </p>
+        <p>Complete the program below by adding a line of code that will output a message reporting back what is input by the user.</p>
         <p>Note: The first line of the program for getting input from the user is provided. <em>Do not change this line.</em></p>
         <p>For example:</p>
         <tabular>
@@ -50,48 +48,36 @@
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  Howdy!
-                </cd>
+                <cd>Howdy!</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  user input: Howdy!
-                </cd>
+                <cd>user input: Howdy!</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  Muddled marmots!
-                </cd>
+                <cd>Muddled marmots!</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  user input: Muddled marmots!
-                </cd>
+                <cd>user input: Muddled marmots!</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  3.14
-                </cd>
+                <cd>3.14</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  user input: 3.14
-                </cd>
+                <cd>user input: 3.14</cd>
               </p>
             </cell>
           </row>
@@ -189,16 +175,10 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code>
-the_input = input()
-# call the print function with two arguments
-</code>
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code>the_input = input()
+# call the print function with two arguments</code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -273,7 +253,7 @@ myTests().main()        </tests>
       <statement>
         <p>Write a short program to get a name from the user, then output a message saying "hello" to the user by name.</p>
         <p>Note: In ALL of your CodeRunner solutions, use the input function with no arguments. For example, in this problem, your first line of code might be: <c>name = input()</c></p>
-        <p>As an experiment, see what happens when you use: <c>name = </c><c>input("Tell me your name: ") </c>and then CHECK your answer.</p>
+        <p>As an experiment, see what happens when you use: <c>name =</c><c>input("Tell me your name: ")</c>and then CHECK your answer.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="30%" />
@@ -285,48 +265,36 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  everyone
-                </cd>
+                <cd>everyone</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  Hello everyone
-                </cd>
+                <cd>Hello everyone</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  coder-in-training
-                </cd>
+                <cd>coder-in-training</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  Hello coder-in-training
-                </cd>
+                <cd>Hello coder-in-training</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  Ziggy
-                </cd>
+                <cd>Ziggy</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  Hello Ziggy
-                </cd>
+                <cd>Hello Ziggy</cd>
               </p>
             </cell>
           </row>
@@ -424,17 +392,11 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code>
-# Hint: similar to previous question; need two lines of code.
+_program = """</preamble>
+        <code># Hint: similar to previous question; need two lines of code.
 # First, get the input.
-# Second, print the message.
-</code>
-        <postamble visible="no">
-
-"""
-</postamble>
+# Second, print the message.</code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -507,7 +469,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-simple_addition-1" label="exe-sec-HW1-1-269748">
       <title>Add 8</title>
       <statement>
-        <p>Write a program to get an integer value from standard input, <alert>add 8 </alert>to the input value, then output the result.</p>
+        <p>Write a program to get an integer value from standard input, <alert>add 8</alert>to the input value, then output the result.</p>
         <p>Note: The first line of the program, for getting input from the user, is provided.</p>
         <p>For example:</p>
         <tabular>
@@ -520,48 +482,36 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5
-                </cd>
+                <cd>5</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5 + 8 = 13
-                </cd>
+                <cd>5 + 8 = 13</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -7
-                </cd>
+                <cd>-7</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -7 + 8 = 1
-                </cd>
+                <cd>-7 + 8 = 1</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0
-                </cd>
+                <cd>0</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0 + 8 = 8
-                </cd>
+                <cd>0 + 8 = 8</cd>
               </p>
             </cell>
           </row>
@@ -659,16 +609,9 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code>
-num = int(input())
-
-</code>
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code>num = int(input())</code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -753,48 +696,36 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5.5
-                </cd>
+                <cd>5.5</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5.5 * 123 = 676.5
-                </cd>
+                <cd>5.5 * 123 = 676.5</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -8.1
-                </cd>
+                <cd>-8.1</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -8.1 * 123 = -996.3
-                </cd>
+                <cd>-8.1 * 123 = -996.3</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  2.2
-                </cd>
+                <cd>2.2</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  2.2 * 123 = 270.6
-                </cd>
+                <cd>2.2 * 123 = 270.6</cd>
               </p>
             </cell>
           </row>
@@ -892,17 +823,11 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code>
-# The following line reads the user input and converts 
+_program = """</preamble>
+        <code># The following line reads the user input and converts 
 # it to a float value:
-num = float(input())
-</code>
-        <postamble visible="no">
-
-"""
-</postamble>
+num = float(input())</code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -975,7 +900,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-simple_modulo-1" label="exe-sec-HW1-1-269739">
       <title>Find the Remainder</title>
       <statement>
-        <p>Write the code that will read an integer input and assign its value to the name <c>num</c>, calculate the remainder when <c>num </c>is divided by 3, and print an informative message. Hint: Use the remainder operator (%).</p>
+        <p>Write the code that will read an integer input and assign its value to the name <c>num</c>, calculate the remainder when <c>num</c>is divided by 3, and print an informative message. Hint: Use the remainder operator (%).</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="30%" />
@@ -987,48 +912,36 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  11
-                </cd>
+                <cd>11</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  When we divide 11 by 3, the remainder is 2
-                </cd>
+                <cd>When we divide 11 by 3, the remainder is 2</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  3
-                </cd>
+                <cd>3</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  When we divide 3 by 3, the remainder is 0
-                </cd>
+                <cd>When we divide 3 by 3, the remainder is 0</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  19
-                </cd>
+                <cd>19</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  When we divide 19 by 3, the remainder is 1
-                </cd>
+                <cd>When we divide 19 by 3, the remainder is 1</cd>
               </p>
             </cell>
           </row>
@@ -1126,13 +1039,9 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code />
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code></code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1217,48 +1126,36 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  2
-                </cd>
+                <cd>2</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  When x = 2 then x^2 = 4
-                </cd>
+                <cd>When x = 2 then x^2 = 4</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  24
-                </cd>
+                <cd>24</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  When x = 24 then x^2 = 576
-                </cd>
+                <cd>When x = 24 then x^2 = 576</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -18
-                </cd>
+                <cd>-18</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  When x = -18 then x^2 = 324
-                </cd>
+                <cd>When x = -18 then x^2 = 324</cd>
               </p>
             </cell>
           </row>
@@ -1356,13 +1253,9 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code />
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code></code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1437,7 +1330,7 @@ myTests().main()        </tests>
       <statement>
         <p id="yui_3_17_2_1_1704483246360_2027">Suppose we want to calculate the volume (in cubic cm) of a cylinder for which the radius of the base is R cm and the height is H cm. We will use the formula: volume = area of base * H. Rather than making a single large calculation and reporting the result, you should practice dividing the work into stages using two assignment statements.</p>
         <p id="yui_3_17_2_1_1704483246360_2130">A partial solution is provided, you just need to add a bit more code.</p>
-        <p id="yui_3_17_2_1_1704483246360_2164">Notice that the statement <c>import math</c> makes all the objects in the math module available; your code should use <c>math.pi</c> (Python's name for «math xmlns=¨http://www.w3.org/1998/Math/MathML¨»«mi mathvariant=¨normal¨»§#960;«/mi»«/math»), in calculating the area of the base.</p>
+        <p id="yui_3_17_2_1_1704483246360_2164">Notice that the statement <c>import math</c> makes all the objects in the math module available; your code should use <c>math.pi</c> (Python's name for «math xmlns=¨http://www.w3.org/1998/Math/MathML¨»«mi mathvariant=¨normal¨»§#960;«/mi»«/math»), in calculating the area of the base.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="30%" />
@@ -1449,51 +1342,39 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  3
-5
-                </cd>
+                <cd>3
+5                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  R = 3.0 , H = 5.0 , Volume = 141.3716694115407
-                </cd>
+                <cd>R = 3.0 , H = 5.0 , Volume = 141.3716694115407</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  6
-2
-                </cd>
+                <cd>6
+2                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  R = 6.0 , H = 2.0 , Volume = 226.1946710584651
-                </cd>
+                <cd>R = 6.0 , H = 2.0 , Volume = 226.1946710584651</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  2.3
-3.5
-                </cd>
+                <cd>2.3
+3.5                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  R = 2.3 , H = 3.5 , Volume = 58.16658798121501
-                </cd>
+                <cd>R = 2.3 , H = 3.5 , Volume = 58.16658798121501</cd>
               </p>
             </cell>
           </row>
@@ -1591,10 +1472,8 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code>
-import math
+_program = """</preamble>
+        <code>import math
 
 # Read the radius from input; convert it to a float value and assign to R
 R = 
@@ -1604,12 +1483,8 @@ H =
 baseArea = 
 # Find the volume and print a message
 volume = 
-print( )
-</code>
-        <postamble visible="no">
-
-"""
-</postamble>
+print( )</code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1685,48 +1560,36 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  314
-                </cd>
+                <cd>314</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  314 minutes equals 5 hours and 14 minutes
-                </cd>
+                <cd>314 minutes equals 5 hours and 14 minutes</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  230
-                </cd>
+                <cd>230</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  230 minutes equals 3 hours and 50 minutes
-                </cd>
+                <cd>230 minutes equals 3 hours and 50 minutes</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  15
-                </cd>
+                <cd>15</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  15 minutes equals 0 hours and 15 minutes
-                </cd>
+                <cd>15 minutes equals 0 hours and 15 minutes</cd>
               </p>
             </cell>
           </row>
@@ -1824,13 +1687,9 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code />
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code></code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")

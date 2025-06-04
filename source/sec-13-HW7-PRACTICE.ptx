@@ -1,7 +1,7 @@
 <section xml:id="sec-HW7-PRACTICE-1">
   <title>HW7 PRACTICE</title>
   <introduction>
-    <p dir="ltr">  - Ungraded assignment, use it to practice for Quiz 7</p>
+    <p dir="ltr">- Ungraded assignment, use it to practice for Quiz 7</p>
   </introduction>
   <exercises>
     <exercise xml:id="exer-swap_list_ends-2" label="exe-sec-HW7-PRACTICE-1-143722">
@@ -20,84 +20,67 @@
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = [1, 3, 9, 2]
+                <cd>L = [1, 3, 9, 2]
 if not(swap_list_ends(L) is None):
     print("Error: function should return None")
-print(L)
-                </cd>
+print(L)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [2, 3, 9, 1]
-                </cd>
+                <cd>[2, 3, 9, 1]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = ['two', 'dos', 2]
+                <cd>L = ['two', 'dos', 2]
 if not(swap_list_ends(L) is None):
     print("Error: function should return None")
-print(L)
-                </cd>
+print(L)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [2, 'dos', 'two']
-                </cd>
+                <cd>[2, 'dos', 'two']</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = [True, False]
+                <cd>L = [True, False]
 if not(swap_list_ends(L) is None):
     print("Error: function should return None")
-print(L)
-                </cd>
+print(L)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [False, True]
-                </cd>
+                <cd>[False, True]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = ["snowy"]
+                <cd>L = ["snowy"]
 if not(swap_list_ends(L) is None):
     print("Error: function should return None")
-print(L)
-                </cd>
+print(L)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['snowy']
-                </cd>
+                <cd>['snowy']</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = ["happy", "birthday", "to", "Monty"]
+                <cd>L = ["happy", "birthday", "to", "Monty"]
 if not(swap_list_ends(L) is None):
     print("Error: function should return None")
 print(L)
@@ -106,9 +89,7 @@ print(L)
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['Monty', 'birthday', 'to', 'happy']
-                </cd>
+                <cd>['Monty', 'birthday', 'to', 'happy']</cd>
               </p>
             </cell>
           </row>
@@ -203,11 +184,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -336,8 +315,8 @@ myTests().main()        </tests>
     <exercise xml:id="exer-make_list_items_upper_2-4" label="exe-sec-HW7-PRACTICE-1-144077">
       <title>Make List Items Uppercase 2</title>
       <statement>
-        <p>Define the function <c>make_uppercase(mylist)</c>, which takes a list parameter <c>mylist</c> (a list of strings), mutates the list by uppercasing each string in mylist. The function returns <c>None</c>. </p>
-        <p>For example, if <c>mylist</c> is <c>['cat', 'Dog', 'frOG']</c>, then the mutated list should  be <c>['CAT', 'DOG', 'FROG']</c>. </p>
+        <p>Define the function <c>make_uppercase(mylist)</c>, which takes a list parameter <c>mylist</c> (a list of strings), mutates the list by uppercasing each string in mylist. The function returns <c>None</c>.</p>
+        <p>For example, if <c>mylist</c> is <c>['cat', 'Dog', 'frOG']</c>, then the mutated list should  be <c>['CAT', 'DOG', 'FROG']</c>.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -349,40 +328,32 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  mylist = ['cat', 'Dog', 'frOG']
+                <cd>mylist = ['cat', 'Dog', 'frOG']
 result = make_uppercase(mylist)
 print(mylist)
 if result != None:
-    print("Error, return value should be None")
-                </cd>
+    print("Error, return value should be None")                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['CAT', 'DOG', 'FROG']
-                </cd>
+                <cd>['CAT', 'DOG', 'FROG']</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  mylist = ['baNanas', 'appLes', 'pEAches', 'PEArs']
+                <cd>mylist = ['baNanas', 'appLes', 'pEAches', 'PEArs']
 result = make_uppercase(mylist)
 print(mylist)
 if result != None:
-    print("Error, return value should be None")
-                </cd>
+    print("Error, return value should be None")                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['BANANAS', 'APPLES', 'PEACHES', 'PEARS']
-                </cd>
+                <cd>['BANANAS', 'APPLES', 'PEACHES', 'PEARS']</cd>
               </p>
             </cell>
           </row>
@@ -477,11 +448,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -565,7 +534,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-square_nums_2-2" label="exe-sec-HW7-PRACTICE-1-161273">
       <title>Square Nums 2</title>
       <statement>
-        <p>Define the function <c>square_nums_2</c> which takes a list of numbers, <alert>L</alert>, and mutates <alert>L</alert> so that each original item is now squared. For example, if L is <c>[2, -5, 9]</c> then, after calling <c>square_nums_2(L)</c>, <c>L == [4, 25, 81]</c>. </p>
+        <p>Define the function <c>square_nums_2</c> which takes a list of numbers, <alert>L</alert>, and mutates <alert>L</alert> so that each original item is now squared. For example, if L is <c>[2, -5, 9]</c> then, after calling <c>square_nums_2(L)</c>, <c>L == [4, 25, 81]</c>.</p>
         <p>Nothing is printed and None is returned.</p>
         <p>For example:</p>
         <tabular>
@@ -578,54 +547,42 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = [0, 1, 2, 3]
+                <cd>L = [0, 1, 2, 3]
 square_nums_2(L)
-print(L)
-                </cd>
+print(L)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [0, 1, 4, 9]
-                </cd>
+                <cd>[0, 1, 4, 9]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = [5]
+                <cd>L = [5]
 square_nums_2(L)
-print(L)
-                </cd>
+print(L)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [25]
-                </cd>
+                <cd>[25]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = []
+                <cd>L = []
 square_nums_2(L)
-print(L)
-                </cd>
+print(L)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  []
-                </cd>
+                <cd>[]</cd>
               </p>
             </cell>
           </row>
@@ -720,11 +677,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -809,7 +764,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-nested_accum_hyphenated_pairs-2" label="exe-sec-HW7-PRACTICE-1-145020">
       <title>Hyphenated Pairs with Nested Loop</title>
       <statement>
-        <p>Define the function <c>get_pairs</c>, which takes a list L of strings, such as </p>
+        <p>Define the function <c>get_pairs</c>, which takes a list L of strings, such as</p>
         <pre>L = ['r', 'g']</pre>
         <p>and returns a list of all the hyphenated pairs of strings from the list (returns a list of strings, such as <c>['r-r', 'r-g', 'g-r', 'g-g']</c>)</p>
         <p>Use a double for loop to accumulate the result.</p>
@@ -824,68 +779,52 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = ['yes', 'no', 'maybe']
-print(get_pairs(L))
-                </cd>
+                <cd>L = ['yes', 'no', 'maybe']
+print(get_pairs(L))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['yes-yes', 'yes-no', 'yes-maybe', 'no-yes', 'no-no', 'no-maybe', 'maybe-yes', 'maybe-no', 'maybe-maybe']
-                </cd>
+                <cd>['yes-yes', 'yes-no', 'yes-maybe', 'no-yes', 'no-no', 'no-maybe', 'maybe-yes', 'maybe-no', 'maybe-maybe']</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  strlist = ["X", "x"]
-print(get_pairs(strlist))
-                </cd>
+                <cd>strlist = ["X", "x"]
+print(get_pairs(strlist))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['X-X', 'X-x', 'x-X', 'x-x']
-                </cd>
+                <cd>['X-X', 'X-x', 'x-X', 'x-x']</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  empty = []
-print(get_pairs(empty))
-                </cd>
+                <cd>empty = []
+print(get_pairs(empty))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  []
-                </cd>
+                <cd>[]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  food = ['apple', 'cheese', 'bread']
-print(get_pairs(food))
-                </cd>
+                <cd>food = ['apple', 'cheese', 'bread']
+print(get_pairs(food))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['apple-apple', 'apple-cheese', 'apple-bread', 'cheese-apple', 'cheese-cheese', 'cheese-bread', 'bread-apple', 'bread-cheese', 'bread-bread']
-                </cd>
+                <cd>['apple-apple', 'apple-cheese', 'apple-bread', 'cheese-apple', 'cheese-cheese', 'cheese-bread', 'bread-apple', 'bread-cheese', 'bread-bread']</cd>
               </p>
             </cell>
           </row>
@@ -980,11 +919,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1083,14 +1020,14 @@ myTests().main()        </tests>
     <exercise xml:id="exer-print_stars_grid_nested_loop-2" label="exe-sec-HW7-PRACTICE-1-145082">
       <title>Print Grid of Asterisks with a Nested Loop</title>
       <statement>
-        <p>Define a function <c>print_star_grid(rows, cols)</c>, which takes two positive integers as parameters and prints a rectangular grid of asterisks in response. <alert>rows</alert> indicates the number of rows to be printed, and <alert>cols</alert> indicates the number of columns (i.e., the length of each row).</p>
+        <p>Define a function <c>print_star_grid(rows, cols)</c>, which takes two positive integers as parameters and prints a rectangular grid of asterisks in response. <alert>rows</alert> indicates the number of rows to be printed, and <alert>cols</alert> indicates the number of columns (i.e., the length of each row).</p>
         <p>After each <c>"*"</c>, print a space (to match the examples).</p>
-        <p>Hints: </p>
+        <p>Hints:</p>
         <p>
           <ul>
             <li>For each r in range(rows), for each c in range(cols), print <c>"*  "</c> (a star followed by a space).</li>
-            <li>To prevent going to a new line each time, include <alert>keyword argument:  </alert><alert>end =</alert><alert> ""</alert>  in  your print call.</li>
-            <li>Make a call to <alert>print() with no arguments</alert> each time the inner loop finishes (to make the end of a row).</li>
+            <li>To prevent going to a new line each time, include <alert>keyword argument:</alert><alert>end =</alert><alert>""</alert> in  your print call.</li>
+            <li>Make a call to <alert>print() with no arguments</alert> each time the inner loop finishes (to make the end of a row).</li>
           </ul>
         </p>
         <p><alert>Note</alert>: This function does NOT explicitly return a value.</p>
@@ -1105,53 +1042,41 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print_star_grid(2,3)
-                </cd>
+                <cd>print_star_grid(2,3)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  * * * 
-* * *
-                </cd>
+                <cd>* * * 
+* * *                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print_star_grid(1,1)
-                </cd>
+                <cd>print_star_grid(1,1)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  *
-                </cd>
+                <cd>*</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print_star_grid(5,5)
-                </cd>
+                <cd>print_star_grid(5,5)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  * * * * * 
+                <cd>* * * * * 
 * * * * * 
 * * * * * 
 * * * * * 
-* * * * *
-                </cd>
+* * * * *                </cd>
               </p>
             </cell>
           </row>
@@ -1246,11 +1171,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1316,11 +1239,11 @@ myTests().main()        </tests>
       <statement>
         <p>Define a function <c>print_XO_grid(rows, cols)</c>, which takes two positive integers as parameters and prints a rectangular grid of X's and O's in response. rows indicates the number of rows to be printed, and cols indicates the number of columns (i.e., the length of each row).</p>
         <p>After each "X" or "O", print a space (to match the examples).</p>
-        <p>Hints: </p>
+        <p>Hints:</p>
         <p>
           <ul>
-            <li>For each r in range(rows), for each c in range(cols), print "X " if r + c is even; otherwise, print "O ". </li>
-            <li>To prevent going to a new line each time, include <alert>keyword argument:  </alert><c>end = ""</c>  in  your print call.</li>
+            <li>For each r in range(rows), for each c in range(cols), print "X " if r + c is even; otherwise, print "O ".</li>
+            <li>To prevent going to a new line each time, include <alert>keyword argument:</alert><c>end = ""</c> in  your print call.</li>
             <li>Make a call to <alert>print() with no arguments</alert> each time the inner loop finishes (to make the end of a row).</li>
           </ul>
         </p>
@@ -1336,35 +1259,27 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print_XO_grid(2,3)
-                </cd>
+                <cd>print_XO_grid(2,3)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  X O X 
-O X O
-                </cd>
+                <cd>X O X 
+O X O                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print_XO_grid(3,2)
-                </cd>
+                <cd>print_XO_grid(3,2)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  X O 
+                <cd>X O 
 O X 
-X O
-                </cd>
+X O                </cd>
               </p>
             </cell>
           </row>
@@ -1459,11 +1374,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1536,7 +1449,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-nested_list_sum_up_all_items-2" label="exe-sec-HW7-PRACTICE-1-144561">
       <title>Sum of Nested List Items</title>
       <statement>
-        <p>Define the function <c>sum_nested(L)</c>, which takes parameter L (a list of lists of integers) and returns the sum of all the elements of all the inner lists of L.  </p>
+        <p>Define the function <c>sum_nested(L)</c>, which takes parameter L (a list of lists of integers) and returns the sum of all the elements of all the inner lists of L.</p>
         <p>For example, if L  = [[1, 2], [3, 3, 2], [7, -6]], then <c>sum_nested(L)</c> would return 1 + 2 + 3 + 3 + 2 + 7 + (-6) = 12.</p>
         <p>TO DO:</p>
         <p>Write a double for loop to accumulate the sum.</p>
@@ -1551,51 +1464,39 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = [[5]]
-print(sum_nested(L))
-                </cd>
+                <cd>L = [[5]]
+print(sum_nested(L))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5
-                </cd>
+                <cd>5</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L=[[1,2],[8,7,6]]
-print(sum_nested(L))
-                </cd>
+                <cd>L=[[1,2],[8,7,6]]
+print(sum_nested(L))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  24
-                </cd>
+                <cd>24</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L =  []
-print(sum_nested(L))
-                </cd>
+                <cd>L =  []
+print(sum_nested(L))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0
-                </cd>
+                <cd>0</cd>
               </p>
             </cell>
           </row>
@@ -1690,11 +1591,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1773,8 +1672,8 @@ myTests().main()        </tests>
     <exercise xml:id="exer-gen_triples-2" label="exe-sec-HW7-PRACTICE-1-161274">
       <title>Generate Triples</title>
       <statement>
-        <p>The function <alert>gen_triples</alert> function takes one parameter, a list `L` of characters. The function then returns a list of all possible 3-character strings that can be made from the characters in `L`.</p>
-        <p>For example, if L = ['n', 'o'], <alert>gen_triples(L)</alert> should return the list: </p>
+        <p>The function <alert>gen_triples</alert> function takes one parameter, a list `L` of characters. The function then returns a list of all possible 3-character strings that can be made from the characters in `L`.</p>
+        <p>For example, if L = ['n', 'o'], <alert>gen_triples(L)</alert> should return the list:</p>
         <p>['nnn', 'nno', 'non',
 'noo', 'onn', 'ono', 'oon', 'ooo']</p>
         <p>If `L` is empty, gen_triples should return an empty list.</p>
@@ -1791,51 +1690,40 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = []
-print(gen_triples(L))
-                </cd>
+                <cd>L = []
+print(gen_triples(L))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  []
-                </cd>
+                <cd>[]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = ['R']
+                <cd>L = ['R']
 print(gen_triples(L))
                 </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['RRR']
-                </cd>
+                <cd>['RRR']</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = ['n', 'o']
-print(gen_triples(L))
-                </cd>
+                <cd>L = ['n', 'o']
+print(gen_triples(L))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['nnn', 'nno', 'non', 'noo', 'onn', 'ono', 'oon', 'ooo']
-                </cd>
+                <cd>['nnn', 'nno', 'non', 'noo', 'onn', 'ono', 'oon', 'ooo']</cd>
               </p>
             </cell>
           </row>
@@ -1930,11 +1818,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2007,8 +1893,7 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
+                <cd>D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
 add_entry(D, 'Spikes', 42)
 if D.get('Spikes') == 42:
     print("new key-value pair was correctly added")
@@ -2019,30 +1904,24 @@ else:
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  new key-value pair was correctly added
-                </cd>
+                <cd>new key-value pair was correctly added</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  D = {'wins': 9, 'losses': 2}
+                <cd>D = {'wins': 9, 'losses': 2}
 add_entry(D, 'ties', 1)
 if D.get('ties') == 1:
     print("new key-value pair was correctly added")
 else:
-    print("key-value pair was NOT added correctly")
-                </cd>
+    print("key-value pair was NOT added correctly")                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  new key-value pair was correctly added
-                </cd>
+                <cd>new key-value pair was correctly added</cd>
               </p>
             </cell>
           </row>
@@ -2137,11 +2016,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2237,14 +2114,14 @@ myTests().main()        </tests>
     <exercise xml:id="exer-delete_entry_from_dictionary-2" label="exe-sec-HW7-PRACTICE-1-145152">
       <title>Delete Entry</title>
       <statement>
-        <p>The function <c>delete_entry</c> takes a parameter <c>D</c> (a dictionary) and a parameter <c>k</c> (a supposed key in <c>D</c>).  </p>
+        <p>The function <c>delete_entry</c> takes a parameter <c>D</c> (a dictionary) and a parameter <c>k</c> (a supposed key in <c>D</c>).</p>
         <p>
           <ul>
-            <li>The function <alert>removes </alert>the entry whose key is <c>k</c> and returns the value that was associated with <c>k</c>.</li>
-            <li><em>However</em>, if <c>k</c> is <alert>not </alert>a key in <c>D</c>, the function leaves <c>D</c> unchanged and returns the value <c>None</c>.</li>
+            <li>The function <alert>removes</alert>the entry whose key is <c>k</c> and returns the value that was associated with <c>k</c>.</li>
+            <li><em>However</em>, if <c>k</c> is <alert>not</alert>a key in <c>D</c>, the function leaves <c>D</c> unchanged and returns the value <c>None</c>.</li>
           </ul>
         </p>
-        <p>Hint: <c>D.pop(k)</c> is helpful here, but first you need to handle the case where k is <alert>not</alert> a key in D. You can search online to learn more, using search string:   <em>python dictionary delete item</em></p>
+        <p>Hint: <c>D.pop(k)</c> is helpful here, but first you need to handle the case where k is <alert>not</alert> a key in D. You can search online to learn more, using search string: <em>python dictionary delete item</em></p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -2256,36 +2133,30 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
+                <cd>D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
 ans = delete_entry(D, 'Digs')
 print(ans)
+
                 </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  47
-                </cd>
+                <cd>47</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  D = {'wins': 9, 'losses': 2}
+                <cd>D = {'wins': 9, 'losses': 2}
 ans = delete_entry(D, 'ties')
-print(ans)
-                </cd>
+print(ans)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  None
-                </cd>
+                <cd>None</cd>
               </p>
             </cell>
           </row>
@@ -2380,11 +2251,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2484,8 +2353,8 @@ myTests().main()        </tests>
     <exercise xml:id="exer-dictionary_has_key-2" label="exe-sec-HW7-PRACTICE-1-145107">
       <title>Has Key</title>
       <statement>
-        <p>The function <c>has_key</c> takes two parameters: <c>D</c> and <c>k</c>, where <c>D</c> is a dictionary and <c>k</c> is a possible key in <c>D</c>. The function returns <c>True</c> if <c>k</c> is a <em>key</em> in the dictionary <c>D</c> and <c>False</c> otherwise.</p>
-        <p><alert>Hint: </alert>Look up and read about the various operators and methods for dictionaries.</p>
+        <p>The function <c>has_key</c> takes two parameters: <c>D</c> and <c>k</c>, where <c>D</c> is a dictionary and <c>k</c> is a possible key in <c>D</c>. The function returns <c>True</c> if <c>k</c> is a <em>key</em> in the dictionary <c>D</c> and <c>False</c> otherwise.</p>
+        <p><alert>Hint:</alert>Look up and read about the various operators and methods for dictionaries.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -2497,34 +2366,28 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
+                <cd>D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
 print(has_key(D, 'Blocks') == True)
                 </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  True
-                </cd>
+                <cd>True</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
+                <cd>D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
 print(has_key(D, 'Spikes'))
                 </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  False
-                </cd>
+                <cd>False</cd>
               </p>
             </cell>
           </row>
@@ -2619,11 +2482,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2711,8 +2572,8 @@ myTests().main()        </tests>
     <exercise xml:id="exer-dictionary_has_value-2" label="exe-sec-HW7-PRACTICE-1-145140">
       <title>Has Value</title>
       <statement>
-        <p>The function <c>has_value</c> takes two parameters: a dictionary <c>D</c> and a number <c>num</c>. The function returns <c>True</c> if <c>num</c> is a <em>value</em> in dictionary <c>D</c>; otherwise, it returns <c>False</c>.</p>
-        <p><alert>Hint: </alert>Reminder yourself about the various operators and methods for dictionaries.</p>
+        <p>The function <c>has_value</c> takes two parameters: a dictionary <c>D</c> and a number <c>num</c>. The function returns <c>True</c> if <c>num</c> is a <em>value</em> in dictionary <c>D</c>; otherwise, it returns <c>False</c>.</p>
+        <p><alert>Hint:</alert>Reminder yourself about the various operators and methods for dictionaries.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -2724,34 +2585,28 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
+                <cd>D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
 print(has_value(D, 47) == True)
                 </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  True
-                </cd>
+                <cd>True</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
+                <cd>D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
 print(has_value(D, 3047) == True)
                 </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  False
-                </cd>
+                <cd>False</cd>
               </p>
             </cell>
           </row>
@@ -2846,11 +2701,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2921,7 +2774,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-dictionary_num_pairs-2" label="exe-sec-HW7-PRACTICE-1-145129">
       <title>Get Num Entries</title>
       <statement>
-        <p>The function <c>get_num_pairs</c> takes one parameter, <c>D</c>, which is a dictionary. The function returns the <alert>number </alert>of key-value pairs in <c>D</c>.</p>
+        <p>The function <c>get_num_pairs</c> takes one parameter, <c>D</c>, which is a dictionary. The function returns the <alert>number</alert>of key-value pairs in <c>D</c>.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -2933,34 +2786,29 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
+                <cd>D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
 print(get_num_pairs(D))
                 </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  4
-                </cd>
+                <cd>4</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  D = {'wins': 9, 'losses': 2}
+                <cd>D = {'wins': 9, 'losses': 2}
 print(get_num_pairs(D))
+
                 </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  2
-                </cd>
+                <cd>2</cd>
               </p>
             </cell>
           </row>
@@ -3055,11 +2903,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -3158,8 +3004,7 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  key_list = ['Hitting Percent', 'Blocks', 'Digs', 'Aces']
+                <cd>key_list = ['Hitting Percent', 'Blocks', 'Digs', 'Aces']
 value_list = [0.174, 5.0, 47, 7]
 new_D = build_dictionary(key_list, value_list)
 if (new_D == {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}):
@@ -3172,32 +3017,26 @@ else:
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  new_D created correctly
-                </cd>
+                <cd>new_D created correctly</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  key_list = ['wins', 'losses']
+                <cd>key_list = ['wins', 'losses']
 value_list = [9, 2]
 new_D = build_dictionary(key_list, value_list)
 if (new_D == {'wins': 9, 'losses': 2}):
     print("new_D created correctly")
 else:
     print("new_D NOT correct; here's what it currently looks like")
-    print(new_D)
-                </cd>
+    print(new_D)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  new_D created correctly
-                </cd>
+                <cd>new_D created correctly</cd>
               </p>
             </cell>
           </row>
@@ -3292,11 +3131,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -3397,17 +3234,17 @@ myTests().main()        </tests>
     <exercise xml:id="exer-find_frequencies_dictionary_of_list-2" label="exe-sec-HW7-PRACTICE-1-144954">
       <title>Accumulate Frequencies Dictionary</title>
       <statement>
-        <p>The function <c>get_freq_dict(L)</c> takes a list of integers and <alert>returns </alert>a dictionary D such that for each number x in L, D[x] is the frequency of x in L.</p>
+        <p>The function <c>get_freq_dict(L)</c> takes a list of integers and <alert>returns</alert>a dictionary D such that for each number x in L, D[x] is the frequency of x in L.</p>
         <p>TO DO: Accumulate D as explained in your textbook. Read up on how to generate a frequency table using a dictionary if the following hint leaves you puzzled.</p>
         <p>Hint: Use the accumulator pattern.</p>
         <p>
           <ol>
-            <li>Initialize D to be an empty dictionary:    <c>D  = {}</c></li>
+            <li>Initialize D to be an empty dictionary: <c>D  = {}</c></li>
             <li>
               <p>
                 For each x in L:
                 <ul>
-                  <li>if x is already a key in D, update the frequency  of x:   <c>D[x] = D[x] + 1</c></li>
+                  <li>if x is already a key in D, update the frequency  of x: <c>D[x] = D[x] + 1</c></li>
                   <li>else, make x:1 a new pair in D</li>
                 </ul>
               </p>
@@ -3426,51 +3263,39 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = [1, 5, 25, 5, 1]
-print(get_freq_dict(L))
-                </cd>
+                <cd>L = [1, 5, 25, 5, 1]
+print(get_freq_dict(L))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  {1: 2, 5: 2, 25: 1}
-                </cd>
+                <cd>{1: 2, 5: 2, 25: 1}</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = [17]
-print(get_freq_dict(L))
-                </cd>
+                <cd>L = [17]
+print(get_freq_dict(L))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  {17: 1}
-                </cd>
+                <cd>{17: 1}</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = [1, 1, 1, 1, 2, 2, 2, 3, 3, 4]
-print(get_freq_dict(L))
-                </cd>
+                <cd>L = [1, 1, 1, 1, 2, 2, 2, 3, 3, 4]
+print(get_freq_dict(L))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  {1: 4, 2: 3, 3: 2, 4: 1}
-                </cd>
+                <cd>{1: 4, 2: 3, 3: 2, 4: 1}</cd>
               </p>
             </cell>
           </row>
@@ -3565,11 +3390,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -3667,7 +3490,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-dict_find_mode_of_list-2" label="exe-sec-HW7-PRACTICE-1-145015">
       <title>Calculate Mode of List (using a dictionary)</title>
       <statement>
-        <p>The function <c>get_</c><c>mode(L)</c> takes one parameter, <alert>L</alert>, a list of integers. <c>get_mode</c> builds a dictionary of frequencies to determine how often each number in the list occurs. Then it returns the <em>mode</em> of the list, that is, the number in L which occurs with the highest frequency.</p>
+        <p>The function <c>get_</c><c>mode(L)</c> takes one parameter, <alert>L</alert>, a list of integers. <c>get_mode</c> builds a dictionary of frequencies to determine how often each number in the list occurs. Then it returns the <em>mode</em> of the list, that is, the number in L which occurs with the highest frequency.</p>
         <p>For example, <c>get_mode([3, 8, 5, 5, 8, 8])</c> would determine that</p>
         <p>
           <ul>
@@ -3678,7 +3501,7 @@ myTests().main()        </tests>
         </p>
         <p>Because  8 has the highest frequency, <alert>get_mode</alert> would return 8  for this example.</p>
         <p>Note: You may assume that L will not be empty and there will be a single mode in L (no ties for most frequent).</p>
-        <p>Tip: Suppose D is a dictionary with integer values. The following code will determine the maximum value in D: <c>max_value = max(D.values())</c></p>
+        <p>Tip: Suppose D is a dictionary with integer values. The following code will determine the maximum value in D: <c>max_value = max(D.values())</c></p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -3690,34 +3513,26 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = [3, 8, 5, 5, 8, 8]
-print(get_mode(L))
-                </cd>
+                <cd>L = [3, 8, 5, 5, 8, 8]
+print(get_mode(L))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  8
-                </cd>
+                <cd>8</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = [3, 8, 5, 5, 8, 8, 3, 3, 5, 3, 3]
-print(get_mode(L))
-                </cd>
+                <cd>L = [3, 8, 5, 5, 8, 8, 3, 3, 5, 3, 3]
+print(get_mode(L))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  3
-                </cd>
+                <cd>3</cd>
               </p>
             </cell>
           </row>
@@ -3812,11 +3627,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -3895,7 +3708,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-Counting-by-k-2" label="exe-sec-HW7-PRACTICE-1-160712">
       <title>Counting by k</title>
       <statement>
-        <p>Write a 6-line Python script (not a function definition). The purpose of the program is to read a positive integer n from standard input and then show how to "count by k" for k = 0, 1, 2, ..., n. </p>
+        <p>Write a 6-line Python script (not a function definition). The purpose of the program is to read a positive integer n from standard input and then show how to "count by k" for k = 0, 1, 2, ..., n.</p>
         <p>Hint: Use a nested for loop.</p>
         <p>For example:</p>
         <tabular>
@@ -3908,23 +3721,20 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  3
+                <cd>3
                 </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  Counting by: 0
+                <cd>Counting by: 0
 0 0 0 0 0 0 0 
 Counting by: 1
 0 1 2 3 4 5 6 
 Counting by: 2
 0 2 4 6 8 10 12 
 Counting by: 3
-0 3 6 9 12 15 18
-                </cd>
+0 3 6 9 12 15 18                </cd>
               </p>
             </cell>
           </row>
@@ -4022,13 +3832,9 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code />
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code></code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")

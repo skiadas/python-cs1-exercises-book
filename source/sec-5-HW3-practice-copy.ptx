@@ -8,8 +8,8 @@
       <title>Print List: 1 through m</title>
       <statement>
         <p>Write a program to do the following:</p>
-        <p>  - read a positive integer <alert>m </alert>from standard input</p>
-        <p>  - use the <alert>list </alert>function and the <alert>range </alert>function to print a list of all the positive integers from 1 through <alert>m</alert>.</p>
+        <p>- read a positive integer <alert>m</alert>from standard input</p>
+        <p>- use the <alert>list</alert>function and the <alert>range</alert>function to print a list of all the positive integers from 1 through <alert>m</alert>.</p>
         <p>Notice the form of the output is a <alert>list</alert>, which displays as a comma-separated sequence of values enclosed by square brackets.</p>
         <p>For example:</p>
         <tabular>
@@ -22,48 +22,36 @@
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5
-                </cd>
+                <cd>5</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [1, 2, 3, 4, 5]
-                </cd>
+                <cd>[1, 2, 3, 4, 5]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  7
-                </cd>
+                <cd>7</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [1, 2, 3, 4, 5, 6, 7]
-                </cd>
+                <cd>[1, 2, 3, 4, 5, 6, 7]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  3
-                </cd>
+                <cd>3</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [1, 2, 3]
-                </cd>
+                <cd>[1, 2, 3]</cd>
               </p>
             </cell>
           </row>
@@ -161,17 +149,11 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code>
-# This problem is solved for you as an example of using list(range())
+_program = """</preamble>
+        <code># This problem is solved for you as an example of using list(range())
 m = int(input())
-print(list(range(1, m + 1)))
-</code>
-        <postamble visible="no">
-
-"""
-</postamble>
+print(list(range(1, m + 1)))</code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -244,8 +226,8 @@ myTests().main()        </tests>
     <exercise xml:id="exer-range_t2-2" label="exe-sec-HW3-practice-copy-1-47624">
       <title>Countdown! Print List: k down to 0</title>
       <statement>
-        <p>Write a program which will read a positive integer k from standard input. Use the <alert>list </alert>function and the <alert>range </alert>function to print a list of integers from the given integer k down to 0. </p>
-        <p>Notice the form of the output is a list. </p>
+        <p>Write a program which will read a positive integer k from standard input. Use the <alert>list</alert>function and the <alert>range</alert>function to print a list of integers from the given integer k down to 0.</p>
+        <p>Notice the form of the output is a list.</p>
         <p><alert>Hint:</alert> When we give the range function 3 arguments, the third argument is the "step size". A negative step size allows us to count down. For example, range(10, 1, -2) is the sequence 10, 8, 6, 4, 2.</p>
         <p>For example:</p>
         <tabular>
@@ -258,48 +240,36 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5
-                </cd>
+                <cd>5</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [5, 4, 3, 2, 1, 0]
-                </cd>
+                <cd>[5, 4, 3, 2, 1, 0]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0
-                </cd>
+                <cd>0</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [0]
-                </cd>
+                <cd>[0]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  3
-                </cd>
+                <cd>3</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [3, 2, 1, 0]
-                </cd>
+                <cd>[3, 2, 1, 0]</cd>
               </p>
             </cell>
           </row>
@@ -397,13 +367,9 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code />
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code></code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -476,7 +442,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-range_t4-2" label="exe-sec-HW3-practice-copy-1-32423">
       <title>Print List: k down to j</title>
       <statement>
-        <p>Write a program which will read two integers, j and k, from standard input. Use the <alert>list </alert>function and the <alert>range </alert>function to print a list of integers from k <alert>down to</alert> j (inclusive). </p>
+        <p>Write a program which will read two integers, j and k, from standard input. Use the <alert>list</alert>function and the <alert>range</alert>function to print a list of integers from k <alert>down to</alert> j (inclusive).</p>
         <p>Notice the form of the output is a list.</p>
         <p>You may assume that j is less than or equal to k.</p>
         <p>For example:</p>
@@ -490,51 +456,40 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  2
-5
-                </cd>
+                <cd>2
+5                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [5, 4, 3, 2]
-                </cd>
+                <cd>[5, 4, 3, 2]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0
-0
-                </cd>
+                <cd>0
+0                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [0]
-                </cd>
+                <cd>[0]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -3
+                <cd>-3
 3
                 </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [3, 2, 1, 0, -1, -2, -3]
-                </cd>
+                <cd>[3, 2, 1, 0, -1, -2, -3]</cd>
               </p>
             </cell>
           </row>
@@ -632,13 +587,9 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code />
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code></code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -720,7 +671,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-range_b3-2" label="exe-sec-HW3-practice-copy-1-32422">
       <title>Print List of Evens from -10 to k</title>
       <statement>
-        <p>Write a program which will read an integer k from standard input. Use the <alert>list </alert>function and the <alert>range </alert>function to print a list of the <alert>even</alert> integers from -10 up to k (inclusive). </p>
+        <p>Write a program which will read an integer k from standard input. Use the <alert>list</alert>function and the <alert>range</alert>function to print a list of the <alert>even</alert> integers from -10 up to k (inclusive).</p>
         <p>Notice the form of the output is a list.</p>
         <p>NOTE: If k is less than -10, your range command should automatically produce an empty sequence, resulting in an empty list being printed.  See the provided examples.</p>
         <p>For example:</p>
@@ -734,64 +685,48 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5
-                </cd>
+                <cd>5</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [-10, -8, -6, -4, -2, 0, 2, 4]
-                </cd>
+                <cd>[-10, -8, -6, -4, -2, 0, 2, 4]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -11
-                </cd>
+                <cd>-11</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  []
-                </cd>
+                <cd>[]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  11
-                </cd>
+                <cd>11</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10]
-                </cd>
+                <cd>[-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  2
-                </cd>
+                <cd>2</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [-10, -8, -6, -4, -2, 0, 2]
-                </cd>
+                <cd>[-10, -8, -6, -4, -2, 0, 2]</cd>
               </p>
             </cell>
           </row>
@@ -889,13 +824,9 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code />
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code></code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -968,8 +899,8 @@ myTests().main()        </tests>
     <exercise xml:id="exer-for_loop_multiples_of_m-2" label="exe-sec-HW3-practice-copy-1-32418">
       <title>Print Multiples of m</title>
       <statement>
-        <p>Define a function <c>print_multiples(m)</c> that takes a positive integer parameter, m, and prints all the <em>multiples </em>of m which are  between 1 and 100, inclusive. </p>
-        <p>Use a for loop to print one number per line of output. </p>
+        <p>Define a function <c>print_multiples(m)</c> that takes a positive integer parameter, m, and prints all the <em>multiples</em>of m which are  between 1 and 100, inclusive.</p>
+        <p>Use a for loop to print one number per line of output.</p>
         <p><alert>Hint:</alert> The first multiple of m is m. Then m + m, then m + m + m, etc.</p>
         <p>For example:</p>
         <tabular>
@@ -982,57 +913,45 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  m = 25
-print_multiples(m)
-                </cd>
+                <cd>m = 25
+print_multiples(m)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  25
+                <cd>25
 50
 75
-100
-                </cd>
+100                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  m = 45
-print_multiples(m)
-                </cd>
+                <cd>m = 45
+print_multiples(m)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  45
-90
-                </cd>
+                <cd>45
+90                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  m = 32
-print_multiples(m)
-                </cd>
+                <cd>m = 32
+print_multiples(m)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  32
+                <cd>32
 64
-96
-                </cd>
+96                </cd>
               </p>
             </cell>
           </row>
@@ -1127,11 +1046,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1210,10 +1127,10 @@ myTests().main()        </tests>
     <exercise xml:id="exer-range_b4-2" label="exe-sec-HW3-practice-copy-1-32427">
       <title>Print List of Integers from 1 through maximum, with a Condition</title>
       <statement>
-        <p>Read two positive integers, <alert>k </alert>and <alert>maximum</alert>, from standard input.</p>
-        <p>Use the <alert>range </alert>function to print a list of all the integers x between 1 and maximum inclusive such that x % k is 1.</p>
+        <p>Read two positive integers, <alert>k</alert>and <alert>maximum</alert>, from standard input.</p>
+        <p>Use the <alert>range</alert>function to print a list of all the integers x between 1 and maximum inclusive such that x % k is 1.</p>
         <p>Notice the form of the output is a list.</p>
-        <p><alert>Hint: </alert>The first number is 1. The next number (if there is a next number) is 1 + k. Then 1 + k + k, etc. What is the step size for this use of the range function?</p>
+        <p><alert>Hint:</alert>The first number is 1. The next number (if there is a next number) is 1 + k. Then 1 + k + k, etc. What is the step size for this use of the range function?</p>
         <p><alert>Note</alert>: DO NOT use an "if" statement, just print the list of a range.</p>
         <p>For example:</p>
         <tabular>
@@ -1226,51 +1143,40 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5
+                <cd>5
 18
                 </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [1, 6, 11, 16]
-                </cd>
+                <cd>[1, 6, 11, 16]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  2
-3
-                </cd>
+                <cd>2
+3                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [1, 3]
-                </cd>
+                <cd>[1, 3]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  7
-25
-                </cd>
+                <cd>7
+25                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [1, 8, 15, 22]
-                </cd>
+                <cd>[1, 8, 15, 22]</cd>
               </p>
             </cell>
           </row>
@@ -1368,13 +1274,9 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code />
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code></code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1445,9 +1347,9 @@ myTests().main()        </tests>
       </program>
     </exercise>
     <exercise xml:id="exer-count_from_j_to_k-2" label="exe-sec-HW3-practice-copy-1-31083">
-      <title>Count from j to k </title>
+      <title>Count from j to k</title>
       <statement>
-        <p>Write the code needed to get integers j and k from standard input, then use a <alert>for loop</alert> to print out all the integers from j through k. You can assume that k will be more than j. </p>
+        <p>Write the code needed to get integers j and k from standard input, then use a <alert>for loop</alert> to print out all the integers from j through k. You can assume that k will be more than j.</p>
         <p>Each number should be printed on a separate line. See the examples for the expected format of the output.</p>
         <p><alert>Hint</alert>: You need to use a for loop to iterate over a specific sequence of integers. Start by determining a correct call to the range function to create that sequence.</p>
         <p>For example:</p>
@@ -1461,58 +1363,48 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  2
+                <cd>2
 4
                 </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  2
+                <cd>2
 3
-4
-                </cd>
+4                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -3
-1
-                </cd>
+                <cd>-3
+1                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -3
+                <cd>-3
 -2
 -1
 0
-1
-                </cd>
+1                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5
+                <cd>5
 6
                 </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5
-6
-                </cd>
+                <cd>5
+6                </cd>
               </p>
             </cell>
           </row>
@@ -1610,13 +1502,9 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code />
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code></code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1689,7 +1577,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-for_loop_count_by_twos-2" label="exe-sec-HW3-practice-copy-1-269760">
       <title>For Loop: Count by Twos</title>
       <statement>
-        <p>Write the code needed to get two integers, j and k, from standard input. Using a <c>for</c> loop and the <c>range</c> function, "count" by twos from j to k (inclusive), one integer per line. You may assume that j is less than or equal to k.</p>
+        <p>Write the code needed to get two integers, j and k, from standard input. Using a <c>for</c> loop and the <c>range</c> function, "count" by twos from j to k (inclusive), one integer per line. You may assume that j is less than or equal to k.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="30%" />
@@ -1701,80 +1589,65 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  4
-11
-                </cd>
+                <cd>4
+11                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  4
+                <cd>4
 6
 8
-10
-                </cd>
+10                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  1
-5
-                </cd>
+                <cd>1
+5                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  1
+                <cd>1
 3
-5
-                </cd>
+5                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -3
+                <cd>-3
 3
                 </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -3
+                <cd>-3
 -1
 1
-3
-                </cd>
+3                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  8
-16
-                </cd>
+                <cd>8
+16                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  8
+                <cd>8
 10
 12
 14
-16
-                </cd>
+16                </cd>
               </p>
             </cell>
           </row>
@@ -1872,13 +1745,9 @@ def input(prompt=None):
 None
 
 
-_program = """
-</preamble>
-        <code />
-        <postamble visible="no">
-
-"""
-</postamble>
+_program = """</preamble>
+        <code></code>
+        <postamble visible="no">"""</postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1960,13 +1829,13 @@ myTests().main()        </tests>
     <exercise xml:id="exer-accum_sum_start_to_stop-2" label="exe-sec-HW3-practice-copy-1-31933">
       <title>Summit</title>
       <statement>
-        <p>The function <c>summit</c> takes two integer parameters, <c>start</c> and <c>stop</c>, and returns the sum of all integers from <c>start</c> to <c>stop</c>, inclusive. For example, <c>summit(-2, 3)</c><alert>returns </alert>the value of -2 + -1 + 0 + 1 + 2 + 3, which is 3. You may assume that <c>start</c> &lt;= <c>stop</c>. </p>
+        <p>The function <c>summit</c> takes two integer parameters, <c>start</c> and <c>stop</c>, and returns the sum of all integers from <c>start</c> to <c>stop</c>, inclusive. For example, <c>summit(-2, 3)</c> <alert>returns</alert>the value of -2 + -1 + 0 + 1 + 2 + 3, which is 3. You may assume that <c>start</c> &lt;= <c>stop</c>.</p>
         <p>Write a definition for <alert>summit</alert>.</p>
-        <p>Use the <alert>accumulate-a-sum </alert>pattern to solve this problem:</p>
-        <p>  - Initialize the accumulator variable.</p>
-        <p>  - Start a for loop to iterate over the required sequence of integers (make a call to the range function); <c>for num in range(....):</c></p>
-        <p>  - Inside the for loop, update the accumulator by adding <c>num </c>to the accumulator.</p>
-        <p>  - After the for loop, return the value of the accumulator variable.</p>
+        <p>Use the <alert>accumulate-a-sum</alert>pattern to solve this problem:</p>
+        <p>- Initialize the accumulator variable.</p>
+        <p>- Start a for loop to iterate over the required sequence of integers (make a call to the range function); <c>for num in range(....):</c></p>
+        <p>- Inside the for loop, update the accumulator by adding <c>num</c>to the accumulator.</p>
+        <p>- After the for loop, return the value of the accumulator variable.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1978,64 +1847,48 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(summit(1, 3))
-                </cd>
+                <cd>print(summit(1, 3))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  6
-                </cd>
+                <cd>6</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(summit(4, 9))
-                </cd>
+                <cd>print(summit(4, 9))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  39
-                </cd>
+                <cd>39</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(summit(25, 25))
-                </cd>
+                <cd>print(summit(25, 25))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  25
-                </cd>
+                <cd>25</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(summit(-10, 23))
-                </cd>
+                <cd>print(summit(-10, 23))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  221
-                </cd>
+                <cd>221</cd>
               </p>
             </cell>
           </row>
@@ -2130,13 +1983,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code>
-def summit(start, stop):
-</code>
-        <postamble visible="no" />
+None</preamble>
+        <code>def summit(start, stop):</code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2209,7 +2058,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-accum_odds_sum_1_to_n-2" label="exe-sec-HW3-practice-copy-1-31932">
       <title>Sum Odds from 1 to n (accumulate a sum)</title>
       <statement>
-        <p>The function <c>summation</c> takes a positive integer <c>n</c> and <alert>returns </alert>the sum of all the odd integers from 1 through <c>n</c>.  For example, summation(5) returns 9 since 1 + 3 + 5 equals 9.</p>
+        <p>The function <c>summation</c> takes a positive integer <c>n</c> and <alert>returns</alert>the sum of all the odd integers from 1 through <c>n</c>.  For example, summation(5) returns 9 since 1 + 3 + 5 equals 9.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -2221,48 +2070,36 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(summation(5))
-                </cd>
+                <cd>print(summation(5))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  9
-                </cd>
+                <cd>9</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(summation(1))
-                </cd>
+                <cd>print(summation(1))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  1
-                </cd>
+                <cd>1</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(summation(1001))
-                </cd>
+                <cd>print(summation(1001))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  251001
-                </cd>
+                <cd>251001</cd>
               </p>
             </cell>
           </row>
@@ -2357,11 +2194,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2455,32 +2290,24 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(sum_of_squares(3))
-                </cd>
+                <cd>print(sum_of_squares(3))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  14
-                </cd>
+                <cd>14</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(sum_of_squares(2))
-                </cd>
+                <cd>print(sum_of_squares(2))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  5
-                </cd>
+                <cd>5</cd>
               </p>
             </cell>
           </row>
@@ -2575,11 +2402,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2655,7 +2480,7 @@ myTests().main()        </tests>
         <p>
           Write a function <c>partial_sum(n)</c> which accumulates and returns the sum of the first n terms of the infinite sequence
           <image decorative="yes" source="images/158384-download.svg" width="90%" />
-          <alert>Note</alert>: n will be a positive integer. For example, when n is 3, the return value is  <c>1/2 + 1/4 + 1/8</c>  (the result from adding the first three terms), which equals <c>0.875</c>.<alert>Hint</alert>: Each denominator is twice as large as the previous denominator. The nth denominator is 2&amp;lt;sup&amp;rt;n&amp;lt;/sup&amp;rt;. You might solve this problem using two accumulators: <c>acc </c>could be the accumulated sum so far, and <c>denom </c>could be the value for the denominator of the next term to be added.
+          <alert>Note</alert>: n will be a positive integer. For example, when n is 3, the return value is <c>1/2 + 1/4 + 1/8</c> (the result from adding the first three terms), which equals <c>0.875</c>.<alert>Hint</alert>: Each denominator is twice as large as the previous denominator. The nth denominator is 2&amp;lt;sup&amp;rt;n&amp;lt;/sup&amp;rt;. You might solve this problem using two accumulators: <c>acc</c>could be the accumulated sum so far, and <c>denom</c>could be the value for the denominator of the next term to be added.
         </p>
         <p>For example:</p>
         <tabular>
@@ -2668,51 +2493,39 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ans = partial_sum(3)
-print(ans)
-                </cd>
+                <cd>ans = partial_sum(3)
+print(ans)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0.875
-                </cd>
+                <cd>0.875</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ans = partial_sum(6)
-print(ans)
-                </cd>
+                <cd>ans = partial_sum(6)
+print(ans)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0.984375
-                </cd>
+                <cd>0.984375</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ans = partial_sum(9)
-print(ans)
-                </cd>
+                <cd>ans = partial_sum(9)
+print(ans)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0.998046875
-                </cd>
+                <cd>0.998046875</cd>
               </p>
             </cell>
           </row>
@@ -2807,11 +2620,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2881,7 +2692,7 @@ myTests().main()        </tests>
       <title>Factorial Function (accumulate a product)</title>
       <statement>
         <p>
-          The function <c>factorial</c> takes a non-negative integer parameter, <c>n</c>, and <alert>returns </alert>the value of n factorial (n!). Note:
+          The function <c>factorial</c> takes a non-negative integer parameter, <c>n</c>, and <alert>returns</alert>the value of n factorial (n!). Note:
           <ul>
             <li>When n is positive, n! = 1 * 2 * 3 * ... * n.  For example, 5! = 1 * 2 * 3 * 4 * 5 = 120.</li>
             <li>When n is zero, n! is defined to be 1. (Function returns 1.)</li>
@@ -2899,48 +2710,36 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(factorial(3))
-                </cd>
+                <cd>print(factorial(3))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  6
-                </cd>
+                <cd>6</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(factorial(4))
-                </cd>
+                <cd>print(factorial(4))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  24
-                </cd>
+                <cd>24</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(factorial(0))
-                </cd>
+                <cd>print(factorial(0))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  1
-                </cd>
+                <cd>1</cd>
               </p>
             </cell>
           </row>
@@ -3035,11 +2834,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")

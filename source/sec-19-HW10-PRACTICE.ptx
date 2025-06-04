@@ -1,22 +1,21 @@
 <section xml:id="sec-HW10-PRACTICE-1">
   <title>HW10 PRACTICE</title>
   <introduction>
-    <p dir="ltr">  - Ungraded Assignment</p>
+    <p dir="ltr">- Ungraded Assignment</p>
   </introduction>
   <exercises>
     <exercise xml:id="exer-defining_classes_intro-2" label="exe-sec-HW10-PRACTICE-1-32302">
       <title>Defining Classes</title>
       <statement>
-        <p>Previously, you have used built-in types in Python like <c>dict</c>, <c>str</c>, and <c>list</c>. Each of these types comes with its own methods, such as <c>keys</c>, <c>lower</c>, and <c>append</c>. </p>
-        <p>Every object has a <alert>type </alert>that indicates which class the object belongs to. The purpose of the class is to specify the instance variables (aka data, attributes) and methods (aka functions) that each object belonging to the class will have. </p>
-        <p>For example, in real life, every <alert>car </alert>has attributes such as make, model, and current odometer. And every reasonable car has available methods such as start engine, shift transmission, and honk horn.</p>
-        <p>Our goal in this assignment is to learn how to <em>create new data types</em> by defining our own classes. </p>
+        <p>Previously, you have used built-in types in Python like <c>dict</c>, <c>str</c>, and <c>list</c>. Each of these types comes with its own methods, such as <c>keys</c>, <c>lower</c>, and <c>append</c>.</p>
+        <p>Every object has a <alert>type</alert>that indicates which class the object belongs to. The purpose of the class is to specify the instance variables (aka data, attributes) and methods (aka functions) that each object belonging to the class will have.</p>
+        <p>For example, in real life, every <alert>car</alert>has attributes such as make, model, and current odometer. And every reasonable car has available methods such as start engine, shift transmission, and honk horn.</p>
+        <p>Our goal in this assignment is to learn how to <em>create new data types</em> by defining our own classes.</p>
       </statement>
     </exercise>
     <exercise xml:id="exer-pogil_1a_classname-2" label="exe-sec-HW10-PRACTICE-1-32303">
-      <title>((Placeholder title))</title>
       <statement>
-        <p>What is the <alert>name </alert>of the class being defined here:</p>
+        <p>What is the <alert>name</alert>of the class being defined here:</p>
         <p>
           <image decorative="yes" source="images/32303-image.png" width="90%" />
         </p>
@@ -25,11 +24,11 @@
       <evaluation>
         <evaluate>
           <test correct="yes">
-            <strcmp value="Sentence" />
+            <strcmp>Sentence</strcmp>
             <feedback />
           </test>
           <test>
-            <strcmp value="sentence" />
+            <strcmp>sentence</strcmp>
             <feedback>
               <p>Spell it exactly right, including capitalization.</p>
             </feedback>
@@ -38,9 +37,8 @@
       </evaluation>
     </exercise>
     <exercise xml:id="exer-pogil_1b_methods-2" label="exe-sec-HW10-PRACTICE-1-32304">
-      <title>((Placeholder title))</title>
       <statement>
-        <p>How many <alert>methods </alert>are in the class being defined here:</p>
+        <p>How many <alert>methods</alert>are in the class being defined here:</p>
         <p>
           <image decorative="yes" source="images/32304-image.png" width="90%" />
         </p>
@@ -58,9 +56,8 @@
       </evaluation>
     </exercise>
     <exercise xml:id="exer-pogil_1c_self-2" label="exe-sec-HW10-PRACTICE-1-32305">
-      <title>((Placeholder title))</title>
       <statement>
-        <p>What is the <alert>name of the first parameter</alert> in all the methods?</p>
+        <p>What is the <alert>name of the first parameter</alert> in all the methods?</p>
         <p>
           <image decorative="yes" source="images/32305-Length.png" width="90%" />
         </p>
@@ -69,13 +66,13 @@
       <evaluation>
         <evaluate>
           <test correct="yes">
-            <strcmp value="self" />
+            <strcmp>self</strcmp>
             <feedback>
               <p>Correct. The first parameter, <c>self</c>, refers to the Length object which activated the method.</p>
             </feedback>
           </test>
           <test>
-            <strcmp value="Self" />
+            <strcmp>Self</strcmp>
             <feedback>
               <p>Spell it exactly right, including capitalization.</p>
             </feedback>
@@ -84,9 +81,8 @@
       </evaluation>
     </exercise>
     <exercise xml:id="exer-pogil_2a_main_num_objects-2" label="exe-sec-HW10-PRACTICE-1-32340">
-      <title>((Placeholder title))</title>
       <statement>
-        <p>In the <c>"__main__"</c> code block below, how many different <c>Sentence </c>objects are created by activating the class constructor?</p>
+        <p>In the <c>"__main__"</c> code block below, how many different <c>Sentence</c>objects are created by activating the class constructor?</p>
         <p>
           <image decorative="yes" source="images/32340-image%20%281%29.png" width="90%" />
         </p>
@@ -97,14 +93,13 @@
           <test correct="yes">
             <numcmp tolerance="0.0" value="4.0" />
             <feedback>
-              <p>Correct! The four Sentence objects are<alert> greeting, question, name, and another.</alert></p>
+              <p>Correct! The four Sentence objects are<alert>greeting, question, name, and another.</alert></p>
             </feedback>
           </test>
         </evaluate>
       </evaluation>
     </exercise>
     <exercise xml:id="exer-pogil_2d_method_parameters-2" label="exe-sec-HW10-PRACTICE-1-32308">
-      <title>((Placeholder title))</title>
       <statement>
         <p><alert>How many parameters</alert> does the <c>convert_to</c> method have?</p>
         <p>
@@ -117,16 +112,15 @@
           <test correct="yes">
             <numcmp tolerance="0.0" value="2.0" />
             <feedback>
-              <p>Correct! The two parameters are <c>self </c>and <c>new_unit</c>.</p>
+              <p>Correct! The two parameters are <c>self</c>and <c>new_unit</c>.</p>
             </feedback>
           </test>
         </evaluate>
       </evaluation>
     </exercise>
     <exercise xml:id="exer-pogil_2e_method_call_arguments-2" label="exe-sec-HW10-PRACTICE-1-32309">
-      <title>((Placeholder title))</title>
       <statement>
-        <p>The <c>convert_to</c> method is called on lines 31 and 38. What is the <alert>number of arguments</alert> for a <c>convert_to</c> method call?</p>
+        <p>The <c>convert_to</c> method is called on lines 31 and 38. What is the <alert>number of arguments</alert> for a <c>convert_to</c> method call?</p>
         <p>
           <image decorative="yes" source="images/32309-length_main.png" width="90%" />
         </p>
@@ -144,9 +138,8 @@
       </evaluation>
     </exercise>
     <exercise xml:id="exer-pogil_2f_arguments_vs_parameters-2" label="exe-sec-HW10-PRACTICE-1-32326">
-      <title>((Placeholder title))</title>
       <statement>
-        <p>Based on your previous answers, how does the number of arguments for each method <em>call </em><alert>differ from</alert> the number of parameters specified in the method's <em>definition</em>?</p>
+        <p>Based on your previous answers, how does the number of arguments for each method <em>call</em><alert>differ from</alert> the number of parameters specified in the method's <em>definition</em>?</p>
       </statement>
       <choices multiple-correct="no" randomize="yes">
         <choice correct="yes">
@@ -317,8 +310,8 @@
 
       def __str__(self):
           return str(self.hours) + ':' + str(self.minutes) + ':' + str(self.seconds)        </pre>
-        <p><alert>Recall:</alert>  The <c>__str__ </c>method returns the string representation of the object. This method is activated (automatically!) whenever <c>print()</c> or <alert><em><c>str</c></em><c>()</c></alert> is invoked on an object. (Like all the other methods whose names are surrounded by double underscores (<c>__</c>), we never call <c>__str__</c> directly.  It is there, waiting to "answer the call" when we ask to <c>print</c> an object or use <c>str() </c>to convert an object to a string.)</p>
-        <p><alert>Question: </alert> What output will be produced when the following lines of code are executed?</p>
+        <p><alert>Recall:</alert> The <c>__str__</c>method returns the string representation of the object. This method is activated (automatically!) whenever <c>print()</c> or <alert><em><c>str</c></em><c>()</c></alert> is invoked on an object. (Like all the other methods whose names are surrounded by double underscores (<c>__</c>), we never call <c>__str__</c> directly.  It is there, waiting to "answer the call" when we ask to <c>print</c> an object or use <c>str()</c>to convert an object to a string.)</p>
+        <p><alert>Question:</alert> What output will be produced when the following lines of code are executed?</p>
         <pre>    t2 = Timer()
     t2.minutes = 7
     t2.seconds = 15
@@ -353,7 +346,7 @@
         <choice correct="no">
           <statement>
             <p>
-              <p><alert><c>Hours: 15 </c><c>Minutes: 7 Seconds: 0</c></alert></p>
+              <p><alert><c>Hours: 15</c><c>Minutes: 7 Seconds: 0</c></alert></p>
             </p>
           </statement>
           <feedback />
@@ -625,19 +618,19 @@
       <evaluation>
         <evaluate>
           <test correct="yes">
-            <strcmp value="t1.set(5, 17, 51)" />
+            <strcmp>t1.set(5, 17, 51)</strcmp>
             <feedback />
           </test>
           <test>
-            <strcmp value="t1.set(5,17,51)" />
+            <strcmp>t1.set(5,17,51)</strcmp>
             <feedback />
           </test>
           <test>
-            <strcmp value="t1.set(5, 17,51)" />
+            <strcmp>t1.set(5, 17,51)</strcmp>
             <feedback />
           </test>
           <test>
-            <strcmp value="t1.set(5,17, 51)" />
+            <strcmp>t1.set(5,17, 51)</strcmp>
             <feedback />
           </test>
         </evaluate>
@@ -646,8 +639,8 @@
     <exercise xml:id="exer-timer_class-convert_to_seconds_method-2" label="exe-sec-HW10-PRACTICE-1-161517">
       <title>Convert to Seconds</title>
       <statement>
-        <p> Implement a method for the Timer class, convert_to_seconds. For a given Timer, the method returns the equivalent number of seconds. For example, if Timer <c>t1</c> is currently 0:1:15 (0 hours, 1 minute, 15 seconds), then the call <c>t1.convert_to_seconds()</c> will return 75.</p>
-        <p>Hint: Remember that inside the body of the convert_to_seconds method definition, we use the parameter <c>self </c>to refer to the <c>Timer </c>object which activated the method.</p>
+        <p>Implement a method for the Timer class, convert_to_seconds. For a given Timer, the method returns the equivalent number of seconds. For example, if Timer <c>t1</c> is currently 0:1:15 (0 hours, 1 minute, 15 seconds), then the call <c>t1.convert_to_seconds()</c> will return 75.</p>
+        <p>Hint: Remember that inside the body of the convert_to_seconds method definition, we use the parameter <c>self</c>to refer to the <c>Timer</c>object which activated the method.</p>
         <p>The <c>Timer</c> class is given below for reference.</p>
         <pre>    class Timer:
         """ A class that represents a timer. """
@@ -674,18 +667,14 @@
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  timer1 = Timer(0, 5, 30)
+                <cd>timer1 = Timer(0, 5, 30)
 ans = timer1.convert_to_seconds()
-print(ans)
-                </cd>
+print(ans)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  330
-                </cd>
+                <cd>330</cd>
               </p>
             </cell>
           </row>
@@ -793,17 +782,11 @@ class Timer:
         print('Seconds:', self.__seconds)
 
     def __str__(self):
-        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)
-    
-
-
-</preamble>
-        <code>
-# NOTE: Do not change the indentation! It is required because the
+        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)</preamble>
+        <code># NOTE: Do not change the indentation! It is required because the
 # code will be pasted into the Timer class definition body.
-    def convert_to_seconds(self):
-</code>
-        <postamble visible="no" />
+    def convert_to_seconds(self):</code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -899,8 +882,8 @@ myTests().main()        </tests>
     <exercise xml:id="exer-timer_class-add_timers-2" label="exe-sec-HW10-PRACTICE-1-32341">
       <title>Add Two Timers</title>
       <statement>
-        <p> Write a function, add_timers, that takes two <c>Timer</c> objects, <c>t1</c> and <c>t2</c>, and returns a new <c>Timer</c> object that is the sum of <c>t1</c> and <c>t2</c>. Neither of the original <c>Timer</c> objects should be changed.</p>
-        <p>The minutes and seconds attributes for the new <c>Timer</c> object must be valid (i.e., in the range 0 through 59). This means you may need to do some conversion from seconds to minutes and from minutes to hours. You may assume that the attributes for the provided <c>Timer</c> objects <c>t1</c> and <c>t2</c> are valid.</p>
+        <p>Write a function, add_timers, that takes two <c>Timer</c> objects, <c>t1</c> and <c>t2</c>, and returns a new <c>Timer</c> object that is the sum of <c>t1</c> and <c>t2</c>. Neither of the original <c>Timer</c> objects should be changed.</p>
+        <p>The minutes and seconds attributes for the new <c>Timer</c> object must be valid (i.e., in the range 0 through 59). This means you may need to do some conversion from seconds to minutes and from minutes to hours. You may assume that the attributes for the provided <c>Timer</c> objects <c>t1</c> and <c>t2</c> are valid.</p>
         <p>Note that the function you are writing is <alert>NOT</alert> a <c>Timer</c> class method. It is just a regular function.</p>
         <p><alert>HINT</alert>: Use floor division (//) and remainder (%) to implement this function.</p>
         <p>The <c>Timer</c> class is given below for reference.</p>
@@ -938,40 +921,32 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  timer1 = Timer(0, 5, 30)
+                <cd>timer1 = Timer(0, 5, 30)
 timer2 = Timer(2, 19, 0)
 timer3 = add_timers(timer1, timer2)
 print(timer3)
-if(str(timer3) != "2:24:30"):  print("Should be: 2:24:30")
-                </cd>
+if(str(timer3) != "2:24:30"):  print("Should be: 2:24:30")                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  2:24:30
-                </cd>
+                <cd>2:24:30</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  timer1 = Timer(1, 51, 41)
+                <cd>timer1 = Timer(1, 51, 41)
 timer2 = Timer(4, 48, 59)
 timer3 = add_timers(timer1, timer2)
 print(timer3)
-if(str(timer3) != "6:40:40"):  print("Should be: 6:40:40")
-                </cd>
+if(str(timer3) != "6:40:40"):  print("Should be: 6:40:40")                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  6:40:40
-                </cd>
+                <cd>6:40:40</cd>
               </p>
             </cell>
           </row>
@@ -1088,15 +1063,9 @@ class Timer:
         return self.__hours
 
     def __str__(self):
-        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)
-    
-
-
-</preamble>
-        <code>
-def add_timers(t1, t2):
-</code>
-        <postamble visible="no" />
+        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)</preamble>
+        <code>def add_timers(t1, t2):</code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1218,9 +1187,9 @@ myTests().main()        </tests>
     <exercise xml:id="exer-implement_comp_oper_info-2" label="exe-sec-HW10-PRACTICE-1-32322">
       <title>Implementing the Comparison Operators</title>
       <statement>
-        <p>Python has "magic" methods to make the comparison operators work with objects. The six comparison operators (&lt;, &lt;=, &gt;, &gt;=, == and !=) are enabled simply by implementing the following special methods: <c>__lt__, __le__, __gt__, __ge__, __eq__ and __ne__</c></p>
-        <p>See:  <em><url href="https://www.tutorialspoint.com/How-to-overload-Python-comparison-operators">https://www.tutorialspoint.com/How-to-overload-Python-comparison-operators</url></em></p>
-        <p>For example, here is the code to implement <c>__lt__</c> (the &lt; or "less than" operator) for the <c>Timer </c>class. Notice we start by converting both Timers to an integer number of seconds, then simply compare those numbers of seconds. Comparing two Timers reduces to the problem of comparing two integers.</p>
+        <p>Python has "magic" methods to make the comparison operators work with objects. The six comparison operators (&lt;, &lt;=, &gt;, &gt;=, == and !=) are enabled simply by implementing the following special methods: <c>__lt__, __le__, __gt__, __ge__, __eq__ and __ne__</c></p>
+        <p>See: <em><url href="https://www.tutorialspoint.com/How-to-overload-Python-comparison-operators">https://www.tutorialspoint.com/How-to-overload-Python-comparison-operators</url></em></p>
+        <p>For example, here is the code to implement <c>__lt__</c> (the &lt; or "less than" operator) for the <c>Timer</c>class. Notice we start by converting both Timers to an integer number of seconds, then simply compare those numbers of seconds. Comparing two Timers reduces to the problem of comparing two integers.</p>
         <pre>
     def __lt__(self, other):
         sec_self = self.convert_to_seconds()
@@ -1232,7 +1201,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-timer_class-equivalence_operator_overload-2" label="exe-sec-HW10-PRACTICE-1-32324">
       <title>Equivalence and Inequivalence Operators: ==, !=</title>
       <statement>
-        <p>Two Timer objects are <alert>equivalent </alert>exactly when they represent the same amount of time. Implement the  <c>__eq__</c> and <c>__ne__</c> methods (i.e., == and != operators) for the <c>Timer </c>class. </p>
+        <p>Two Timer objects are <alert>equivalent</alert>exactly when they represent the same amount of time. Implement the <c>__eq__</c> and <c>__ne__</c> methods (i.e., == and != operators) for the <c>Timer</c>class.</p>
         <p><alert>Hint</alert>: Assume the <c>convert_to_seconds</c> method has already been implemented.</p>
         <p>For example:</p>
         <tabular>
@@ -1245,40 +1214,32 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  timer1 = Timer(0, 5, 30)
+                <cd>timer1 = Timer(0, 5, 30)
 timer2 = Timer(0, 5, 30)
 ans1 = timer1 == timer2
 ans2 = timer1 != timer2
-print(ans1, ans2)
-                </cd>
+print(ans1, ans2)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  True False
-                </cd>
+                <cd>True False</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  timer1 = Timer(1, 5, 30)
+                <cd>timer1 = Timer(1, 5, 30)
 timer2 = Timer(0, 5, 30)
 ans = timer1 == timer2
 ans2 = timer1 != timer2
-print(ans, ans2)
-                </cd>
+print(ans, ans2)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  False True
-                </cd>
+                <cd>False True</cd>
               </p>
             </cell>
           </row>
@@ -1398,20 +1359,14 @@ class Timer:
         return self.__seconds + 60*self.__minutes + 3600*self.__hours
         
     def __str__(self):
-        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)
-
-
-
-</preamble>
-        <code>
-# NOTE: Do not change the indentation! It is required because the
+        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)</preamble>
+        <code># NOTE: Do not change the indentation! It is required because the
 # code will be pasted into the Timer class definition body.
     def __eq__(self, other):
         
         
-    def __ne__(self, other):
-</code>
-        <postamble visible="no" />
+    def __ne__(self, other):</code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")

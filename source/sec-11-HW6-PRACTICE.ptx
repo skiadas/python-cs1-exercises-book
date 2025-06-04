@@ -10,9 +10,9 @@
         <p>Given a list, <c>L</c>, the function <c>front_two</c> creates a new list of length 2 out of the first two items in <c>L</c> as follows:</p>
         <p>
           <ul>
-            <li>In the new list, the second item becomes the first item, and the first item becomes the second. </li>
-            <li>If <c>L</c> contains only one item, the first item in the new list should be the value <c>None</c>. </li>
-            <li>If <c>L</c> is empty, both items in the new list should be value <c>None</c>. </li>
+            <li>In the new list, the second item becomes the first item, and the first item becomes the second.</li>
+            <li>If <c>L</c> contains only one item, the first item in the new list should be the value <c>None</c>.</li>
+            <li>If <c>L</c> is empty, both items in the new list should be value <c>None</c>.</li>
             <li>The function returns the new list.</li>
           </ul>
         </p>
@@ -27,68 +27,52 @@
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = ['a', 'b', 'c', 'd']
-print(front_two(L))
-                </cd>
+                <cd>L = ['a', 'b', 'c', 'd']
+print(front_two(L))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['b', 'a']
-                </cd>
+                <cd>['b', 'a']</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = []
-print(front_two(L))
-                </cd>
+                <cd>L = []
+print(front_two(L))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [None, None]
-                </cd>
+                <cd>[None, None]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = [5, 2]
-print(front_two(L))
-                </cd>
+                <cd>L = [5, 2]
+print(front_two(L))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [2, 5]
-                </cd>
+                <cd>[2, 5]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = [7]
-print(front_two(L))
-                </cd>
+                <cd>L = [7]
+print(front_two(L))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [None, 7]
-                </cd>
+                <cd>[None, 7]</cd>
               </p>
             </cell>
           </row>
@@ -183,13 +167,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code>
-def front_two(L):
-</code>
-        <postamble visible="no" />
+None</preamble>
+        <code>def front_two(L):</code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -268,11 +248,11 @@ myTests().main()        </tests>
     <exercise xml:id="exer-func_print_items_reverse-2" label="exe-sec-HW6-PRACTICE-1-31906">
       <title>Print Reverse</title>
       <statement>
-        <p>The function <c>print_reverse</c> takes one parameter, <c>L</c>, which is a list.  The function then prints the items in the list <alert>in reverse order</alert>, one item per line, <alert>WITHOUT changing the value of <c>L</c></alert>.</p>
+        <p>The function <c>print_reverse</c> takes one parameter, <c>L</c>, which is a list.  The function then prints the items in the list <alert>in reverse order</alert>, one item per line, <alert>WITHOUT changing the value of <c>L</c></alert>.</p>
         <p>Write the function definition.</p>
         <p>Note 1: This function does NOT get anything from standard input.</p>
         <p>Note 2: This function DOES, however, print to standard output.</p>
-        <p>Note 3: You should NOT return anything from this function (let it return <c>None </c>by default).</p>
+        <p>Note 3: You should NOT return anything from this function (let it return <c>None</c>by default).</p>
         <p>Hint: Some ideas for iterating over a list in reverse order are given <url href="https://thispointer.com/python-different-ways-to-iterate-over-a-list-in-reverse-order/">here</url>.</p>
         <p>For example:</p>
         <tabular>
@@ -285,60 +265,50 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = ['apple', 'banana', 'cherry']
+                <cd>L = ['apple', 'banana', 'cherry']
 Lcopy = L[:]
 return_value = print_reverse(L)
 if return_value != None or L != Lcopy:
-    print("Error")
-                </cd>
+    print("Error")                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  cherry
+                <cd>cherry
 banana
-apple
-                </cd>
+apple                </cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = ['happy']
+                <cd>L = ['happy']
 Lcopy = L[:]
 return_value = print_reverse(L)
 if return_value != None or L != Lcopy:
-    print("Error")
-                </cd>
+    print("Error")                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  happy
-                </cd>
+                <cd>happy</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = []
+                <cd>L = []
 Lcopy = L[:]
 return_value = print_reverse(L)
 if return_value != None or L != Lcopy:
-    print("Error")
-                </cd>
+    print("Error")                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd></cd>
+                <cd />
               </p>
             </cell>
           </row>
@@ -433,11 +403,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -534,7 +502,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-sum_evens-2" label="exe-sec-HW6-PRACTICE-1-31990">
       <title>Sum Evens</title>
       <statement>
-        <p>The function <c>sum_evens</c> takes a list of integers and returns the <alert>sum</alert> of all the even integers in the list.</p>
+        <p>The function <c>sum_evens</c> takes a list of integers and returns the <alert>sum</alert> of all the even integers in the list.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -546,48 +514,36 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(sum_evens([1, 5, 2, 5, 3, 5, 4]))
-                </cd>
+                <cd>print(sum_evens([1, 5, 2, 5, 3, 5, 4]))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  6
-                </cd>
+                <cd>6</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(sum_evens([5, 5, -5, -5]))
-                </cd>
+                <cd>print(sum_evens([5, 5, -5, -5]))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0
-                </cd>
+                <cd>0</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(sum_evens([16, 24, 30]))
-                </cd>
+                <cd>print(sum_evens([16, 24, 30]))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  70
-                </cd>
+                <cd>70</cd>
               </p>
             </cell>
           </row>
@@ -682,11 +638,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -795,8 +749,8 @@ myTests().main()        </tests>
     <exercise xml:id="exer-count_contains_x-2" label="exe-sec-HW6-PRACTICE-1-32010">
       <title>Count Contains 'og'</title>
       <statement>
-        <p>The function <c>count_contains_og </c>takes a list of strings and returns how many strings in the list contain 'og' / 'OG' / 'oG' / 'Og' (check for 'og', ignoring case).</p>
-        <p><alert>Hint</alert>: Use the sequence membership operator <alert>in</alert> to help you check for 'og' in the individual strings. Create a <alert>lower-cased</alert> version of the string (<c>lower</c>), then use the <c>in</c> operator.</p>
+        <p>The function <c>count_contains_og</c>takes a list of strings and returns how many strings in the list contain 'og' / 'OG' / 'oG' / 'Og' (check for 'og', ignoring case).</p>
+        <p><alert>Hint</alert>: Use the sequence membership operator <alert>in</alert> to help you check for 'og' in the individual strings. Create a <alert>lower-cased</alert> version of the string (<c>lower</c>), then use the <c>in</c> operator.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -808,51 +762,39 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  str_list = ['cat', 'dog', 'FROG', 'monkey']
-print(count_contains_og(str_list))
-                </cd>
+                <cd>str_list = ['cat', 'dog', 'FROG', 'monkey']
+print(count_contains_og(str_list))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  2
-                </cd>
+                <cd>2</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  strlist = ["X", "x"]
-print(count_contains_og(strlist))
-                </cd>
+                <cd>strlist = ["X", "x"]
+print(count_contains_og(strlist))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  0
-                </cd>
+                <cd>0</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  list_of_one_og = ["Doggie"]
-print(count_contains_og(list_of_one_og))
-                </cd>
+                <cd>list_of_one_og = ["Doggie"]
+print(count_contains_og(list_of_one_og))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  1
-                </cd>
+                <cd>1</cd>
               </p>
             </cell>
           </row>
@@ -947,11 +889,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1050,7 +990,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-ffirst_negative_trickier-2" label="exe-sec-HW6-PRACTICE-1-32045">
       <title>First Negative</title>
       <statement>
-        <p>Define the function <c>first_negative(nums)</c> takes one parameter. <c>nums</c>, a possibly empty list of numbers. The function then returns the first negative item in <c>numlist</c>. </p>
+        <p>Define the function <c>first_negative(nums)</c> takes one parameter. <c>nums</c>, a possibly empty list of numbers. The function then returns the first negative item in <c>numlist</c>.</p>
         <p>Note: if there are <alert>NO</alert> negative numbers in the list, the function returns the Python object <c>None</c>.</p>
         <p>For example:</p>
         <tabular>
@@ -1063,64 +1003,48 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(first_negative([1, 3, 9, -2]))
-                </cd>
+                <cd>print(first_negative([1, 3, 9, -2]))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -2
-                </cd>
+                <cd>-2</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(first_negative([1, 3, 9, 2]))
-                </cd>
+                <cd>print(first_negative([1, 3, 9, 2]))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  None
-                </cd>
+                <cd>None</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(first_negative([1, -3, -9, -2]))
-                </cd>
+                <cd>print(first_negative([1, -3, -9, -2]))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -3
-                </cd>
+                <cd>-3</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(first_negative([0, -1.1, 0, -2.2, 0, -3.3, 0]))
-                </cd>
+                <cd>print(first_negative([0, -1.1, 0, -2.2, 0, -3.3, 0]))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  -1.1
-                </cd>
+                <cd>-1.1</cd>
               </p>
             </cell>
           </row>
@@ -1215,11 +1139,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1328,11 +1250,11 @@ myTests().main()        </tests>
     <exercise xml:id="exer-square_nums_1-2" label="exe-sec-HW6-PRACTICE-1-32004">
       <title>Square Nums 1</title>
       <statement>
-        <p>Define the function <c>square_nums</c> which takes a list of numbers, <c>numlist</c>, and returns a NEW list containing the squares of the numbers in the original list.  The given list, <c>numlist</c>, should not be changed.</p>
-        <p><alert>Note</alert>: Use the accumulator pattern and <c>newlist.append(item)</c> to solve this problem.  </p>
+        <p>Define the function <c>square_nums</c> which takes a list of numbers, <c>numlist</c>, and returns a NEW list containing the squares of the numbers in the original list.  The given list, <c>numlist</c>, should not be changed.</p>
+        <p><alert>Note</alert>: Use the accumulator pattern and <c>newlist.append(item)</c> to solve this problem.</p>
         <p>
           <ul>
-            <li>The accumulator variable, <alert>newlist</alert>, should be initialized to an empty list. </li>
+            <li>The accumulator variable, <alert>newlist</alert>, should be initialized to an empty list.</li>
             <li>Inside a <alert>for loop</alert> which iterates over numlist, use <alert>append</alert> to update the value of newlist.</li>
           </ul>
         </p>
@@ -1347,48 +1269,36 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(square_nums([1, 2, 3, 4, 5]))
-                </cd>
+                <cd>print(square_nums([1, 2, 3, 4, 5]))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [1, 4, 9, 16, 25]
-                </cd>
+                <cd>[1, 4, 9, 16, 25]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(square_nums([-5, 0, 6]))
-                </cd>
+                <cd>print(square_nums([-5, 0, 6]))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  [25, 0, 36]
-                </cd>
+                <cd>[25, 0, 36]</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  print(square_nums([]))
-                </cd>
+                <cd>print(square_nums([]))</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  []
-                </cd>
+                <cd>[]</cd>
               </p>
             </cell>
           </row>
@@ -1483,11 +1393,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1569,8 +1477,8 @@ myTests().main()        </tests>
     <exercise xml:id="exer-make_list_items_upper_2-2" label="exe-sec-HW6-PRACTICE-1-31105">
       <title>Make List Items Uppercase 2</title>
       <statement>
-        <p>Define the function <c>make_uppercase(mylist)</c>, which takes a list parameter <c>mylist</c> (a list of strings), mutates the list by uppercasing each string in mylist. The function returns <c>None</c>. </p>
-        <p>For example, if <c>mylist</c> is <c>['cat', 'Dog', 'frOG']</c>, then the mutated list should  be <c>['CAT', 'DOG', 'FROG']</c>. </p>
+        <p>Define the function <c>make_uppercase(mylist)</c>, which takes a list parameter <c>mylist</c> (a list of strings), mutates the list by uppercasing each string in mylist. The function returns <c>None</c>.</p>
+        <p>For example, if <c>mylist</c> is <c>['cat', 'Dog', 'frOG']</c>, then the mutated list should  be <c>['CAT', 'DOG', 'FROG']</c>.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1582,40 +1490,32 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  mylist = ['cat', 'Dog', 'frOG']
+                <cd>mylist = ['cat', 'Dog', 'frOG']
 result = make_uppercase(mylist)
 print(mylist)
 if result != None:
-    print("Error, return value should be None")
-                </cd>
+    print("Error, return value should be None")                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['CAT', 'DOG', 'FROG']
-                </cd>
+                <cd>['CAT', 'DOG', 'FROG']</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  mylist = ['baNanas', 'appLes', 'pEAches', 'PEArs']
+                <cd>mylist = ['baNanas', 'appLes', 'pEAches', 'PEArs']
 result = make_uppercase(mylist)
 print(mylist)
 if result != None:
-    print("Error, return value should be None")
-                </cd>
+    print("Error, return value should be None")                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['BANANAS', 'APPLES', 'PEACHES', 'PEARS']
-                </cd>
+                <cd>['BANANAS', 'APPLES', 'PEACHES', 'PEARS']</cd>
               </p>
             </cell>
           </row>
@@ -1710,11 +1610,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1801,12 +1699,12 @@ myTests().main()        </tests>
         <p>
           Write a function, build_list<c>()</c>, to read words from standard input and store them in a list.
           <ul>
-            <li>You may assume that there will be fewer than 100 words. </li>
+            <li>You may assume that there will be fewer than 100 words.</li>
             <li>If the string "STOP" is given as input before 100 words have been added to the list, stop the for loop and return the accumulated list of strings.</li>
           </ul>
         </p>
         <p><alert>Hints:</alert></p>
-        <p>  - Use the accumulate-a-list pattern, with <c>acc_list</c> initialized to the empty list, <c>[]</c>  - Use a for loop to iterate i over <c>range(100)</c>  - When STOP is read from input, <c>break</c> from the for loop; otherwise, <c>append</c> the new word to acc_list before reading the next input  - Return acc_list</p>
+        <p>- Use the accumulate-a-list pattern, with <c>acc_list</c> initialized to the empty list, <c>[]</c> - Use a for loop to iterate i over <c>range(100)</c> - When STOP is read from input, <c>break</c> from the for loop; otherwise, <c>append</c> the new word to acc_list before reading the next input  - Return acc_list</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1820,19 +1718,16 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L = build_list()
+                <cd>L = build_list()
 print(L)
 C = ["April", "showers", "bring", "May", "flowers"]
 if L != C:
-    print("error")
-                </cd>
+    print("error")                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  April
+                <cd>April
 showers
 bring
 May
@@ -1843,9 +1738,7 @@ STOP
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['April', 'showers', 'bring', 'May', 'flowers']
-                </cd>
+                <cd>['April', 'showers', 'bring', 'May', 'flowers']</cd>
               </p>
             </cell>
           </row>
@@ -1940,11 +1833,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2028,7 +1919,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-final_substrings-2" label="exe-sec-HW6-PRACTICE-1-32084">
       <title>Final Substrings</title>
       <statement>
-        <p>The function <c>final</c><c>_substrings</c> takes a string parameter <c>inString</c> and returns a list of all the non-empty final substrings of <c>inString</c> (in order by their lengths).</p>
+        <p>The function <c>final</c><c>_substrings</c> takes a string parameter <c>inString</c> and returns a list of all the non-empty final substrings of <c>inString</c> (in order by their lengths).</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -2040,54 +1931,42 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  inString = "Python!"
+                <cd>inString = "Python!"
 L = final_substrings(inString)
-print(L)
-                </cd>
+print(L)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['!', 'n!', 'on!', 'hon!', 'thon!', 'ython!', 'Python!']
-                </cd>
+                <cd>['!', 'n!', 'on!', 'hon!', 'thon!', 'ython!', 'Python!']</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  inString = "dogs"
+                <cd>inString = "dogs"
 L = final_substrings(inString)
-print(L)
-                </cd>
+print(L)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['s', 'gs', 'ogs', 'dogs']
-                </cd>
+                <cd>['s', 'gs', 'ogs', 'dogs']</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  inString = ""
+                <cd>inString = ""
 L = final_substrings(inString)
-print(L)
-                </cd>
+print(L)                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  []
-                </cd>
+                <cd>[]</cd>
               </p>
             </cell>
           </row>
@@ -2182,11 +2061,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2282,15 +2159,15 @@ myTests().main()        </tests>
     <exercise xml:id="exer-interleave_lists-2" label="exe-sec-HW6-PRACTICE-1-161051">
       <title>Interleave Lists</title>
       <statement>
-        <p>The function <c>interleave_lists</c> takes two parameters, <c>L1</c> and <c>L2</c>, both lists. Notice that the lists may have different lengths.</p>
+        <p>The function <c>interleave_lists</c> takes two parameters, <c>L1</c> and <c>L2</c>, both lists. Notice that the lists may have different lengths.</p>
         <p>The function accumulates a new list by appending alternating items from <c>L1</c> and <c>L2</c> until one list has been exhausted.  The remaining items from the other list are then appended to the end of the new list, and the new list is returned.</p>
         <p>For example, if <c>L1 = ["hop", "skip", "jump", "rest"]</c> and <c>L2 = ["up", "down"]</c>, then the function would return the list: <c>["hop", "up", "skip", "down", "jump", "rest"]</c>.</p>
-        <p><alert>HINT: </alert>Python has a built-in function<alert> <c>min()</c> </alert>which is helpful here. </p>
+        <p><alert>HINT:</alert>Python has a built-in function<alert><c>min()</c></alert>which is helpful here.</p>
         <p>
           <ul>
             <li>Initialize accumulator variable <c>newlist</c> to be an empty list</li>
             <li>Set <c>min_length = min(len(L1), len(L2))</c>, the smaller of the two list lengths</li>
-            <li>Use a <alert>for loop </alert>to iterate <c>k</c> over <c>range(min_length)</c> to do the first part of this function's work. On each iteration, append to newlist the item from index k in L1, and then append the item from index k in L2 (two appends on each iteration).</li>
+            <li>Use a <alert>for loop</alert>to iterate <c>k</c> over <c>range(min_length)</c> to do the first part of this function's work. On each iteration, append to newlist the item from index k in L1, and then append the item from index k in L2 (two appends on each iteration).</li>
             <li>AFTER the loop finishes, append the remaining items (if any) to newlist; use a decision statement to determine which list has remaining items -- then it just takes one line of code to append those items to newlist (using a slice of L1 or L2)</li>
             <li><c>return newlist</c></li>
           </ul>
@@ -2306,54 +2183,42 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L1 = ["hop", "skip", "jump"]
+                <cd>L1 = ["hop", "skip", "jump"]
 L2 = ["A", "B", "C", "D", "E"]
-print(interleave_lists(L1, L2))
-                </cd>
+print(interleave_lists(L1, L2))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['hop', 'A', 'skip', 'B', 'jump', 'C', 'D', 'E']
-                </cd>
+                <cd>['hop', 'A', 'skip', 'B', 'jump', 'C', 'D', 'E']</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  L1 = ["dive"]
+                <cd>L1 = ["dive"]
 L2 = ["hop", "skip", "jump"]
-print(interleave_lists(L1, L2))
-                </cd>
+print(interleave_lists(L1, L2))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['dive', 'hop', 'skip', 'jump']
-                </cd>
+                <cd>['dive', 'hop', 'skip', 'jump']</cd>
               </p>
             </cell>
           </row>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  cats = ["Ziggy", "Troll Boy"]
+                <cd>cats = ["Ziggy", "Troll Boy"]
 dogs = ["Ruthie", "Ame"]
-print(interleave_lists(cats, dogs))
-                </cd>
+print(interleave_lists(cats, dogs))                </cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>
-                  ['Ziggy', 'Ruthie', 'Troll Boy', 'Ame']
-                </cd>
+                <cd>['Ziggy', 'Ruthie', 'Troll Boy', 'Ame']</cd>
               </p>
             </cell>
           </row>
@@ -2448,11 +2313,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None
-
-</preamble>
-        <code />
-        <postamble visible="no" />
+None</preamble>
+        <code></code>
+        <postamble visible="no"></postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
