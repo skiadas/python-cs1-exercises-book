@@ -782,7 +782,11 @@ class Timer:
         print('Seconds:', self.__seconds)
 
     def __str__(self):
-        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)</preamble>
+        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)
+    
+
+
+        </preamble>
         <code># NOTE: Do not change the indentation! It is required because the
 # code will be pasted into the Timer class definition body.
     def convert_to_seconds(self):</code>
@@ -1063,7 +1067,11 @@ class Timer:
         return self.__hours
 
     def __str__(self):
-        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)</preamble>
+        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)
+    
+
+
+        </preamble>
         <code>def add_timers(t1, t2):</code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -1359,7 +1367,11 @@ class Timer:
         return self.__seconds + 60*self.__minutes + 3600*self.__hours
         
     def __str__(self):
-        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)</preamble>
+        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)
+
+
+
+        </preamble>
         <code># NOTE: Do not change the indentation! It is required because the
 # code will be pasted into the Timer class definition body.
     def __eq__(self, other):

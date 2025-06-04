@@ -444,7 +444,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -633,7 +635,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -873,7 +877,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code># read the string from input
 matchString = ____________
 
@@ -1082,7 +1087,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -1275,7 +1282,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -1471,7 +1480,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -1666,7 +1677,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -1878,7 +1891,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re

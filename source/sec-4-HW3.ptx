@@ -149,7 +149,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code># This problem is solved for you as an example of using list(range())
 m = int(input())
 print(list(range(1, m + 1)))</code>
@@ -367,7 +368,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code></code>
         <postamble visible="no">"""</postamble>
         <tests>import re
@@ -587,7 +589,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code></code>
         <postamble visible="no">"""</postamble>
         <tests>import re
@@ -824,7 +827,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code></code>
         <postamble visible="no">"""</postamble>
         <tests>import re
@@ -1046,7 +1050,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -1274,7 +1280,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code></code>
         <postamble visible="no">"""</postamble>
         <tests>import re
@@ -1502,7 +1509,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code></code>
         <postamble visible="no">"""</postamble>
         <tests>import re
@@ -1745,7 +1753,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code></code>
         <postamble visible="no">"""</postamble>
         <tests>import re
@@ -1983,7 +1992,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code>def summit(start, stop):</code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -2194,7 +2205,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -2402,7 +2415,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -2620,7 +2635,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -2834,7 +2851,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re

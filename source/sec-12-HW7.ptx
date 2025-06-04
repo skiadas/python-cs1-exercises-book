@@ -151,7 +151,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -401,7 +403,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -630,7 +634,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -872,7 +878,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -1124,7 +1132,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -1327,7 +1337,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -1544,7 +1556,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -1775,7 +1789,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code>def gen_triples(L):</code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -1989,7 +2005,11 @@ def check_answer(D, new_pair, new_size):
     if D[new_pair[0]] == new_pair[1] and len(D) == new_size:
         print("correctly added", str(new_pair[0]) + ":" + str(new_pair[1]))
     else:
-        print("error")</preamble>
+        print("error") 
+
+
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -2222,7 +2242,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -2453,7 +2475,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -2672,7 +2696,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -2874,7 +2900,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -3109,7 +3137,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -3361,7 +3391,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -3598,7 +3630,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -3803,7 +3837,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code></code>
         <postamble visible="no">"""</postamble>
         <tests>import re

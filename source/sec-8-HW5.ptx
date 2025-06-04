@@ -154,7 +154,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -438,7 +440,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -711,7 +715,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -981,7 +987,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -1242,7 +1250,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -1485,7 +1495,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -1739,7 +1751,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -2002,7 +2016,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -2239,7 +2255,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -2455,7 +2473,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -2697,7 +2717,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -2946,7 +2968,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re
@@ -3223,7 +3247,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code>from string import digits
 
 def is_numberlike(mystr):
@@ -3548,7 +3574,9 @@ def input(prompt=None):
     raise EOFError()
   return _my_in.pop()
 
-None</preamble>
+None
+
+        </preamble>
         <code></code>
         <postamble visible="no"></postamble>
         <tests>import re

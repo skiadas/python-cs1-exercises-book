@@ -175,7 +175,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code>the_input = input()
 # call the print function with two arguments</code>
         <postamble visible="no">"""</postamble>
@@ -392,7 +393,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code># Hint: similar to previous question; need two lines of code.
 # First, get the input.
 # Second, print the message.</code>
@@ -609,7 +611,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code>num = int(input())</code>
         <postamble visible="no">"""</postamble>
         <tests>import re
@@ -823,7 +826,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code># The following line reads the user input and converts 
 # it to a float value:
 num = float(input())</code>
@@ -1039,7 +1043,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code></code>
         <postamble visible="no">"""</postamble>
         <tests>import re
@@ -1253,7 +1258,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code></code>
         <postamble visible="no">"""</postamble>
         <tests>import re
@@ -1472,7 +1478,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code>import math
 
 # Read the radius from input; convert it to a float value and assign to R
@@ -1687,7 +1694,8 @@ def input(prompt=None):
 None
 
 
-_program = """</preamble>
+_program = """
+        </preamble>
         <code></code>
         <postamble visible="no">"""</postamble>
         <tests>import re
