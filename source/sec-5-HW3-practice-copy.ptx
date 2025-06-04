@@ -151,10 +151,15 @@ None
 
 _program = """
         </preamble>
-        <code># This problem is solved for you as an example of using list(range())
+        <code>
+# This problem is solved for you as an example of using list(range())
 m = int(input())
-print(list(range(1, m + 1)))</code>
-        <postamble visible="no">"""</postamble>
+print(list(range(1, m + 1)))
+        </code>
+        <postamble visible="no">
+
+"""
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -370,8 +375,13 @@ None
 
 _program = """
         </preamble>
-        <code></code>
-        <postamble visible="no">"""</postamble>
+        <code>
+
+        </code>
+        <postamble visible="no">
+
+"""
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -591,8 +601,13 @@ None
 
 _program = """
         </preamble>
-        <code></code>
-        <postamble visible="no">"""</postamble>
+        <code>
+
+        </code>
+        <postamble visible="no">
+
+"""
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -829,8 +844,13 @@ None
 
 _program = """
         </preamble>
-        <code></code>
-        <postamble visible="no">"""</postamble>
+        <code>
+
+        </code>
+        <postamble visible="no">
+
+"""
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1053,8 +1073,11 @@ def input(prompt=None):
 None
 
         </preamble>
-        <code></code>
-        <postamble visible="no"></postamble>
+        <code>
+
+        </code>
+        <postamble visible="no">
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1282,8 +1305,13 @@ None
 
 _program = """
         </preamble>
-        <code></code>
-        <postamble visible="no">"""</postamble>
+        <code>
+
+        </code>
+        <postamble visible="no">
+
+"""
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1511,8 +1539,13 @@ None
 
 _program = """
         </preamble>
-        <code></code>
-        <postamble visible="no">"""</postamble>
+        <code>
+
+        </code>
+        <postamble visible="no">
+
+"""
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1755,8 +1788,13 @@ None
 
 _program = """
         </preamble>
-        <code></code>
-        <postamble visible="no">"""</postamble>
+        <code>
+
+        </code>
+        <postamble visible="no">
+
+"""
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1995,8 +2033,11 @@ def input(prompt=None):
 None
 
         </preamble>
-        <code>def summit(start, stop):</code>
-        <postamble visible="no"></postamble>
+        <code>
+def summit(start, stop):
+        </code>
+        <postamble visible="no">
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2208,8 +2249,11 @@ def input(prompt=None):
 None
 
         </preamble>
-        <code></code>
-        <postamble visible="no"></postamble>
+        <code>
+
+        </code>
+        <postamble visible="no">
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2418,8 +2462,11 @@ def input(prompt=None):
 None
 
         </preamble>
-        <code></code>
-        <postamble visible="no"></postamble>
+        <code>
+
+        </code>
+        <postamble visible="no">
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2638,8 +2685,11 @@ def input(prompt=None):
 None
 
         </preamble>
-        <code></code>
-        <postamble visible="no"></postamble>
+        <code>
+
+        </code>
+        <postamble visible="no">
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -2854,8 +2904,11 @@ def input(prompt=None):
 None
 
         </preamble>
-        <code></code>
-        <postamble visible="no"></postamble>
+        <code>
+
+        </code>
+        <postamble visible="no">
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")

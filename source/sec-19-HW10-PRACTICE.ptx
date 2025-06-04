@@ -787,10 +787,13 @@ class Timer:
 
 
         </preamble>
-        <code># NOTE: Do not change the indentation! It is required because the
+        <code>
+# NOTE: Do not change the indentation! It is required because the
 # code will be pasted into the Timer class definition body.
-    def convert_to_seconds(self):</code>
-        <postamble visible="no"></postamble>
+    def convert_to_seconds(self):
+        </code>
+        <postamble visible="no">
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1072,8 +1075,11 @@ class Timer:
 
 
         </preamble>
-        <code>def add_timers(t1, t2):</code>
-        <postamble visible="no"></postamble>
+        <code>
+def add_timers(t1, t2):
+        </code>
+        <postamble visible="no">
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1372,13 +1378,16 @@ class Timer:
 
 
         </preamble>
-        <code># NOTE: Do not change the indentation! It is required because the
+        <code>
+# NOTE: Do not change the indentation! It is required because the
 # code will be pasted into the Timer class definition body.
     def __eq__(self, other):
         
         
-    def __ne__(self, other):</code>
-        <postamble visible="no"></postamble>
+    def __ne__(self, other):
+        </code>
+        <postamble visible="no">
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")

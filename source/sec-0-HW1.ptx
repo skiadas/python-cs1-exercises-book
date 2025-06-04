@@ -177,9 +177,14 @@ None
 
 _program = """
         </preamble>
-        <code>the_input = input()
-# call the print function with two arguments</code>
-        <postamble visible="no">"""</postamble>
+        <code>
+the_input = input()
+# call the print function with two arguments
+        </code>
+        <postamble visible="no">
+
+"""
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -395,10 +400,15 @@ None
 
 _program = """
         </preamble>
-        <code># Hint: similar to previous question; need two lines of code.
+        <code>
+# Hint: similar to previous question; need two lines of code.
 # First, get the input.
-# Second, print the message.</code>
-        <postamble visible="no">"""</postamble>
+# Second, print the message.
+        </code>
+        <postamble visible="no">
+
+"""
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -613,8 +623,14 @@ None
 
 _program = """
         </preamble>
-        <code>num = int(input())</code>
-        <postamble visible="no">"""</postamble>
+        <code>
+num = int(input())
+
+        </code>
+        <postamble visible="no">
+
+"""
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -828,10 +844,15 @@ None
 
 _program = """
         </preamble>
-        <code># The following line reads the user input and converts 
+        <code>
+# The following line reads the user input and converts 
 # it to a float value:
-num = float(input())</code>
-        <postamble visible="no">"""</postamble>
+num = float(input())
+        </code>
+        <postamble visible="no">
+
+"""
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1045,8 +1066,13 @@ None
 
 _program = """
         </preamble>
-        <code></code>
-        <postamble visible="no">"""</postamble>
+        <code>
+
+        </code>
+        <postamble visible="no">
+
+"""
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1260,8 +1286,13 @@ None
 
 _program = """
         </preamble>
-        <code></code>
-        <postamble visible="no">"""</postamble>
+        <code>
+
+        </code>
+        <postamble visible="no">
+
+"""
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1480,7 +1511,8 @@ None
 
 _program = """
         </preamble>
-        <code>import math
+        <code>
+import math
 
 # Read the radius from input; convert it to a float value and assign to R
 R = 
@@ -1490,8 +1522,12 @@ H =
 baseArea = 
 # Find the volume and print a message
 volume = 
-print( )</code>
-        <postamble visible="no">"""</postamble>
+print( )
+        </code>
+        <postamble visible="no">
+
+"""
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
@@ -1696,8 +1732,13 @@ None
 
 _program = """
         </preamble>
-        <code></code>
-        <postamble visible="no">"""</postamble>
+        <code>
+
+        </code>
+        <postamble visible="no">
+
+"""
+        </postamble>
         <tests>import re
 
 RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
