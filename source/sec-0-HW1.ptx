@@ -7,7 +7,7 @@
   </introduction>
   <exercises>
     <exercise xml:id="exer-CodeRunner-Overview-1" label="exe-sec-HW1-1-145621">
-      <statement>
+      <statement correct="yes">
         <p>CodeRunner is a system for working on coding problems directly within Moodle.  Below is an example of what a CodeRunner problem looks like.</p>
         <p>
           <image decorative="yes" source="images/145621-Screen%20Shot%202018-01-14%20at%209.57.32%20AM.png" width="90%" />

@@ -6,7 +6,7 @@
   <exercises>
     <exercise xml:id="exer-defining_classes_intro-2" label="exe-sec-HW10-PRACTICE-1-32302">
       <title>Defining Classes</title>
-      <statement>
+      <statement correct="yes">
         <p>Previously, you have used built-in types in Python like <c>dict</c>, <c>str</c>, and <c>list</c>. Each of these types comes with its own methods, such as <c>keys</c>, <c>lower</c>, and <c>append</c>.</p>
         <p>Every object has a <alert>type</alert>that indicates which class the object belongs to. The purpose of the class is to specify the instance variables (aka data, attributes) and methods (aka functions) that each object belonging to the class will have.</p>
         <p>For example, in real life, every <alert>car</alert>has attributes such as make, model, and current odometer. And every reasonable car has available methods such as start engine, shift transmission, and honk horn.</p>
@@ -1200,7 +1200,7 @@ myTests().main()        </tests>
     </exercise>
     <exercise xml:id="exer-implement_comp_oper_info-2" label="exe-sec-HW10-PRACTICE-1-32322">
       <title>Implementing the Comparison Operators</title>
-      <statement>
+      <statement correct="yes">
         <p>Python has "magic" methods to make the comparison operators work with objects. The six comparison operators (&lt;, &lt;=, &gt;, &gt;=, == and !=) are enabled simply by implementing the following special methods: <c>__lt__, __le__, __gt__, __ge__, __eq__ and __ne__</c></p>
         <p>See: <em><url href="https://www.tutorialspoint.com/How-to-overload-Python-comparison-operators">https://www.tutorialspoint.com/How-to-overload-Python-comparison-operators</url></em></p>
         <p>For example, here is the code to implement <c>__lt__</c> (the &lt; or "less than" operator) for the <c>Timer</c>class. Notice we start by converting both Timers to an integer number of seconds, then simply compare those numbers of seconds. Comparing two Timers reduces to the problem of comparing two integers.</p>
