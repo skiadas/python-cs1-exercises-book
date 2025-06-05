@@ -1,8 +1,8 @@
 <pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
   <book>
-    <title>Exercises</title>
+    <title>CS 220 Python Programming Exercises</title>
     <chapter>
-      <title>Chapter Title</title>
+      <title>Sections</title>
       <xi:include href="./sec-0-HW1.ptx" />
       <xi:include href="./sec-1-HW1-practice.ptx" />
       <xi:include href="./sec-2-HW2.ptx" />
