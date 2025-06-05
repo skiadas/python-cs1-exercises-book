@@ -10,7 +10,7 @@
         <p>
           <image decorative="yes" source="images/145621-Screen%20Shot%202018-01-14%20at%209.57.32%20AM.png" width="90%" />
         </p>
-        <p>1. The first thing you should do when starting a problem is to <term>carefully</term> read the problem description. The problem description tells you what your solution code needs to accomplish, as well as important details about the problem including:</p>
+        <p>1. The first thing you should do when starting a problem is to <alert>carefully</alert> read the problem description. The problem description tells you what your solution code needs to accomplish, as well as important details about the problem including:</p>
         <p>
           <ul>
             <li>Type of input your code must handle</li>
@@ -18,14 +18,14 @@
             <li>Whether your code should produce output (print) or return a value</li>
           </ul>
         </p>
-        <term>If you don't understand the problem, you won't be able to solve the problem; <em>this is the most important step</em>!</term>
-        <p>2. To help you understand the problem, you will always be given a few examples. Typically, the examples show sample inputs and the result that your code should produce given each input. It's important to understa!d that your solution needs to be <term>general</term>.  This means that your goal is to code a solution that will work for any valid input for the problem, not just the given examples.</p>
+        <alert>If you don't understand the problem, you won't be able to solve the problem; <em>this is the most important step</em>!</alert>
+        <p>2. To help you understand the problem, you will always be given a few examples. Typically, the examples show sample inputs and the result that your code should produce given each input. It's important to understa!d that your solution needs to be <alert>general</alert>.  This means that your goal is to code a solution that will work for any valid input for the problem, not just the given examples.</p>
         <p>3. Once you understand the problem, you can start coding your solution in the white box. Depending on the problem, there may be some code already there to get you started. When you are ready to check your solution, click the "Check" button.</p>
         <p>If I were to click the "Check" button for the example problem in the image, here is the feedback that I would get from CodeRunner.</p>
         <p>
           <image decorative="yes" source="images/145621-Screen%20Shot%202018-01-14%20at%2010.00.24%20AM.png" width="90%" />
         </p>
-        <p>For each example input, CodeRunner shows you the correct (<term>Expected</term>) result, the result produced by your code (<term>Got</term>), and whether your result is correct. Clicking on the "Show differences" button will show you where your result differs from the expected result.</p>
+        <p>For each example input, CodeRunner shows you the correct (<alert>Expected</alert>) result, the result produced by your code (<alert>Got</alert>), and whether your result is correct. Clicking on the "Show differences" button will show you where your result differs from the expected result.</p>
         <p>4. Use the CodeRunner feedback to try to understand where the problems are in your code, and then work on fixing your solution code. Keep checking and revising your code until you reach the correct solution.</p>
         <p>Now it is time for you to try solving some CodeRunner problems!</p>
       </statement>
@@ -479,7 +479,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-simple_addition-2" label="exe-sec-HW1-practice-1-269748">
       <title>Add 8</title>
       <statement>
-        <p>Write a program to get an integer value from standard input, <term>add 8</term>to the input value, then output the result.</p>
+        <p>Write a program to get an integer value from standard input, <alert>add 8</alert>to the input value, then output the result.</p>
         <p>Note: The first line of the program, for getting input from the user, is provided.</p>
         <p>For example:</p>
         <tabular>
@@ -701,7 +701,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-simple_multiplication-2" label="exe-sec-HW1-practice-1-269749">
       <title>Multiply by 123</title>
       <statement>
-        <p>Write a short program that will read a decimal value (a float) from standard input, multiply the input value <term>by 123</term>, then output a message with the result.</p>
+        <p>Write a short program that will read a decimal value (a float) from standard input, multiply the input value <alert>by 123</alert>, then output a message with the result.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="30%" />
