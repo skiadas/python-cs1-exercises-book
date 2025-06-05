@@ -5,7 +5,7 @@
     <exercise xml:id="exer-flip_sign_add_3-1" label="exe-sec-HW2-1-269753">
       <title>Flip Sign and Add Three</title>
       <statement>
-        <p>Write a short <alert>program</alert> (not a function definition) that will get a decimal value x (type <alert>float</alert>) from standard input and print a message regarding the value of x and the value of 3 - x.</p>
+        <p>Write a short <term>program</term> (not a function definition) that will get a decimal value x (type <term>float</term>) from standard input and print a message regarding the value of x and the value of 3 - x.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="30%" />
@@ -440,10 +440,10 @@ myTests().main()        </tests>
     <exercise xml:id="exer-math_sqrt_round-1" label="exe-sec-HW2-1-269755">
       <title>Rounded Square Root</title>
       <statement>
-        <p>Write the code needed to get an integer value from standard input, calculate the square root of the value <alert>rounded to the nearest hundredth</alert>, then <alert>print</alert> a message with the result.</p>
-        <p><alert>NOTE:</alert> You may assume that the input value will not be negative.</p>
+        <p>Write the code needed to get an integer value from standard input, calculate the square root of the value <term>rounded to the nearest hundredth</term>, then <term>print</term> a message with the result.</p>
+        <p><term>NOTE:</term> You may assume that the input value will not be negative.</p>
         <p>
-          <alert>Reminder</alert>:
+          <term>Reminder</term>:
           <ul>
             <li>Start by importing the <c>math</c> module.</li>
             <li>Use the function <c>math.sqrt</c> to calculate a square root.</li>
@@ -674,11 +674,11 @@ myTests().main()        </tests>
         <p>Write the code needed to get two numbers from standard input:</p>
         <p>
           <ul>
-            <li>a decimal value (i.e., a number with a decimal point, which will be read as Python type <alert>float</alert>)</li>
+            <li>a decimal value (i.e., a number with a decimal point, which will be read as Python type <term>float</term>)</li>
             <li>an integer value</li>
           </ul>
         </p>
-        <p>Assign the decimal value to the variable <c>decimal</c> and the integer value to the variable precision (or other reasonable names).Finally, round the value of <c>decimal</c> to the number of places after the decimal point indicated by <c>precision</c>, and <alert>print</alert> the result.</p>
+        <p>Assign the decimal value to the variable <c>decimal</c> and the integer value to the variable precision (or other reasonable names).Finally, round the value of <c>decimal</c> to the number of places after the decimal point indicated by <c>precision</c>, and <term>print</term> the result.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="30%" />
@@ -914,7 +914,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-div_and_mod-1" label="exe-sec-HW2-1-269757">
       <title>Integer Division and Remainder</title>
       <statement>
-        <p>Write the code needed to get two integer values from standard input, assign the first integer to the variable <c>dividend</c>, and assign the second integer to the variable <c>divisor</c>. Calculate two things and <alert>print</alert> the results:</p>
+        <p>Write the code needed to get two integer values from standard input, assign the first integer to the variable <c>dividend</c>, and assign the second integer to the variable <c>divisor</c>. Calculate two things and <term>print</term> the results:</p>
         <p>
           <ol>
             <li>Use integer division (floor division) to calculate how many times the <c>divisor</c> will go into the <c>dividend</c>, excluding the remainder.</li>
@@ -1144,11 +1144,11 @@ myTests().main()        </tests>
       <title>Bookcases</title>
       <statement>
         <p>
-          You are planning to add bookcases to a wall in your living room, but you don't know how many bookcases to buy. You decide to write a Python <alert>function</alert>, <c>get_</c><c>num_bookcases</c>, to help. Your function needs to do the following:
+          You are planning to add bookcases to a wall in your living room, but you don't know how many bookcases to buy. You decide to write a Python <term>function</term>, <c>get_</c><c>num_bookcases</c>, to help. Your function needs to do the following:
           <ol>
             <li>Take parameters for the width of the wall (an integer number of feet) and the width of a bookcase (an integer number of inches). (Your function does not read input from the keyboard; it gets its input through named parameters.)</li>
-            <li>Calculate how many whole bookcases will fit on the wall using <alert>modular arithmetic</alert> (use div and/or mod, represented by the operators // and %, as needed to solve the problem).</li>
-            <li><alert>Return</alert>the number of bookcases.</li>
+            <li>Calculate how many whole bookcases will fit on the wall using <term>modular arithmetic</term> (use div and/or mod, represented by the operators // and %, as needed to solve the problem).</li>
+            <li><term>Return</term>the number of bookcases.</li>
           </ol>
         </p>
         <p>For example:</p>
@@ -1374,7 +1374,7 @@ myTests().main()        </tests>
             <li>read an integer from standard input</li>
             <li>return 0 if the integer is even, 1 if the integer is odd</li>
             <li>do not use a conditional ("if") statement, just use modular arithmetic (such as // or %)</li>
-            <li>do not print the result, <alert>return</alert> it</li>
+            <li>do not print the result, <term>return</term> it</li>
           </ul>
         </p>
         <p>Hint: What is the remainder when you divide an even number by 2?  What is the remainder when you divide an odd number by 2?</p>
@@ -1852,8 +1852,8 @@ myTests().main()        </tests>
     <exercise xml:id="exer-for_loop_2_multiples_of_n-1" label="exe-sec-HW2-1-82943">
       <title>Print Integers Less Than n</title>
       <statement>
-        <p>Write a function, <alert><c>p</c><c>rint_integers_less_than(⁠n)</c></alert>, which takes an integer parameter n and prints each integer k which is at least 0 and is less than n, in ascending order.</p>
-        <p>Hint: use a simple <alert>for</alert> loop.</p>
+        <p>Write a function, <term><c>p</c><c>rint_integers_less_than(⁠n)</c></term>, which takes an integer parameter n and prints each integer k which is at least 0 and is less than n, in ascending order.</p>
+        <p>Hint: use a simple <term>for</term> loop.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -2084,8 +2084,8 @@ myTests().main()        </tests>
       <title>Print Perfect Cubes</title>
       <statement>
         <p>Write a function, <c>print_perfect_cubes(n)</c>, that takes an integer parameter n and prints the perfect cubes starting from 0&amp;lt;sup&amp;rt;3&amp;lt;/sup&amp;rt; = 0 and ending with n&amp;lt;sup&amp;rt;3&amp;lt;/sup&amp;rt;. When n is negative, the function prints nothing; but do not check for this condition with an "if" statement, it is unneccesary; use a for loop that will automatically print nothing when n &lt; 0.</p>
-        <p><alert>Hint for choosing the right range for your for loop</alert>: In the general case, when n is not negative, your function will need to print n+1 different values.</p>
-        <p><alert>Hint for printing the first part of the output</alert>: Convert n to a string and then concatenate that string with "^3"; assign the result to a variable, <c>the_cube</c>. Make <c>the_cube</c> the first argument in your print function call.</p>
+        <p><term>Hint for choosing the right range for your for loop</term>: In the general case, when n is not negative, your function will need to print n+1 different values.</p>
+        <p><term>Hint for printing the first part of the output</term>: Convert n to a string and then concatenate that string with "^3"; assign the result to a variable, <c>the_cube</c>. Make <c>the_cube</c> the first argument in your print function call.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />

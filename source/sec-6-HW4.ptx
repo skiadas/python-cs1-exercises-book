@@ -5,7 +5,7 @@
     <exercise xml:id="exer-func_between_zero_one-1" label="exe-sec-HW4-1-225598">
       <title>Between 0 and 1</title>
       <statement>
-        <p>Write a function called <alert>between_zero_and_one</alert>that takes a parameter num; num will be a number at run time.  The function should return True if num falls strictly between 0 and 1; otherwise, it should return False.</p>
+        <p>Write a function called <term>between_zero_and_one</term>that takes a parameter num; num will be a number at run time.  The function should return True if num falls strictly between 0 and 1; otherwise, it should return False.</p>
         <p>NOTE: This function does NOT read anything from standard input.</p>
         <p>NOTE: Your function should not print anything to standard output. Use a return statement, not a print statement, at the end of your function.</p>
         <p>Hint: Do not return the strings "True", "False". Boolean values are not quoted.</p>
@@ -242,12 +242,12 @@ myTests().main()        </tests>
     <exercise xml:id="exer-basic_conditional_divides-1" label="exe-sec-HW4-1-31644">
       <title>Divides</title>
       <statement>
-        <p>Define a function <alert>divides</alert>that takes integer parameters <alert>n</alert> and <alert>d</alert>.</p>
-        <p><alert>-</alert>If n is a multiple of d, that is, if "d divides n" evenly, the function returns True and prints a message. For example, if n is 12 and d is 2, the message will say, "12 is divisible by 2"</p>
+        <p>Define a function <term>divides</term>that takes integer parameters <term>n</term> and <term>d</term>.</p>
+        <p><term>-</term>If n is a multiple of d, that is, if "d divides n" evenly, the function returns True and prints a message. For example, if n is 12 and d is 2, the message will say, "12 is divisible by 2"</p>
         <p>- Otherwise, the function returns False and prints  a negative message, for example, "12 is not divisible by 11"</p>
         <p>- Your function might  be around 7 lines long.</p>
         <p>Hint 1:  Use the remainder operator and an if-else conditional.</p>
-        <p>Hint 2: Do not return the strings "True", "False". Return a Boolean constant, either <alert>True</alert> or <alert>False</alert> (no quotes)</p>
+        <p>Hint 2: Do not return the strings "True", "False". Return a Boolean constant, either <term>True</term> or <term>False</term> (no quotes)</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -482,10 +482,10 @@ myTests().main()        </tests>
       <title>Num Is Even</title>
       <statement>
         <p>The function <c>isEven</c>takes one parameter, n (an integer). <c>isEven</c> returns a boolean result.</p>
-        <p>- isEven returns <alert>True</alert>if n is even,</p>
-        <p>- otherwise isEven returns <alert>False</alert>.</p>
+        <p>- isEven returns <term>True</term>if n is even,</p>
+        <p>- otherwise isEven returns <term>False</term>.</p>
         <p>Define the isEven function.</p>
-        <p>Remember: Do not return the strings "True", "False". Return a Boolean constant, either <alert>True</alert> or <alert>False</alert> (no quotes)</p>
+        <p>Remember: Do not return the strings "True", "False". Return a Boolean constant, either <term>True</term> or <term>False</term> (no quotes)</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1184,11 +1184,11 @@ myTests().main()        </tests>
     <exercise xml:id="exer-func_inside_unit_circle-1" label="exe-sec-HW4-1-160469">
       <title>Is In Unit Circle</title>
       <statement>
-        <p>Write a function called is_in_unit_circle that takes two parameters, <alert>x</alert> and <alert>y</alert> (floats), the coordinates of a point in the x-y plane.</p>
-        <p>- The function returns <alert>True</alert>if (x, y) is less than one unit away from (0,0) [i.e., if the point (x, y) is inside the unit circle];</p>
-        <p>- Otherwise, the function returns <alert>False</alert></p>
-        <p><alert>Hint:</alert>Use the distance formula to calculate the distance (or the square of the distance) from (x, y) to (0, 0). Then compare that distance with 1.</p>
-        <p><alert>D</alert><alert>istance between two points = √((x&amp;lt;sub&amp;rt;2&amp;lt;/sub&amp;rt; – x&amp;lt;sub&amp;rt;1&amp;lt;/sub&amp;rt;)² + (y&amp;lt;sub&amp;rt;2&amp;lt;/sub&amp;rt; – y&amp;lt;sub&amp;rt;1&amp;lt;/sub&amp;rt;)²)</alert></p>
+        <p>Write a function called is_in_unit_circle that takes two parameters, <term>x</term> and <term>y</term> (floats), the coordinates of a point in the x-y plane.</p>
+        <p>- The function returns <term>True</term>if (x, y) is less than one unit away from (0,0) [i.e., if the point (x, y) is inside the unit circle];</p>
+        <p>- Otherwise, the function returns <term>False</term></p>
+        <p><term>Hint:</term>Use the distance formula to calculate the distance (or the square of the distance) from (x, y) to (0, 0). Then compare that distance with 1.</p>
+        <p><term>D</term><term>istance between two points = √((x&amp;lt;sub&amp;rt;2&amp;lt;/sub&amp;rt; – x&amp;lt;sub&amp;rt;1&amp;lt;/sub&amp;rt;)² + (y&amp;lt;sub&amp;rt;2&amp;lt;/sub&amp;rt; – y&amp;lt;sub&amp;rt;1&amp;lt;/sub&amp;rt;)²)</term></p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1634,7 +1634,7 @@ myTests().main()        </tests>
       <title>List Product</title>
       <statement>
         <p>Define a function list_product(L) which takes a parameter L, a list of numbers, and returns the product of all the items in L.</p>
-        <p>Hint: Use the accumulate-a-product pattern as discussed in class. Remember, you should <alert>not</alert> initialize your accumulator variable to 0 when it represents a product.</p>
+        <p>Hint: Use the accumulate-a-product pattern as discussed in class. Remember, you should <term>not</term> initialize your accumulator variable to 0 when it represents a product.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -2585,13 +2585,13 @@ myTests().main()        </tests>
         </p>
         <p>So F(3) = F(2) + F(1) = 1  + 1  = 2, F(4) = F(3) +  F(2) = 2 + 1 = 3, F(5) =  5, F(6) =  8, etc.</p>
         <p>When N is positive, F should return the Nth Fibonacci number, F(N); when N is not positive, F should return the Python object <c>None</c>.</p>
-        <p><alert>Big Hint</alert>: Use two accumulator variables, <c>previous</c>and <c>current</c>, since we will always add the last two terms to make the next term.</p>
+        <p><term>Big Hint</term>: Use two accumulator variables, <c>previous</c>and <c>current</c>, since we will always add the last two terms to make the next term.</p>
         <p>
           <ul>
             <li>Initialize <c>previous</c>to have the value of F(1), and initialize <c>current</c>to have the value of F(2).</li>
             <li>Think about how many additional terms the for loop needs to calculate to determine F(N) when N &gt; 2. That number is the argument for the range function call in the first line of the loop.</li>
             <li>In the body of the loop, update both accumulators: let <c>next</c>be the sum of <c>previous</c>and <c>current</c>, update <c>previous</c>to equal <c>current</c>, and update <c>current</c>to equal <c>next</c>.</li>
-            <li>When the for loop ends, return <alert>current.</alert></li>
+            <li>When the for loop ends, return <term>current.</term></li>
           </ul>
         </p>
         <p>For example:</p>

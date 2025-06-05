@@ -544,7 +544,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-square_nums_2-2" label="exe-sec-HW7-PRACTICE-1-161273">
       <title>Square Nums 2</title>
       <statement>
-        <p>Define the function <c>square_nums_2</c> which takes a list of numbers, <alert>L</alert>, and mutates <alert>L</alert> so that each original item is now squared. For example, if L is <c>[2, -5, 9]</c> then, after calling <c>square_nums_2(L)</c>, <c>L == [4, 25, 81]</c>.</p>
+        <p>Define the function <c>square_nums_2</c> which takes a list of numbers, <term>L</term>, and mutates <term>L</term> so that each original item is now squared. For example, if L is <c>[2, -5, 9]</c> then, after calling <c>square_nums_2(L)</c>, <c>L == [4, 25, 81]</c>.</p>
         <p>Nothing is printed and None is returned.</p>
         <p>For example:</p>
         <tabular>
@@ -1040,17 +1040,17 @@ myTests().main()        </tests>
     <exercise xml:id="exer-print_stars_grid_nested_loop-2" label="exe-sec-HW7-PRACTICE-1-145082">
       <title>Print Grid of Asterisks with a Nested Loop</title>
       <statement>
-        <p>Define a function <c>print_star_grid(rows, cols)</c>, which takes two positive integers as parameters and prints a rectangular grid of asterisks in response. <alert>rows</alert> indicates the number of rows to be printed, and <alert>cols</alert> indicates the number of columns (i.e., the length of each row).</p>
+        <p>Define a function <c>print_star_grid(rows, cols)</c>, which takes two positive integers as parameters and prints a rectangular grid of asterisks in response. <term>rows</term> indicates the number of rows to be printed, and <term>cols</term> indicates the number of columns (i.e., the length of each row).</p>
         <p>After each <c>"*"</c>, print a space (to match the examples).</p>
         <p>Hints:</p>
         <p>
           <ul>
             <li>For each r in range(rows), for each c in range(cols), print <c>"*  "</c> (a star followed by a space).</li>
-            <li>To prevent going to a new line each time, include <alert>keyword argument:</alert><alert>end =</alert><alert>""</alert> in  your print call.</li>
-            <li>Make a call to <alert>print() with no arguments</alert> each time the inner loop finishes (to make the end of a row).</li>
+            <li>To prevent going to a new line each time, include <term>keyword argument:</term><term>end =</term><term>""</term> in  your print call.</li>
+            <li>Make a call to <term>print() with no arguments</term> each time the inner loop finishes (to make the end of a row).</li>
           </ul>
         </p>
-        <p><alert>Note</alert>: This function does NOT explicitly return a value.</p>
+        <p><term>Note</term>: This function does NOT explicitly return a value.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1268,11 +1268,11 @@ myTests().main()        </tests>
         <p>
           <ul>
             <li>For each r in range(rows), for each c in range(cols), print "X " if r + c is even; otherwise, print "O ".</li>
-            <li>To prevent going to a new line each time, include <alert>keyword argument:</alert><c>end = ""</c> in  your print call.</li>
-            <li>Make a call to <alert>print() with no arguments</alert> each time the inner loop finishes (to make the end of a row).</li>
+            <li>To prevent going to a new line each time, include <term>keyword argument:</term><c>end = ""</c> in  your print call.</li>
+            <li>Make a call to <term>print() with no arguments</term> each time the inner loop finishes (to make the end of a row).</li>
           </ul>
         </p>
-        <p><alert>Note</alert>: This function does NOT explicitly return a value.</p>
+        <p><term>Note</term>: This function does NOT explicitly return a value.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1707,8 +1707,8 @@ myTests().main()        </tests>
     <exercise xml:id="exer-gen_triples-2" label="exe-sec-HW7-PRACTICE-1-161274">
       <title>Generate Triples</title>
       <statement>
-        <p>The function <alert>gen_triples</alert> function takes one parameter, a list `L` of characters. The function then returns a list of all possible 3-character strings that can be made from the characters in `L`.</p>
-        <p>For example, if L = ['n', 'o'], <alert>gen_triples(L)</alert> should return the list:</p>
+        <p>The function <term>gen_triples</term> function takes one parameter, a list `L` of characters. The function then returns a list of all possible 3-character strings that can be made from the characters in `L`.</p>
+        <p>For example, if L = ['n', 'o'], <term>gen_triples(L)</term> should return the list:</p>
         <p>['nnn', 'nno', 'non',
 'noo', 'onn', 'ono', 'oon', 'ooo']</p>
         <p>If `L` is empty, gen_triples should return an empty list.</p>
@@ -1921,7 +1921,7 @@ myTests().main()        </tests>
       <title>Add Entry</title>
       <statement>
         <p>The function <c>add_entry</c> takes a dictionary <c>D</c>, and two additional parameters, <c>key</c> and <c>val</c>, The function adds <c>key</c> to the dictionary, using <c>val</c> for the value of <c>key</c>.</p>
-        <p><alert>Note</alert>: This function does not return anything.</p>
+        <p><term>Note</term>: This function does not return anything.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -2162,11 +2162,11 @@ myTests().main()        </tests>
         <p>The function <c>delete_entry</c> takes a parameter <c>D</c> (a dictionary) and a parameter <c>k</c> (a supposed key in <c>D</c>).</p>
         <p>
           <ul>
-            <li>The function <alert>removes</alert>the entry whose key is <c>k</c> and returns the value that was associated with <c>k</c>.</li>
-            <li><em>However</em>, if <c>k</c> is <alert>not</alert>a key in <c>D</c>, the function leaves <c>D</c> unchanged and returns the value <c>None</c>.</li>
+            <li>The function <term>removes</term>the entry whose key is <c>k</c> and returns the value that was associated with <c>k</c>.</li>
+            <li><em>However</em>, if <c>k</c> is <term>not</term>a key in <c>D</c>, the function leaves <c>D</c> unchanged and returns the value <c>None</c>.</li>
           </ul>
         </p>
-        <p>Hint: <c>D.pop(k)</c> is helpful here, but first you need to handle the case where k is <alert>not</alert> a key in D. You can search online to learn more, using search string: <em>python dictionary delete item</em></p>
+        <p>Hint: <c>D.pop(k)</c> is helpful here, but first you need to handle the case where k is <term>not</term> a key in D. You can search online to learn more, using search string: <em>python dictionary delete item</em></p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -2404,7 +2404,7 @@ myTests().main()        </tests>
       <title>Has Key</title>
       <statement>
         <p>The function <c>has_key</c> takes two parameters: <c>D</c> and <c>k</c>, where <c>D</c> is a dictionary and <c>k</c> is a possible key in <c>D</c>. The function returns <c>True</c> if <c>k</c> is a <em>key</em> in the dictionary <c>D</c> and <c>False</c> otherwise.</p>
-        <p><alert>Hint:</alert>Look up and read about the various operators and methods for dictionaries.</p>
+        <p><term>Hint:</term>Look up and read about the various operators and methods for dictionaries.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -2628,7 +2628,7 @@ myTests().main()        </tests>
       <title>Has Value</title>
       <statement>
         <p>The function <c>has_value</c> takes two parameters: a dictionary <c>D</c> and a number <c>num</c>. The function returns <c>True</c> if <c>num</c> is a <em>value</em> in dictionary <c>D</c>; otherwise, it returns <c>False</c>.</p>
-        <p><alert>Hint:</alert>Reminder yourself about the various operators and methods for dictionaries.</p>
+        <p><term>Hint:</term>Reminder yourself about the various operators and methods for dictionaries.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -2834,7 +2834,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-dictionary_num_pairs-2" label="exe-sec-HW7-PRACTICE-1-145129">
       <title>Get Num Entries</title>
       <statement>
-        <p>The function <c>get_num_pairs</c> takes one parameter, <c>D</c>, which is a dictionary. The function returns the <alert>number</alert>of key-value pairs in <c>D</c>.</p>
+        <p>The function <c>get_num_pairs</c> takes one parameter, <c>D</c>, which is a dictionary. The function returns the <term>number</term>of key-value pairs in <c>D</c>.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -3057,7 +3057,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-build_dictionary-2" label="exe-sec-HW7-PRACTICE-1-161275">
       <title>Build Dictionary</title>
       <statement>
-        <p>The function <alert>build_dictionary</alert> takes two parameters, `key_list` and `value_list`.  Both lists have the same length. The two lists are organized such that each item in `key_list` can be matched up with the item at the corresponding index in `value_list` to form a key-value pair for a dictionary. Write the function so that it creates a new dictionary using `key_list` and `value_list`. The new dictionary should be returned by the function.</p>
+        <p>The function <term>build_dictionary</term> takes two parameters, `key_list` and `value_list`.  Both lists have the same length. The two lists are organized such that each item in `key_list` can be matched up with the item at the corresponding index in `value_list` to form a key-value pair for a dictionary. Write the function so that it creates a new dictionary using `key_list` and `value_list`. The new dictionary should be returned by the function.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -3304,7 +3304,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-find_frequencies_dictionary_of_list-2" label="exe-sec-HW7-PRACTICE-1-144954">
       <title>Accumulate Frequencies Dictionary</title>
       <statement>
-        <p>The function <c>get_freq_dict(L)</c> takes a list of integers and <alert>returns</alert>a dictionary D such that for each number x in L, D[x] is the frequency of x in L.</p>
+        <p>The function <c>get_freq_dict(L)</c> takes a list of integers and <term>returns</term>a dictionary D such that for each number x in L, D[x] is the frequency of x in L.</p>
         <p>TO DO: Accumulate D as explained in your textbook. Read up on how to generate a frequency table using a dictionary if the following hint leaves you puzzled.</p>
         <p>Hint: Use the accumulator pattern.</p>
         <p>
@@ -3565,7 +3565,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-dict_find_mode_of_list-2" label="exe-sec-HW7-PRACTICE-1-145015">
       <title>Calculate Mode of List (using a dictionary)</title>
       <statement>
-        <p>The function <c>get_</c><c>mode(L)</c> takes one parameter, <alert>L</alert>, a list of integers. <c>get_mode</c> builds a dictionary of frequencies to determine how often each number in the list occurs. Then it returns the <em>mode</em> of the list, that is, the number in L which occurs with the highest frequency.</p>
+        <p>The function <c>get_</c><c>mode(L)</c> takes one parameter, <term>L</term>, a list of integers. <c>get_mode</c> builds a dictionary of frequencies to determine how often each number in the list occurs. Then it returns the <em>mode</em> of the list, that is, the number in L which occurs with the highest frequency.</p>
         <p>For example, <c>get_mode([3, 8, 5, 5, 8, 8])</c> would determine that</p>
         <p>
           <ul>
@@ -3574,7 +3574,7 @@ myTests().main()        </tests>
             <li>5 has frequency 2</li>
           </ul>
         </p>
-        <p>Because  8 has the highest frequency, <alert>get_mode</alert> would return 8  for this example.</p>
+        <p>Because  8 has the highest frequency, <term>get_mode</term> would return 8  for this example.</p>
         <p>Note: You may assume that L will not be empty and there will be a single mode in L (no ties for most frequent).</p>
         <p>Tip: Suppose D is a dictionary with integer values. The following code will determine the maximum value in D: <c>max_value = max(D.values())</c></p>
         <p>For example:</p>

@@ -253,7 +253,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-func_print_items_reverse-1" label="exe-sec-HW6-1-31906">
       <title>Print Reverse</title>
       <statement>
-        <p>The function <c>print_reverse</c> takes one parameter, <c>L</c>, which is a list.  The function then prints the items in the list <alert>in reverse order</alert>, one item per line, <alert>WITHOUT changing the value of <c>L</c></alert>.</p>
+        <p>The function <c>print_reverse</c> takes one parameter, <c>L</c>, which is a list.  The function then prints the items in the list <term>in reverse order</term>, one item per line, <term>WITHOUT changing the value of <c>L</c></term>.</p>
         <p>Write the function definition.</p>
         <p>Note 1: This function does NOT get anything from standard input.</p>
         <p>Note 2: This function DOES, however, print to standard output.</p>
@@ -512,7 +512,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-sum_evens-1" label="exe-sec-HW6-1-31990">
       <title>Sum Evens</title>
       <statement>
-        <p>The function <c>sum_evens</c> takes a list of integers and returns the <alert>sum</alert> of all the even integers in the list.</p>
+        <p>The function <c>sum_evens</c> takes a list of integers and returns the <term>sum</term> of all the even integers in the list.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -765,7 +765,7 @@ myTests().main()        </tests>
       <title>Count Contains 'og'</title>
       <statement>
         <p>The function <c>count_contains_og</c>takes a list of strings and returns how many strings in the list contain 'og' / 'OG' / 'oG' / 'Og' (check for 'og', ignoring case).</p>
-        <p><alert>Hint</alert>: Use the sequence membership operator <alert>in</alert> to help you check for 'og' in the individual strings. Create a <alert>lower-cased</alert> version of the string (<c>lower</c>), then use the <c>in</c> operator.</p>
+        <p><term>Hint</term>: Use the sequence membership operator <term>in</term> to help you check for 'og' in the individual strings. Create a <term>lower-cased</term> version of the string (<c>lower</c>), then use the <c>in</c> operator.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1011,7 +1011,7 @@ myTests().main()        </tests>
       <title>First Negative</title>
       <statement>
         <p>Define the function <c>first_negative(nums)</c> takes one parameter. <c>nums</c>, a possibly empty list of numbers. The function then returns the first negative item in <c>numlist</c>.</p>
-        <p>Note: if there are <alert>NO</alert> negative numbers in the list, the function returns the Python object <c>None</c>.</p>
+        <p>Note: if there are <term>NO</term> negative numbers in the list, the function returns the Python object <c>None</c>.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1276,11 +1276,11 @@ myTests().main()        </tests>
       <title>Square Nums 1</title>
       <statement>
         <p>Define the function <c>square_nums</c> which takes a list of numbers, <c>numlist</c>, and returns a NEW list containing the squares of the numbers in the original list.  The given list, <c>numlist</c>, should not be changed.</p>
-        <p><alert>Note</alert>: Use the accumulator pattern and <c>newlist.append(item)</c> to solve this problem.</p>
+        <p><term>Note</term>: Use the accumulator pattern and <c>newlist.append(item)</c> to solve this problem.</p>
         <p>
           <ul>
-            <li>The accumulator variable, <alert>newlist</alert>, should be initialized to an empty list.</li>
-            <li>Inside a <alert>for loop</alert> which iterates over numlist, use <alert>append</alert> to update the value of newlist.</li>
+            <li>The accumulator variable, <term>newlist</term>, should be initialized to an empty list.</li>
+            <li>Inside a <term>for loop</term> which iterates over numlist, use <term>append</term> to update the value of newlist.</li>
           </ul>
         </p>
         <p>For example:</p>
@@ -1738,7 +1738,7 @@ myTests().main()        </tests>
             <li>If the string "STOP" is given as input before 100 words have been added to the list, stop the for loop and return the accumulated list of strings.</li>
           </ul>
         </p>
-        <p><alert>Hints:</alert></p>
+        <p><term>Hints:</term></p>
         <p>- Use the accumulate-a-list pattern, with <c>acc_list</c> initialized to the empty list, <c>[]</c> - Use a for loop to iterate i over <c>range(100)</c> - When STOP is read from input, <c>break</c> from the for loop; otherwise, <c>append</c> the new word to acc_list before reading the next input  - Return acc_list</p>
         <p>For example:</p>
         <tabular>
@@ -2207,12 +2207,12 @@ myTests().main()        </tests>
         <p>The function <c>interleave_lists</c> takes two parameters, <c>L1</c> and <c>L2</c>, both lists. Notice that the lists may have different lengths.</p>
         <p>The function accumulates a new list by appending alternating items from <c>L1</c> and <c>L2</c> until one list has been exhausted.  The remaining items from the other list are then appended to the end of the new list, and the new list is returned.</p>
         <p>For example, if <c>L1 = ["hop", "skip", "jump", "rest"]</c> and <c>L2 = ["up", "down"]</c>, then the function would return the list: <c>["hop", "up", "skip", "down", "jump", "rest"]</c>.</p>
-        <p><alert>HINT:</alert>Python has a built-in function<alert><c>min()</c></alert>which is helpful here.</p>
+        <p><term>HINT:</term>Python has a built-in function<term><c>min()</c></term>which is helpful here.</p>
         <p>
           <ul>
             <li>Initialize accumulator variable <c>newlist</c> to be an empty list</li>
             <li>Set <c>min_length = min(len(L1), len(L2))</c>, the smaller of the two list lengths</li>
-            <li>Use a <alert>for loop</alert>to iterate <c>k</c> over <c>range(min_length)</c> to do the first part of this function's work. On each iteration, append to newlist the item from index k in L1, and then append the item from index k in L2 (two appends on each iteration).</li>
+            <li>Use a <term>for loop</term>to iterate <c>k</c> over <c>range(min_length)</c> to do the first part of this function's work. On each iteration, append to newlist the item from index k in L1, and then append the item from index k in L2 (two appends on each iteration).</li>
             <li>AFTER the loop finishes, append the remaining items (if any) to newlist; use a decision statement to determine which list has remaining items -- then it just takes one line of code to append those items to newlist (using a slice of L1 or L2)</li>
             <li><c>return newlist</c></li>
           </ul>

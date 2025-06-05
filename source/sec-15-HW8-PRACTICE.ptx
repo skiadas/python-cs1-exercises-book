@@ -7,9 +7,9 @@
     <exercise xml:id="exer-build_num_list1-2" label="exe-sec-HW8-PRACTICE-1-32073">
       <title>Build Num List</title>
       <statement>
-        <p>Write a function, <c>build_num_list</c>, that has no parameters; the function reads <alert>integers</alert>from standard input, one at a time, stopping when a <c>0</c> is read.</p>
-        <p>Each number read, except the final <c>0</c>, is appended to a new list (initially empty) created by the function. The function should <alert>return</alert> the accumulated list.</p>
-        <p><alert>Hint:</alert>Use a while loop.</p>
+        <p>Write a function, <c>build_num_list</c>, that has no parameters; the function reads <term>integers</term>from standard input, one at a time, stopping when a <c>0</c> is read.</p>
+        <p>Each number read, except the final <c>0</c>, is appended to a new list (initially empty) created by the function. The function should <term>return</term> the accumulated list.</p>
+        <p><term>Hint:</term>Use a while loop.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -237,9 +237,9 @@ myTests().main()        </tests>
     <exercise xml:id="exer-get_pos_input-2" label="exe-sec-HW8-PRACTICE-1-32046">
       <title>Get Positive Input</title>
       <statement>
-        <p>The function <c>get_pos_input</c> takes no parameters. Instead, it reads integers one at a time from standard input until a <alert>positive</alert> integer is read. Once a positive integer has been read, that integer is <alert>returned</alert>.</p>
+        <p>The function <c>get_pos_input</c> takes no parameters. Instead, it reads integers one at a time from standard input until a <term>positive</term> integer is read. Once a positive integer has been read, that integer is <term>returned</term>.</p>
         <p>Add Python code to implement the <c>get_pos_input</c> function.</p>
-        <p><alert>Hint</alert>: Use a while loop.</p>
+        <p><term>Hint</term>: Use a while loop.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -455,9 +455,9 @@ myTests().main()        </tests>
     <exercise xml:id="exer-sum_nonneg_input-2" label="exe-sec-HW8-PRACTICE-1-32050">
       <title>Sum Nonnegative Input</title>
       <statement>
-        <p>The function <c>sum_nonneg_input</c> takes no parameters. Instead, it reads <alert>integers</alert>one at a time from standard input, maintaining a running sum of numbers entered, until a negative integer is read. Once a negative integer is read, the function returns the current sum. Note: the negative number is not included in the sum.</p>
+        <p>The function <c>sum_nonneg_input</c> takes no parameters. Instead, it reads <term>integers</term>one at a time from standard input, maintaining a running sum of numbers entered, until a negative integer is read. Once a negative integer is read, the function returns the current sum. Note: the negative number is not included in the sum.</p>
         <p>Write Python code to implement the <c>sum_nonneg_input</c> function.</p>
-        <p><alert>Hint</alert>: Use a while loop.</p>
+        <p><term>Hint</term>: Use a while loop.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -655,15 +655,15 @@ myTests().main()        </tests>
       <title>Max Float Input</title>
       <statement>
         <p>
-          The function <c>max_float_input</c> takes no parameters. Instead, it reads strings from standard input, one at a time, until the string "<alert>stop</alert>" is read.
+          The function <c>max_float_input</c> takes no parameters. Instead, it reads strings from standard input, one at a time, until the string "<term>stop</term>" is read.
           <ul>
-            <li>If the string is not "<alert>stop</alert>", the string is converted to a floating point value (type <c>float</c>) and compared to the largest previous float value entered (if any).</li>
-            <li>Otherwise, the function stops and returns the <alert>largest floating point value</alert> that was entered so far.</li>
+            <li>If the string is not "<term>stop</term>", the string is converted to a floating point value (type <c>float</c>) and compared to the largest previous float value entered (if any).</li>
+            <li>Otherwise, the function stops and returns the <term>largest floating point value</term> that was entered so far.</li>
           </ul>
         </p>
-        <p><alert>Note</alert>: If the <alert>first</alert>string entered is "<alert>stop</alert>", the function simply returns the Python object <c>None</c>.</p>
+        <p><term>Note</term>: If the <term>first</term>string entered is "<term>stop</term>", the function simply returns the Python object <c>None</c>.</p>
         <p>Add Python code to implement the <c>max_float_input</c> function.</p>
-        <p><alert>Hint</alert>: Use a while loop.</p>
+        <p><term>Hint</term>: Use a while loop.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -897,8 +897,8 @@ myTests().main()        </tests>
         <p>The function <c>multiplication_quiz(a, b)</c> takes two integer parameters, <c>a</c> and <c>b</c>. The function prompts the user (just once) to enter the product of a times b, and uses a loop to keep checking the input for the correct answer.</p>
         <p>The function keeps a count of how many attempts were needed to get the right answer. When the correct answer is read, the function returns the count.</p>
         <p>Write the code needed to implement this function.</p>
-        <p><alert>Hint</alert>: Use a while loop.</p>
-        <p><alert>Note</alert>: You should assume that every input can be converted to an integer.</p>
+        <p><term>Hint</term>: Use a while loop.</p>
+        <p><term>Note</term>: You should assume that every input can be converted to an integer.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1125,7 +1125,7 @@ myTests().main()        </tests>
       <title>List Has Repeat (using set)</title>
       <statement>
         <p>Write a definition for the function <c>has_repeat(L)</c>. The parameter L is a list of immutable items. The function returns True if L has at least one repeated item, otherwise it returns False.</p>
-        <p><alert>Hint</alert>: If the set of items in L has a shorter length than L itself, return True; otherwise, return False.</p>
+        <p><term>Hint</term>: If the set of items in L has a shorter length than L itself, return True; otherwise, return False.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1349,7 +1349,7 @@ myTests().main()        </tests>
       <statement>
         <p>Implement the function <c>num_distinct_elements(C)</c>. The function takes the parameter C, a collection of type list, string, or tuple, and returns the number of distinct items in C. For example, if C is the list [1, 2, 3, 3, 2, 1, 2, 3, 3, 10], the return value would be 4 (since 1, 2, 3, 10 are the "distinct" elements).</p>
         <p>HINT: The body of the function requires just one or two lines of code.</p>
-        <p><alert>NOTE</alert>: Use <c>set</c> in your code.</p>
+        <p><term>NOTE</term>: Use <c>set</c> in your code.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1594,9 +1594,9 @@ myTests().main()        </tests>
     <exercise xml:id="exer-distinct_elements_in_nested_collection-2" label="exe-sec-HW8-PRACTICE-1-32391">
       <title>Get Distinct From Nested</title>
       <statement>
-        <p>Write a definition for the function <c>get_distinct_from_nested(C)</c>, where the parameter C is a sequence of sequences (e.g.,  a list of strings or a list of lists of integers). The job of the function is to use set operations to find and return the <alert>sorted</alert>list of unique elements in the nested collection C.</p>
-        <p><alert>Hint</alert>: If S is a set, <c>sorted(S)</c> is a sorted list of the elements in S.</p>
-        <p><alert>Another Hint</alert>: Use set union to accumulate the set S of distinct inner elements using a single for loop:</p>
+        <p>Write a definition for the function <c>get_distinct_from_nested(C)</c>, where the parameter C is a sequence of sequences (e.g.,  a list of strings or a list of lists of integers). The job of the function is to use set operations to find and return the <term>sorted</term>list of unique elements in the nested collection C.</p>
+        <p><term>Hint</term>: If S is a set, <c>sorted(S)</c> is a sorted list of the elements in S.</p>
+        <p><term>Another Hint</term>: Use set union to accumulate the set S of distinct inner elements using a single for loop:</p>
         <p>
           <ul>
             <li>iterate <c>seq</c>over the top-level elements of C</li>
@@ -1829,7 +1829,7 @@ myTests().main()        </tests>
       <title>String Intersection</title>
       <statement>
         <p>Write the definition for a function <c>string_intersection(str1, str2)</c>, which takes two string parameters and returns a sorted list of the characters the two strings have in common.</p>
-        <p><alert>Hint</alert>: Use set intersection and the sorted() function.</p>
+        <p><term>Hint</term>: Use set intersection and the sorted() function.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -2055,7 +2055,7 @@ myTests().main()        </tests>
       <title>Write a Program to Check for Anagrams</title>
       <statement>
         <p>Write the code to read two strings (str1, str2) from standard input and print a message regarding whether or not the strings are anagrams (rearrangements) of each other.</p>
-        <p><alert>Hint</alert>: Compare sorted lists of characters for the two strings.</p>
+        <p><term>Hint</term>: Compare sorted lists of characters for the two strings.</p>
         <p>In addition, if the strings are NOT anagrams of each other, give one of the following explanations: "They do not have the same character sets.", or "They do not have the same character frequencies."</p>
         <p>For example, "DOGS" and "GODS" are anagrams. "DOGS" and "HANOVER" do not have the same character sets, while "HANOVER" and "HANOOOVER" do not have the same character frequencies.</p>
         <p>Use set operations to determine if two non-anagrams have the same character set; if they do share the same set of characters, then you may conclude that their character frequencies are the only difference.</p>

@@ -5,8 +5,8 @@
     Main Concepts:
     <ul>
       <li>A text file is a sequence of lines, where each line is a string ending in the newline character, '\n'.</li>
-      <li>Syntax and semantics for calling the <alert>open</alert>function to open a text file for reading.</li>
-      <li>Syntax and semantics for some basic file methods: <alert>readline, readlines, read, close</alert>.</li>
+      <li>Syntax and semantics for calling the <term>open</term>function to open a text file for reading.</li>
+      <li>Syntax and semantics for some basic file methods: <term>readline, readlines, read, close</term>.</li>
       <li>Coding pattern: How to iterate over the lines of a text file using a for loop.</li>
     </ul>
     <p />
@@ -14,7 +14,7 @@
   <exercises>
     <exercisegroup xml:id="exer-file_reading_match-1" label="exe-sec-HW9-1-225597">
       <introduction>
-        <p>Suppose <alert>pet_names.txt</alert> is the name of a text file in our current directory, and we successfully opened the file for reading by executing the following statement:</p>
+        <p>Suppose <term>pet_names.txt</term> is the name of a text file in our current directory, and we successfully opened the file for reading by executing the following statement:</p>
         <p></p>
         <c>pets = open('pet_names.txt', 'r')</c>
         <p>Each of the code chunks below uses file object, <c>pets</c>. Match each code chunk with the correct description of the result produced by executing the code.</p>
@@ -524,7 +524,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-file_get_second_line-1" label="exe-sec-HW9-1-32165">
       <title>Get Second Line</title>
       <statement>
-        <p>The function <c>get_second_line</c> takes one parameter, <c>fname</c>, the name of a text file. The function should open the file for reading, determine the <alert>second</alert>line of the file, close the file, and return the second line (a string).</p>
+        <p>The function <c>get_second_line</c> takes one parameter, <c>fname</c>, the name of a text file. The function should open the file for reading, determine the <term>second</term>line of the file, close the file, and return the second line (a string).</p>
         <p>NOTE: You may assume the file will have at least two lines.</p>
         <p>For example:</p>
         <tabular>
@@ -724,11 +724,11 @@ myTests().main()        </tests>
     <exercise xml:id="exer-file_iteration_introduction-1" label="exe-sec-HW9-1-104015">
       <title>File Iteration: Introduction</title>
       <statement>
-        <p>A text file is essentially a sequence of lines. Here is a <alert>typical coding pattern</alert> for processing each line of a file in turn:</p>
+        <p>A text file is essentially a sequence of lines. Here is a <term>typical coding pattern</term> for processing each line of a file in turn:</p>
         <p>
           <ul>
             <li>Open the file for reading.</li>
-            <li>Use a <alert>for loop</alert> to iterate over the lines of text, executing a block of one or more statements to process each line.</li>
+            <li>Use a <term>for loop</term> to iterate over the lines of text, executing a block of one or more statements to process each line.</li>
             <li>Close the file.</li>
             <li>Finish processing (print, return, etc.) if needed</li>
           </ul>
@@ -742,15 +742,15 @@ for line in myFile:
     etc...
 myFile.close()
         </pre>
-        <p><alert>PROBLEM</alert>: Read a string from standard input. Then, iterate over a text file called "cards.txt" and, for each line of the file that starts with the string read from standard input, print that line.</p>
+        <p><term>PROBLEM</term>: Read a string from standard input. Then, iterate over a text file called "cards.txt" and, for each line of the file that starts with the string read from standard input, print that line.</p>
         <p>
-          <alert>TO DO:</alert>
+          <term>TO DO:</term>
           <ul>
             <li>Add the missing bits of code to complete the partial solution that is provided (replace the _________ s).</li>
             <li><em>Follow the coding pattern described above.</em></li>
           </ul>
         </p>
-        <p><alert>NOTE</alert>: If there are no lines in the file beginning with the given string, there should be no output.</p>
+        <p><term>NOTE</term>: If there are no lines in the file beginning with the given string, there should be no output.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="30%" />
@@ -985,8 +985,8 @@ myTests().main()        </tests>
     <exercise xml:id="exer-file_first_chars-1" label="exe-sec-HW9-1-32176">
       <title>File First Chars</title>
       <statement>
-        <p>The function <c>file_first_chars</c> takes one parameter, <c>fname</c>, the name of a text file, and <alert>returns</alert>a string made up of the first character from each line in the file.  You may assume there are no blank lines in the file.</p>
-        <p><alert>Hint</alert>: Use a <alert>for</alert>loop to iterate over the lines of the file and accumulate the string of first characters.</p>
+        <p>The function <c>file_first_chars</c> takes one parameter, <c>fname</c>, the name of a text file, and <term>returns</term>a string made up of the first character from each line in the file.  You may assume there are no blank lines in the file.</p>
+        <p><term>Hint</term>: Use a <term>for</term>loop to iterate over the lines of the file and accumulate the string of first characters.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1383,7 +1383,7 @@ myTests().main()        </tests>
       <title>Print Last Line and Count of Lines</title>
       <statement>
         <p>The function <c>print_last_line</c> takes one parameter, <c>fname</c>, the name of a text file. The function should open the file for reading, read the lines of the file until it reaches the end, print out the last line in the file, report the number of lines contained in the file, and close the file.</p>
-        <p><alert>Hint</alert>: Use a <alert>for</alert>loop to iterate over the lines and accumulate the count.</p>
+        <p><term>Hint</term>: Use a <term>for</term>loop to iterate over the lines and accumulate the count.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1577,14 +1577,14 @@ myTests().main()        </tests>
     <exercise xml:id="exer-file_last_words-1" label="exe-sec-HW9-1-31853">
       <title>File Last Words</title>
       <statement>
-        <p>The function <alert>last_words</alert>takes one parameter, <c>fname</c>, the name of a text file, and returns a list containing the last word from each line of the file. For example, if the file contents are:</p>
+        <p>The function <term>last_words</term>takes one parameter, <c>fname</c>, the name of a text file, and returns a list containing the last word from each line of the file. For example, if the file contents are:</p>
         <pre>apples are red
 bananas are yellow
 limes are green
         </pre>
         <p>then the list <c>["red", "yellow", "green"]</c> should be returned.</p>
-        <p><alert>NOTE:</alert> You may assume the file will contain no blank lines.</p>
-        <p><alert>BIG HINT:</alert> If <c>line</c>is a string representing a line of text (inside a for loop!), then <c>L = line.split()</c> creates a list of the words in the line.</p>
+        <p><term>NOTE:</term> You may assume the file will contain no blank lines.</p>
+        <p><term>BIG HINT:</term> If <c>line</c>is a string representing a line of text (inside a for loop!), then <c>L = line.split()</c> creates a list of the words in the line.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1790,7 +1790,7 @@ myTests().main()        </tests>
             <li>However, if <c>line_num</c> is greater than or equal to the number of lines in the file, a warning message should printed instead.</li>
           </ul>
         </p>
-        <p><alert>NOTE:</alert> <c>line_num</c> begins indexing at 0; line_num = 0 refers to the FIRST line of the file, line_num = 1 refers to the SECOND line, and so on.</p>
+        <p><term>NOTE:</term> <c>line_num</c> begins indexing at 0; line_num = 0 refers to the FIRST line of the file, line_num = 1 refers to the SECOND line, and so on.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
