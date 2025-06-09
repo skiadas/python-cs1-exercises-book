@@ -721,7 +721,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-file_iteration_introduction-1" label="exe-sec-HW9-1-104015">
+    <exercise xml:id="exer-file_iteration_introduction-1" label="exe-sec-HW9-1-271603">
       <title>File Iteration: Introduction</title>
       <statement>
         <p>A text file is essentially a sequence of lines. Here is a <alert>typical coding pattern</alert> for processing each line of a file in turn:</p>
@@ -734,7 +734,7 @@ myTests().main()        </tests>
           </ul>
         </p>
         <p>NOTE: You will need to use this pattern, or some variation of it, to solve the remaining coding problems in this assignment.</p>
-        <p>As the following for loop iterates through each line of the file, the loop variable (`line`) represents the current line of the file as a string of characters.</p>
+        <p>As the following for loop iterates through each line of the file, the loop variable (<c>line</c>) represents the current line of the file as a string of characters.</p>
         <pre>myFile = open("someTextFile.txt", "r")
 for line in myFile:
     do something on each iteration

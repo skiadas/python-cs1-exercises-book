@@ -4,30 +4,9 @@
     <p>HWK 1 Practice Copy -- for review purposes</p>
   </introduction>
   <exercises>
-    <exercise xml:id="exer-CodeRunner-Overview-2" label="exe-sec-HW1-practice-1-145621">
+    <exercise xml:id="exer-CodeRunner-Overview-2" label="exe-sec-HW1-practice-1-271600">
       <statement correct="yes">
-        <p>CodeRunner is a system for working on coding problems directly within Moodle.  Below is an example of what a CodeRunner problem looks like.</p>
-        <p>
-          <image decorative="yes" source="images/145621-Screen%20Shot%202018-01-14%20at%209.57.32%20AM.png" width="90%" />
-        </p>
-        <p>1. The first thing you should do when starting a problem is to <alert>carefully</alert> read the problem description. The problem description tells you what your solution code needs to accomplish, as well as important details about the problem including:</p>
-        <p>
-          <ul>
-            <li>Type of input your code must handle</li>
-            <li>Type of output your code will need to produce</li>
-            <li>Whether your code should produce output (print) or return a value</li>
-          </ul>
-        </p>
-        <alert>If you don't understand the problem, you won't be able to solve the problem; <em>this is the most important step</em>!</alert>
-        <p>2. To help you understand the problem, you will always be given a few examples. Typically, the examples show sample inputs and the result that your code should produce given each input. It's important to understa!d that your solution needs to be <alert>general</alert>.  This means that your goal is to code a solution that will work for any valid input for the problem, not just the given examples.</p>
-        <p>3. Once you understand the problem, you can start coding your solution in the white box. Depending on the problem, there may be some code already there to get you started. When you are ready to check your solution, click the "Check" button.</p>
-        <p>If I were to click the "Check" button for the example problem in the image, here is the feedback that I would get from CodeRunner.</p>
-        <p>
-          <image decorative="yes" source="images/145621-Screen%20Shot%202018-01-14%20at%2010.00.24%20AM.png" width="90%" />
-        </p>
-        <p>For each example input, CodeRunner shows you the correct (<alert>Expected</alert>) result, the result produced by your code (<alert>Got</alert>), and whether your result is correct. Clicking on the "Show differences" button will show you where your result differs from the expected result.</p>
-        <p>4. Use the CodeRunner feedback to try to understand where the problems are in your code, and then work on fixing your solution code. Keep checking and revising your code until you reach the correct solution.</p>
-        <p>Now it is time for you to try solving some CodeRunner problems!</p>
+        <p>Make a new info question to replace the HW1 info question, or delete that question and instead make a Google Doc to replace it.</p>
       </statement>
     </exercise>
     <exercise xml:id="exer-output_input-2" label="exe-sec-HW1-practice-1-269746">
@@ -1577,7 +1556,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-convert_minutes-2" label="exe-sec-HW1-practice-1-269752">
+    <exercise xml:id="exer-convert_minutes-2" label="exe-sec-HW1-practice-1-271601">
       <title>Convert Minutes</title>
       <statement>
         <p>We need to convert a number of minutes to hours-and-minutes. For example, 83 minutes is equal to 1 hour and 23 minutes.</p>

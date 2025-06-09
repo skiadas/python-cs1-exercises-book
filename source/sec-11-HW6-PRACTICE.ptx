@@ -1728,18 +1728,18 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-build_list_from_input-2" label="exe-sec-HW6-PRACTICE-1-30599">
+    <exercise xml:id="exer-build_list_from_input-2" label="exe-sec-HW6-PRACTICE-1-271602">
       <title>Build List from Input</title>
       <statement>
         <p>
           Write a function, build_list<c>()</c>, to read words from standard input and store them in a list.
           <ul>
             <li>You may assume that there will be fewer than 100 words.</li>
-            <li>If the string "STOP" is given as input before 100 words have been added to the list, stop the for loop and return the accumulated list of strings.</li>
+            <li>If the string "STOP" is given as input before 100 words have been added to the list, stop the for loop and return the accumulated list of strings</li>
           </ul>
+          <h3>Hints:</h3>
         </p>
-        <p><alert>Hints:</alert></p>
-        <p>- Use the accumulate-a-list pattern, with <c>acc_list</c> initialized to the empty list, <c>[]</c> - Use a for loop to iterate i over <c>range(100)</c> - When STOP is read from input, <c>break</c> from the for loop; otherwise, <c>append</c> the new word to acc_list before reading the next input  - Return acc_list</p>
+        <p>- Use the accumulate-a-list pattern, with <c>acc_list</c> initialized to the empty list, <c>[]</c> - Use a for loop to iterate i over <c>range(100)</c> - When STOP is read from input, <c>break</c> from the for loop; otherwise, <c>append</c> the new word to <c>acc_list</c> before reading the next input  - Return <c>acc_list</c></p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />

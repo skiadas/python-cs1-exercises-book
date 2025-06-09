@@ -4,21 +4,32 @@
     <p dir="ltr">- Ungraded Assignment</p>
   </introduction>
   <exercises>
-    <exercise xml:id="exer-defining_classes_intro-2" label="exe-sec-HW10-PRACTICE-1-32302">
+    <exercise xml:id="exer-defining_classes_intro-2" label="exe-sec-HW10-PRACTICE-1-271604">
       <title>Defining Classes</title>
       <statement correct="yes">
         <p>Previously, you have used built-in types in Python like <c>dict</c>, <c>str</c>, and <c>list</c>. Each of these types comes with its own methods, such as <c>keys</c>, <c>lower</c>, and <c>append</c>.</p>
-        <p>Every object has a <alert>type</alert>that indicates which class the object belongs to. The purpose of the class is to specify the instance variables (aka data, attributes) and methods (aka functions) that each object belonging to the class will have.</p>
+        <p>Every object has a <alert>type</alert>that indicates which class the object belongs to. The purpose of the class definition is to specify the instance variables (aka data, attributes) and methods (aka functions) that each object belonging to the class will have.</p>
         <p>For example, in real life, every <alert>car</alert>has attributes such as make, model, and current odometer. And every reasonable car has available methods such as start engine, shift transmission, and honk horn.</p>
         <p>Our goal in this assignment is to learn how to <em>create new data types</em> by defining our own classes.</p>
       </statement>
     </exercise>
-    <exercise xml:id="exer-pogil_1a_classname-2" label="exe-sec-HW10-PRACTICE-1-32303">
+    <exercise xml:id="exer-pogil_1a_classname-2" label="exe-sec-HW10-PRACTICE-1-271605">
       <statement>
         <p>What is the <alert>name</alert>of the class being defined here:</p>
-        <p>
-          <image decorative="yes" source="images/32303-image.png" width="90%" />
-        </p>
+        <pre>
+# sentenceclass.py
+
+class Sentence:
+    def __init__(self, chars):
+        # store the chars in an instance variable
+        self.chars = chars
+        
+    def getChars(self):
+        return self.chars
+    
+    def setChars(self, newChars):
+        self.chars = newChars
+        </pre>
         <fillin answer="Sentence" width="16" />
       </statement>
       <evaluation>
@@ -36,12 +47,23 @@
         </evaluate>
       </evaluation>
     </exercise>
-    <exercise xml:id="exer-pogil_1b_methods-2" label="exe-sec-HW10-PRACTICE-1-32304">
+    <exercise xml:id="exer-pogil_1b_methods-2" label="exe-sec-HW10-PRACTICE-1-271606">
       <statement>
         <p>How many <alert>methods</alert>are in the class being defined here:</p>
-        <p>
-          <image decorative="yes" source="images/32304-image.png" width="90%" />
-        </p>
+        <pre>
+# sentenceclass.py
+
+class Sentence:
+    def __init__(self, chars):
+        # store the chars in an instance variable
+        self.chars = chars
+        
+    def getChars(self):
+        return self.chars
+    
+    def setChars(self, newChars):
+        self.chars = newChars
+        </pre>
         <fillin answer="3.0" width="16" />
       </statement>
       <evaluation>
@@ -55,12 +77,36 @@
         </evaluate>
       </evaluation>
     </exercise>
-    <exercise xml:id="exer-pogil_1c_self-2" label="exe-sec-HW10-PRACTICE-1-32305">
+    <exercise xml:id="exer-pogil_1c_self-2" label="exe-sec-HW10-PRACTICE-1-271608">
       <statement>
-        <p>What is the <alert>name of the first parameter</alert> in all the methods?</p>
-        <p>
-          <image decorative="yes" source="images/32305-Length.png" width="90%" />
-        </p>
+        <p>Here is a <c>Length</c> class definition. What is the <alert>name of the first parameter</alert> in all the instance method definitions for a Python class?</p>
+        <pre>
+class Length:
+    def __init__(self, quantity, unit):
+        # A Length object has a quantity (numerical) and a unit label (string).
+        # The unit will be one of these: 'inches', 'yards'
+        self.quantity = quantity
+        self.unit = unit
+    
+    def has_unit(self, some_unit):
+        # return True if the Length object's unit label is
+        # the same as some_unit, otherwise False
+        return self.unit == some_unit
+    
+    def convert_to(self, new_unit):
+        # convert this Length object to the new unit
+        if self.has_unit('inches') and new_unit == 'yards':
+            self.quantity = self.quantity / 36
+            self.unit = new_unit
+        elif self.has_unit('yards') and new_unit == 'inches':
+            self.quantity = self.quantity * 36
+            self.unit = new_unit
+            
+    def __str__(self):
+        # return a string for printing the Length object information
+        rounded_quantity = round(self.quantity, 3)
+        return f'{rounded_quantity} {self.unit}'
+        </pre>
         <fillin answer="self" width="16" />
       </statement>
       <evaluation>
@@ -80,12 +126,18 @@
         </evaluate>
       </evaluation>
     </exercise>
-    <exercise xml:id="exer-pogil_2a_main_num_objects-2" label="exe-sec-HW10-PRACTICE-1-32340">
+    <exercise xml:id="exer-pogil_2a_main_num_objects-2" label="exe-sec-HW10-PRACTICE-1-271610">
       <statement>
-        <p>In the <c>"__main__"</c> code block below, how many different <c>Sentence</c>objects are created by activating the class constructor?</p>
-        <p>
-          <image decorative="yes" source="images/32340-image%20%281%29.png" width="90%" />
-        </p>
+        <p>In the code block below, how many different <c>Sentence</c>objects are created by activating the class constructor?</p>
+        <pre>
+if __name__ == "__main__":
+    greeting = Sentence("Hi")
+    question = Sentence("How are you doing today?")
+    mystr = question.getChars()
+    name = Sentence("My name is Tina")
+    name.setChars("My name is Tony")
+    another = Sentence("Did you see 'Turning Red'?")
+        </pre>
         <fillin answer="4.0" width="16" />
       </statement>
       <evaluation>
@@ -99,12 +151,19 @@
         </evaluate>
       </evaluation>
     </exercise>
-    <exercise xml:id="exer-pogil_2d_method_parameters-2" label="exe-sec-HW10-PRACTICE-1-32308">
+    <exercise xml:id="exer-pogil_2d_method_parameters-2" label="exe-sec-HW10-PRACTICE-1-271611">
       <statement>
         <p><alert>How many parameters</alert> does the <c>convert_to</c> method have?</p>
-        <p>
-          <image decorative="yes" source="images/32308-convert_to.png" width="90%" />
-        </p>
+        <pre>
+def convert_to(self, new_unit):
+    # convert this Length object to the new unit
+    if self.has_unit('inches') and new_unit == 'yards':
+        self.quantity = self.quantity / 36
+        self.unit = new_unit
+    elif self.has_unit('yards') and new_unit == 'inches':
+        self.quantity = self.quantity * 36
+        self.unit = new_unit
+        </pre>
         <fillin answer="2.0" width="16" />
       </statement>
       <evaluation>
@@ -118,13 +177,19 @@
         </evaluate>
       </evaluation>
     </exercise>
-    <exercise xml:id="exer-pogil_2e_method_call_arguments-2" label="exe-sec-HW10-PRACTICE-1-32309">
+    <exercise xml:id="exer-pogil_2e_method_call_arguments-2" label="exe-sec-HW10-PRACTICE-1-271612">
       <statement>
-        <p>The <c>convert_to</c> method is called on lines 31 and 38. What is the <alert>number of arguments</alert> for a <c>convert_to</c> method call?</p>
-        <p>
-          <image decorative="yes" source="images/32309-length_main.png" width="90%" />
-        </p>
-        <fillin answer="1.0" width="16" />
+        <p>Notice that the <c>convert_to</c> method is called twice in the code block below. What is the number of <alert>arguments</alert> for a <c>convert_to</c> method call?</p>
+        <c><pre>if __name__ == "__main__":
+    football_field = Length(100, 'yards')
+    print("Length of a football field:", football_field)
+    football_field.convert_to("inches")
+    print("Length of a football field:", football_field)
+    
+    rattler = Length(38, "inches")
+    print("Length of a female black-tailed rattler:", rattler)
+    rattler.convert_to("yards")
+    print("Length of a female black-tailed rattler:", rattler)</pre></c><fillin answer="1.0" width="16" />
       </statement>
       <evaluation>
         <evaluate>
@@ -174,25 +239,26 @@
         </choice>
       </choices>
     </exercise>
-    <exercise xml:id="exer-timer_class-multi1-2" label="exe-sec-HW10-PRACTICE-1-32329">
-      <title>Class Constructor</title>
+    <exercise xml:id="exer-timer_class-multi1-2" label="exe-sec-HW10-PRACTICE-1-271613">
+      <title>Initializing New Instances of the Class</title>
       <statement>
         <p>Consider the following class definition.</p>
         <pre>  class Timer:
       """ A class that represents a timer. """
       def __init__(self):
-          self.__hours = 0
-          self.__minutes = 0
-          self.__seconds = 0
+          self.hours = 0
+          self.minutes = 0
+          self.seconds = 0
 
       def print_with_labels(self):
-          print('Hours:', self.__hours, end=' ')
-          print('Minutes:', self.__minutes, end=' ')
-          print('Seconds:', self.__seconds)
+          print('Hours:', self.hours, end=' ')
+          print('Minutes:', self.minutes, end=' ')
+          print('Seconds:', self.seconds)
 
       def __str__(self):
-          return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)        </pre>
-        <p>Which of the methods in the function is the class <alert>constructor</alert>, responsible for initializing the instance variables (attributes) of the class?</p>
+          return f'{self.hours}:{self.minutes}:{self.seconds}'
+        </pre>
+        <p>Which of these methods is responsible for initializing the instance variables (attributes) of a new instance?</p>
       </statement>
       <choices multiple-correct="no" randomize="yes">
         <choice correct="yes">
@@ -221,24 +287,25 @@
         </choice>
       </choices>
     </exercise>
-    <exercise xml:id="exer-timer_class-multi2-2" label="exe-sec-HW10-PRACTICE-1-32316">
+    <exercise xml:id="exer-timer_class-multi2-2" label="exe-sec-HW10-PRACTICE-1-271614">
       <title>Creating Objects</title>
       <statement>
         <p>Consider the following class definition.</p>
         <pre>  class Timer:
       """ A class that represents a timer. """
       def __init__(self):
-          self.__hours = 0
-          self.__minutes = 0
-          self.__seconds = 0
+          self.hours = 0
+          self.minutes = 0
+          self.seconds = 0
 
       def print_with_labels(self):
-          print('Hours:', self.__hours, end=' ')
-          print('Minutes:', self.__minutes, end=' ')
-          print('Seconds:', self.__seconds)
+          print('Hours:', self.hours, end=' ')
+          print('Minutes:', self.minutes, end=' ')
+          print('Seconds:', self.seconds)
 
       def __str__(self):
-          return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)        </pre>
+          return f'{self.hours}:{self.minutes}:{self.seconds}'
+        </pre>
         <p>Which of the following lines of code will create a new Timer object set to 0 seconds, 0 minutes, and 0 hours, and assign it to the variable <c>timer1</c>?</p>
       </statement>
       <choices multiple-correct="no" randomize="yes">
@@ -292,7 +359,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise xml:id="exer-timer_class-multi4-2" label="exe-sec-HW10-PRACTICE-1-32319">
+    <exercise xml:id="exer-timer_class-multi4-2" label="exe-sec-HW10-PRACTICE-1-271615">
       <title>Calling Methods 1</title>
       <statement>
         <p>Consider the following class definition.</p>
@@ -309,8 +376,9 @@
           print('Seconds:', self.seconds)
 
       def __str__(self):
-          return str(self.hours) + ':' + str(self.minutes) + ':' + str(self.seconds)        </pre>
-        <p><alert>Recall:</alert> The <c>__str__</c>method returns the string representation of the object. This method is activated (automatically!) whenever <c>print()</c> or <alert><em><c>str</c></em><c>()</c></alert> is invoked on an object. (Like all the other methods whose names are surrounded by double underscores (<c>__</c>), we never call <c>__str__</c> directly.  It is there, waiting to "answer the call" when we ask to <c>print</c> an object or use <c>str()</c>to convert an object to a string.)</p>
+          return f'{self.hours}:{self.minutes}:{self.seconds}'
+        </pre>
+        <p><alert>Recall:</alert> The <c>__str__</c>method returns the string representation of the object. This method is activated (automatically!) whenever <c>print()</c> or <alert><c>str</c><c>()</c></alert> is invoked on an object. (Like all the other methods whose names are surrounded by double underscores (<c>__</c>), we never call <c>__str__</c> directly.  It is there, waiting to "answer the call" when we ask to <c>print</c> an object or use <c>str()</c>to convert an object to a string.)</p>
         <p><alert>Question:</alert> What output will be produced when the following lines of code are executed?</p>
         <pre>    t2 = Timer()
     t2.minutes = 7
@@ -369,33 +437,33 @@
         </choice>
       </choices>
     </exercise>
-    <exercise xml:id="exer-timer_class-multi3-2" label="exe-sec-HW10-PRACTICE-1-104213">
+    <exercise xml:id="exer-timer_class-multi3-2" label="exe-sec-HW10-PRACTICE-1-271616">
       <title>Setting Attributes</title>
       <statement>
         <p>Consider the following class definition.</p>
         <pre>  class Timer:
       """ A class that represents a timer. """
       def __init__(self):
-          self.__hours = 0
-          self.__minutes = 0
-          self.__seconds = 0
+          self.hours = 0
+          self.minutes = 0
+          self.seconds = 0
       
       def set_hours(self, h):
-          self.__hours = h
+          self.hours = h
           
       def set_minutes(self, m):
-          self.__minutes = m
+          self.minutes = m
           
       def set_seconds(self, s):
-          self.__seconds = s
+          self.seconds = s
 
       def print_with_labels(self):
-          print('Hours:', self.__hours, end=' ')
-          print('Minutes:', self.__minutes, end=' ')
-          print('Seconds:', self.__seconds)
+          print('Hours:', self.hours, end=' ')
+          print('Minutes:', self.minutes, end=' ')
+          print('Seconds:', self.seconds)
 
       def __str__(self):
-          return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)        </pre>
+          return f'{self.hours}:{self.minutes}:{self.seconds}'        </pre>
         <p>What output will be produced when the following lines of code are executed?</p>
         <pre>      t1 = Timer()
       t1.set_hours(7)
@@ -435,33 +503,33 @@
         </choice>
       </choices>
     </exercise>
-    <exercise xml:id="exer-timer_class-multi5-2" label="exe-sec-HW10-PRACTICE-1-32320">
+    <exercise xml:id="exer-timer_class-multi5-2" label="exe-sec-HW10-PRACTICE-1-271617">
       <title>Calling Methods 2</title>
       <statement>
         <p>Consider the following class definition.</p>
         <pre>  class Timer:
       """ A class that represents a timer. """
       def __init__(self):
-          self.__hours = 0
-          self.__minutes = 0
-          self.__seconds = 0
+          self.hours = 0
+          self.minutes = 0
+          self.seconds = 0
       
       def set_hours(self, h):
-          self.__hours = h
+          self.hours = h
           
       def set_minutes(self, m):
-          self.__minutes = m
+          self.minutes = m
           
       def set_seconds(self, s):
-          self.__seconds = s
+          self.seconds = s
 
       def print_with_labels(self):
-          print('Hours:', self.__hours, end=' ')
-          print('Minutes:', self.__minutes, end=' ')
-          print('Seconds:', self.__seconds)
+          print('Hours:', self.hours, end=' ')
+          print('Minutes:', self.minutes, end=' ')
+          print('Seconds:', self.seconds)
 
       def __str__(self):
-          return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)        </pre>
+          return f'{self.hours}:{self.minutes}:{self.seconds}'        </pre>
         <p>What output will be produced when the following lines of code are executed?</p>
         <pre>    t2 = Timer()
     t2.set_hours(14)
@@ -521,34 +589,34 @@
         </choice>
       </choices>
     </exercise>
-    <exercise xml:id="exer-timer_class-multi6-2" label="exe-sec-HW10-PRACTICE-1-32342">
+    <exercise xml:id="exer-timer_class-multi6-2" label="exe-sec-HW10-PRACTICE-1-271619">
       <title>Writing Methods</title>
       <statement>
         <p>Consider the following class definition.</p>
         <pre>  class Timer:
       """ A class that represents a timer. """
       def __init__(self):
-          self.__hours = 0
-          self.__minutes = 0
-          self.__seconds = 0
+          self.hours = 0
+          self.minutes = 0
+          self.seconds = 0
 
       def print_with_labels(self):
-          print('Hours:', self.__hours, end=' ')
-          print('Minutes:', self.__minutes, end=' ')
-          print('Seconds:', self.__seconds)
+          print('Hours:', self.hours, end=' ')
+          print('Minutes:', self.minutes, end=' ')
+          print('Seconds:', self.seconds)
 
       def __str__(self):
-          return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)        </pre>
-        <p>Which of the following is the correct definition for a new <c>Timer</c> class method called <c>set</c> that will take three integer values representing hours, minutes, and seconds. and set the object's instance variables (attributes) appropriately?</p>
+          return f'{self.hours}:{self.minutes}:{self.seconds}'        </pre>
+        <p>Which of the following is the correct definition for a new <c>Timer</c> class method called <c>set</c> that will take three integer values representing hours, minutes, and seconds and set the object's instance variables (attributes) appropriately?</p>
       </statement>
       <choices multiple-correct="no" randomize="yes">
         <choice correct="yes">
           <statement>
             <p>
               <pre>def set(self, h, m, s):
-    self.__hours = h
-    self.__minutes = m
-    self.__seconds = s              </pre>
+    self.hours = h
+    self.minutes = m
+    self.seconds = s              </pre>
             </p>
           </statement>
           <feedback />
@@ -557,9 +625,9 @@
           <statement>
             <p>
               <pre>def set(h, m, s):
-    self.__hours = h
-    self.__minutes = m
-    self.__seconds = s              </pre>
+    self.hours = h
+    self.minutes = m
+    self.seconds = s              </pre>
             </p>
           </statement>
           <feedback>
@@ -570,9 +638,9 @@
           <statement>
             <p>
               <pre>def set(self):
-    self.__hours = h
-    self.__minutes = m
-    self.__seconds = s              </pre>
+    self.hours = h
+    self.minutes = m
+    self.seconds = s              </pre>
             </p>
           </statement>
           <feedback>
@@ -583,9 +651,9 @@
           <statement>
             <p>
               <pre>def set(self, h, m, s):
-    __hours = h
-    __minutes = m
-    __seconds = s              </pre>
+    hours = h
+    minutes = m
+    seconds = s              </pre>
             </p>
           </statement>
           <feedback>
@@ -594,24 +662,24 @@
         </choice>
       </choices>
     </exercise>
-    <exercise xml:id="exer-timer_class-call_set_short-2" label="exe-sec-HW10-PRACTICE-1-32321">
+    <exercise xml:id="exer-timer_class-call_set_short-2" label="exe-sec-HW10-PRACTICE-1-271620">
       <title>Calling the Set Method</title>
       <statement>
         <p>Consider the following class definition.</p>
         <pre>  class Timer:
       """ A class that represents a timer. """
       def __init__(self):
-          self.__hours = 0
-          self.__minutes = 0
-          self.__seconds = 0
+          self.hours = 0
+          self.minutes = 0
+          self.seconds = 0
 
       def print_with_labels(self):
-          print('Hours:', self.__hours, end=' ')
-          print('Minutes:', self.__minutes, end=' ')
-          print('Seconds:', self.__seconds)
+          print('Hours:', self.hours, end=' ')
+          print('Minutes:', self.minutes, end=' ')
+          print('Seconds:', self.seconds)
 
       def __str__(self):
-          return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)        </pre>
+          return f'{self.hours}:{self.minutes}:{self.seconds}'        </pre>
         <p>Suppose <c>t1</c> is a newly created instance of the the <c>Timer</c> class (i.e., a <c>Timer</c> object). Give the line of code that will call the <c>set</c> method, as described in the previous question, to set <c>t1</c> to 5 hours, 17 minutes, 51 seconds.</p>
         <fillin answer="t1.set(5, 17, 51)" width="16" />
       </statement>
@@ -636,26 +704,26 @@
         </evaluate>
       </evaluation>
     </exercise>
-    <exercise xml:id="exer-timer_class-convert_to_seconds_method-2" label="exe-sec-HW10-PRACTICE-1-161517">
+    <exercise xml:id="exer-timer_class-convert_to_seconds_method-2" label="exe-sec-HW10-PRACTICE-1-271622">
       <title>Convert to Seconds</title>
       <statement>
-        <p>Implement a method for the Timer class, convert_to_seconds. For a given Timer, the method returns the equivalent number of seconds. For example, if Timer <c>t1</c> is currently 0:1:15 (0 hours, 1 minute, 15 seconds), then the call <c>t1.convert_to_seconds()</c> will return 75.</p>
+        <p>Implement a method for the Timer class, <c>convert_to_seconds</c>. For a given Timer, the method returns the equivalent number of seconds. For example, if Timer <c>t1</c> is currently set to 0:1:15 (0 hours, 1 minute, 15 seconds), then the call <c>t1.convert_to_seconds()</c> will return 75.</p>
         <p>Hint: Remember that inside the body of the convert_to_seconds method definition, we use the parameter <c>self</c>to refer to the <c>Timer</c>object which activated the method.</p>
-        <p>The <c>Timer</c> class is given below for reference.</p>
+        <p>The <c>Timer</c> class definition is given below for reference.</p>
         <pre>    class Timer:
         """ A class that represents a timer. """
         def __init__(self, h, m, s):
-            self.__hours = h
-            self.__minutes = m
-            self.__seconds = s
+            self.hours = h
+            self.minutes = m
+            self.seconds = s
 
         def print_with_labels(self):
-            print('Hours:', self.__hours, end=' ')
-            print('Minutes:', self.__minutes, end=' ')
-            print('Seconds:', self.__seconds)
+            print('Hours:', self.hours, end=' ')
+            print('Minutes:', self.minutes, end=' ')
+            print('Seconds:', self.seconds)
 
         def __str__(self):
-            print(self.__hours + ':' + self.__minutes + ':' self.__seconds)        </pre>
+            return f'{self.hours}:{self.minutes}:{self.seconds}'        </pre>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -772,17 +840,17 @@ def input(prompt=None):
 class Timer:
     """ A class that represents a timer. """
     def __init__(self, h, m, s):
-        self.__hours = h
-        self.__minutes = m
-        self.__seconds= s
+        self.hours = h
+        self.minutes = m
+        self.seconds= s
 
     def print_with_labels(self):
-        print('Hours:', self.__hours, end=' ')
-        print('Minutes:', self.__minutes, end=' ')
-        print('Seconds:', self.__seconds)
+        print('Hours:', self.hours, end=' ')
+        print('Minutes:', self.minutes, end=' ')
+        print('Seconds:', self.seconds)
 
     def __str__(self):
-        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)
+        return f'{self.hours}:{self.minutes}:{self.seconds}'
     
 
 
@@ -886,7 +954,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-timer_class-add_timers-2" label="exe-sec-HW10-PRACTICE-1-32341">
+    <exercise xml:id="exer-timer_class-add_timers-2" label="exe-sec-HW10-PRACTICE-1-271624">
       <title>Add Two Timers</title>
       <statement>
         <p>Write a function, add_timers, that takes two <c>Timer</c> objects, <c>t1</c> and <c>t2</c>, and returns a new <c>Timer</c> object that is the sum of <c>t1</c> and <c>t2</c>. Neither of the original <c>Timer</c> objects should be changed.</p>
@@ -897,26 +965,26 @@ myTests().main()        </tests>
         <pre>class Timer:
         """ A class that represents a timer. """
         def __init__(self, h, m, s):
-            self.__hours = h
-            self.__minutes = m
-            self.__seconds = s
+            self.hours = h
+            self.minutes = m
+            self.seconds = s
 
         def print_with_labels(self):
-            print('Hours:', self.__hours, end=' ')
-            print('Minutes:', self.__minutes, end=' ')
-            print('Seconds:', self.__seconds)
+            print('Hours:', self.hours, end=' ')
+            print('Minutes:', self.minutes, end=' ')
+            print('Seconds:', self.seconds)
             
         def get_seconds(self):
-            return self.__seconds
+            return self.seconds
         
         def get_minutes(self):
-            return self.__minutes
+            return self.minutes
         
         def get_hours(self):
-            return self.__hours
+            return self.hours
 
         def __str__(self):
-            print(self.__hours + ':' + self.__minutes + ':' self.__seconds)        </pre>
+            return f'{self.hours}:{self.minutes}:{self.seconds}'        </pre>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1051,26 +1119,26 @@ def input(prompt=None):
 class Timer:
     """ A class that represents a timer. """
     def __init__(self, h, m, s):
-        self.__hours = h
-        self.__minutes = m
-        self.__seconds= s
+        self.hours = h
+        self.minutes = m
+        self.seconds= s
 
     def print_with_labels(self):
-        print('Hours:', self.__hours, end=' ')
-        print('Minutes:', self.__minutes, end=' ')
-        print('Seconds:', self.__seconds)
+        print('Hours:', self.hours, end=' ')
+        print('Minutes:', self.minutes, end=' ')
+        print('Seconds:', self.seconds)
         
     def get_seconds(self):
-        return self.__seconds
+        return self.seconds
         
     def get_minutes(self):
-        return self.__minutes
+        return self.minutes
         
     def get_hours(self):
-        return self.__hours
+        return self.hours
 
     def __str__(self):
-        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)
+        return f'{self.hours}:{self.minutes}:{self.seconds}'
     
 
 
@@ -1198,12 +1266,12 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-implement_comp_oper_info-2" label="exe-sec-HW10-PRACTICE-1-32322">
+    <exercise xml:id="exer-implement_comp_oper_info-2" label="exe-sec-HW10-PRACTICE-1-271625">
       <title>Implementing the Comparison Operators</title>
       <statement correct="yes">
         <p>Python has "magic" methods to make the comparison operators work with objects. The six comparison operators (&lt;, &lt;=, &gt;, &gt;=, == and !=) are enabled simply by implementing the following special methods: <c>__lt__, __le__, __gt__, __ge__, __eq__ and __ne__</c></p>
         <p>See: <em><url href="https://www.tutorialspoint.com/How-to-overload-Python-comparison-operators">https://www.tutorialspoint.com/How-to-overload-Python-comparison-operators</url></em></p>
-        <p>For example, here is the code to implement <c>__lt__</c> (the &lt; or "less than" operator) for the <c>Timer</c>class. Notice we start by converting both Timers to an integer number of seconds, then simply compare those numbers of seconds. Comparing two Timers reduces to the problem of comparing two integers.</p>
+        <p>For example, here is the code to implement <c>__lt__</c> (i.e., &lt;, the "less than" operator) for the <c>Timer</c>class. Notice we start by converting both Timers to an integer number of seconds, then simply compare those numbers of seconds. Comparing two Timers reduces to the problem of comparing two integers.</p>
         <pre>
     def __lt__(self, other):
         sec_self = self.convert_to_seconds()
@@ -1212,11 +1280,11 @@ myTests().main()        </tests>
         </pre>
       </statement>
     </exercise>
-    <exercise xml:id="exer-timer_class-equivalence_operator_overload-2" label="exe-sec-HW10-PRACTICE-1-32324">
+    <exercise xml:id="exer-timer_class-equivalence_operator_overload-2" label="exe-sec-HW10-PRACTICE-1-271627">
       <title>Equivalence and Inequivalence Operators: ==, !=</title>
       <statement>
-        <p>Two Timer objects are <alert>equivalent</alert>exactly when they represent the same amount of time. Implement the <c>__eq__</c> and <c>__ne__</c> methods (i.e., == and != operators) for the <c>Timer</c>class.</p>
-        <p><alert>Hint</alert>: Assume the <c>convert_to_seconds</c> method has already been implemented.</p>
+        <p>Two Timer objects are <alert>equivalent</alert>exactly when they represent the same amount of time. Implement the <c>__eq__</c>method (i.e., == ) for the <c>Timer</c>class.</p>
+        <p><alert>Hint</alert>: You should assume that the <c>convert_to_seconds</c> method has already been implemented.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -1351,29 +1419,29 @@ def input(prompt=None):
 class Timer:
     """ A class that represents a timer. """
     def __init__(self, h, m, s):
-        self.__hours = h
-        self.__minutes = m
-        self.__seconds = s
+        self.hours = h
+        self.minutes = m
+        self.seconds= s
 
     def print_with_labels(self):
-        print('Hours:', self.__hours, end=' ')
-        print('Minutes:', self.__minutes, end=' ')
-        print('Seconds:', self.__seconds)
+        print('Hours:', self.hours, end=' ')
+        print('Minutes:', self.minutes, end=' ')
+        print('Seconds:', self.seconds)
         
     def get_seconds(self):
-        return self.__seconds
+        return self.seconds
         
     def get_minutes(self):
-        return self.__minutes
+        return self.minutes
         
     def get_hours(self):
-        return self.__hours
-
-    def convert_to_seconds(self):
-        return self.__seconds + 60*self.__minutes + 3600*self.__hours
+        return self.hours
         
+    def convert_to_seconds(self):
+        return self.hours*60*60 + self.minutes*60 + self.seconds
+
     def __str__(self):
-        return str(self.__hours) + ':' + str(self.__minutes) + ':' + str(self.__seconds)
+        return f'{self.hours}:{self.minutes}:{self.seconds}'
 
 
 
@@ -1383,8 +1451,7 @@ class Timer:
 # code will be pasted into the Timer class definition body.
     def __eq__(self, other):
         
-        
-    def __ne__(self, other):
+
         </code>
         <postamble visible="no">
         </postamble>
