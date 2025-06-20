@@ -11,7 +11,7 @@
             </p>
 
             <p>
-                <image source="images/hw1_sample_question_description.png" title="A sample coding problem"></image>
+                <image source="images/hw1_sample_question_description.png" title="A sample coding problem" width="80%"></image>
             </p>
 
             <p>
@@ -69,7 +69,7 @@
                         </p>
 
                         <p>
-                            <image source="images/check_button_result.png"></image>
+                            <image source="images/check_button_result.png" width="80%"></image>
                         </p>
 
                         <p>
