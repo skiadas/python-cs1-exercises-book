@@ -1,8 +1,6 @@
 <section xml:id="sec-HW3-1">
   <title>HW3</title>
-  <introduction>
-    <p dir="ltr">CodeRunner Assignment for Week 3.</p>
-  </introduction>
+
   <exercises>
     <exercise xml:id="exer-range_t1-1" label="exe-sec-HW3-1-32419">
       <title>Print List: 1 through m</title>

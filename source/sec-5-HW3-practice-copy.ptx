@@ -1,8 +1,6 @@
 <section xml:id="sec-HW3-practice-copy-1">
   <title>HW3 -- practice copy</title>
-  <introduction>
-    <p dir="ltr">Ungraded assignment, allows you to practice the HW3 problems as you study for Quiz 3.</p>
-  </introduction>
+
   <exercises>
     <exercise xml:id="exer-range_t1-2" label="exe-sec-HW3-practice-copy-1-32419">
       <title>Print List: 1 through m</title>

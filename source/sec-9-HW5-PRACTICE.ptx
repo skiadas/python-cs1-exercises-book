@@ -1,8 +1,6 @@
 <section xml:id="sec-HW5-PRACTICE-1">
   <title>HW5 PRACTICE</title>
-  <introduction>
-    <p dir="ltr">Ungraded Assignment</p>
-  </introduction>
+
   <exercises>
     <exercise xml:id="exer-slice_three_from_front-2" label="exe-sec-HW5-PRACTICE-1-31939">
       <title>First Three Characters in a String</title>

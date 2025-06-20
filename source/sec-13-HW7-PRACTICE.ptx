@@ -1,8 +1,6 @@
 <section xml:id="sec-HW7-PRACTICE-1">
   <title>HW7 PRACTICE</title>
-  <introduction>
-    <p dir="ltr">- Ungraded assignment, use it to practice for Quiz 7</p>
-  </introduction>
+
   <exercises>
     <exercise xml:id="exer-swap_list_ends-2" label="exe-sec-HW7-PRACTICE-1-143722">
       <title>Swap List Ends</title>
