@@ -1,15 +1,94 @@
 <section xml:id="sec-HW1-1">
-  <title>HW1</title>
-  <introduction>
-    <p>CodeRunner Tutorial</p>
-    <p dir="ltr">- Moodle calls this a "Quiz" but it's really a <alert>homework assignment</alert>.</p>
-    <p dir="ltr">- Due 1/16, 9 AM. Please email Prof. Wahl (wahl@hanover.edu) if you need a 1-week extension (10% late deduction).</p>
-  </introduction>
-  <exercises>
+    <title>HW1</title>
+
+    <exercises>
     <exercise xml:id="exer-CodeRunner-Overview-1" label="exe-sec-HW1-1-271600">
-      <statement correct="yes">
-        <p>Make a new info question to replace the HW1 info question, or delete that question and instead make a Google Doc to replace it.</p>
-      </statement>
+        <statement correct="yes">
+            <p>
+                Welcome to ActiveCode coding problems in Runestone! Here's an image of a typical coding problem:
+            </p>
+
+            <p>
+                <image source="images/hw1_sample_question_description.png" title="A sample coding problem"></image>
+            </p>
+
+            <p>
+                <ol>
+                    <li>
+                        <p>
+                            The first thing you should do when starting a problem is to carefully read the problem description.
+                            The problem description tells you what your solution code needs to accomplish, as well as important details about the problem including:
+                                            <ul>
+                    <li>
+                        <p>
+                            Type of input your code must handle
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Type of output your code will need to produce
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Whether your code should produce output (print) or a value (return)
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            If you don't understand the problem, you won't be able to solve the problem; this is the most important step!
+                        </p>
+                    </li>
+                </ul>
+
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            To help you understand the problem, you will always be given a few examples.
+                            Typically, the examples show sample inputs and the result that your code should produce for each input.
+                            It's important to understa!d that your solution needs to be general.
+                            This means that your goal is to code a solution that will work for any valid input for the problem, not just the given examples.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Once you understand the problem, you can start coding your solution in the white box.
+                            Depending on the problem, there may be some code already there to get you started.
+                            When you are ready to check your solution, click the <q>Save &#x26; Run</q> button.
+                        </p>
+
+                        <p>
+                            If I were to click the <q>Save &#x26; Run</q> button for the example problem in the image above, here is the feedback that I would get from Runestone:
+                        </p>
+
+                        <p>
+                            <image source="images/check_button_result.png"></image>
+                        </p>
+
+                        <p>
+                            For each example input, Runestone shows you the correct (Expected Value) result, the result produced by your code (Actual Value), and whether your result is correct (Result).
+                            If the expected value or actual value is too long to be fully shown in the results table, clicking on the <q>Expand Differences</q> button will show that information in a popup window.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Use the Runestone feedback to try to understand where the problems are in your code, then work on fixing your code.
+                            Keep checking and revising until you reach the correct solution.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+
+            <p>
+                Now it is time for you to try solving some ActiveCode problems in Runestone! <alert>Select the answer "True" and click the "Check Me" button before moving on.</alert>
+            </p>
+        </statement>
     </exercise>
     <exercise xml:id="exer-output_input-1" label="exe-sec-HW1-1-269746">
       <title>Output the Input</title>
@@ -148,7 +227,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -371,7 +450,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -594,7 +673,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -815,7 +894,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -1037,7 +1116,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -1257,7 +1336,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -1482,7 +1561,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -1703,7 +1782,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None

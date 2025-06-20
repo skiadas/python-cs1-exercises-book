@@ -151,7 +151,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -440,7 +440,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -718,7 +718,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -993,7 +993,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -1259,7 +1259,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -1507,7 +1507,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -1766,7 +1766,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -2034,7 +2034,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -2276,7 +2276,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -2497,7 +2497,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -2744,7 +2744,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -2998,7 +2998,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -3280,7 +3280,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
@@ -3610,7 +3610,7 @@ def input(prompt=None):
   if prompt is not None:
     print(prompt, end='')
   if _my_in == []:
-    raise EOFError()
+    raise RuntimeError()
   return _my_in.pop()
 
 None
