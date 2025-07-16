@@ -257,54 +257,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('Howdy!')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'user input: Howdy!\n'.strip(), "Input: " + 'Howdy!')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('Muddled marmots!')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'user input: Muddled marmots!\n'.strip(), "Input: " + 'Muddled marmots!')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('3.14')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'user input: 3.14\n'.strip(), "Input: " + '3.14')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('42 is the answer to everything')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'user input: 42 is the answer to everything\n'.strip(), "Input: " + '42 is the answer to everything')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn("That's all, folks!")
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "user input: That's all, folks!\n".strip(), "Input: " + "That's all, folks!")
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('99 bottles of beer on the wall')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'user input: 99 bottles of beer on the wall\n'.strip(), "Input: " + '99 bottles of beer on the wall')
 
 
@@ -481,54 +481,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('everyone')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Hello everyone\n'.strip(), "Input: " + 'everyone')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('coder-in-training')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Hello coder-in-training\n'.strip(), "Input: " + 'coder-in-training')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('Ziggy')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Hello Ziggy\n'.strip(), "Input: " + 'Ziggy')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('Diana')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Hello Diana\n'.strip(), "Input: " + 'Diana')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('Pythonista')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Hello Pythonista\n'.strip(), "Input: " + 'Pythonista')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('Mr. Gray')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Hello Mr. Gray\n'.strip(), "Input: " + 'Mr. Gray')
 
 
@@ -703,54 +703,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('5')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '5 + 8 = 13'.strip(), "Input: " + '5')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('-7')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-7 + 8 = 1'.strip(), "Input: " + '-7')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('0')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0 + 8 = 8'.strip(), "Input: " + '0')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('-1999')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-1999 + 8 = -1991'.strip(), "Input: " + '-1999')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('-10')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-10 + 8 = -2\n'.strip(), "Input: " + '-10')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('-11')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-11 + 8 = -3\n'.strip(), "Input: " + '-11')
 
 
@@ -903,7 +903,7 @@ None
 _program = """
         </preamble>
         <code>
-# The following line reads the user input and converts 
+# The following line reads the user input and converts
 # it to a float value:
 num = float(input())
         </code>
@@ -925,54 +925,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('5.5')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '5.5 * 123 = 676.5\n'.strip(), "Input: " + '5.5')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('-8.1')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-8.1 * 123 = -996.3\n'.strip(), "Input: " + '-8.1')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('2.2')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '2.2 * 123 = 270.6\n'.strip(), "Input: " + '2.2')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('0.0')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0.0 * 123 = 0.0\n'.strip(), "Input: " + '0.0')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('-200.6')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-200.6 * 123 = -24673.8\n'.strip(), "Input: " + '-200.6')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('24.5')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '24.5 * 123 = 3013.5\n'.strip(), "Input: " + '24.5')
 
 
@@ -1145,54 +1145,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('11')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'When we divide 11 by 3, the remainder is 2\n'.strip(), "Input: " + '11')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('3')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'When we divide 3 by 3, the remainder is 0\n'.strip(), "Input: " + '3')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('19')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'When we divide 19 by 3, the remainder is 1\n'.strip(), "Input: " + '19')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('112')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'When we divide 112 by 3, the remainder is 1\n'.strip(), "Input: " + '112')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('225')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'When we divide 225 by 3, the remainder is 0\n'.strip(), "Input: " + '225')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('11111')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'When we divide 11111 by 3, the remainder is 2\n'.strip(), "Input: " + '11111')
 
 
@@ -1365,54 +1365,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('2')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'When x = 2 then x^2 = 4\n'.strip(), "Input: " + '2')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('24')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'When x = 24 then x^2 = 576\n'.strip(), "Input: " + '24')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('-18')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'When x = -18 then x^2 = 324\n'.strip(), "Input: " + '-18')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('6')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'When x = 6 then x^2 = 36\n'.strip(), "Input: " + '6')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('15')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'When x = 15 then x^2 = 225\n'.strip(), "Input: " + '15')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('12345')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'When x = 12345 then x^2 = 152399025\n'.strip(), "Input: " + '12345')
 
 
@@ -1423,9 +1423,9 @@ myTests().main()        </tests>
     <exercise xml:id="exer-cylinder_volume-1" label="exe-sec-HW1-1-269751">
       <title>Volume of Cylinder</title>
       <statement>
-        <p id="yui_3_17_2_1_1704483246360_2027">Suppose we want to calculate the volume (in cubic cm) of a cylinder for which the radius of the base is R cm and the height is H cm. We will use the formula: volume = area of base * H. Rather than making a single large calculation and reporting the result, you should practice dividing the work into stages using two assignment statements.</p>
-        <p id="yui_3_17_2_1_1704483246360_2130">A partial solution is provided, you just need to add a bit more code.</p>
-        <p id="yui_3_17_2_1_1704483246360_2164">Notice that the statement <c>import math</c> makes all the objects in the math module available; your code should use <c>math.pi</c> (Python's name for «math xmlns=¨http://www.w3.org/1998/Math/MathML¨»«mi mathvariant=¨normal¨»§#960;«/mi»«/math»), in calculating the area of the base.</p>
+        <p>Suppose we want to calculate the volume (in cubic cm) of a cylinder for which the radius of the base is R cm and the height is H cm. We will use the formula: volume = area of base * H. Rather than making a single large calculation and reporting the result, you should practice dividing the work into stages using two assignment statements.</p>
+        <p>A partial solution is provided, you just need to add a bit more code.</p>
+        <p>Notice that the statement <c>import math</c> makes all the objects in the math module available; your code should use <c>math.pi</c> (Python's name for π), in calculating the area of the base.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="30%" />
@@ -1443,7 +1443,7 @@ myTests().main()        </tests>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>R = 3.0 , H = 5.0 , Volume = 141.3716694115407</cd>
+                <cd>141.3716694115407</cd>
               </p>
             </cell>
           </row>
@@ -1456,7 +1456,7 @@ myTests().main()        </tests>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>R = 6.0 , H = 2.0 , Volume = 226.1946710584651</cd>
+                <cd>226.1946710584651</cd>
               </p>
             </cell>
           </row>
@@ -1469,7 +1469,7 @@ myTests().main()        </tests>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>R = 2.3 , H = 3.5 , Volume = 58.16658798121501</cd>
+                <cd>58.16658798121501</cd>
               </p>
             </cell>
           </row>
@@ -1573,13 +1573,13 @@ _program = """
 import math
 
 # Read the radius from input; convert it to a float value and assign to R
-R = 
+R =
 # Read the height from input; convert it to a float value and assign to H
-H = 
+H =
 # Find the base area using math.pi and R
-baseArea = 
-# Find the volume and print a message
-volume = 
+baseArea =
+# Find the volume and print its value
+volume =
 print( )
         </code>
         <postamble visible="no">
@@ -1600,37 +1600,37 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('3\n5')
-    
+
     exec(_program)
-    
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'R = 3.0 , H = 5.0 , Volume = 141.3716694115407\n'.strip(), "Input: " + '3\n5')
+
+    self.assertEqual(round(float(getMyStdOut()), 6), round(141.3716694115407, 6), "Input: " + '3\n5')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('6\n2')
-    
+
     exec(_program)
-    
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'R = 6.0 , H = 2.0 , Volume = 226.1946710584651\n'.strip(), "Input: " + '6\n2')
+
+    self.assertEqual(round(float(getMyStdOut()), 6), round(226.1946710584651, 6), "Input: " + '6\n2')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('2.3\n3.5')
-    
+
     exec(_program)
-    
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'R = 2.3 , H = 3.5 , Volume = 58.16658798121501\n'.strip(), "Input: " + '2.3\n3.5')
+
+    self.assertEqual(round(float(getMyStdOut()), 6), round(58.16658798121501, 6), "Input: " + '2.3\n3.5')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('0.7\n10.1')
-    
+
     exec(_program)
-    
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'R = 0.7 , H = 10.1 , Volume = 15.547742042615884\n'.strip(), "Input: " + '0.7\n10.1')
+
+    self.assertEqual(round(float(getMyStdOut()), 6), round(15.547742042615884, 6), "Input: " + '0.7\n10.1')
 
 
 
@@ -1811,54 +1811,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('314')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '314 minutes equals 5 hours and 14 minutes\n'.strip(), "Input: " + '314')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('230')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '230 minutes equals 3 hours and 50 minutes\n'.strip(), "Input: " + '230')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('15')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '15 minutes equals 0 hours and 15 minutes\n'.strip(), "Input: " + '15')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('120')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '120 minutes equals 2 hours and 0 minutes\n'.strip(), "Input: " + '120')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('654')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '654 minutes equals 10 hours and 54 minutes\n'.strip(), "Input: " + '654')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('54321')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '54321 minutes equals 905 hours and 21 minutes\n'.strip(), "Input: " + '54321')
 
 
