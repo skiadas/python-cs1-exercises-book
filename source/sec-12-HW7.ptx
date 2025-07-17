@@ -173,96 +173,96 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [1, 3, 9, 2]
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[2, 3, 9, 1]\n'.strip(), "Test: " + 'L = [1, 3, 9, 2]\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ['super', 'awesome', 'excellent']
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['excellent', 'awesome', 'super']\n".strip(), "Test: " + 'L = [\'super\', \'awesome\', \'excellent\']\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [['a', 'b'], ['c', 'd', 'e']]
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "[['c', 'd', 'e'], ['a', 'b']]\n".strip(), "Test: " + 'L = [[\'a\', \'b\'], [\'c\', \'d\', \'e\']]\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [True, False]
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[False, True]\n'.strip(), "Test: " + 'L = [True, False]\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ['just one thing']
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['just one thing']\n".strip(), "Test: " + 'L = [\'just one thing\']\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = []
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]\n'.strip(), "Test: " + 'L = []\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [5]
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[5]\n'.strip(), "Test: " + 'L = [5]\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
 
 
   def test8(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = list("outstanding")
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['g', 'u', 't', 's', 't', 'a', 'n', 'd', 'i', 'n', 'o']\n".strip(), "Test: " + 'L = list("outstanding")\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
 
 
@@ -428,65 +428,65 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     mylist = ['cat', 'Dog', 'frOG']
     result = make_uppercase(mylist)
     print(mylist)
     if result != None:
         print("Error, return value should be None")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['CAT', 'DOG', 'FROG']\n".strip(), "Test: " + 'mylist = [\'cat\', \'Dog\', \'frOG\']\nresult = make_uppercase(mylist)\nprint(mylist)\nif result != None:\n    print("Error, return value should be None")')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     mylist = ['baNanas', 'appLes', 'pEAches', 'PEArs']
     result = make_uppercase(mylist)
     print(mylist)
     if result != None:
         print("Error, return value should be None")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['BANANAS', 'APPLES', 'PEACHES', 'PEARS']\n".strip(), "Test: " + 'mylist = [\'baNanas\', \'appLes\', \'pEAches\', \'PEArs\']\nresult = make_uppercase(mylist)\nprint(mylist)\nif result != None:\n    print("Error, return value should be None")')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     mylist = ['w', 'x', 'y', 'z', 'yes']
     result = make_uppercase(mylist)
     print(mylist)
     if result != None:
         print("Error, return value should be None")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['W', 'X', 'Y', 'Z', 'YES']\n".strip(), "Test: " + 'mylist = [\'w\', \'x\', \'y\', \'z\', \'yes\']\nresult = make_uppercase(mylist)\nprint(mylist)\nif result != None:\n    print("Error, return value should be None")')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     mylist = []
     result = make_uppercase(mylist)
     print(mylist)
     if result != None:
         print("Error, return value should be None")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]\n'.strip(), "Test: " + 'mylist = []\nresult = make_uppercase(mylist)\nprint(mylist)\nif result != None:\n    print("Error, return value should be None")')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     mylist = ['cOw', 'HoRse', 'pig', 'BUNNy']
     result = make_uppercase(mylist)
     print(mylist)
     if result != None:
         print("Error, return value should be None")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['COW', 'HORSE', 'PIG', 'BUNNY']\n".strip(), "Test: " + 'mylist = [\'cOw\', \'HoRse\', \'pig\', \'BUNNy\']\nresult = make_uppercase(mylist)\nprint(mylist)\nif result != None:\n    print("Error, return value should be None")')
 
 
@@ -662,66 +662,66 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [0, 1, 2, 3]
     square_nums_2(L)
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[0, 1, 4, 9]\n'.strip(), "Test: " + 'L = [0, 1, 2, 3]\nsquare_nums_2(L)\nprint(L)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [5]
     square_nums_2(L)
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[25]\n'.strip(), "Test: " + 'L = [5]\nsquare_nums_2(L)\nprint(L)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = []
     square_nums_2(L)
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]\n'.strip(), "Test: " + 'L = []\nsquare_nums_2(L)\nprint(L)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [-1, 1, -2, 2, -3, 3]
     square_nums_2(L)
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 1, 4, 4, 9, 9]\n'.strip(), "Test: " + 'L = [-1, 1, -2, 2, -3, 3]\nsquare_nums_2(L)\nprint(L)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [9, 94, 39, 60, 99, 83]
     square_nums_2(L)
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[81, 8836, 1521, 3600, 9801, 6889]\n'.strip(), "Test: " + 'L = [9, 94, 39, 60, 99, 83]\nsquare_nums_2(L)\nprint(L)')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L  = [99, 9, 94, 39, 60, 83, 99]
     square_nums_2(L)
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[9801, 81, 8836, 1521, 3600, 6889, 9801]\n'.strip(), "Test: " + 'L  = [99, 9, 94, 39, 60, 83, 99]\nsquare_nums_2(L)\nprint(L)')
 
 
@@ -909,80 +909,80 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ['yes', 'no', 'maybe']
     print(get_pairs(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['yes-yes', 'yes-no', 'yes-maybe', 'no-yes', 'no-no', 'no-maybe', 'maybe-yes', 'maybe-no', 'maybe-maybe']\n".strip(), "Test: " + "L = ['yes', 'no', 'maybe']\nprint(get_pairs(L))")
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     fish = ["angel", "gold", "cat", "puffer", "damsel"]
     print(get_pairs(fish))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['angel-angel', 'angel-gold', 'angel-cat', 'angel-puffer', 'angel-damsel', 'gold-angel', 'gold-gold', 'gold-cat', 'gold-puffer', 'gold-damsel', 'cat-angel', 'cat-gold', 'cat-cat', 'cat-puffer', 'cat-damsel', 'puffer-angel', 'puffer-gold', 'puffer-cat', 'puffer-puffer', 'puffer-damsel', 'damsel-angel', 'damsel-gold', 'damsel-cat', 'damsel-puffer', 'damsel-damsel']\n".strip(), "Test: " + 'fish = ["angel", "gold", "cat", "puffer", "damsel"]\nprint(get_pairs(fish))')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     strlist = ["X", "x"]
     print(get_pairs(strlist))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['X-X', 'X-x', 'x-X', 'x-x']\n".strip(), "Test: " + 'strlist = ["X", "x"]\nprint(get_pairs(strlist))')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     empty = []
     print(get_pairs(empty))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]\n'.strip(), "Test: " + 'empty = []\nprint(get_pairs(empty))')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ["UNO"]
     print(get_pairs(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['UNO-UNO']\n".strip(), "Test: " + 'L = ["UNO"]\nprint(get_pairs(L))')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     food = ['apple', 'cheese', 'bread']
     print(get_pairs(food))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['apple-apple', 'apple-cheese', 'apple-bread', 'cheese-apple', 'cheese-cheese', 'cheese-bread', 'bread-apple', 'bread-cheese', 'bread-bread']\n".strip(), "Test: " + "food = ['apple', 'cheese', 'bread']\nprint(get_pairs(food))")
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     instruments = ["Box drum", "Paixiao", "Saxophone", "Txistu", "Xalam", "Xaphoon", "Xun", "Xylophone"]
     print(get_pairs(instruments))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['Box drum-Box drum', 'Box drum-Paixiao', 'Box drum-Saxophone', 'Box drum-Txistu', 'Box drum-Xalam', 'Box drum-Xaphoon', 'Box drum-Xun', 'Box drum-Xylophone', 'Paixiao-Box drum', 'Paixiao-Paixiao', 'Paixiao-Saxophone', 'Paixiao-Txistu', 'Paixiao-Xalam', 'Paixiao-Xaphoon', 'Paixiao-Xun', 'Paixiao-Xylophone', 'Saxophone-Box drum', 'Saxophone-Paixiao', 'Saxophone-Saxophone', 'Saxophone-Txistu', 'Saxophone-Xalam', 'Saxophone-Xaphoon', 'Saxophone-Xun', 'Saxophone-Xylophone', 'Txistu-Box drum', 'Txistu-Paixiao', 'Txistu-Saxophone', 'Txistu-Txistu', 'Txistu-Xalam', 'Txistu-Xaphoon', 'Txistu-Xun', 'Txistu-Xylophone', 'Xalam-Box drum', 'Xalam-Paixiao', 'Xalam-Saxophone', 'Xalam-Txistu', 'Xalam-Xalam', 'Xalam-Xaphoon', 'Xalam-Xun', 'Xalam-Xylophone', 'Xaphoon-Box drum', 'Xaphoon-Paixiao', 'Xaphoon-Saxophone', 'Xaphoon-Txistu', 'Xaphoon-Xalam', 'Xaphoon-Xaphoon', 'Xaphoon-Xun', 'Xaphoon-Xylophone', 'Xun-Box drum', 'Xun-Paixiao', 'Xun-Saxophone', 'Xun-Txistu', 'Xun-Xalam', 'Xun-Xaphoon', 'Xun-Xun', 'Xun-Xylophone', 'Xylophone-Box drum', 'Xylophone-Paixiao', 'Xylophone-Saxophone', 'Xylophone-Txistu', 'Xylophone-Xalam', 'Xylophone-Xaphoon', 'Xylophone-Xun', 'Xylophone-Xylophone']\n".strip(), "Test: " + 'instruments = ["Box drum", "Paixiao", "Saxophone", "Txistu", "Xalam", "Xaphoon", "Xun", "Xylophone"]\nprint(get_pairs(instruments))')
 
 
   def test8(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ['hearts', 'diamonds', 'clubs', 'spades']
     print(get_pairs(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['hearts-hearts', 'hearts-diamonds', 'hearts-clubs', 'hearts-spades', 'diamonds-hearts', 'diamonds-diamonds', 'diamonds-clubs', 'diamonds-spades', 'clubs-hearts', 'clubs-diamonds', 'clubs-clubs', 'clubs-spades', 'spades-hearts', 'spades-diamonds', 'spades-clubs', 'spades-spades']\n".strip(), "Test: " + "L = ['hearts', 'diamonds', 'clubs', 'spades']\nprint(get_pairs(L))")
 
 
@@ -1020,7 +1020,7 @@ myTests().main()        </tests>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>* * * 
+                <cd>* * *
 * * *                </cd>
               </p>
             </cell>
@@ -1045,10 +1045,10 @@ myTests().main()        </tests>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>* * * * * 
-* * * * * 
-* * * * * 
-* * * * * 
+                <cd>* * * * *
+* * * * *
+* * * * *
+* * * * *
 * * * * *                </cd>
               </p>
             </cell>
@@ -1166,45 +1166,45 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_star_grid(2,3)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '* * *\n* * *\n'.strip(), "Test: " + 'print_star_grid(2,3)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_star_grid(1,1)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '*\n'.strip(), "Test: " + 'print_star_grid(1,1)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_star_grid(5,5)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '* * * * *\n* * * * *\n* * * * *\n* * * * *\n* * * * *\n'.strip(), "Test: " + 'print_star_grid(5,5)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_star_grid(3,2)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '* *\n* *\n* *\n'.strip(), "Test: " + 'print_star_grid(3,2)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_star_grid(7,3)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '* * *\n* * *\n* * *\n* * *\n* * *\n* * *\n* * *\n'.strip(), "Test: " + 'print_star_grid(7,3)')
 
 
@@ -1242,7 +1242,7 @@ myTests().main()        </tests>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>X O X 
+                <cd>X O X
 O X O                </cd>
               </p>
             </cell>
@@ -1255,8 +1255,8 @@ O X O                </cd>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>X O 
-O X 
+                <cd>X O
+O X
 X O                </cd>
               </p>
             </cell>
@@ -1374,54 +1374,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_XO_grid(2,3)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X O X\nO X O\n'.strip(), "Test: " + 'print_XO_grid(2,3)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_XO_grid(3,2)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X O\nO X\nX O\n'.strip(), "Test: " + 'print_XO_grid(3,2)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_XO_grid(1, 5)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X O X O X\n'.strip(), "Test: " + 'print_XO_grid(1, 5)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_XO_grid(3,1)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X\nO\nX\n'.strip(), "Test: " + 'print_XO_grid(3,1)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_XO_grid(5, 5)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X O X O X\nO X O X O\nX O X O X\nO X O X O\nX O X O X\n'.strip(), "Test: " + 'print_XO_grid(5, 5)')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_XO_grid(8, 3)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X O X\nO X O\nX O X\nO X O\nX O X\nO X O\nX O X\nO X O\n'.strip(), "Test: " + 'print_XO_grid(8, 3)')
 
 
@@ -1596,60 +1596,60 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [[5]]
     print(sum_nested(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '5\n'.strip(), "Test: " + 'L = [[5]]\nprint(sum_nested(L))')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L=[[1,2],[8,7,6]]
     print(sum_nested(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '24\n'.strip(), "Test: " + 'L=[[1,2],[8,7,6]]\nprint(sum_nested(L))')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L =  []
     print(sum_nested(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n'.strip(), "Test: " + 'L =  []\nprint(sum_nested(L))')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [[5,4],[3,1,1,1,10],[2],[4]]
     print(sum_nested(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '31\n'.strip(), "Test: " + 'L = [[5,4],[3,1,1,1,10],[2],[4]]\nprint(sum_nested(L))')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [[1],[2,3],[-3,-2,-1,0]]
     print(sum_nested(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n'.strip(), "Test: " + 'L = [[1],[2,3],[-3,-2,-1,0]]\nprint(sum_nested(L))')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [[1,1,1],[2,3,2],[5,5,5],[10,11,12,13,14]]
     print(sum_nested(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '85\n'.strip(), "Test: " + 'L = [[1,1,1],[2,3,2],[5,5,5],[10,11,12,13,14]]\nprint(sum_nested(L))')
 
 
@@ -1832,60 +1832,60 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ['n', 'o']
     ans = gen_triples(L)
     ans.sort()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['nnn', 'nno', 'non', 'noo', 'onn', 'ono', 'oon', 'ooo']\n".strip(), "Test: " + "L = ['n', 'o']\nans = gen_triples(L)\nans.sort()\nprint(ans)")
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ['?']
     ans = gen_triples(L)
     ans.sort()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['???']\n".strip(), "Test: " + "L = ['?']\nans = gen_triples(L)\nans.sort()\nprint(ans)")
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = []
     ans = gen_triples(L)
     ans.sort()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]\n'.strip(), "Test: " + 'L = []\nans = gen_triples(L)\nans.sort()\nprint(ans)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ['x', 'y', 'z', 'w']
     ans = gen_triples(L)
     ans.sort()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['www', 'wwx', 'wwy', 'wwz', 'wxw', 'wxx', 'wxy', 'wxz', 'wyw', 'wyx', 'wyy', 'wyz', 'wzw', 'wzx', 'wzy', 'wzz', 'xww', 'xwx', 'xwy', 'xwz', 'xxw', 'xxx', 'xxy', 'xxz', 'xyw', 'xyx', 'xyy', 'xyz', 'xzw', 'xzx', 'xzy', 'xzz', 'yww', 'ywx', 'ywy', 'ywz', 'yxw', 'yxx', 'yxy', 'yxz', 'yyw', 'yyx', 'yyy', 'yyz', 'yzw', 'yzx', 'yzy', 'yzz', 'zww', 'zwx', 'zwy', 'zwz', 'zxw', 'zxx', 'zxy', 'zxz', 'zyw', 'zyx', 'zyy', 'zyz', 'zzw', 'zzx', 'zzy', 'zzz']\n".strip(), "Test: " + "L = ['x', 'y', 'z', 'w']\nans = gen_triples(L)\nans.sort()\nprint(ans)")
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ['d', 'o', 'g', 's']
     ans = gen_triples(L)
     ans.sort()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['ddd', 'ddg', 'ddo', 'dds', 'dgd', 'dgg', 'dgo', 'dgs', 'dod', 'dog', 'doo', 'dos', 'dsd', 'dsg', 'dso', 'dss', 'gdd', 'gdg', 'gdo', 'gds', 'ggd', 'ggg', 'ggo', 'ggs', 'god', 'gog', 'goo', 'gos', 'gsd', 'gsg', 'gso', 'gss', 'odd', 'odg', 'odo', 'ods', 'ogd', 'ogg', 'ogo', 'ogs', 'ood', 'oog', 'ooo', 'oos', 'osd', 'osg', 'oso', 'oss', 'sdd', 'sdg', 'sdo', 'sds', 'sgd', 'sgg', 'sgo', 'sgs', 'sod', 'sog', 'soo', 'sos', 'ssd', 'ssg', 'sso', 'sss']\n".strip(), "Test: " + "L = ['d', 'o', 'g', 's']\nans = gen_triples(L)\nans.sort()\nprint(ans)")
 
 
@@ -2029,7 +2029,7 @@ def check_answer(D, new_pair, new_size):
     if D[new_pair[0]] == new_pair[1] and len(D) == new_size:
         print("correctly added", str(new_pair[0]) + ":" + str(new_pair[1]))
     else:
-        print("error") 
+        print("error")
 
 
 
@@ -2053,53 +2053,53 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
     add_entry(D, 'Spikes', 42)
     check_answer(D, ('Spikes', 42), 5)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'correctly added Spikes:42\n'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nadd_entry(D, 'Spikes', 42)\ncheck_answer(D, ('Spikes', 42), 5)")
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'wins': 9, 'losses': 2}
     add_entry(D, 'ties', 1)
     check_answer(D, ('ties', 1), 3)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'correctly added ties:1\n'.strip(), "Test: " + "D = {'wins': 9, 'losses': 2}\nadd_entry(D, 'ties', 1)\ncheck_answer(D, ('ties', 1), 3)")
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
     add_entry(D, 'minor', 'Counting Sheep')
     check_answer(D, ('minor', 'Counting Sheep'), 5)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'correctly added minor:Counting Sheep\n'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nadd_entry(D, 'minor', 'Counting Sheep')\ncheck_answer(D, ('minor', 'Counting Sheep'), 5)")
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {}
     for i in range(11):
         D[i] = i * i
     add_entry(D, 20, 400)
     check_answer(D, (20, 400), 12)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'correctly added 20:400\n'.strip(), "Test: " + 'D = {}\nfor i in range(11):\n    D[i] = i * i\nadd_entry(D, 20, 400)\ncheck_answer(D, (20, 400), 12)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
                    ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
                    ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4}
@@ -2109,19 +2109,19 @@ class myTests(TestCaseGui):
         print("Woohoo!")
     else:
         print("Oh, noes!")
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Woohoo!\n'.strip(), "Test: " + 'student_ages = {(\'Steph\',\'Martin\'): 4, (\'Bobby\', \'Roo\'): 5, (\'Tiffany\', \'Roo\'): 5,\n               (\'Alex\', \'Oriole\'): 6, (\'Sandy\', \'Singh\'): 4, (\'Ida\', \'North-West\'): 6,\n               (\'Mihrimah\', \'Suleiman\'): 5, (\'Kat\', \'Mouse\'): 4}\ns = (\'Felix\', \'Dumezweni\')\nadd_entry(student_ages, s, 6)\nif student_ages[s] == 6 and len(student_ages) == 9:\n    print("Woohoo!")\nelse:\n    print("Oh, noes!")\n')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {}
     add_entry(D, 'wins', 100)
     check_answer(D, ('wins', 100), 1)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'correctly added wins:100\n'.strip(), "Test: " + "D = {}\nadd_entry(D, 'wins', 100)\ncheck_answer(D, ('wins', 100), 1)")
 
 
@@ -2291,81 +2291,81 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
     ans = delete_entry(D, 'Digs')
     print(ans)
-    
-    
-    
+
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '47\n'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nans = delete_entry(D, 'Digs')\nprint(ans)\n\n")
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'wins': 9, 'losses': 2}
     ans = delete_entry(D, 'ties')
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'None\n'.strip(), "Test: " + "D = {'wins': 9, 'losses': 2}\nans = delete_entry(D, 'ties')\nprint(ans)")
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
     ans = delete_entry(D, 'major2 gpa')
     print(ans)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3.4\n'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nans = delete_entry(D, 'major2 gpa')\nprint(ans)\n")
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {}
     for i in range(10): D[i] = i*i - 1
     ans = delete_entry(D, 12)
     print(ans)
-    
-    
-    
+
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'None\n'.strip(), "Test: " + 'D = {}\nfor i in range(10): D[i] = i*i - 1\nans = delete_entry(D, 12)\nprint(ans)\n\n')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
                    ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
                    ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4}
     student = ('Steph', 'Martin')
     ans = delete_entry(student_ages, student)
     print(ans)
-    
-    
-    
+
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4\n'.strip(), "Test: " + "student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,\n               ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,\n               ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4}\nstudent = ('Steph', 'Martin')\nans = delete_entry(student_ages, student)\nprint(ans)\n\n")
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
                    ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
                    ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4}
     student = ('Abe', 'Lincoln')
     ans = delete_entry(student_ages, student)
     print(ans)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'None\n'.strip(), "Test: " + "student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,\n               ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,\n               ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4}\nstudent = ('Abe', 'Lincoln')\nans = delete_entry(student_ages, student)\nprint(ans)\n")
 
 
@@ -2527,69 +2527,69 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
     print(has_key(D, 'Blocks') == True)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nprint(has_key(D, 'Blocks') == True)\n")
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
     print(has_key(D, 'Spikes') == True)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nprint(has_key(D, 'Spikes') == True)\n")
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
     print(has_key(D, 'credits') == True)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nprint(has_key(D, 'credits') == True)")
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
     print(has_key(D, 'gpa'))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nprint(has_key(D, 'gpa'))")
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
                    ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
                    ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}
     student = ('Bobby', 'Roo')
     print(has_key(student_ages, student) == True)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,\n               ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,\n               ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}\nstudent = ('Bobby', 'Roo')\nprint(has_key(student_ages, student) == True)\n")
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
                    ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
                    ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}
     student = ('Bobby', 'Nguyen')
     print(has_key(student_ages, student) == True)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False'.strip(), "Test: " + "student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,\n               ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,\n               ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}\nstudent = ('Bobby', 'Nguyen')\nprint(has_key(student_ages, student) == True)")
 
 
@@ -2751,52 +2751,52 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
     print(has_value(D, 47) == True)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nprint(has_value(D, 47) == True)\n")
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
     print(has_value(D, 3047) == True)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nprint(has_value(D, 3047) == True)\n")
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
     print(has_value(D, 2022) == True)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nprint(has_value(D, 2022) == True)")
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
     print(has_value(D, 2020) == True)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nprint(has_value(D, 2020) == True)")
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
     print(has_value(D, 3.7) == True)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nprint(has_value(D, 3.7) == True)")
 
 
@@ -2958,68 +2958,68 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
     print(get_num_pairs(D))
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nprint(get_num_pairs(D))\n")
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'wins': 9, 'losses': 2}
     print(get_num_pairs(D))
-    
-    
-    
+
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '2'.strip(), "Test: " + "D = {'wins': 9, 'losses': 2}\nprint(get_num_pairs(D))\n\n")
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'gpa': 3.7, 'credits': 17, 'graduation year': 2022}
     print(get_num_pairs(D))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3'.strip(), "Test: " + "D = {'gpa': 3.7, 'credits': 17, 'graduation year': 2022}\nprint(get_num_pairs(D))")
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {}
     for i in range(50,101):
         D[chr(i)] = i
     print(get_num_pairs(D))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '51'.strip(), "Test: " + 'D = {}\nfor i in range(50,101):\n    D[chr(i)] = i\nprint(get_num_pairs(D))')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
                    ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
                    ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}
     print(get_num_pairs(student_ages))
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '9'.strip(), "Test: " + "student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,\n               ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,\n               ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}\nprint(get_num_pairs(student_ages))\n")
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {}
     print(get_num_pairs(D))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0'.strip(), "Test: " + 'D = {}\nprint(get_num_pairs(D))')
 
 
@@ -3198,75 +3198,75 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     key_list = ['Hitting Percent', 'Blocks', 'Digs', 'Aces']
     value_list = [0.174, 5.0, 47, 7]
     D = build_dictionary(key_list, value_list)
     print(D)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "{'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\n".strip(), "Test: " + "key_list = ['Hitting Percent', 'Blocks', 'Digs', 'Aces']\nvalue_list = [0.174, 5.0, 47, 7]\nD = build_dictionary(key_list, value_list)\nprint(D)\n")
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     key_list = ['wins', 'losses']
     value_list = [9, 2]
     D = build_dictionary(key_list, value_list)
     print(D)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "{'wins': 9, 'losses': 2}\n".strip(), "Test: " + "key_list = ['wins', 'losses']\nvalue_list = [9, 2]\nD = build_dictionary(key_list, value_list)\nprint(D)")
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     key_list = ['major1 gpa', 'major2 gpa', 'credits', 'graduation year']
     value_list = [3.7, 3.4, 17, 2022]
     D = build_dictionary(key_list, value_list)
     print(D)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "{'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\n".strip(), "Test: " + "key_list = ['major1 gpa', 'major2 gpa', 'credits', 'graduation year']\nvalue_list = [3.7, 3.4, 17, 2022]\nD = build_dictionary(key_list, value_list)\nprint(D)")
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     key_list = ['First Years', 'Sophomores', 'Juniors', 'Seniors']
     value_list = [135, 114, 109, 105]
     D = build_dictionary(key_list, value_list)
     print(D)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "{'First Years': 135, 'Sophomores': 114, 'Juniors': 109, 'Seniors': 105}\n".strip(), "Test: " + "key_list = ['First Years', 'Sophomores', 'Juniors', 'Seniors']\nvalue_list = [135, 114, 109, 105]\nD = build_dictionary(key_list, value_list)\nprint(D)")
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     key_list = [('Steph','Martin'), ('Bobby', 'Roo'), ('Alex', 'Oriole'), ('Mihrimah', 'Suleiman'), ('Felix', 'Dumezweni')]
     value_list = [4, 5, 6, 5, 6]
     D = build_dictionary(key_list, value_list)
     print(D)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "{('Steph', 'Martin'): 4, ('Bobby', 'Roo'): 5, ('Alex', 'Oriole'): 6, ('Mihrimah', 'Suleiman'): 5, ('Felix', 'Dumezweni'): 6}\n".strip(), "Test: " + "key_list = [('Steph','Martin'), ('Bobby', 'Roo'), ('Alex', 'Oriole'), ('Mihrimah', 'Suleiman'), ('Felix', 'Dumezweni')]\nvalue_list = [4, 5, 6, 5, 6]\nD = build_dictionary(key_list, value_list)\nprint(D)")
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     key_list = ['x', 'a', 'u', 't', 'ww']
     value_list = ['pizza', 'steak', 'sushi', 'dim sum', 'tuna']
     D = build_dictionary(key_list, value_list)
     print(D)
     print(type(D))
     print(D['x'])
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "{'x': 'pizza', 'a': 'steak', 'u': 'sushi', 't': 'dim sum', 'ww': 'tuna'}\n&lt;class 'dict'&gt;\npizza\n".strip(), "Test: " + "key_list = ['x', 'a', 'u', 't', 'ww']\nvalue_list = ['pizza', 'steak', 'sushi', 'dim sum', 'tuna']\nD = build_dictionary(key_list, value_list)\nprint(D)\nprint(type(D))\nprint(D['x'])")
 
 
@@ -3455,79 +3455,79 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [1, 5, 25, 5, 1]
     print(get_freq_dict(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{1: 2, 5: 2, 25: 1}\n'.strip(), "Test: " + 'L = [1, 5, 25, 5, 1]\nprint(get_freq_dict(L))')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [5, 5, 5, 5, 5, 3]
     print(get_freq_dict(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{5: 5, 3: 1}\n'.strip(), "Test: " + 'L = [5, 5, 5, 5, 5, 3]\nprint(get_freq_dict(L))')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [17]
     print(get_freq_dict(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{17: 1}\n'.strip(), "Test: " + 'L = [17]\nprint(get_freq_dict(L))')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = list(range(5))
     print(get_freq_dict(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{0: 1, 1: 1, 2: 1, 3: 1, 4: 1}\n'.strip(), "Test: " + 'L = list(range(5))\nprint(get_freq_dict(L))')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = list(range(3))*2 + [3, 4]
     print(get_freq_dict(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{0: 2, 1: 2, 2: 2, 3: 1, 4: 1}\n'.strip(), "Test: " + 'L = list(range(3))*2 + [3, 4]\nprint(get_freq_dict(L))')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [1, 1, 1, 1, 2, 2, 2, 3, 3, 4]
     print(get_freq_dict(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{1: 4, 2: 3, 3: 2, 4: 1}\n'.strip(), "Test: " + 'L = [1, 1, 1, 1, 2, 2, 2, 3, 3, 4]\nprint(get_freq_dict(L))')
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(get_freq_dict([]))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{}\n'.strip(), "Test: " + 'print(get_freq_dict([]))')
 
 
   def test8(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = list(range(3))*3 + [1, 2] + [7, 8, 8]
     print(get_freq_dict(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{0: 3, 1: 4, 2: 4, 7: 1, 8: 2}\n'.strip(), "Test: " + 'L = list(range(3))*3 + [1, 2] + [7, 8, 8]\nprint(get_freq_dict(L))')
 
 
@@ -3697,60 +3697,60 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [3, 8, 5, 5, 8, 8]
     print(get_mode(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '8\n'.strip(), "Test: " + 'L = [3, 8, 5, 5, 8, 8]\nprint(get_mode(L))')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [3, 8, 5, 5, 8, 8, 3, 3, 5, 3, 3]
     print(get_mode(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3\n'.strip(), "Test: " + 'L = [3, 8, 5, 5, 8, 8, 3, 3, 5, 3, 3]\nprint(get_mode(L))')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [-5, 10, -4, 10, -3]
     print(get_mode(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '10'.strip(), "Test: " + 'L = [-5, 10, -4, 10, -3]\nprint(get_mode(L))')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [-5]
     print(get_mode(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-5\n'.strip(), "Test: " + 'L = [-5]\nprint(get_mode(L))')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [4, 3, 4]
     print(get_mode(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4\n'.strip(), "Test: " + 'L = [4, 3, 4]\nprint(get_mode(L))')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = list(range(20))+[17,17]+list(range(20))
     print(get_mode(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '17\n'.strip(), "Test: " + 'L = list(range(20))+[17,17]+list(range(20))\nprint(get_mode(L))')
 
 
@@ -3781,11 +3781,11 @@ myTests().main()        </tests>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>Counting by: 0
-0 0 0 0 0 0 0 
+0 0 0 0 0 0 0
 Counting by: 1
-0 1 2 3 4 5 6 
+0 1 2 3 4 5 6
 Counting by: 2
-0 2 4 6 8 10 12 
+0 2 4 6 8 10 12
 Counting by: 3
 0 3 6 9 12 15 18                </cd>
               </p>
@@ -3908,28 +3908,28 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('3\n')
-    
+
     exec(_program)
-    
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Counting by: 0\n0 0 0 0 0 0 0 \nCounting by: 1\n0 1 2 3 4 5 6 \nCounting by: 2\n0 2 4 6 8 10 12 \nCounting by: 3\n0 3 6 9 12 15 18 \n'.strip(), "Input: " + '3\n')
+
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), RIGHT_WHITESPACE_TRIMMER.sub("",'Counting by: 0\n0 0 0 0 0 0 0\nCounting by: 1\n0 1 2 3 4 5 6 \nCounting by: 2\n0 2 4 6 8 10 12 \nCounting by: 3\n0 3 6 9 12 15 18 \n').strip(), "Input: " + '3\n')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('4')
-    
+
     exec(_program)
-    
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Counting by: 0\n0 0 0 0 0 0 0 \nCounting by: 1\n0 1 2 3 4 5 6 \nCounting by: 2\n0 2 4 6 8 10 12 \nCounting by: 3\n0 3 6 9 12 15 18 \nCounting by: 4\n0 4 8 12 16 20 24 '.strip(), "Input: " + '4')
+
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), RIGHT_WHITESPACE_TRIMMER.sub("",'Counting by: 0\n0 0 0 0 0 0 0 \nCounting by: 1\n0 1 2 3 4 5 6 \nCounting by: 2\n0 2 4 6 8 10 12 \nCounting by: 3\n0 3 6 9 12 15 18 \nCounting by: 4\n0 4 8 12 16 20 24 ').strip(), "Input: " + '4')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('5\n')
-    
+
     exec(_program)
-    
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Counting by: 0\n0 0 0 0 0 0 0 \nCounting by: 1\n0 1 2 3 4 5 6 \nCounting by: 2\n0 2 4 6 8 10 12 \nCounting by: 3\n0 3 6 9 12 15 18 \nCounting by: 4\n0 4 8 12 16 20 24 \nCounting by: 5\n0 5 10 15 20 25 30 \n'.strip(), "Input: " + '5\n')
+
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), RIGHT_WHITESPACE_TRIMMER.sub("",'Counting by: 0\n0 0 0 0 0 0 0 \nCounting by: 1\n0 1 2 3 4 5 6 \nCounting by: 2\n0 2 4 6 8 10 12 \nCounting by: 3\n0 3 6 9 12 15 18 \nCounting by: 4\n0 4 8 12 16 20 24 \nCounting by: 5\n0 5 10 15 20 25 30 \n').strip(), "Input: " + '5\n')
 
 
 
