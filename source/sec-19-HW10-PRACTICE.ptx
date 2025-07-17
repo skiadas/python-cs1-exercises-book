@@ -21,10 +21,10 @@ class Sentence:
     def __init__(self, chars):
         # store the chars in an instance variable
         self.chars = chars
-        
+
     def getChars(self):
         return self.chars
-    
+
     def setChars(self, newChars):
         self.chars = newChars
         </pre>
@@ -55,10 +55,10 @@ class Sentence:
     def __init__(self, chars):
         # store the chars in an instance variable
         self.chars = chars
-        
+
     def getChars(self):
         return self.chars
-    
+
     def setChars(self, newChars):
         self.chars = newChars
         </pre>
@@ -85,12 +85,12 @@ class Length:
         # The unit will be one of these: 'inches', 'yards'
         self.quantity = quantity
         self.unit = unit
-    
+
     def has_unit(self, some_unit):
         # return True if the Length object's unit label is
         # the same as some_unit, otherwise False
         return self.unit == some_unit
-    
+
     def convert_to(self, new_unit):
         # convert this Length object to the new unit
         if self.has_unit('inches') and new_unit == 'yards':
@@ -99,7 +99,7 @@ class Length:
         elif self.has_unit('yards') and new_unit == 'inches':
             self.quantity = self.quantity * 36
             self.unit = new_unit
-            
+
     def __str__(self):
         # return a string for printing the Length object information
         rounded_quantity = round(self.quantity, 3)
@@ -183,7 +183,7 @@ def convert_to(self, new_unit):
     print("Length of a football field:", football_field)
     football_field.convert_to("inches")
     print("Length of a football field:", football_field)
-    
+
     rattler = Length(38, "inches")
     print("Length of a female black-tailed rattler:", rattler)
     rattler.convert_to("yards")
@@ -445,13 +445,13 @@ def convert_to(self, new_unit):
           self.hours = 0
           self.minutes = 0
           self.seconds = 0
-      
+
       def set_hours(self, h):
           self.hours = h
-          
+
       def set_minutes(self, m):
           self.minutes = m
-          
+
       def set_seconds(self, s):
           self.seconds = s
 
@@ -511,13 +511,13 @@ def convert_to(self, new_unit):
           self.hours = 0
           self.minutes = 0
           self.seconds = 0
-      
+
       def set_hours(self, h):
           self.hours = h
-          
+
       def set_minutes(self, m):
           self.minutes = m
-          
+
       def set_seconds(self, s):
           self.seconds = s
 
@@ -793,6 +793,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -849,7 +854,7 @@ class Timer:
 
     def __str__(self):
         return f'{self.hours}:{self.minutes}:{self.seconds}'
-    
+
 
 
         </preamble>
@@ -862,7 +867,7 @@ class Timer:
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -874,77 +879,77 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(0, 5, 30)
     ans = timer1.convert_to_seconds()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '330\n'.strip(), "Test: " + 'timer1 = Timer(0, 5, 30)\nans = timer1.convert_to_seconds()\nprint(ans)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(0, 5, 30)
     ans = timer1.convert_to_seconds()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '330\n'.strip(), "Test: " + 'timer1 = Timer(0, 5, 30)\nans = timer1.convert_to_seconds()\nprint(ans)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(0, 55, 30)
     ans = timer1.convert_to_seconds()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3330\n'.strip(), "Test: " + 'timer1 = Timer(0, 55, 30)\nans = timer1.convert_to_seconds()\nprint(ans)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(14, 40, 30)
     ans = timer1.convert_to_seconds()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '52830\n'.strip(), "Test: " + 'timer1 = Timer(14, 40, 30)\nans = timer1.convert_to_seconds()\nprint(ans)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(1, 2, 3)
     ans = timer1.convert_to_seconds()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3723\n'.strip(), "Test: " + 'timer1 = Timer(1, 2, 3)\nans = timer1.convert_to_seconds()\nprint(ans)')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(10, 45, 59)
     ans = timer1.convert_to_seconds()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '38759\n'.strip(), "Test: " + 'timer1 = Timer(10, 45, 59)\nans = timer1.convert_to_seconds()\nprint(ans)')
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(100, 35, 58)
     ans = timer1.convert_to_seconds()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '362158\n'.strip(), "Test: " + 'timer1 = Timer(100, 35, 58)\nans = timer1.convert_to_seconds()\nprint(ans)')
 
 
@@ -971,13 +976,13 @@ myTests().main()        </tests>
             print('Hours:', self.hours, end=' ')
             print('Minutes:', self.minutes, end=' ')
             print('Seconds:', self.seconds)
-            
+
         def get_seconds(self):
             return self.seconds
-        
+
         def get_minutes(self):
             return self.minutes
-        
+
         def get_hours(self):
             return self.hours
 
@@ -1072,6 +1077,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -1125,19 +1135,19 @@ class Timer:
         print('Hours:', self.hours, end=' ')
         print('Minutes:', self.minutes, end=' ')
         print('Seconds:', self.seconds)
-        
+
     def get_seconds(self):
         return self.seconds
-        
+
     def get_minutes(self):
         return self.minutes
-        
+
     def get_hours(self):
         return self.hours
 
     def __str__(self):
         return f'{self.hours}:{self.minutes}:{self.seconds}'
-    
+
 
 
         </preamble>
@@ -1148,7 +1158,7 @@ def add_timers(t1, t2):
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1160,103 +1170,103 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(0, 5, 30)
     timer2 = Timer(2, 19, 0)
     timer3 = add_timers(timer1, timer2)
     print(timer3)
     if(str(timer3) != "2:24:30"):  print("Should be: 2:24:30")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '2:24:30\n'.strip(), "Test: " + 'timer1 = Timer(0, 5, 30)\ntimer2 = Timer(2, 19, 0)\ntimer3 = add_timers(timer1, timer2)\nprint(timer3)\nif(str(timer3) != "2:24:30"):  print("Should be: 2:24:30")')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(0, 5, 30)
     timer2 = Timer(2, 19, 35)
     timer3 = add_timers(timer1, timer2)
     print(timer3)
     if(str(timer3) != "2:25:5"):  print("Should be: 2:25:5")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '2:25:5\n'.strip(), "Test: " + 'timer1 = Timer(0, 5, 30)\ntimer2 = Timer(2, 19, 35)\ntimer3 = add_timers(timer1, timer2)\nprint(timer3)\nif(str(timer3) != "2:25:5"):  print("Should be: 2:25:5")')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(0, 55, 30)
     timer2 = Timer(2, 10, 0)
     timer3 = add_timers(timer1, timer2)
     print(timer3)
     if(str(timer3) != "3:5:30"):  print("Should be: 3:5:30")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3:5:30\n'.strip(), "Test: " + 'timer1 = Timer(0, 55, 30)\ntimer2 = Timer(2, 10, 0)\ntimer3 = add_timers(timer1, timer2)\nprint(timer3)\nif(str(timer3) != "3:5:30"):  print("Should be: 3:5:30")')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(14, 40, 30)
     timer2 = Timer(6, 10, 45)
     timer3 = add_timers(timer1, timer2)
     print(timer3)
     if(str(timer3) != "20:51:15"):  print("Should be: 20:51:15")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '20:51:15\n'.strip(), "Test: " + 'timer1 = Timer(14, 40, 30)\ntimer2 = Timer(6, 10, 45)\ntimer3 = add_timers(timer1, timer2)\nprint(timer3)\nif(str(timer3) != "20:51:15"):  print("Should be: 20:51:15")')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(1, 51, 41)
     timer2 = Timer(4, 48, 59)
     timer3 = add_timers(timer1, timer2)
     print(timer3)
     if(str(timer3) != "6:40:40"):  print("Should be: 6:40:40")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '6:40:40'.strip(), "Test: " + 'timer1 = Timer(1, 51, 41)\ntimer2 = Timer(4, 48, 59)\ntimer3 = add_timers(timer1, timer2)\nprint(timer3)\nif(str(timer3) != "6:40:40"):  print("Should be: 6:40:40")')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(10, 45, 59)
     timer2 = Timer(30, 54, 50)
     timer3 = add_timers(timer1, timer2)
     print(timer3)
     if(str(timer3) != "41:40:49"):  print("Should be: 41:40:49")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '41:40:49'.strip(), "Test: " + 'timer1 = Timer(10, 45, 59)\ntimer2 = Timer(30, 54, 50)\ntimer3 = add_timers(timer1, timer2)\nprint(timer3)\nif(str(timer3) != "41:40:49"):  print("Should be: 41:40:49")')
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(100, 35, 58)
     timer2 = Timer(130, 59, 37)
     timer3 = add_timers(timer1, timer2)
     print(timer3)
     if(str(timer3) != "231:35:35"):  print("Should be: 231:35:35")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '231:35:35\n'.strip(), "Test: " + 'timer1 = Timer(100, 35, 58)\ntimer2 = Timer(130, 59, 37)\ntimer3 = add_timers(timer1, timer2)\nprint(timer3)\nif(str(timer3) != "231:35:35"):  print("Should be: 231:35:35")')
 
 
   def test8(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(200, 36, 59)
     timer2 = Timer(330, 58, 59)
     timer3 = add_timers(timer1, timer2)
     print(timer3)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '531:35:58\n'.strip(), "Test: " + 'timer1 = Timer(200, 36, 59)\ntimer2 = Timer(330, 58, 59)\ntimer3 = add_timers(timer1, timer2)\nprint(timer3)')
 
 
@@ -1372,6 +1382,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -1425,16 +1440,16 @@ class Timer:
         print('Hours:', self.hours, end=' ')
         print('Minutes:', self.minutes, end=' ')
         print('Seconds:', self.seconds)
-        
+
     def get_seconds(self):
         return self.seconds
-        
+
     def get_minutes(self):
         return self.minutes
-        
+
     def get_hours(self):
         return self.hours
-        
+
     def convert_to_seconds(self):
         return self.hours*60*60 + self.minutes*60 + self.seconds
 
@@ -1448,14 +1463,14 @@ class Timer:
 # NOTE: Do not change the indentation! It is required because the
 # code will be pasted into the Timer class definition body.
     def __eq__(self, other):
-        
+
 
         </code>
         <postamble visible="no">
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1467,91 +1482,91 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(0, 5, 30)
     timer2 = Timer(0, 5, 30)
     ans1 = timer1 == timer2
     ans2 = timer1 != timer2
     print(ans1, ans2)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True False\n'.strip(), "Test: " + 'timer1 = Timer(0, 5, 30)\ntimer2 = Timer(0, 5, 30)\nans1 = timer1 == timer2\nans2 = timer1 != timer2\nprint(ans1, ans2)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(1, 5, 30)
     timer2 = Timer(0, 5, 30)
     ans = timer1 == timer2
     ans2 = timer1 != timer2
     print(ans, ans2)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False True\n'.strip(), "Test: " + 'timer1 = Timer(1, 5, 30)\ntimer2 = Timer(0, 5, 30)\nans = timer1 == timer2\nans2 = timer1 != timer2\nprint(ans, ans2)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(1, 5, 30)
     timer2 = Timer(1, 4, 30)
     ans = timer1 == timer2
     ans2 = timer1 != timer2
     print(ans, ans2)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False True\n'.strip(), "Test: " + 'timer1 = Timer(1, 5, 30)\ntimer2 = Timer(1, 4, 30)\nans = timer1 == timer2\nans2 = timer1 != timer2\nprint(ans, ans2)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(1, 5, 30)
     timer2 = Timer(0, 5, 32)
     ans = timer1 == timer2
     ans2 = timer1 != timer2
     print(ans, ans2)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False True\n'.strip(), "Test: " + 'timer1 = Timer(1, 5, 30)\ntimer2 = Timer(0, 5, 32)\nans = timer1 == timer2\nans2 = timer1 != timer2\nprint(ans, ans2)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(10, 50, 40)
     timer2 = Timer(10, 50, 40)
     ans = timer1 == timer2
     ans2 = timer1 != timer2
     print(ans, ans2)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True False\n'.strip(), "Test: " + 'timer1 = Timer(10, 50, 40)\ntimer2 = Timer(10, 50, 40)\nans = timer1 == timer2\nans2 = timer1 != timer2\nprint(ans, ans2)')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(10, 50, 40)
     timer2 = Timer(10, 50, 41)
     ans = timer1 == timer2
     ans2 = timer1 != timer2
     print(ans, ans2)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False True\n'.strip(), "Test: " + 'timer1 = Timer(10, 50, 40)\ntimer2 = Timer(10, 50, 41)\nans = timer1 == timer2\nans2 = timer1 != timer2\nprint(ans, ans2)')
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     timer1 = Timer(10, 50, 40)
     timer2 = Timer(11, 50, 40)
     ans = timer1 == timer2
     ans2 = timer1 != timer2
     print(ans, ans2)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False True\n'.strip(), "Test: " + 'timer1 = Timer(10, 50, 40)\ntimer2 = Timer(11, 50, 40)\nans = timer1 == timer2\nans2 = timer1 != timer2\nprint(ans, ans2)')
 
 

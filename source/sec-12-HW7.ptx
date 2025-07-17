@@ -109,6 +109,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -161,7 +166,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -364,6 +369,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -416,7 +426,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -598,6 +608,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -650,7 +665,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -845,6 +860,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -897,7 +917,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1102,6 +1122,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -1154,7 +1179,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1310,6 +1335,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -1362,7 +1392,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1532,6 +1562,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -1584,7 +1619,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1768,6 +1803,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -1820,7 +1860,7 @@ def gen_triples(L):
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1983,6 +2023,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -2041,7 +2086,7 @@ def check_answer(D, new_pair, new_size):
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -2227,6 +2272,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -2279,7 +2329,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -2463,6 +2513,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -2515,7 +2570,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -2687,6 +2742,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -2739,7 +2799,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -2894,6 +2954,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -2946,7 +3011,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -3134,6 +3199,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -3186,7 +3256,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -3391,6 +3461,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -3443,7 +3518,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -3633,6 +3708,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -3685,7 +3765,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -3840,6 +3920,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -3896,7 +3981,7 @@ _program = """
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui

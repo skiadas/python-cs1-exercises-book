@@ -392,6 +392,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -444,7 +449,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -456,54 +461,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_first_line("wordlist1.txt")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'happy'.strip(), "Test: " + 'print_first_line("wordlist1.txt")')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_first_line("random1.txt")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '77635'.strip(), "Test: " + 'print_first_line("random1.txt")')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_first_line("jazzscales.txt")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Play a major pent scale in Ab with attack on the 3rd string'.strip(), "Test: " + 'print_first_line("jazzscales.txt")')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_first_line("clocktimes.txt")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '09:05'.strip(), "Test: " + 'print_first_line("clocktimes.txt")')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_first_line("cards.txt")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Three of Clubs'.strip(), "Test: " + 'print_first_line("cards.txt")')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_first_line("strings1.txt")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '43XkyLl3QO'.strip(), "Test: " + 'print_first_line("strings1.txt")')
 
 
@@ -586,6 +591,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -638,7 +648,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -650,60 +660,60 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     x = get_second_line("wordlist1.txt")
     print(x)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'sad'.strip(), "Test: " + 'x = get_second_line("wordlist1.txt")\nprint(x)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     x = get_second_line("random1.txt")
     print(x)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '51437'.strip(), "Test: " + 'x = get_second_line("random1.txt")\nprint(x)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     x = get_second_line("jazzscales.txt")
     print(x)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Play a 7th pent scale in C# (Db) with attack on the 1st string'.strip(), "Test: " + 'x = get_second_line("jazzscales.txt")\nprint(x)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     x = get_second_line("clocktimes.txt")
     print(x)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '09:15\n'.strip(), "Test: " + 'x = get_second_line("clocktimes.txt")\nprint(x)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     x = get_second_line("cards.txt")
     print(x)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Six of Diamonds\n'.strip(), "Test: " + 'x = get_second_line("cards.txt")\nprint(x)')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     x = get_second_line("strings1.txt")
     print(x)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'KgYH4yZ9vp\n'.strip(), "Test: " + 'x = get_second_line("strings1.txt")\nprint(x)')
 
 
@@ -828,6 +838,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -896,7 +911,7 @@ myFile.close()
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -908,63 +923,63 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('Ace')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Ace of Hearts\n\nAce of Spades\n\nAce of Clubs\n\nAce of Diamonds\n'.strip(), "Input: " + 'Ace')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('Jack')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Jack of Clubs\n\nJack of Diamonds\n\nJack of Hearts\n\nJack of Spades\n'.strip(), "Input: " + 'Jack')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('queen')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Input: " + 'queen')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('Five')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Five of Spades\n\nFive of Hearts\n\nFive of Clubs\n\nFive of Diamonds\n'.strip(), "Input: " + 'Five')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('5')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Input: " + '5')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('Nine')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Nine of Clubs\n\nNine of Spades\n\nNine of Diamonds\n\nNine of Hearts\n'.strip(), "Input: " + 'Nine')
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('T')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Three of Clubs\n\nTen of Hearts\n\nTwo of Clubs\n\nThree of Diamonds\n\nTwo of Spades\n\nTen of Spades\n\nThree of Spades\n\nTwo of Diamonds\n\nTwo of Hearts\n\nTen of Diamonds\n\nThree of Hearts\n\nTen of Clubs\n'.strip(), "Input: " + 'T')
 
 
@@ -1046,6 +1061,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -1098,7 +1118,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1110,54 +1130,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(file_first_chars("wordlist1.txt"))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'hsaem'.strip(), "Test: " + 'print(file_first_chars("wordlist1.txt"))')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(file_first_chars("random1.txt"))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '752128978396557591217'.strip(), "Test: " + 'print(file_first_chars("random1.txt"))')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(file_first_chars("jazzscales.txt"))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'PPP'.strip(), "Test: " + 'print(file_first_chars("jazzscales.txt"))')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(file_first_chars("clocktimes.txt"))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '000011111111111111111111111111111111111111'.strip(), "Test: " + 'print(file_first_chars("clocktimes.txt"))')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(file_first_chars("cards.txt"))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'TSTETSETQTKFJFFNFTTJNSESFQJKSFAQTKTAFFNSESKSANJTQTTA\n'.strip(), "Test: " + 'print(file_first_chars("cards.txt"))')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(file_first_chars("strings1.txt"))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4KB3PaQCbyJwDQMvahL96VIdR'.strip(), "Test: " + 'print(file_first_chars("strings1.txt"))')
 
 
@@ -1244,6 +1264,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -1296,7 +1321,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1308,60 +1333,60 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = first_words("wordlist1.txt")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['happy', 'sad', 'angsty', 'euphoric', 'maudlin']\n".strip(), "Test: " + 'L = first_words("wordlist1.txt")\nprint(L)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = first_words("random1.txt")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['77635', '51437', '25094', '13874', '24429', '88575', '90277', '72340', '8826', '36166', '99144', '6920', '56237', '58141', '77661', '51028', '93722', '14354', '26125', '10151', '75322']\n".strip(), "Test: " + 'L = first_words("random1.txt")\nprint(L)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = first_words("snakes.txt")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['Cottonmouth', 'Timber', 'Black', 'Tiger', 'Copperhead', 'Eastern', 'Western', 'Eastern', 'Prairie', 'Mojave']\n".strip(), "Test: " + 'L = first_words("snakes.txt")\nprint(L)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = first_words("clocktimes.txt")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['09:05', '09:15', '09:20', '09:30', '10:20', '10:25', '10:30', '10:40', '10:45', '11:00', '11:15', '11:30', '11:35', '11:55', '12:00', '12:05', '12:10', '12:45', '12:50', '12:55', '13:05', '13:20', '13:35', '14:00', '14:10', '14:15', '14:20', '14:25', '14:35', '14:45', '14:50', '15:00', '15:55', '16:00', '16:05', '16:20', '16:25', '16:30', '16:35', '16:40', '16:50', '16:55']\n".strip(), "Test: " + 'L = first_words("clocktimes.txt")\nprint(L)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = first_words("cards.txt")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['Three', 'Six', 'Ten', 'Eight', 'Two', 'Six', 'Eight', 'Three', 'Queen', 'Two', 'King', 'Five', 'Jack', 'Five', 'Four', 'Nine', 'Five', 'Ten', 'Three', 'Jack', 'Nine', 'Seven', 'Eight', 'Seven', 'Five', 'Queen', 'Jack', 'King', 'Six', 'Four', 'Ace', 'Queen', 'Two', 'King', 'Two', 'Ace', 'Four', 'Four', 'Nine', 'Seven', 'Eight', 'Seven', 'King', 'Six', 'Ace', 'Nine', 'Jack', 'Ten', 'Queen', 'Three', 'Ten', 'Ace']\n".strip(), "Test: " + 'L = first_words("cards.txt")\nprint(L)')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = first_words("strings1.txt")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['43XkyLl3QO', 'KgYH4yZ9vp', 'B9z0d27BWf', '3lVimQBNOl', 'PZF1FkRCC0', 'aodmjRnbSM', 'QinMgOKyJ3', 'CIRpxzuBov', 'bl2VB97vGe', 'ypinbN0yjw', 'JotIY4A9GC', 'wjlureOXLy', 'DlHXQlUuhv', 'QHvicuwzKp', 'MzORTv2BYU', 'vVnuElBS0s', 'aezB6hMOqj', 'hipsag5OAM', 'LhgNsYqWhB', '9b3yi6e29s', '6fx3eADW4n', 'V28c1LIoQC', 'IsN0xS6bZ4', 'd1e0b2hJX6', 'RwXQZcECRu']\n".strip(), "Test: " + 'L = first_words("strings1.txt")\nprint(L)')
 
 
@@ -1445,6 +1470,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -1497,7 +1527,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1509,54 +1539,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_last_line("wordlist1.txt")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'maudlin\n\nThe file has 5 lines.\n'.strip(), "Test: " + 'print_last_line("wordlist1.txt")')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_last_line("random1.txt")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '75322\n\nThe file has 21 lines.\n'.strip(), "Test: " + 'print_last_line("random1.txt")')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_last_line("jazzscales.txt")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Play a major scale in B with attack on the 1st string\n\nThe file has 3 lines.\n'.strip(), "Test: " + 'print_last_line("jazzscales.txt")')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_last_line("clocktimes.txt")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '16:55\n\nThe file has 42 lines.\n'.strip(), "Test: " + 'print_last_line("clocktimes.txt")')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_last_line("cards.txt")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Ace of Diamonds\n\nThe file has 52 lines.\n'.strip(), "Test: " + 'print_last_line("cards.txt")')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_last_line("strings1.txt")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'RwXQZcECRu\n\nThe file has 25 lines.\n'.strip(), "Test: " + 'print_last_line("strings1.txt")')
 
 
@@ -1645,6 +1675,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -1697,7 +1732,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1709,60 +1744,60 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = last_words("wordlist1.txt")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['happy', 'sad', 'angsty', 'euphoric', 'maudlin']\n".strip(), "Test: " + 'L = last_words("wordlist1.txt")\nprint(L)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = last_words("random1.txt")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['77635', '51437', '25094', '13874', '24429', '88575', '90277', '72340', '8826', '36166', '99144', '6920', '56237', '58141', '77661', '51028', '93722', '14354', '26125', '10151', '75322']\n".strip(), "Test: " + 'L = last_words("random1.txt")\nprint(L)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = last_words("jazzscales.txt")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['string', 'string', 'string']\n".strip(), "Test: " + 'L = last_words("jazzscales.txt")\nprint(L)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = last_words("clocktimes.txt")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['09:05', '09:15', '09:20', '09:30', '10:20', '10:25', '10:30', '10:40', '10:45', '11:00', '11:15', '11:30', '11:35', '11:55', '12:00', '12:05', '12:10', '12:45', '12:50', '12:55', '13:05', '13:20', '13:35', '14:00', '14:10', '14:15', '14:20', '14:25', '14:35', '14:45', '14:50', '15:00', '15:55', '16:00', '16:05', '16:20', '16:25', '16:30', '16:35', '16:40', '16:50', '16:55']\n".strip(), "Test: " + 'L = last_words("clocktimes.txt")\nprint(L)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = last_words("cards.txt")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['Clubs', 'Diamonds', 'Hearts', 'Clubs', 'Clubs', 'Spades', 'Spades', 'Diamonds', 'Diamonds', 'Spades', 'Spades', 'Spades', 'Clubs', 'Hearts', 'Clubs', 'Clubs', 'Clubs', 'Spades', 'Spades', 'Diamonds', 'Spades', 'Hearts', 'Diamonds', 'Clubs', 'Diamonds', 'Clubs', 'Hearts', 'Diamonds', 'Hearts', 'Diamonds', 'Hearts', 'Hearts', 'Diamonds', 'Clubs', 'Hearts', 'Spades', 'Hearts', 'Spades', 'Diamonds', 'Spades', 'Hearts', 'Diamonds', 'Hearts', 'Clubs', 'Clubs', 'Hearts', 'Spades', 'Diamonds', 'Spades', 'Hearts', 'Clubs', 'Diamonds']\n".strip(), "Test: " + 'L = last_words("cards.txt")\nprint(L)')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = last_words("strings1.txt")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['43XkyLl3QO', 'KgYH4yZ9vp', 'B9z0d27BWf', '3lVimQBNOl', 'PZF1FkRCC0', 'aodmjRnbSM', 'QinMgOKyJ3', 'CIRpxzuBov', 'bl2VB97vGe', 'ypinbN0yjw', 'JotIY4A9GC', 'wjlureOXLy', 'DlHXQlUuhv', 'QHvicuwzKp', 'MzORTv2BYU', 'vVnuElBS0s', 'aezB6hMOqj', 'hipsag5OAM', 'LhgNsYqWhB', '9b3yi6e29s', '6fx3eADW4n', 'V28c1LIoQC', 'IsN0xS6bZ4', 'd1e0b2hJX6', 'RwXQZcECRu']\n".strip(), "Test: " + 'L = last_words("strings1.txt")\nprint(L)')
 
 
@@ -1862,6 +1897,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -1914,7 +1954,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1926,72 +1966,72 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_line_if_exists("wordlist1.txt", 5)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Warning! line_num = 5 is not valid\n'.strip(), "Test: " + 'print_line_if_exists("wordlist1.txt", 5)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_line_if_exists("random1.txt", 0)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '77635\n'.strip(), "Test: " + 'print_line_if_exists("random1.txt", 0)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_line_if_exists("jazzscales.txt", 12)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Warning! line_num = 12 is not valid\n'.strip(), "Test: " + 'print_line_if_exists("jazzscales.txt", 12)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_line_if_exists("clocktimes.txt", 7)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '10:40\n'.strip(), "Test: " + 'print_line_if_exists("clocktimes.txt", 7)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_line_if_exists("cards.txt", 51)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Ace of Diamonds\n'.strip(), "Test: " + 'print_line_if_exists("cards.txt", 51)')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_line_if_exists("cards.txt", 52)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Warning! line_num = 52 is not valid\n'.strip(), "Test: " + 'print_line_if_exists("cards.txt", 52)')
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_line_if_exists("strings1.txt", 3)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3lVimQBNOl\n'.strip(), "Test: " + 'print_line_if_exists("strings1.txt", 3)')
 
 
   def test8(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_line_if_exists("strings1.txt", 3000)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Warning! line_num = 3000 is not valid\n'.strip(), "Test: " + 'print_line_if_exists("strings1.txt", 3000)')
 
 

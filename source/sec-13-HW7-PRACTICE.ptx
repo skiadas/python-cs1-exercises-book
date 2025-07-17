@@ -140,6 +140,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -192,7 +197,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -204,110 +209,110 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [1, 3, 9, 2]
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[2, 3, 9, 1]'.strip(), "Test: " + 'L = [1, 3, 9, 2]\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ['two', 'dos', 2]
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "[2, 'dos', 'two']".strip(), "Test: " + 'L = [\'two\', \'dos\', 2]\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [True, False]
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[False, True]'.strip(), "Test: " + 'L = [True, False]\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ["snowy"]
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['snowy']".strip(), "Test: " + 'L = ["snowy"]\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [0.0, -0.2, -0.4, -0.6, -0.8, -1.0]
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[-1.0, -0.2, -0.4, -0.6, -0.8, 0.0]'.strip(), "Test: " + 'L = [0.0, -0.2, -0.4, -0.6, -0.8, -1.0]\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ['Ziggy', 'Spike', 'Cleo', 'Skye', 'Ruthie']
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['Ruthie', 'Spike', 'Cleo', 'Skye', 'Ziggy']".strip(), "Test: " + 'L = [\'Ziggy\', \'Spike\', \'Cleo\', \'Skye\', \'Ruthie\']\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ['C', 'C++', 'C#', 'Java', 'Javascript', 'Python']
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['Python', 'C++', 'C#', 'Java', 'Javascript', 'C']\n".strip(), "Test: " + 'L = [\'C\', \'C++\', \'C#\', \'Java\', \'Javascript\', \'Python\']\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
 
 
   def test8(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = []
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]'.strip(), "Test: " + 'L = []\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)\n')
 
 
   def test9(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ["happy", "birthday", "to", "Monty"]
     if not(swap_list_ends(L) is None):
         print("Error: function should return None")
     print(L)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['Monty', 'birthday', 'to', 'happy']".strip(), "Test: " + 'L = ["happy", "birthday", "to", "Monty"]\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)\n')
 
 
@@ -409,6 +414,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -461,7 +471,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -473,65 +483,65 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     mylist = ['cat', 'Dog', 'frOG']
     result = make_uppercase(mylist)
     print(mylist)
     if result != None:
         print("Error, return value should be None")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['CAT', 'DOG', 'FROG']\n".strip(), "Test: " + 'mylist = [\'cat\', \'Dog\', \'frOG\']\nresult = make_uppercase(mylist)\nprint(mylist)\nif result != None:\n    print("Error, return value should be None")')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     mylist = ['baNanas', 'appLes', 'pEAches', 'PEArs']
     result = make_uppercase(mylist)
     print(mylist)
     if result != None:
         print("Error, return value should be None")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['BANANAS', 'APPLES', 'PEACHES', 'PEARS']\n".strip(), "Test: " + 'mylist = [\'baNanas\', \'appLes\', \'pEAches\', \'PEArs\']\nresult = make_uppercase(mylist)\nprint(mylist)\nif result != None:\n    print("Error, return value should be None")')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     mylist = ['w', 'x', 'y', 'z', 'yes']
     result = make_uppercase(mylist)
     print(mylist)
     if result != None:
         print("Error, return value should be None")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['W', 'X', 'Y', 'Z', 'YES']\n".strip(), "Test: " + 'mylist = [\'w\', \'x\', \'y\', \'z\', \'yes\']\nresult = make_uppercase(mylist)\nprint(mylist)\nif result != None:\n    print("Error, return value should be None")')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     mylist = []
     result = make_uppercase(mylist)
     print(mylist)
     if result != None:
         print("Error, return value should be None")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]\n'.strip(), "Test: " + 'mylist = []\nresult = make_uppercase(mylist)\nprint(mylist)\nif result != None:\n    print("Error, return value should be None")')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     mylist = ['cOw', 'HoRse', 'pig', 'BUNNy']
     result = make_uppercase(mylist)
     print(mylist)
     if result != None:
         print("Error, return value should be None")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['COW', 'HORSE', 'PIG', 'BUNNY']\n".strip(), "Test: " + 'mylist = [\'cOw\', \'HoRse\', \'pig\', \'BUNNy\']\nresult = make_uppercase(mylist)\nprint(mylist)\nif result != None:\n    print("Error, return value should be None")')
 
 
@@ -643,6 +653,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -695,7 +710,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -707,66 +722,66 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [0, 1, 2, 3]
     square_nums_2(L)
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[0, 1, 4, 9]\n'.strip(), "Test: " + 'L = [0, 1, 2, 3]\nsquare_nums_2(L)\nprint(L)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [5]
     square_nums_2(L)
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[25]\n'.strip(), "Test: " + 'L = [5]\nsquare_nums_2(L)\nprint(L)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = []
     square_nums_2(L)
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]\n'.strip(), "Test: " + 'L = []\nsquare_nums_2(L)\nprint(L)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [-1, 1, -2, 2, -3, 3]
     square_nums_2(L)
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 1, 4, 4, 9, 9]\n'.strip(), "Test: " + 'L = [-1, 1, -2, 2, -3, 3]\nsquare_nums_2(L)\nprint(L)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [9, 94, 39, 60, 99, 83]
     square_nums_2(L)
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[81, 8836, 1521, 3600, 9801, 6889]\n'.strip(), "Test: " + 'L = [9, 94, 39, 60, 99, 83]\nsquare_nums_2(L)\nprint(L)')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L  = [99, 9, 94, 39, 60, 83, 99]
     square_nums_2(L)
     print(L)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[9801, 81, 8836, 1521, 3600, 6889, 9801]\n'.strip(), "Test: " + 'L  = [99, 9, 94, 39, 60, 83, 99]\nsquare_nums_2(L)\nprint(L)')
 
 
@@ -890,6 +905,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -942,7 +962,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -954,80 +974,80 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ['yes', 'no', 'maybe']
     print(get_pairs(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['yes-yes', 'yes-no', 'yes-maybe', 'no-yes', 'no-no', 'no-maybe', 'maybe-yes', 'maybe-no', 'maybe-maybe']\n".strip(), "Test: " + "L = ['yes', 'no', 'maybe']\nprint(get_pairs(L))")
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     fish = ["angel", "gold", "cat", "puffer", "damsel"]
     print(get_pairs(fish))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['angel-angel', 'angel-gold', 'angel-cat', 'angel-puffer', 'angel-damsel', 'gold-angel', 'gold-gold', 'gold-cat', 'gold-puffer', 'gold-damsel', 'cat-angel', 'cat-gold', 'cat-cat', 'cat-puffer', 'cat-damsel', 'puffer-angel', 'puffer-gold', 'puffer-cat', 'puffer-puffer', 'puffer-damsel', 'damsel-angel', 'damsel-gold', 'damsel-cat', 'damsel-puffer', 'damsel-damsel']\n".strip(), "Test: " + 'fish = ["angel", "gold", "cat", "puffer", "damsel"]\nprint(get_pairs(fish))')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     strlist = ["X", "x"]
     print(get_pairs(strlist))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['X-X', 'X-x', 'x-X', 'x-x']\n".strip(), "Test: " + 'strlist = ["X", "x"]\nprint(get_pairs(strlist))')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     empty = []
     print(get_pairs(empty))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]\n'.strip(), "Test: " + 'empty = []\nprint(get_pairs(empty))')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ["UNO"]
     print(get_pairs(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['UNO-UNO']\n".strip(), "Test: " + 'L = ["UNO"]\nprint(get_pairs(L))')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     food = ['apple', 'cheese', 'bread']
     print(get_pairs(food))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['apple-apple', 'apple-cheese', 'apple-bread', 'cheese-apple', 'cheese-cheese', 'cheese-bread', 'bread-apple', 'bread-cheese', 'bread-bread']\n".strip(), "Test: " + "food = ['apple', 'cheese', 'bread']\nprint(get_pairs(food))")
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     instruments = ["Box drum", "Paixiao", "Saxophone", "Txistu", "Xalam", "Xaphoon", "Xun", "Xylophone"]
     print(get_pairs(instruments))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['Box drum-Box drum', 'Box drum-Paixiao', 'Box drum-Saxophone', 'Box drum-Txistu', 'Box drum-Xalam', 'Box drum-Xaphoon', 'Box drum-Xun', 'Box drum-Xylophone', 'Paixiao-Box drum', 'Paixiao-Paixiao', 'Paixiao-Saxophone', 'Paixiao-Txistu', 'Paixiao-Xalam', 'Paixiao-Xaphoon', 'Paixiao-Xun', 'Paixiao-Xylophone', 'Saxophone-Box drum', 'Saxophone-Paixiao', 'Saxophone-Saxophone', 'Saxophone-Txistu', 'Saxophone-Xalam', 'Saxophone-Xaphoon', 'Saxophone-Xun', 'Saxophone-Xylophone', 'Txistu-Box drum', 'Txistu-Paixiao', 'Txistu-Saxophone', 'Txistu-Txistu', 'Txistu-Xalam', 'Txistu-Xaphoon', 'Txistu-Xun', 'Txistu-Xylophone', 'Xalam-Box drum', 'Xalam-Paixiao', 'Xalam-Saxophone', 'Xalam-Txistu', 'Xalam-Xalam', 'Xalam-Xaphoon', 'Xalam-Xun', 'Xalam-Xylophone', 'Xaphoon-Box drum', 'Xaphoon-Paixiao', 'Xaphoon-Saxophone', 'Xaphoon-Txistu', 'Xaphoon-Xalam', 'Xaphoon-Xaphoon', 'Xaphoon-Xun', 'Xaphoon-Xylophone', 'Xun-Box drum', 'Xun-Paixiao', 'Xun-Saxophone', 'Xun-Txistu', 'Xun-Xalam', 'Xun-Xaphoon', 'Xun-Xun', 'Xun-Xylophone', 'Xylophone-Box drum', 'Xylophone-Paixiao', 'Xylophone-Saxophone', 'Xylophone-Txistu', 'Xylophone-Xalam', 'Xylophone-Xaphoon', 'Xylophone-Xun', 'Xylophone-Xylophone']\n".strip(), "Test: " + 'instruments = ["Box drum", "Paixiao", "Saxophone", "Txistu", "Xalam", "Xaphoon", "Xun", "Xylophone"]\nprint(get_pairs(instruments))')
 
 
   def test8(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ['hearts', 'diamonds', 'clubs', 'spades']
     print(get_pairs(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['hearts-hearts', 'hearts-diamonds', 'hearts-clubs', 'hearts-spades', 'diamonds-hearts', 'diamonds-diamonds', 'diamonds-clubs', 'diamonds-spades', 'clubs-hearts', 'clubs-diamonds', 'clubs-clubs', 'clubs-spades', 'spades-hearts', 'spades-diamonds', 'spades-clubs', 'spades-spades']\n".strip(), "Test: " + "L = ['hearts', 'diamonds', 'clubs', 'spades']\nprint(get_pairs(L))")
 
 
@@ -1065,7 +1085,7 @@ myTests().main()        </tests>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>* * * 
+                <cd>* * *
 * * *                </cd>
               </p>
             </cell>
@@ -1090,10 +1110,10 @@ myTests().main()        </tests>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>* * * * * 
-* * * * * 
-* * * * * 
-* * * * * 
+                <cd>* * * * *
+* * * * *
+* * * * *
+* * * * *
 * * * * *                </cd>
               </p>
             </cell>
@@ -1147,6 +1167,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -1199,7 +1224,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1211,45 +1236,45 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_star_grid(2,3)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '* * *\n* * *\n'.strip(), "Test: " + 'print_star_grid(2,3)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_star_grid(1,1)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '*\n'.strip(), "Test: " + 'print_star_grid(1,1)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_star_grid(5,5)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '* * * * *\n* * * * *\n* * * * *\n* * * * *\n* * * * *\n'.strip(), "Test: " + 'print_star_grid(5,5)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_star_grid(3,2)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '* *\n* *\n* *\n'.strip(), "Test: " + 'print_star_grid(3,2)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_star_grid(7,3)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '* * *\n* * *\n* * *\n* * *\n* * *\n* * *\n* * *\n'.strip(), "Test: " + 'print_star_grid(7,3)')
 
 
@@ -1287,7 +1312,7 @@ myTests().main()        </tests>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>X O X 
+                <cd>X O X
 O X O                </cd>
               </p>
             </cell>
@@ -1300,8 +1325,8 @@ O X O                </cd>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>X O 
-O X 
+                <cd>X O
+O X
 X O                </cd>
               </p>
             </cell>
@@ -1355,6 +1380,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -1407,7 +1437,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1419,54 +1449,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_XO_grid(2,3)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X O X\nO X O\n'.strip(), "Test: " + 'print_XO_grid(2,3)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_XO_grid(3,2)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X O\nO X\nX O\n'.strip(), "Test: " + 'print_XO_grid(3,2)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_XO_grid(1, 5)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X O X O X\n'.strip(), "Test: " + 'print_XO_grid(1, 5)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_XO_grid(3,1)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X\nO\nX\n'.strip(), "Test: " + 'print_XO_grid(3,1)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_XO_grid(5, 5)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X O X O X\nO X O X O\nX O X O X\nO X O X O\nX O X O X\n'.strip(), "Test: " + 'print_XO_grid(5, 5)')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_XO_grid(8, 3)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X O X\nO X O\nX O X\nO X O\nX O X\nO X O\nX O X\nO X O\n'.strip(), "Test: " + 'print_XO_grid(8, 3)')
 
 
@@ -1577,6 +1607,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -1629,7 +1664,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1641,60 +1676,60 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [[5]]
     print(sum_nested(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '5\n'.strip(), "Test: " + 'L = [[5]]\nprint(sum_nested(L))')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L=[[1,2],[8,7,6]]
     print(sum_nested(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '24\n'.strip(), "Test: " + 'L=[[1,2],[8,7,6]]\nprint(sum_nested(L))')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L =  []
     print(sum_nested(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n'.strip(), "Test: " + 'L =  []\nprint(sum_nested(L))')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [[5,4],[3,1,1,1,10],[2],[4]]
     print(sum_nested(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '31\n'.strip(), "Test: " + 'L = [[5,4],[3,1,1,1,10],[2],[4]]\nprint(sum_nested(L))')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [[1],[2,3],[-3,-2,-1,0]]
     print(sum_nested(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n'.strip(), "Test: " + 'L = [[1],[2,3],[-3,-2,-1,0]]\nprint(sum_nested(L))')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [[1,1,1],[2,3,2],[5,5,5],[10,11,12,13,14]]
     print(sum_nested(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '85\n'.strip(), "Test: " + 'L = [[1,1,1],[2,3,2],[5,5,5],[10,11,12,13,14]]\nprint(sum_nested(L))')
 
 
@@ -1809,6 +1844,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -1861,7 +1901,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -1873,41 +1913,41 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = []
     print(gen_triples(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]'.strip(), "Test: " + 'L = []\nprint(gen_triples(L))')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ['R']
     print(gen_triples(L))
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['RRR']".strip(), "Test: " + "L = ['R']\nprint(gen_triples(L))\n")
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ['n', 'o']
     print(gen_triples(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['nnn', 'nno', 'non', 'noo', 'onn', 'ono', 'oon', 'ooo']".strip(), "Test: " + "L = ['n', 'o']\nprint(gen_triples(L))")
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = ['A', 'B', 'C']
     print(gen_triples(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['AAA', 'AAB', 'AAC', 'ABA', 'ABB', 'ABC', 'ACA', 'ACB', 'ACC', 'BAA', 'BAB', 'BAC', 'BBA', 'BBB', 'BBC', 'BCA', 'BCB', 'BCC', 'CAA', 'CAB', 'CAC', 'CBA', 'CBB', 'CBC', 'CCA', 'CCB', 'CCC']".strip(), "Test: " + "L = ['A', 'B', 'C']\nprint(gen_triples(L))")
 
 
@@ -2012,6 +2052,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -2064,7 +2109,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -2076,50 +2121,50 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
     add_entry(D, 'Spikes', 42)
     if D.get('Spikes') == 42:
         print("new key-value pair was correctly added")
     else:
         print("key-value pair was NOT added correctly")
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'new key-value pair was correctly added'.strip(), "Test: " + 'D = {\'Hitting Percent\': 0.174, \'Blocks\': 5.0, \'Digs\': 47, \'Aces\': 7}\nadd_entry(D, \'Spikes\', 42)\nif D.get(\'Spikes\') == 42:\n    print("new key-value pair was correctly added")\nelse:\n    print("key-value pair was NOT added correctly")\n')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'wins': 9, 'losses': 2}
     add_entry(D, 'ties', 1)
     if D.get('ties') == 1:
         print("new key-value pair was correctly added")
     else:
         print("key-value pair was NOT added correctly")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'new key-value pair was correctly added'.strip(), "Test: " + 'D = {\'wins\': 9, \'losses\': 2}\nadd_entry(D, \'ties\', 1)\nif D.get(\'ties\') == 1:\n    print("new key-value pair was correctly added")\nelse:\n    print("key-value pair was NOT added correctly")')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
     add_entry(D, 'minor', 'Counting Sheep')
     if D.get('minor') == 'Counting Sheep':
         print("new key-value pair was correctly added")
     else:
         print("key-value pair was NOT added correctly")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'new key-value pair was correctly added'.strip(), "Test: " + 'D = {\'major1 gpa\': 3.7, \'major2 gpa\': 3.4, \'credits\': 17, \'graduation year\': 2022}\nadd_entry(D, \'minor\', \'Counting Sheep\')\nif D.get(\'minor\') == \'Counting Sheep\':\n    print("new key-value pair was correctly added")\nelse:\n    print("key-value pair was NOT added correctly")')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {}
     for i in range(65,89):
         D[chr(i)] = i
@@ -2128,14 +2173,14 @@ class myTests(TestCaseGui):
         print("new key-value pair was correctly added")
     else:
         print("key-value pair was NOT added correctly")
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'new key-value pair was correctly added'.strip(), "Test: " + 'D = {}\nfor i in range(65,89):\n    D[chr(i)] = i\nadd_entry(D, \'Z\', 90)\nif D.get(\'Z\') == 90:\n    print("new key-value pair was correctly added")\nelse:\n    print("key-value pair was NOT added correctly")')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
                    ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
                    ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4}
@@ -2145,8 +2190,8 @@ class myTests(TestCaseGui):
         print("new key-value pair was correctly added")
     else:
         print("key-value pair was NOT added correctly")
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'new key-value pair was correctly added'.strip(), "Test: " + 'student_ages = {(\'Steph\',\'Martin\'): 4, (\'Bobby\', \'Roo\'): 5, (\'Tiffany\', \'Roo\'): 5,\n               (\'Alex\', \'Oriole\'): 6, (\'Sandy\', \'Singh\'): 4, (\'Ida\', \'North-West\'): 6,\n               (\'Mihrimah\', \'Suleiman\'): 5, (\'Kat\', \'Mouse\'): 4}\nstudent = (\'Felix\', \'Dumezweni\')\nadd_entry(student_ages, student, 6)\nif student_ages.get(student) == 6:\n    print("new key-value pair was correctly added")\nelse:\n    print("key-value pair was NOT added correctly")\n')
 
 
@@ -2252,6 +2297,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -2304,7 +2354,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -2316,81 +2366,81 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
     ans = delete_entry(D, 'Digs')
     print(ans)
-    
-    
-    
+
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '47\n'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nans = delete_entry(D, 'Digs')\nprint(ans)\n\n")
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'wins': 9, 'losses': 2}
     ans = delete_entry(D, 'ties')
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'None\n'.strip(), "Test: " + "D = {'wins': 9, 'losses': 2}\nans = delete_entry(D, 'ties')\nprint(ans)")
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
     ans = delete_entry(D, 'major2 gpa')
     print(ans)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3.4\n'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nans = delete_entry(D, 'major2 gpa')\nprint(ans)\n")
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {}
     for i in range(10): D[i] = i*i - 1
     ans = delete_entry(D, 12)
     print(ans)
-    
-    
-    
+
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'None\n'.strip(), "Test: " + 'D = {}\nfor i in range(10): D[i] = i*i - 1\nans = delete_entry(D, 12)\nprint(ans)\n\n')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
                    ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
                    ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4}
     student = ('Steph', 'Martin')
     ans = delete_entry(student_ages, student)
     print(ans)
-    
-    
-    
+
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4\n'.strip(), "Test: " + "student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,\n               ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,\n               ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4}\nstudent = ('Steph', 'Martin')\nans = delete_entry(student_ages, student)\nprint(ans)\n\n")
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
                    ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
                    ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4}
     student = ('Abe', 'Lincoln')
     ans = delete_entry(student_ages, student)
     print(ans)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'None\n'.strip(), "Test: " + "student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,\n               ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,\n               ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4}\nstudent = ('Abe', 'Lincoln')\nans = delete_entry(student_ages, student)\nprint(ans)\n")
 
 
@@ -2488,6 +2538,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -2540,7 +2595,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -2552,69 +2607,69 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
     print(has_key(D, 'Blocks') == True)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nprint(has_key(D, 'Blocks') == True)\n")
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
     print(has_key(D, 'Spikes'))
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nprint(has_key(D, 'Spikes'))\n")
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
     print(has_key(D, 'credits'))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nprint(has_key(D, 'credits'))")
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
     print(has_key(D, 'gpa'))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nprint(has_key(D, 'gpa'))")
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
                    ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
                    ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}
     student = ('Bobby', 'Roo')
     print(has_key(student_ages, student))
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,\n               ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,\n               ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}\nstudent = ('Bobby', 'Roo')\nprint(has_key(student_ages, student))\n")
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
                    ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
                    ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}
     student = ('Bobby', 'Nguyen')
     print(has_key(student_ages, student))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False'.strip(), "Test: " + "student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,\n               ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,\n               ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}\nstudent = ('Bobby', 'Nguyen')\nprint(has_key(student_ages, student))")
 
 
@@ -2712,6 +2767,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -2764,7 +2824,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -2776,52 +2836,52 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
     print(has_value(D, 47) == True)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nprint(has_value(D, 47) == True)\n")
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
     print(has_value(D, 3047) == True)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nprint(has_value(D, 3047) == True)\n")
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
     print(has_value(D, 2022) == True)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nprint(has_value(D, 2022) == True)")
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
     print(has_value(D, 2020) == True)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nprint(has_value(D, 2020) == True)")
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
     print(has_value(D, 3.7) == True)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nprint(has_value(D, 3.7) == True)")
 
 
@@ -2919,6 +2979,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -2971,7 +3036,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -2983,68 +3048,68 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
     print(get_num_pairs(D))
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nprint(get_num_pairs(D))\n")
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'wins': 9, 'losses': 2}
     print(get_num_pairs(D))
-    
-    
-    
+
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '2'.strip(), "Test: " + "D = {'wins': 9, 'losses': 2}\nprint(get_num_pairs(D))\n\n")
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {'gpa': 3.7, 'credits': 17, 'graduation year': 2022}
     print(get_num_pairs(D))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3'.strip(), "Test: " + "D = {'gpa': 3.7, 'credits': 17, 'graduation year': 2022}\nprint(get_num_pairs(D))")
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {}
     for i in range(50,101):
         D[chr(i)] = i
     print(get_num_pairs(D))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '51'.strip(), "Test: " + 'D = {}\nfor i in range(50,101):\n    D[chr(i)] = i\nprint(get_num_pairs(D))')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
                    ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
                    ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}
     print(get_num_pairs(student_ages))
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '9'.strip(), "Test: " + "student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,\n               ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,\n               ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}\nprint(get_num_pairs(student_ages))\n")
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     D = {}
     print(get_num_pairs(D))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0'.strip(), "Test: " + 'D = {}\nprint(get_num_pairs(D))')
 
 
@@ -3152,6 +3217,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -3204,7 +3274,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -3216,7 +3286,7 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     key_list = ['Hitting Percent', 'Blocks', 'Digs', 'Aces']
     value_list = [0.174, 5.0, 47, 7]
     new_D = build_dictionary(key_list, value_list)
@@ -3225,15 +3295,15 @@ class myTests(TestCaseGui):
     else:
         print("new_D NOT correct; here's what it currently looks like")
         print(new_D)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'new_D created correctly'.strip(), "Test: " + 'key_list = [\'Hitting Percent\', \'Blocks\', \'Digs\', \'Aces\']\nvalue_list = [0.174, 5.0, 47, 7]\nnew_D = build_dictionary(key_list, value_list)\nif (new_D == {\'Hitting Percent\': 0.174, \'Blocks\': 5.0, \'Digs\': 47, \'Aces\': 7}):\n    print("new_D created correctly")\nelse:\n    print("new_D NOT correct; here\'s what it currently looks like")\n    print(new_D)\n')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     key_list = ['wins', 'losses']
     value_list = [9, 2]
     new_D = build_dictionary(key_list, value_list)
@@ -3242,14 +3312,14 @@ class myTests(TestCaseGui):
     else:
         print("new_D NOT correct; here's what it currently looks like")
         print(new_D)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'new_D created correctly'.strip(), "Test: " + 'key_list = [\'wins\', \'losses\']\nvalue_list = [9, 2]\nnew_D = build_dictionary(key_list, value_list)\nif (new_D == {\'wins\': 9, \'losses\': 2}):\n    print("new_D created correctly")\nelse:\n    print("new_D NOT correct; here\'s what it currently looks like")\n    print(new_D)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     key_list = ['major1 gpa', 'major2 gpa', 'credits', 'graduation year']
     value_list = [3.7, 3.4, 17, 2022]
     new_D = build_dictionary(key_list, value_list)
@@ -3258,14 +3328,14 @@ class myTests(TestCaseGui):
     else:
         print("new_D NOT correct; here's what it currently looks like")
         print(new_D)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'new_D created correctly'.strip(), "Test: " + 'key_list = [\'major1 gpa\', \'major2 gpa\', \'credits\', \'graduation year\']\nvalue_list = [3.7, 3.4, 17, 2022]\nnew_D = build_dictionary(key_list, value_list)\nif (new_D == {\'major1 gpa\': 3.7, \'major2 gpa\': 3.4, \'credits\': 17, \'graduation year\': 2022}):\n    print("new_D created correctly")\nelse:\n    print("new_D NOT correct; here\'s what it currently looks like")\n    print(new_D)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     key_list = ['First Years', 'Sophomores', 'Juniors', 'Seniors']
     value_list = [135, 114, 109, 105]
     new_D = build_dictionary(key_list, value_list)
@@ -3274,14 +3344,14 @@ class myTests(TestCaseGui):
     else:
         print("new_D NOT correct; here's what it currently looks like")
         print(new_D)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'new_D created correctly'.strip(), "Test: " + 'key_list = [\'First Years\', \'Sophomores\', \'Juniors\', \'Seniors\']\nvalue_list = [135, 114, 109, 105]\nnew_D = build_dictionary(key_list, value_list)\nif (new_D == {\'First Years\': 135, \'Sophomores\': 114, \'Juniors\': 109, \'Seniors\': 105}):\n    print("new_D created correctly")\nelse:\n    print("new_D NOT correct; here\'s what it currently looks like")\n    print(new_D)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     key_list = [('Steph','Martin'), ('Bobby', 'Roo'), ('Alex', 'Oriole'), ('Mihrimah', 'Suleiman'), ('Felix', 'Dumezweni')]
     value_list = [4, 5, 6, 5, 6]
     new_D = build_dictionary(key_list, value_list)
@@ -3290,8 +3360,8 @@ class myTests(TestCaseGui):
     else:
         print("new_D NOT correct; here's what it currently looks like")
         print(new_D)
-    
-    
+
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'new_D created correctly'.strip(), "Test: " + 'key_list = [(\'Steph\',\'Martin\'), (\'Bobby\', \'Roo\'), (\'Alex\', \'Oriole\'), (\'Mihrimah\', \'Suleiman\'), (\'Felix\', \'Dumezweni\')]\nvalue_list = [4, 5, 6, 5, 6]\nnew_D = build_dictionary(key_list, value_list)\nif (new_D == {(\'Steph\',\'Martin\'): 4, (\'Bobby\', \'Roo\'): 5, (\'Alex\', \'Oriole\'): 6, (\'Mihrimah\', \'Suleiman\'): 5, (\'Felix\', \'Dumezweni\'): 6}):\n    print("new_D created correctly")\nelse:\n    print("new_D NOT correct; here\'s what it currently looks like")\n    print(new_D)\n')
 
 
@@ -3416,6 +3486,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -3468,7 +3543,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -3480,79 +3555,79 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [1, 5, 25, 5, 1]
     print(get_freq_dict(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{1: 2, 5: 2, 25: 1}\n'.strip(), "Test: " + 'L = [1, 5, 25, 5, 1]\nprint(get_freq_dict(L))')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [5, 5, 5, 5, 5, 3]
     print(get_freq_dict(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{5: 5, 3: 1}\n'.strip(), "Test: " + 'L = [5, 5, 5, 5, 5, 3]\nprint(get_freq_dict(L))')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [17]
     print(get_freq_dict(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{17: 1}\n'.strip(), "Test: " + 'L = [17]\nprint(get_freq_dict(L))')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = list(range(5))
     print(get_freq_dict(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{0: 1, 1: 1, 2: 1, 3: 1, 4: 1}\n'.strip(), "Test: " + 'L = list(range(5))\nprint(get_freq_dict(L))')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = list(range(3))*2 + [3, 4]
     print(get_freq_dict(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{0: 2, 1: 2, 2: 2, 3: 1, 4: 1}\n'.strip(), "Test: " + 'L = list(range(3))*2 + [3, 4]\nprint(get_freq_dict(L))')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [1, 1, 1, 1, 2, 2, 2, 3, 3, 4]
     print(get_freq_dict(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{1: 4, 2: 3, 3: 2, 4: 1}\n'.strip(), "Test: " + 'L = [1, 1, 1, 1, 2, 2, 2, 3, 3, 4]\nprint(get_freq_dict(L))')
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(get_freq_dict([]))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{}\n'.strip(), "Test: " + 'print(get_freq_dict([]))')
 
 
   def test8(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = list(range(3))*3 + [1, 2] + [7, 8, 8]
     print(get_freq_dict(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{0: 3, 1: 4, 2: 4, 7: 1, 8: 2}\n'.strip(), "Test: " + 'L = list(range(3))*3 + [1, 2] + [7, 8, 8]\nprint(get_freq_dict(L))')
 
 
@@ -3658,6 +3733,11 @@ class FileLike:
         return results
       results.append(line)
 
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
+
   def close(self):
     pass
 
@@ -3710,7 +3790,7 @@ None
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -3722,60 +3802,60 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [3, 8, 5, 5, 8, 8]
     print(get_mode(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '8\n'.strip(), "Test: " + 'L = [3, 8, 5, 5, 8, 8]\nprint(get_mode(L))')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [3, 8, 5, 5, 8, 8, 3, 3, 5, 3, 3]
     print(get_mode(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3\n'.strip(), "Test: " + 'L = [3, 8, 5, 5, 8, 8, 3, 3, 5, 3, 3]\nprint(get_mode(L))')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [-5, 10, -4, 10, -3]
     print(get_mode(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '10'.strip(), "Test: " + 'L = [-5, 10, -4, 10, -3]\nprint(get_mode(L))')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [-5]
     print(get_mode(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-5\n'.strip(), "Test: " + 'L = [-5]\nprint(get_mode(L))')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = [4, 3, 4]
     print(get_mode(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4\n'.strip(), "Test: " + 'L = [4, 3, 4]\nprint(get_mode(L))')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     L = list(range(20))+[17,17]+list(range(20))
     print(get_mode(L))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '17\n'.strip(), "Test: " + 'L = list(range(20))+[17,17]+list(range(20))\nprint(get_mode(L))')
 
 
@@ -3806,11 +3886,11 @@ myTests().main()        </tests>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>Counting by: 0
-0 0 0 0 0 0 0 
+0 0 0 0 0 0 0
 Counting by: 1
-0 1 2 3 4 5 6 
+0 1 2 3 4 5 6
 Counting by: 2
-0 2 4 6 8 10 12 
+0 2 4 6 8 10 12
 Counting by: 3
 0 3 6 9 12 15 18                </cd>
               </p>
@@ -3864,6 +3944,11 @@ class FileLike:
       if line == '':
         return results
       results.append(line)
+
+  def __iter__(self):
+    for l in self.readlines():
+      yield l
+
 
   def close(self):
     pass
@@ -3921,7 +4006,7 @@ _program = """
         </postamble>
         <tests>import re
 
-RIGHT_WHITESPACE_TRIMMER = re.compile("\\s+(?=\\n|$)")
+RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
 
 
 from unittest.gui import TestCaseGui
@@ -3933,27 +4018,27 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('3\n')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Counting by: 0\n0 0 0 0 0 0 0 \nCounting by: 1\n0 1 2 3 4 5 6 \nCounting by: 2\n0 2 4 6 8 10 12 \nCounting by: 3\n0 3 6 9 12 15 18 \n'.strip(), "Input: " + '3\n')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('4')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Counting by: 0\n0 0 0 0 0 0 0 \nCounting by: 1\n0 1 2 3 4 5 6 \nCounting by: 2\n0 2 4 6 8 10 12 \nCounting by: 3\n0 3 6 9 12 15 18 \nCounting by: 4\n0 4 8 12 16 20 24 '.strip(), "Input: " + '4')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('5\n')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Counting by: 0\n0 0 0 0 0 0 0 \nCounting by: 1\n0 1 2 3 4 5 6 \nCounting by: 2\n0 2 4 6 8 10 12 \nCounting by: 3\n0 3 6 9 12 15 18 \nCounting by: 4\n0 4 8 12 16 20 24 \nCounting by: 5\n0 5 10 15 20 25 30 \n'.strip(), "Input: " + '5\n')
 
 
