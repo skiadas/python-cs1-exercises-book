@@ -172,54 +172,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('5')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 2, 3, 4, 5]\n'.strip(), "Input: " + '5')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('7')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 2, 3, 4, 5, 6, 7]\n'.strip(), "Input: " + '7')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('3')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 2, 3]\n'.strip(), "Input: " + '3')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('15\n')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]\n'.strip(), "Input: " + '15\n')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('8')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 2, 3, 4, 5, 6, 7, 8]\n'.strip(), "Input: " + '8')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('1')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1]\n'.strip(), "Input: " + '1')
 
 
@@ -394,54 +394,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('5')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[5, 4, 3, 2, 1, 0]\n'.strip(), "Input: " + '5')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('0')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[0]\n'.strip(), "Input: " + '0')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('3')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[3, 2, 1, 0]\n'.strip(), "Input: " + '3')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('12\n')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]'.strip(), "Input: " + '12\n')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('8')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[8, 7, 6, 5, 4, 3, 2, 1, 0]\n'.strip(), "Input: " + '8')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('1')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 0]'.strip(), "Input: " + '1')
 
 
@@ -620,63 +620,63 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('2\n5')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[5, 4, 3, 2]\n'.strip(), "Input: " + '2\n5')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('0\n0')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[0]\n'.strip(), "Input: " + '0\n0')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('-3\n3\n')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[3, 2, 1, 0, -1, -2, -3]\n'.strip(), "Input: " + '-3\n3\n')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('7\n15\n')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[15, 14, 13, 12, 11, 10, 9, 8, 7]'.strip(), "Input: " + '7\n15\n')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('0\n8')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[8, 7, 6, 5, 4, 3, 2, 1, 0]\n'.strip(), "Input: " + '0\n8')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('41\n42')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[42, 41]'.strip(), "Input: " + '41\n42')
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('55\n77')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55]\n'.strip(), "Input: " + '55\n77')
 
 
@@ -863,54 +863,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('5')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[-10, -8, -6, -4, -2, 0, 2, 4]\n'.strip(), "Input: " + '5')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('-11')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]\n'.strip(), "Input: " + '-11')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('11')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10]\n'.strip(), "Input: " + '11')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('1\n')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[-10, -8, -6, -4, -2, 0]\n'.strip(), "Input: " + '1\n')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('2')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[-10, -8, -6, -4, -2, 0, 2]\n'.strip(), "Input: " + '2')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('25')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]\n'.strip(), "Input: " + '25')
 
 
@@ -1090,60 +1090,60 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     m = 25
     print_multiples(m)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '25\n50\n75\n100\n'.strip(), "Test: " + 'm = 25\nprint_multiples(m)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     m = 45
     print_multiples(m)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '45\n90\n'.strip(), "Test: " + 'm = 45\nprint_multiples(m)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     m = 32
     print_multiples(m)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '32\n64\n96\n'.strip(), "Test: " + 'm = 32\nprint_multiples(m)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     m = 105
     print_multiples(m)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'm = 105\nprint_multiples(m)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     m = 33
     print_multiples(m)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '33\n66\n99\n'.strip(), "Test: " + 'm = 33\nprint_multiples(m)')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     m = 12
     print_multiples(m)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '12\n24\n36\n48\n60\n72\n84\n96\n'.strip(), "Test: " + 'm = 12\nprint_multiples(m)')
 
 
@@ -1324,54 +1324,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('5\n18\n')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 6, 11, 16]\n'.strip(), "Input: " + '5\n18\n')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('2\n3')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 3]'.strip(), "Input: " + '2\n3')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('7\n25')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 8, 15, 22]\n'.strip(), "Input: " + '7\n25')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('13\n51\n')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 14, 27, 40]\n'.strip(), "Input: " + '13\n51\n')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('9\n37')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 10, 19, 28, 37]\n'.strip(), "Input: " + '9\n37')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('25\n500')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 26, 51, 76, 101, 126, 151, 176, 201, 226, 251, 276, 301, 326, 351, 376, 401, 426, 451, 476]\n'.strip(), "Input: " + '25\n500')
 
 
@@ -1558,54 +1558,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('2\n4\n')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '2\n3\n4\n'.strip(), "Input: " + '2\n4\n')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('-3\n1')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-3\n-2\n-1\n0\n1\n'.strip(), "Input: " + '-3\n1')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('5\n6\n')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '5\n6\n'.strip(), "Input: " + '5\n6\n')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('11\n15\n')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '11\n12\n13\n14\n15\n'.strip(), "Input: " + '11\n15\n')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('-3\n3')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-3\n-2\n-1\n0\n1\n2\n3\n'.strip(), "Input: " + '-3\n3')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('0\n12')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n'.strip(), "Input: " + '0\n12')
 
 
@@ -1807,63 +1807,63 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('4\n11')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4\n6\n8\n10\n'.strip(), "Input: " + '4\n11')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('1\n5')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1\n3\n5\n'.strip(), "Input: " + '1\n5')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('-3\n3\n')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-3\n-1\n1\n3\n'.strip(), "Input: " + '-3\n3\n')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('20\n29\n')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '20\n22\n24\n26\n28\n'.strip(), "Input: " + '20\n29\n')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('-1\n0')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-1\n'.strip(), "Input: " + '-1\n0')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('15\n20')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '15\n17\n19\n'.strip(), "Input: " + '15\n20')
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('8\n16')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '8\n10\n12\n14\n16\n'.strip(), "Input: " + '8\n16')
 
 
@@ -2050,54 +2050,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(summit(1, 3))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '6'.strip(), "Test: " + 'print(summit(1, 3))')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(summit(4, 9))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '39\n'.strip(), "Test: " + 'print(summit(4, 9))')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(summit(25, 25))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '25'.strip(), "Test: " + 'print(summit(25, 25))')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(summit(10, 11))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '21\n'.strip(), "Test: " + 'print(summit(10, 11))')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(summit(100, 110))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1155\n'.strip(), "Test: " + 'print(summit(100, 110))')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(summit(-10, 23))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '221\n'.strip(), "Test: " + 'print(summit(-10, 23))')
 
 
@@ -2266,63 +2266,63 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(summation(5))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '9\n'.strip(), "Test: " + 'print(summation(5))')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(summation(10))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '25\n'.strip(), "Test: " + 'print(summation(10))')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(summation(1))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1'.strip(), "Test: " + 'print(summation(1))')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(summation(99))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '2500\n'.strip(), "Test: " + 'print(summation(99))')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(summation(3))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4\n'.strip(), "Test: " + 'print(summation(3))')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(summation(1001))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '251001\n'.strip(), "Test: " + 'print(summation(1001))')
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(summation(23))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '144\n'.strip(), "Test: " + 'print(summation(23))')
 
 
@@ -2333,7 +2333,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-accum_sum_squares-1" label="exe-sec-HW3-1-32037">
       <title>Sum of Squares (accumulate a sum)</title>
       <statement>
-        <p id="yui_3_17_2_1_1599507369757_1953">The function <c>sum_of_squares</c> takes a parameter n and returns the sum of squares «math xmlns=¨http://www.w3.org/1998/Math/MathML¨»«msup»«mn»1«/mn»«mn»2«/mn»«/msup»«mo»§#160;«/mo»«mo»+«/mo»«mo»§#160;«/mo»«msup»«mn»2«/mn»«mn»2«/mn»«/msup»«mo»§#160;«/mo»«mo»+«/mo»«mo»§#160;«/mo»«msup»«mn»3«/mn»«mn»2«/mn»«/msup»«mo»§#160;«/mo»«mo»+«/mo»«mo»§#160;«/mo»«mo».«/mo»«mo».«/mo»«mo».«/mo»«mo»§#160;«/mo»«mo»+«/mo»«mo»§#160;«/mo»«msup»«mi»n«/mi»«mn»2«/mn»«/msup»«/math».</p>
+        <p id="yui_3_17_2_1_1599507369757_1953">The function <c>sum_of_squares</c> takes a parameter n and returns the sum of squares <m>1^2+2^2+3^2+ \cdots + n^2</m></p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -2479,54 +2479,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(sum_of_squares(3))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '14\n'.strip(), "Test: " + 'print(sum_of_squares(3))')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(sum_of_squares(2))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '5\n'.strip(), "Test: " + 'print(sum_of_squares(2))')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(sum_of_squares(1))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1\n'.strip(), "Test: " + 'print(sum_of_squares(1))')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(sum_of_squares(100))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '338350\n'.strip(), "Test: " + 'print(sum_of_squares(100))')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(sum_of_squares(1000))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '333833500\n'.strip(), "Test: " + 'print(sum_of_squares(1000))')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(sum_of_squares(2345))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4301154445\n'.strip(), "Test: " + 'print(sum_of_squares(2345))')
 
 
@@ -2702,50 +2702,50 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     ans = partial_sum(1)
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0.5\n'.strip(), "Test: " + 'ans = partial_sum(1)\nprint(ans)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     ans = partial_sum(3)
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0.875\n'.strip(), "Test: " + 'ans = partial_sum(3)\nprint(ans)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     ans = partial_sum(6)
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0.984375\n'.strip(), "Test: " + 'ans = partial_sum(6)\nprint(ans)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     ans = partial_sum(7)
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0.9921875\n'.strip(), "Test: " + 'ans = partial_sum(7)\nprint(ans)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     ans = partial_sum(9)
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0.998046875\n'.strip(), "Test: " + 'ans = partial_sum(9)\nprint(ans)')
 
 
@@ -2921,90 +2921,90 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(factorial(3))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '6'.strip(), "Test: " + 'print(factorial(3))')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(factorial(4))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '24'.strip(), "Test: " + 'print(factorial(4))')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(factorial(0))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1'.strip(), "Test: " + 'print(factorial(0))')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(factorial(7))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '5040\n'.strip(), "Test: " + 'print(factorial(7))')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(factorial(8))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '40320\n'.strip(), "Test: " + 'print(factorial(8))')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(factorial(11))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '39916800\n'.strip(), "Test: " + 'print(factorial(11))')
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(factorial(15))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1307674368000\n'.strip(), "Test: " + 'print(factorial(15))')
 
 
   def test8(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(factorial(13))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '6227020800\n'.strip(), "Test: " + 'print(factorial(13))')
 
 
   def test9(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(factorial(12))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '479001600'.strip(), "Test: " + 'print(factorial(12))')
 
 
   def test10(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(factorial(1))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1\n'.strip(), "Test: " + 'print(factorial(1))')
 
 
