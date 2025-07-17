@@ -167,45 +167,45 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('5.5')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'x is 5.5 and 3 - x is -2.5\n'.strip(), "Input: " + '5.5')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('-8.1')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'x is -8.1 and 3 - x is 11.1\n'.strip(), "Input: " + '-8.1')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('0.12')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'x is 0.12 and 3 - x is 2.88\n'.strip(), "Input: " + '0.12')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('-200.7')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'x is -200.7 and 3 - x is 203.7\n'.strip(), "Input: " + '-200.7')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('24.5')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'x is 24.5 and 3 - x is -21.5\n'.strip(), "Input: " + '24.5')
 
 
@@ -382,54 +382,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('5\n15')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '5.0 is about 33.3 percent of 15.0\n'.strip(), "Input: " + '5\n15')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('12.5\n28.0')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '12.5 is about 44.6 percent of 28.0\n'.strip(), "Input: " + '12.5\n28.0')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('2.52\n8.1')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '2.52 is about 31.1 percent of 8.1\n'.strip(), "Input: " + '2.52\n8.1')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('42.3\n540.7\n')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '42.3 is about 7.8 percent of 540.7\n'.strip(), "Input: " + '42.3\n540.7\n')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('10.5\n48.2')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '10.5 is about 21.8 percent of 48.2\n'.strip(), "Input: " + '10.5\n48.2')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('1.01\n100.1')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1.01 is about 1.0 percent of 100.1\n'.strip(), "Input: " + '1.01\n100.1')
 
 
@@ -613,54 +613,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('11')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'the square root of 11 is about 3.32'.strip(), "Input: " + '11')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('95')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'the square root of 95 is about 9.75'.strip(), "Input: " + '95')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('3')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'the square root of 3 is about 1.73'.strip(), "Input: " + '3')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('1234')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'the square root of 1234 is about 35.13'.strip(), "Input: " + '1234')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('42')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'the square root of 42 is about 6.48'.strip(), "Input: " + '42')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('255')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'the square root of 255 is about 15.97'.strip(), "Input: " + '255')
 
 
@@ -678,7 +678,7 @@ myTests().main()        </tests>
             <li>an integer value</li>
           </ul>
         </p>
-        <p>Assign the decimal value to the variable <c>decimal</c> and the integer value to the variable precision (or other reasonable names).Finally, round the value of <c>decimal</c> to the number of places after the decimal point indicated by <c>precision</c>, and <alert>print</alert> the result.</p>
+        <p>Assign the decimal value to the variable <c>decimal</c> and the integer value to the variable <c>precision</c> (or other reasonable names). Finally, round the value of <c>decimal</c> to the number of places after the decimal point indicated by <c>precision</c>, and <alert>print</alert> the result.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="30%" />
@@ -856,55 +856,55 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('5.555\n1')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '5.6\n'.strip(), "Input: " + '5.555\n1')
 
 
   def test2(self):
     resetMyStdOut()
-    setMyStdIn('-9.87437\n3')
-    
+    setMyStdIn('-9.87437\n4')
+
     exec(_program)
-    
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-9.874\n'.strip(), "Input: " + '-9.87437\n3')
+
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-9.8744\n'.strip(), "Input: " + '-9.87437\n4')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('0.900001\n0')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1.0\n'.strip(), "Input: " + '0.900001\n0')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('-42.4444\n1')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-42.4\n'.strip(), "Input: " + '-42.4444\n1')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('18.500001\n0')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '19.0\n'.strip(), "Input: " + '18.500001\n0')
 
 
   def test6(self):
     resetMyStdOut()
-    setMyStdIn('12.12345\n4')
-    
+    setMyStdIn('12.12346\n4')
+
     exec(_program)
-    
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '12.1235\n'.strip(), "Input: " + '12.12345\n4')
+
+    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '12.1235\n'.strip(), "Input: " + '12.12346\n4')
 
 
 
@@ -1085,54 +1085,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('10\n7')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '7 goes into 10 1 times with 3 left over\n'.strip(), "Input: " + '10\n7')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('100\n35')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '35 goes into 100 2 times with 30 left over\n'.strip(), "Input: " + '100\n35')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('10\n5')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '5 goes into 10 2 times with 0 left over\n'.strip(), "Input: " + '10\n5')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('25\n7\n')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '7 goes into 25 3 times with 4 left over\n'.strip(), "Input: " + '25\n7\n')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('99\n98')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '98 goes into 99 1 times with 1 left over\n'.strip(), "Input: " + '99\n98')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('14\n6')
-    
+
     exec(_program)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '6 goes into 14 2 times with 2 left over\n'.strip(), "Input: " + '14\n6')
 
 
@@ -1309,54 +1309,54 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(get_num_bookcases(20, 50))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4\n'.strip(), "Test: " + 'print(get_num_bookcases(20, 50))')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(get_num_bookcases(8, 15))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '6\n'.strip(), "Test: " + 'print(get_num_bookcases(8, 15))')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(get_num_bookcases(18, 29))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '7\n'.strip(), "Test: " + 'print(get_num_bookcases(18, 29))')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(get_num_bookcases(3, 40))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n'.strip(), "Test: " + 'print(get_num_bookcases(3, 40))')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(get_num_bookcases(4, 45))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1\n'.strip(), "Test: " + 'print(get_num_bookcases(4, 45))')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print(get_num_bookcases(150, 33))
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '54\n'.strip(), "Test: " + 'print(get_num_bookcases(150, 33))')
 
 
@@ -1573,70 +1573,70 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('5')
-    
+
     ans = even_or_odd()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1'.strip(), "Input: " + '5')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('-14')
-    
+
     ans = even_or_odd()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0'.strip(), "Input: " + '-14')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('0')
-    
+
     ans = even_or_odd()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0'.strip(), "Input: " + '0')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('99')
-    
+
     ans = even_or_odd()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1'.strip(), "Input: " + '99')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('50')
-    
+
     ans = even_or_odd()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0'.strip(), "Input: " + '50')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('-121')
-    
+
     ans = even_or_odd()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '1'.strip(), "Input: " + '-121')
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('122')
-    
+
     ans = even_or_odd()
     print(ans)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0'.strip(), "Input: " + '122')
 
 
@@ -1812,36 +1812,36 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     say_spam(1)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Spam!\n'.strip(), "Test: " + 'say_spam(1)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     say_spam(2)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Spam!\nSpam!\n'.strip(), "Test: " + 'say_spam(2)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     say_spam(5)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Spam!\nSpam!\nSpam!\nSpam!\nSpam!\n'.strip(), "Test: " + 'say_spam(5)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     say_spam(8)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Spam!\nSpam!\nSpam!\nSpam!\nSpam!\nSpam!\nSpam!\nSpam!\n'.strip(), "Test: " + 'say_spam(8)')
 
 
@@ -2016,63 +2016,63 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_integers_less_than(2)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n1\n'.strip(), "Test: " + 'print_integers_less_than(2)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_integers_less_than(5)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n1\n2\n3\n4\n'.strip(), "Test: " + 'print_integers_less_than(5)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_integers_less_than(-3)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'print_integers_less_than(-3)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_integers_less_than(0)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'print_integers_less_than(0)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_integers_less_than(1)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n'.strip(), "Test: " + 'print_integers_less_than(1)')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_integers_less_than(11)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n'.strip(), "Test: " + 'print_integers_less_than(11)')
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_integers_less_than(15)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n'.strip(), "Test: " + 'print_integers_less_than(15)')
 
 
@@ -2250,63 +2250,63 @@ class myTests(TestCaseGui):
   def test1(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_perfect_cubes(2)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0^3 = 0\n1^3 = 1\n2^3 = 8\n'.strip(), "Test: " + 'print_perfect_cubes(2)')
 
 
   def test2(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_perfect_cubes(5)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0^3 = 0\n1^3 = 1\n2^3 = 8\n3^3 = 27\n4^3 = 64\n5^3 = 125\n'.strip(), "Test: " + 'print_perfect_cubes(5)')
 
 
   def test3(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_perfect_cubes(-10)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), ''.strip(), "Test: " + 'print_perfect_cubes(-10)')
 
 
   def test4(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_perfect_cubes(1)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0^3 = 0\n1^3 = 1\n'.strip(), "Test: " + 'print_perfect_cubes(1)')
 
 
   def test5(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_perfect_cubes(2)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0^3 = 0\n1^3 = 1\n2^3 = 8\n'.strip(), "Test: " + 'print_perfect_cubes(2)')
 
 
   def test6(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_perfect_cubes(9)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0^3 = 0\n1^3 = 1\n2^3 = 8\n3^3 = 27\n4^3 = 64\n5^3 = 125\n6^3 = 216\n7^3 = 343\n8^3 = 512\n9^3 = 729\n'.strip(), "Test: " + 'print_perfect_cubes(9)')
 
 
   def test7(self):
     resetMyStdOut()
     setMyStdIn('')
-    
+
     print_perfect_cubes(13)
-    
+
     self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0^3 = 0\n1^3 = 1\n2^3 = 8\n3^3 = 27\n4^3 = 64\n5^3 = 125\n6^3 = 216\n7^3 = 343\n8^3 = 512\n9^3 = 729\n10^3 = 1000\n11^3 = 1331\n12^3 = 1728\n13^3 = 2197\n'.strip(), "Test: " + 'print_perfect_cubes(13)')
 
 
