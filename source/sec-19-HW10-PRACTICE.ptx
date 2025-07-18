@@ -692,11 +692,11 @@ def convert_to(self, new_unit):
             <feedback />
           </test>
           <test>
-            <strcmp>t1\.set(5, 17,51)</strcmp>
+            <strcmp>t1\.set\(5, 17,51\)</strcmp>
             <feedback />
           </test>
           <test>
-            <strcmp>t1.set\(5,17, 51\)</strcmp>
+            <strcmp>t1\.set\(5,17, 51\)</strcmp>
             <feedback />
           </test>
         </evaluate>
