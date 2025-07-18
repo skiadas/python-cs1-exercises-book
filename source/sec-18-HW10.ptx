@@ -681,24 +681,24 @@ def convert_to(self, new_unit):
       def __str__(self):
           return f'{self.hours}:{self.minutes}:{self.seconds}'        </pre>
         <p>Suppose <c>t1</c> is a newly created instance of the the <c>Timer</c> class (i.e., a <c>Timer</c> object). Give the line of code that will call the <c>set</c> method, as described in the previous question, to set <c>t1</c> to 5 hours, 17 minutes, 51 seconds.</p>
-        <fillin answer="t1.set(5, 17, 51)" width="16" />
+        <fillin mode="string" answer="t1.set(5, 17, 51)" width="16" />
       </statement>
       <evaluation>
         <evaluate>
           <test correct="yes">
-            <strcmp>t1.set(5, 17, 51)</strcmp>
+            <strcmp>t1.set\(5, 17, 51\)</strcmp>
             <feedback />
           </test>
           <test>
-            <strcmp>t1.set(5,17,51)</strcmp>
+            <strcmp>t1\.set\(5,17,51\)</strcmp>
             <feedback />
           </test>
           <test>
-            <strcmp>t1.set(5, 17,51)</strcmp>
+            <strcmp>t1\.set\(5, 17,51\)</strcmp>
             <feedback />
           </test>
           <test>
-            <strcmp>t1.set(5,17, 51)</strcmp>
+            <strcmp>t1\.set\(5,17, 51\)</strcmp>
             <feedback />
           </test>
         </evaluate>
