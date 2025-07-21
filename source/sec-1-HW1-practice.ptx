@@ -1230,7 +1230,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-square_input-2" label="exe-sec-HW1-practice-1-269750">
       <title>Square of Input</title>
       <statement>
-        <p>Write the code to read an input, convert it to an integer value, assign that value to the name <c>x</c>, and print a message regarding the square of the input (i.e., the value of x&amp;lt;sup&amp;rt;2&amp;lt;/sup&amp;rt;).</p>
+        <p>Write the code to read an input, convert it to an integer value, assign that value to the name <c>x</c>, and print a message regarding the square of the input (i.e., the value of <m>x^2</m>).</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="30%" />

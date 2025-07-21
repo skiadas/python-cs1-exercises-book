@@ -1914,7 +1914,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-accum_sum_start_to_stop-1" label="exe-sec-HW3-1-31933">
       <title>Summit</title>
       <statement>
-        <p>The function <c>summit</c> takes two integer parameters, <c>start</c> and <c>stop</c>, and returns the sum of all integers from <c>start</c> to <c>stop</c>, inclusive. For example, <c>summit(-2, 3)</c> <alert>returns</alert>the value of -2 + -1 + 0 + 1 + 2 + 3, which is 3. You may assume that <c>start</c> &lt;= <c>stop</c>.</p>
+        <p>The function <c>summit</c> takes two integer parameters, <c>start</c> and <c>stop</c>, and returns the sum of all integers from <c>start</c> to <c>stop</c>, inclusive. For example, <c>summit(-2, 3)</c> <alert>returns</alert>the value of -2 + -1 + 0 + 1 + 2 + 3, which is 3. You may assume that <c>start &lt;= stop</c>.</p>
         <p>Write a definition for <alert>summit</alert>.</p>
         <p>Use the <alert>accumulate-a-sum</alert>pattern to solve this problem:</p>
         <p>- Initialize the accumulator variable.</p>
@@ -2595,7 +2595,7 @@ myTests().main()        </tests>
         <p>
           Write a function <c>partial_sum(n)</c> which accumulates and returns the sum of the first n terms of the infinite sequence
           <image decorative="yes" source="images/158384-download.svg" width="90%" />
-          <alert>Note</alert>: n will be a positive integer. For example, when n is 3, the return value is <c>1/2 + 1/4 + 1/8</c> (the result from adding the first three terms), which equals <c>0.875</c>.<alert>Hint</alert>: Each denominator is twice as large as the previous denominator. The nth denominator is 2&amp;lt;sup&amp;rt;n&amp;lt;/sup&amp;rt;. You might solve this problem using two accumulators: <c>acc</c>could be the accumulated sum so far, and <c>denom</c>could be the value for the denominator of the next term to be added.
+          <alert>Note</alert>: n will be a positive integer. For example, when n is 3, the return value is <c>1/2 + 1/4 + 1/8</c> (the result from adding the first three terms), which equals <c>0.875</c>.<alert>Hint</alert>: Each denominator is twice as large as the previous denominator. The nth denominator is <m>2^n</m>. You might solve this problem using two accumulators: <c>acc</c>could be the accumulated sum so far, and <c>denom</c>could be the value for the denominator of the next term to be added.
         </p>
         <p>For example:</p>
         <tabular>

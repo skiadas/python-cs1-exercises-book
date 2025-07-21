@@ -2128,7 +2128,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-for_loop_3_print_cubes-1" label="exe-sec-HW2-1-269759">
       <title>Print Perfect Cubes</title>
       <statement>
-        <p>Write a function, <c>print_perfect_cubes(n)</c>, that takes an integer parameter n and prints the perfect cubes starting from 0&amp;lt;sup&amp;rt;3&amp;lt;/sup&amp;rt; = 0 and ending with n&amp;lt;sup&amp;rt;3&amp;lt;/sup&amp;rt;. When n is negative, the function prints nothing; but do not check for this condition with an "if" statement, it is unneccesary; use a for loop that will automatically print nothing when n &lt; 0.</p>
+        <p>Write a function, <c>print_perfect_cubes(n)</c>, that takes an integer parameter n and prints the perfect cubes starting from <m>0^3 = 0</m> and ending with <m>n^3</m>. When n is negative, the function prints nothing; but do not check for this condition with an "if" statement, it is unnecessary; use a for loop that will automatically print nothing when <m>n &lt; 0</m>.</p>
         <p><alert>Hint for choosing the right range for your for loop</alert>: In the general case, when n is not negative, your function will need to print n+1 different values.</p>
         <p><alert>Hint for printing the first part of the output</alert>: Convert n to a string and then concatenate that string with "^3"; assign the result to a variable, <c>the_cube</c>. Make <c>the_cube</c> the first argument in your print function call.</p>
         <p>For example:</p>
