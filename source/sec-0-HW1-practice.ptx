@@ -1,10 +1,8 @@
-<section xml:id="sec-HW1-practice-1">
-  <title>HW1 PRACTICE</title>
-  <introduction>
-    <p>The PRACTICE assignments are for practice only (they are ungraded).</p>
-  </introduction>
-  <exercises>
-    <exercise xml:id="exer-CodeRunner-Overview-practice-1" label="exe-sec-HW1-practice-1-271600">
+<section xml:id="sec-HW1-1-practice">
+    <title>HW1 Practice</title>
+
+    <exercises>
+    <exercise xml:id="exer-CodeRunner-Overview-1-practice" label="exe-sec-HW1-1-271600-practice">
         <statement correct="yes">
             <p>
                 Welcome to ActiveCode coding problems in Runestone! Here's an image of a typical coding problem:
@@ -52,7 +50,7 @@
                         <p>
                             To help you understand the problem, you will always be given a few examples.
                             Typically, the examples show sample inputs and the result that your code should produce for each input.
-                            It's important to understa!d that your solution needs to be general.
+                            It's important to understand that your solution needs to be general.
                             This means that your goal is to code a solution that will work for any valid input for the problem, not just the given examples.
                         </p>
                     </li>
@@ -92,7 +90,7 @@
             </p>
         </statement>
     </exercise>
-    <exercise xml:id="exer-output_input-2" label="exe-sec-HW1-practice-1-269746">
+    <exercise xml:id="exer-output_input-1-practice" label="exe-sec-HW1-1-269746-practice">
       <title>Output the Input</title>
       <statement>
         <p>Complete the program below by adding a line of code that will output a message reporting back what is input by the user.</p>
@@ -319,7 +317,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-say_greeting-2" label="exe-sec-HW1-practice-1-269747">
+    <exercise xml:id="exer-say_greeting-1-practice" label="exe-sec-HW1-1-269747-practice">
       <title>Say Hello</title>
       <statement>
         <p>Write a short program to get a name from the user, then output a message saying "hello" to the user by name.</p>
@@ -548,7 +546,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-simple_addition-2" label="exe-sec-HW1-practice-1-269748">
+    <exercise xml:id="exer-simple_addition-1-practice" label="exe-sec-HW1-1-269748-practice">
       <title>Add 8</title>
       <statement>
         <p>Write a program to get an integer value from standard input, <alert>add 8</alert>to the input value, then output the result.</p>
@@ -775,7 +773,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-simple_multiplication-2" label="exe-sec-HW1-practice-1-269749">
+    <exercise xml:id="exer-simple_multiplication-1-practice" label="exe-sec-HW1-1-269749-practice">
       <title>Multiply by 123</title>
       <statement>
         <p>Write a short program that will read a decimal value (a float) from standard input, multiply the input value <alert>by 123</alert>, then output a message with the result.</p>
@@ -1002,7 +1000,7 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-simple_modulo-2" label="exe-sec-HW1-practice-1-269739">
+    <exercise xml:id="exer-simple_modulo-1-practice" label="exe-sec-HW1-1-269739-practice">
       <title>Find the Remainder</title>
       <statement>
         <p>Write the code that will read an integer input and assign its value to the name <c>num</c>, calculate the remainder when <c>num</c>is divided by 3, and print an informative message. Hint: Use the remainder operator (%).</p>
@@ -1227,10 +1225,10 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-square_input-2" label="exe-sec-HW1-practice-1-269750">
+    <exercise xml:id="exer-square_input-1-practice" label="exe-sec-HW1-1-269750-practice">
       <title>Square of Input</title>
       <statement>
-        <p>Write the code to read an input, convert it to an integer value, assign that value to the name <c>x</c>, and print a message regarding the square of the input (i.e., the value of <m>x^2</m>).</p>
+        <p>Write the code to read an input, convert it to an integer value, assign that value to the name <c>x</c>, and print a message regarding the square of the input (i.e., <m>x^2</m>).</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="30%" />
@@ -1452,12 +1450,12 @@ class myTests(TestCaseGui):
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-cylinder_volume-2" label="exe-sec-HW1-practice-1-269751">
+    <exercise xml:id="exer-cylinder_volume-1-practice" label="exe-sec-HW1-1-269751-practice">
       <title>Volume of Cylinder</title>
       <statement>
-        <p id="yui_3_17_2_1_1704483246360_2027">Suppose we want to calculate the volume (in cubic cm) of a cylinder for which the radius of the base is R cm and the height is H cm. We will use the formula: volume = area of base * H. Rather than making a single large calculation and reporting the result, you should practice dividing the work into stages using two assignment statements.</p>
-        <p id="yui_3_17_2_1_1704483246360_2130">A partial solution is provided, you just need to add a bit more code.</p>
-        <p id="yui_3_17_2_1_1704483246360_2164">Notice that the statement <c>import math</c> makes all the objects in the math module available; your code should use <c>math.pi</c> (Python's name for «math xmlns=¨http://www.w3.org/1998/Math/MathML¨»«mi mathvariant=¨normal¨»§#960;«/mi»«/math»), in calculating the area of the base.</p>
+        <p>Suppose we want to calculate the volume (in cubic cm) of a cylinder for which the radius of the base is R cm and the height is H cm. We will use the formula: volume = area of base * H. Rather than making a single large calculation and reporting the result, you should practice dividing the work into stages using two assignment statements.</p>
+        <p>A partial solution is provided, you just need to add a bit more code.</p>
+        <p>Notice that the statement <c>import math</c> makes all the objects in the math module available; your code should use <c>math.pi</c> (Python's name for π), in calculating the area of the base.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="30%" />
@@ -1475,7 +1473,7 @@ myTests().main()        </tests>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>R = 3.0 , H = 5.0 , Volume = 141.3716694115407</cd>
+                <cd>141.3716694115407</cd>
               </p>
             </cell>
           </row>
@@ -1488,7 +1486,7 @@ myTests().main()        </tests>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>R = 6.0 , H = 2.0 , Volume = 226.1946710584651</cd>
+                <cd>226.1946710584651</cd>
               </p>
             </cell>
           </row>
@@ -1501,7 +1499,7 @@ myTests().main()        </tests>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>R = 2.3 , H = 3.5 , Volume = 58.16658798121501</cd>
+                <cd>58.16658798121501</cd>
               </p>
             </cell>
           </row>
@@ -1615,7 +1613,7 @@ R =
 H =
 # Find the base area using math.pi and R
 baseArea =
-# Find the volume and print a message
+# Find the volume and print its value
 volume =
 print( )
         </code>
@@ -1640,7 +1638,7 @@ class myTests(TestCaseGui):
 
     exec(_program)
 
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'R = 3.0 , H = 5.0 , Volume = 141.3716694115407\n'.strip(), "Input: " + '3\n5')
+    self.assertEqual(round(float(getMyStdOut()), 6), round(141.3716694115407, 6), "Input: " + '3\n5')
 
 
   def test2(self):
@@ -1649,7 +1647,7 @@ class myTests(TestCaseGui):
 
     exec(_program)
 
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'R = 6.0 , H = 2.0 , Volume = 226.1946710584651\n'.strip(), "Input: " + '6\n2')
+    self.assertEqual(round(float(getMyStdOut()), 6), round(226.1946710584651, 6), "Input: " + '6\n2')
 
 
   def test3(self):
@@ -1658,7 +1656,7 @@ class myTests(TestCaseGui):
 
     exec(_program)
 
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'R = 2.3 , H = 3.5 , Volume = 58.16658798121501\n'.strip(), "Input: " + '2.3\n3.5')
+    self.assertEqual(round(float(getMyStdOut()), 6), round(58.16658798121501, 6), "Input: " + '2.3\n3.5')
 
 
   def test4(self):
@@ -1667,14 +1665,14 @@ class myTests(TestCaseGui):
 
     exec(_program)
 
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'R = 0.7 , H = 10.1 , Volume = 15.547742042615884\n'.strip(), "Input: " + '0.7\n10.1')
+    self.assertEqual(round(float(getMyStdOut()), 6), round(15.547742042615884, 6), "Input: " + '0.7\n10.1')
 
 
 
 myTests().main()        </tests>
       </program>
     </exercise>
-    <exercise xml:id="exer-convert_minutes-2" label="exe-sec-HW1-practice-1-271601">
+    <exercise xml:id="exer-convert_minutes-1-practice" label="exe-sec-HW1-1-271601-practice">
       <title>Convert Minutes</title>
       <statement>
         <p>We need to convert a number of minutes to hours-and-minutes. For example, 83 minutes is equal to 1 hour and 23 minutes.</p>
