@@ -1925,7 +1925,7 @@ myTests().main()        </tests>
         <p><alert>Hint</alert>: Accumulate the new string.
           <ul>
           <li><p>Use a for loop to iterate over the characters in s</p></li>
-          <li><p>Inside the loop, update the accumulator if the current character is not a lowercase vowel ( <c>if ch</c><c>not in 'aeiou'</c> )</p></li>
+          <li><p>Inside the loop, update the accumulator if the current character is not a lowercase vowel ( <c>if ch not in 'aeiou'</c> )</p></li>
         </ul>
         For example:</p>
         <tabular>
@@ -3533,7 +3533,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-find_max_char-1" label="exe-sec-HW5-1-31988">
       <title>Find Max Char</title>
       <statement>
-        <p>The function <c>find_</c><c>max_char</c> takes one string parameter, <c>mystr</c>. The function returns the character in <c>mystr</c> with the maximum ordinal value (the character that comes last in the ASCII alphabet, relative to the other characters in <c>mystr</c>). However, if <alert>mystr</alert> is the empty string, the function returns the Python object <alert>None</alert>.</p>
+        <p>The function <c>find_max_char</c> takes one string parameter, <c>mystr</c>. The function returns the character in <c>mystr</c> with the maximum ordinal value (the character that comes last in the ASCII alphabet, relative to the other characters in <c>mystr</c>). However, if <alert>mystr</alert> is the empty string, the function returns the Python object <alert>None</alert>.</p>
         <p>Notice that we don't need the ord() function to compare ordinal values; we can use comparison operators. For example, "Z" &gt; "C" is true because Z comes after C in the ASCII alphabet.</p>
         <p>We need to "accumulate" the correct answer (max_char) and then return it:</p>
         <p>

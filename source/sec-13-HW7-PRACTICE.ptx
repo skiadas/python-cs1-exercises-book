@@ -3638,7 +3638,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-dict_find_mode_of_list-2" label="exe-sec-HW7-PRACTICE-1-145015">
       <title>Calculate Mode of List (using a dictionary)</title>
       <statement>
-        <p>The function <c>get_</c><c>mode(L)</c> takes one parameter, <alert>L</alert>, a list of integers. <c>get_mode</c> builds a dictionary of frequencies to determine how often each number in the list occurs. Then it returns the <em>mode</em> of the list, that is, the number in L which occurs with the highest frequency.</p>
+        <p>The function <c>get_mode(L)</c> takes one parameter, <alert>L</alert>, a list of integers. <c>get_mode</c> builds a dictionary of frequencies to determine how often each number in the list occurs. Then it returns the <em>mode</em> of the list, that is, the number in L which occurs with the highest frequency.</p>
         <p>For example, <c>get_mode([3, 8, 5, 5, 8, 8])</c> would determine that</p>
         <p>
           <ul>

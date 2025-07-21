@@ -1924,7 +1924,7 @@ myTests().main()        </tests>
         <p>You may assume the string contains no upper-case letters.</p>
         <p><alert>Hint</alert>: Accumulate the new string.</p>
         <p>- Use a for loop to iterate over the characters in s</p>
-        <p>- Inside the loop, update the accumulator if the current character is not a lowercase vowel ( <c>if ch</c><c>not in 'aeiou'</c> )</p>
+        <p>- Inside the loop, update the accumulator if the current character is not a lowercase vowel ( <c>if ch not in 'aeiou'</c> )</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
@@ -2193,7 +2193,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-decode_ascii_ACCUM-2" label="exe-sec-HW5-PRACTICE-1-30808">
       <title>Decode from ASCII</title>
       <statement>
-        <p>The function <c>decodeFromAscii</c><c></c>takes a list <c>L</c> of integers in the range 32 through 126. Each item in L is an ASCII code representing a single printable character. The function accumulates the string of characters represented by the list of ASCII codes and returns that string.</p>
+        <p>The function <c>decodeFromAscii</c> takes a list <c>L</c> of integers in the range 32 through 126. Each item in L is an ASCII code representing a single printable character. The function accumulates the string of characters represented by the list of ASCII codes and returns that string.</p>
         <p>For example, <c>decodeFromAscii([78, 105, 99, 101, 33])</c> returns <c>"Nice!"</c> because N is chr(78), i is chr(105), c is chr(99), etc.</p>
         <p>Note: ASCII was created in the 1960's so programmers could have a standard encoding for common keyboard characters as numbers. It was later expanded to create Unicode so that characters from languages  other than English, mathematical symbols, and many other symbols could also be represented by numerical codes.</p>
         <p>For example:</p>
@@ -3531,7 +3531,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-find_max_char-2" label="exe-sec-HW5-PRACTICE-1-31988">
       <title>Find Max Char</title>
       <statement>
-        <p>The function <c>find_</c><c>max_char</c> takes one string parameter, <c>mystr</c>. The function returns the character in <c>mystr</c> with the maximum ordinal value (the character that comes last in the ASCII alphabet, relative to the other characters in <c>mystr</c>). However, if <alert>mystr</alert> is the empty string, the function returns the Python object <alert>None</alert>.</p>
+        <p>The function <c>find_max_char</c> takes one string parameter, <c>mystr</c>. The function returns the character in <c>mystr</c> with the maximum ordinal value (the character that comes last in the ASCII alphabet, relative to the other characters in <c>mystr</c>). However, if <alert>mystr</alert> is the empty string, the function returns the Python object <alert>None</alert>.</p>
         <p>Notice that we don't need the ord() function to compare ordinal values; we can use comparison operators. For example, "Z" &gt; "C" is true because Z comes after C in the ASCII alphabet.</p>
         <p>We need to "accumulate" the correct answer (max_char) and then return it:</p>
         <p>

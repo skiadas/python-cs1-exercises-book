@@ -1169,7 +1169,7 @@ myTests().main()        </tests>
       <title>Bookcases</title>
       <statement>
         <p>
-          You are planning to add bookcases to a wall in your living room, but you don't know how many bookcases to buy. You decide to write a Python <alert>function</alert>, <c>get_</c><c>num_bookcases</c>, to help. Your function needs to do the following:
+          You are planning to add bookcases to a wall in your living room, but you don't know how many bookcases to buy. You decide to write a Python <alert>function</alert>, <c>get_num_bookcases</c>, to help. Your function needs to do the following:
           <ol>
             <li>Take parameters for the width of the wall (an integer number of feet) and the width of a bookcase (an integer number of inches). (Your function does not read input from the keyboard; it gets its input through named parameters.)</li>
             <li>Calculate how many whole bookcases will fit on the wall using <alert>modular arithmetic</alert> (use div and/or mod, represented by the operators // and %, as needed to solve the problem).</li>
@@ -1892,7 +1892,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-for_loop_2_multiples_of_n-2" label="exe-sec-HW2-PRACTICE-1-82943">
       <title>Print Integers Less Than n</title>
       <statement>
-        <p>Write a function, <alert><c>p</c><c>rint_integers_less_than(⁠n)</c></alert>, which takes an integer parameter n and prints each integer k which is at least 0 and is less than n, in ascending order.</p>
+        <p>Write a function, <alert><c>print_integers_less_than(⁠n)</c></alert>, which takes an integer parameter n and prints each integer k which is at least 0 and is less than n, in ascending order.</p>
         <p>Hint: use a simple <alert>for</alert> loop.</p>
         <p>For example:</p>
         <tabular>

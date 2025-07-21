@@ -322,7 +322,7 @@ myTests().main()        </tests>
       <statement>
         <p>Write a short program to get a name from the user, then output a message saying "hello" to the user by name.</p>
         <p>Note: In ALL of your CodeRunner solutions, use the input function with no arguments. For example, in this problem, your first line of code might be: <c>name = input()</c></p>
-        <p>As an experiment, see what happens when you use: <c>name =</c><c>input("Tell me your name: ")</c>and then CHECK your answer.</p>
+        <p>As an experiment, see what happens when you use: <c>name = input("Tell me your name: ")</c>and then CHECK your answer.</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="30%" />

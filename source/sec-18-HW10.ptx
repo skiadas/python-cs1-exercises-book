@@ -378,7 +378,7 @@ def convert_to(self, new_unit):
       def __str__(self):
           return f'{self.hours}:{self.minutes}:{self.seconds}'
         </pre>
-        <p><alert>Recall:</alert> The <c>__str__</c>method returns the string representation of the object. This method is activated (automatically!) whenever <c>print()</c> or <alert><c>str</c><c>()</c></alert> is invoked on an object. (Like all the other methods whose names are surrounded by double underscores (<c>__</c>), we never call <c>__str__</c> directly.  It is there, waiting to "answer the call" when we ask to <c>print</c> an object or use <c>str()</c>to convert an object to a string.)</p>
+        <p><alert>Recall:</alert> The <c>__str__</c>method returns the string representation of the object. This method is activated (automatically!) whenever <c>print()</c> or <alert><c>str()</c></alert> is invoked on an object. (Like all the other methods whose names are surrounded by double underscores (<c>__</c>), we never call <c>__str__</c> directly.  It is there, waiting to "answer the call" when we ask to <c>print</c> an object or use <c>str()</c>to convert an object to a string.)</p>
         <p><alert>Question:</alert> What output will be produced when the following lines of code are executed?</p>
         <pre>    t2 = Timer()
     t2.minutes = 7
@@ -414,7 +414,7 @@ def convert_to(self, new_unit):
         <choice correct="no">
           <statement>
             <p>
-              <p><alert><c>Hours: 15</c><c>Minutes: 7 Seconds: 0</c></alert></p>
+              <p><alert><c>Hours: 15 Minutes: 7 Seconds: 0</c></alert></p>
             </p>
           </statement>
           <feedback />

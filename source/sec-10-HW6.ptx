@@ -1998,7 +1998,7 @@ myTests().main()        </tests>
     <exercise xml:id="exer-final_substrings-1" label="exe-sec-HW6-1-32084">
       <title>Final Substrings</title>
       <statement>
-        <p>The function <c>final</c><c>_substrings</c> takes a string parameter <c>inString</c> and returns a list of all the non-empty final substrings of <c>inString</c> (in order by their lengths).</p>
+        <p>The function <c>final_substrings</c> takes a string parameter <c>inString</c> and returns a list of all the non-empty final substrings of <c>inString</c> (in order by their lengths).</p>
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
