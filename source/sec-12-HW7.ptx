@@ -18,10 +18,7 @@
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L = [1, 3, 9, 2]
-if not(swap_list_ends(L) is None):
-    print("Error: function should return None")
-print(L)                </cd>
+                <cd>swap_list_ends([1, 3, 9, 2])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -33,10 +30,7 @@ print(L)                </cd>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L = ['super', 'awesome', 'excellent']
-if not(swap_list_ends(L) is None):
-    print("Error: function should return None")
-print(L)                </cd>
+                <cd>swap_list_ends(['super', 'awesome', 'excellent'])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -48,10 +42,7 @@ print(L)                </cd>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L = [True, False]
-if not(swap_list_ends(L) is None):
-    print("Error: function should return None")
-print(L)                </cd>
+                <cd>swap_list_ends([True, False])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -63,216 +54,67 @@ print(L)                </cd>
         </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-None
-
-        </preamble>
         <code>
 
         </code>
-        <postamble visible="no">
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
+<tests>
 from unittest.gui import TestCaseGui
+import StringIO
+import sys
 
 class myTests(TestCaseGui):
 
 
-
   def test1(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [1, 3, 9, 2]
-    if not(swap_list_ends(L) is None):
-        print("Error: function should return None")
-    print(L)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[2, 3, 9, 1]\n'.strip(), "Test: " + 'L = [1, 3, 9, 2]\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
-
+    lst = [1, 3, 9, 2]
+    res = swap_list_ends(lst)
+    self.assertEqual(lst, [2, 3, 9, 1], "swap_list_ends([1, 3, 9, 2])")
+    self.assertEqual(res, None, "function should return None")
 
   def test2(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = ['super', 'awesome', 'excellent']
-    if not(swap_list_ends(L) is None):
-        print("Error: function should return None")
-    print(L)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['excellent', 'awesome', 'super']\n".strip(), "Test: " + 'L = [\'super\', \'awesome\', \'excellent\']\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
-
+    lst = ['super', 'awesome', 'excellent']
+    res = swap_list_ends(lst)
+    self.assertEqual(lst, ['excellent', 'awesome', 'super'], "swap_list_ends(['super', 'awesome', 'excellent'])")
+    self.assertEqual(res, None, "function should return None")
 
   def test3(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [['a', 'b'], ['c', 'd', 'e']]
-    if not(swap_list_ends(L) is None):
-        print("Error: function should return None")
-    print(L)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "[['c', 'd', 'e'], ['a', 'b']]\n".strip(), "Test: " + 'L = [[\'a\', \'b\'], [\'c\', \'d\', \'e\']]\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
-
+    lst = [['a', 'b'], ['c', 'd', 'e']]
+    res = swap_list_ends(lst)
+    self.assertEqual(lst, [['c', 'd', 'e'], ['a', 'b']], "swap_list_ends([['a', 'b'], ['c', 'd', 'e']])")
+    self.assertEqual(res, None, "function should return None")
 
   def test4(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [True, False]
-    if not(swap_list_ends(L) is None):
-        print("Error: function should return None")
-    print(L)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[False, True]\n'.strip(), "Test: " + 'L = [True, False]\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
-
+    lst = [True, False]
+    res = swap_list_ends(lst)
+    self.assertEqual(lst, [False, True], "swap_list_ends([True, False])")
+    self.assertEqual(res, None, "function should return None")
 
   def test5(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = ['just one thing']
-    if not(swap_list_ends(L) is None):
-        print("Error: function should return None")
-    print(L)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['just one thing']\n".strip(), "Test: " + 'L = [\'just one thing\']\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
-
+    lst = ['just one thing']
+    res = swap_list_ends(lst)
+    self.assertEqual(lst, ['just one thing'], "swap_list_ends(['just one thing'])")
+    self.assertEqual(res, None, "function should return None")
 
   def test6(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = []
-    if not(swap_list_ends(L) is None):
-        print("Error: function should return None")
-    print(L)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]\n'.strip(), "Test: " + 'L = []\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
-
+    lst = []
+    res = swap_list_ends(lst)
+    self.assertEqual(lst, [], "swap_list_ends([])")
+    self.assertEqual(res, None, "function should return None")
 
   def test7(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [5]
-    if not(swap_list_ends(L) is None):
-        print("Error: function should return None")
-    print(L)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[5]\n'.strip(), "Test: " + 'L = [5]\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
-
+    lst = [5]
+    res = swap_list_ends(lst)
+    self.assertEqual(lst, [5], "swap_list_ends([5])")
+    self.assertEqual(res, None, "function should return None")
 
   def test8(self):
-    resetMyStdOut()
-    setMyStdIn('')
+    lst = ['o', 'u', 't', 's', 't', 'a', 'n', 'd', 'i', 'n', 'g']
+    res = swap_list_ends(lst)
+    self.assertEqual(lst, ['g', 'u', 't', 's', 't', 'a', 'n', 'd', 'i', 'n', 'o'], "swap_list_ends(['o', 'u', 't', 's', 't', 'a', 'n', 'd', 'i', 'n', 'g'])")
+    self.assertEqual(res, None, "function should return None")
 
-    L = list("outstanding")
-    if not(swap_list_ends(L) is None):
-        print("Error: function should return None")
-    print(L)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['g', 'u', 't', 's', 't', 'a', 'n', 'd', 'i', 'n', 'o']\n".strip(), "Test: " + 'L = list("outstanding")\nif not(swap_list_ends(L) is None):\n    print("Error: function should return None")\nprint(L)')
-
-
-
-myTests().main()        </tests>
+myTests().main()
+</tests>
       </program>
     </exercise>
     <exercise xml:id="exer-make_list_items_upper_2-3" label="exe-sec-HW7-1-31105">
@@ -291,11 +133,7 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>mylist = ['cat', 'Dog', 'frOG']
-result = make_uppercase(mylist)
-print(mylist)
-if result != None:
-    print("Error, return value should be None")                </cd>
+                <cd>make_uppercase(['cat', 'Dog', 'frOG'])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -307,11 +145,7 @@ if result != None:
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>mylist = ['baNanas', 'appLes', 'pEAches', 'PEArs']
-result = make_uppercase(mylist)
-print(mylist)
-if result != None:
-    print("Error, return value should be None")                </cd>
+                <cd>make_uppercase(['baNanas', 'appLes', 'pEAches', 'PEArs'])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -323,186 +157,49 @@ if result != None:
         </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-None
-
-        </preamble>
         <code>
 
         </code>
-        <postamble visible="no">
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
+<tests>
 from unittest.gui import TestCaseGui
+import StringIO
+import sys
 
 class myTests(TestCaseGui):
 
 
-
   def test1(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    mylist = ['cat', 'Dog', 'frOG']
-    result = make_uppercase(mylist)
-    print(mylist)
-    if result != None:
-        print("Error, return value should be None")
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['CAT', 'DOG', 'FROG']\n".strip(), "Test: " + 'mylist = [\'cat\', \'Dog\', \'frOG\']\nresult = make_uppercase(mylist)\nprint(mylist)\nif result != None:\n    print("Error, return value should be None")')
-
+    lst = ['cat', 'Dog', 'frOG']
+    res = make_uppercase(lst)
+    self.assertEqual(lst, ['CAT', 'DOG', 'FROG'], "make_uppercase(['cat', 'Dog', 'frOG'])")
+    self.assertEqual(res, None, "function should return None")
 
   def test2(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    mylist = ['baNanas', 'appLes', 'pEAches', 'PEArs']
-    result = make_uppercase(mylist)
-    print(mylist)
-    if result != None:
-        print("Error, return value should be None")
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['BANANAS', 'APPLES', 'PEACHES', 'PEARS']\n".strip(), "Test: " + 'mylist = [\'baNanas\', \'appLes\', \'pEAches\', \'PEArs\']\nresult = make_uppercase(mylist)\nprint(mylist)\nif result != None:\n    print("Error, return value should be None")')
-
+    lst = ['baNanas', 'appLes', 'pEAches', 'PEArs']
+    res = make_uppercase(lst)
+    self.assertEqual(lst, ['BANANAS', 'APPLES', 'PEACHES', 'PEARS'], "make_uppercase(['baNanas', 'appLes', 'pEAches', 'PEArs'])")
+    self.assertEqual(res, None, "function should return None")
 
   def test3(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    mylist = ['w', 'x', 'y', 'z', 'yes']
-    result = make_uppercase(mylist)
-    print(mylist)
-    if result != None:
-        print("Error, return value should be None")
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['W', 'X', 'Y', 'Z', 'YES']\n".strip(), "Test: " + 'mylist = [\'w\', \'x\', \'y\', \'z\', \'yes\']\nresult = make_uppercase(mylist)\nprint(mylist)\nif result != None:\n    print("Error, return value should be None")')
-
+    lst = ['w', 'x', 'y', 'z', 'yes']
+    res = make_uppercase(lst)
+    self.assertEqual(lst, ['W', 'X', 'Y', 'Z', 'YES'], "make_uppercase(['w', 'x', 'y', 'z', 'yes'])")
+    self.assertEqual(res, None, "function should return None")
 
   def test4(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    mylist = []
-    result = make_uppercase(mylist)
-    print(mylist)
-    if result != None:
-        print("Error, return value should be None")
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]\n'.strip(), "Test: " + 'mylist = []\nresult = make_uppercase(mylist)\nprint(mylist)\nif result != None:\n    print("Error, return value should be None")')
-
+    lst = []
+    res = make_uppercase(lst)
+    self.assertEqual(lst, [], "make_uppercase([])")
+    self.assertEqual(res, None, "function should return None")
 
   def test5(self):
-    resetMyStdOut()
-    setMyStdIn('')
+    lst = ['cOw', 'HoRse', 'pig', 'BUNNy']
+    res = make_uppercase(lst)
+    self.assertEqual(lst, ['COW', 'HORSE', 'PIG', 'BUNNY'], "make_uppercase(['cOw', 'HoRse', 'pig', 'BUNNy'])")
+    self.assertEqual(res, None, "function should return None")
 
-    mylist = ['cOw', 'HoRse', 'pig', 'BUNNy']
-    result = make_uppercase(mylist)
-    print(mylist)
-    if result != None:
-        print("Error, return value should be None")
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['COW', 'HORSE', 'PIG', 'BUNNY']\n".strip(), "Test: " + 'mylist = [\'cOw\', \'HoRse\', \'pig\', \'BUNNy\']\nresult = make_uppercase(mylist)\nprint(mylist)\nif result != None:\n    print("Error, return value should be None")')
-
-
-
-myTests().main()        </tests>
-      </program>
+myTests().main()
+</tests>      </program>
     </exercise>
     <exercise xml:id="exer-square_nums_2-1" label="exe-sec-HW7-1-31106">
       <title>Square Nums 2</title>
@@ -520,9 +217,7 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L = [0, 1, 2, 3]
-square_nums_2(L)
-print(L)                </cd>
+                <cd>square_nums_2([0, 1, 2, 3])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -534,9 +229,7 @@ print(L)                </cd>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L = [5]
-square_nums_2(L)
-print(L)                </cd>
+                <cd>square_nums_2([5])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -548,9 +241,7 @@ print(L)                </cd>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L = []
-square_nums_2(L)
-print(L)                </cd>
+                <cd>square_nums_2([])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -562,186 +253,55 @@ print(L)                </cd>
         </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-None
-
-        </preamble>
         <code>
 
         </code>
-        <postamble visible="no">
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
+<tests>
 from unittest.gui import TestCaseGui
+import StringIO
+import sys
 
 class myTests(TestCaseGui):
 
 
-
   def test1(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [0, 1, 2, 3]
-    square_nums_2(L)
-    print(L)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[0, 1, 4, 9]\n'.strip(), "Test: " + 'L = [0, 1, 2, 3]\nsquare_nums_2(L)\nprint(L)')
-
+    lst = [0, 1, 2, 3]
+    res = square_nums_2(lst)
+    self.assertEqual(lst, [0, 1, 4, 9], "square_nums_2([0, 1, 2, 3])")
+    self.assertEqual(res, None, "function should return None")
 
   def test2(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [5]
-    square_nums_2(L)
-    print(L)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[25]\n'.strip(), "Test: " + 'L = [5]\nsquare_nums_2(L)\nprint(L)')
-
+    lst = [5]
+    res = square_nums_2(lst)
+    self.assertEqual(lst, [25], "square_nums_2([5])")
+    self.assertEqual(res, None, "function should return None")
 
   def test3(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = []
-    square_nums_2(L)
-    print(L)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]\n'.strip(), "Test: " + 'L = []\nsquare_nums_2(L)\nprint(L)')
-
+    lst = []
+    res = square_nums_2(lst)
+    self.assertEqual(lst, [], "square_nums_2([])")
+    self.assertEqual(res, None, "function should return None")
 
   def test4(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [-1, 1, -2, 2, -3, 3]
-    square_nums_2(L)
-    print(L)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[1, 1, 4, 4, 9, 9]\n'.strip(), "Test: " + 'L = [-1, 1, -2, 2, -3, 3]\nsquare_nums_2(L)\nprint(L)')
-
+    lst = [-1, 1, -2, 2, -3, 3]
+    res = square_nums_2(lst)
+    self.assertEqual(lst, [1, 1, 4, 4, 9, 9], "square_nums_2([-1, 1, -2, 2, -3, 3])")
+    self.assertEqual(res, None, "function should return None")
 
   def test5(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [9, 94, 39, 60, 99, 83]
-    square_nums_2(L)
-    print(L)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[81, 8836, 1521, 3600, 9801, 6889]\n'.strip(), "Test: " + 'L = [9, 94, 39, 60, 99, 83]\nsquare_nums_2(L)\nprint(L)')
-
+    lst = [9, 94, 39, 60, 99, 83]
+    res = square_nums_2(lst)
+    self.assertEqual(lst, [81, 8836, 1521, 3600, 9801, 6889], "square_nums_2([9, 94, 39, 60, 99, 83])")
+    self.assertEqual(res, None, "function should return None")
 
   def test6(self):
-    resetMyStdOut()
-    setMyStdIn('')
+    lst = [99, 9, 94, 39, 60, 83, 99]
+    res = square_nums_2(lst)
+    self.assertEqual(lst, [9801, 81, 8836, 1521, 3600, 6889, 9801], "square_nums_2([99, 9, 94, 39, 60, 83, 99])")
+    self.assertEqual(res, None, "function should return None")
 
-    L  = [99, 9, 94, 39, 60, 83, 99]
-    square_nums_2(L)
-    print(L)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[9801, 81, 8836, 1521, 3600, 6889, 9801]\n'.strip(), "Test: " + 'L  = [99, 9, 94, 39, 60, 83, 99]\nsquare_nums_2(L)\nprint(L)')
-
-
-
-myTests().main()        </tests>
+myTests().main()
+</tests>
       </program>
     </exercise>
     <exercise xml:id="exer-nested_accum_hyphenated_pairs-1" label="exe-sec-HW7-1-32007">
@@ -762,8 +322,7 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L = ['yes', 'no', 'maybe']
-print(get_pairs(L))                </cd>
+                <cd>get_pairs(['yes', 'no', 'maybe'])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -775,8 +334,7 @@ print(get_pairs(L))                </cd>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>strlist = ["X", "x"]
-print(get_pairs(strlist))                </cd>
+                <cd>get_pairs(["X", "x"])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -788,8 +346,7 @@ print(get_pairs(strlist))                </cd>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>empty = []
-print(get_pairs(empty))                </cd>
+                <cd>get_pairs([])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -801,8 +358,7 @@ print(get_pairs(empty))                </cd>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>food = ['apple', 'cheese', 'bread']
-print(get_pairs(food))                </cd>
+                <cd>get_pairs(['apple', 'cheese', 'bread'])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -814,200 +370,49 @@ print(get_pairs(food))                </cd>
         </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-None
-
-        </preamble>
         <code>
 
         </code>
-        <postamble visible="no">
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
+<tests>
 from unittest.gui import TestCaseGui
+import StringIO
+import sys
 
 class myTests(TestCaseGui):
 
 
-
   def test1(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = ['yes', 'no', 'maybe']
-    print(get_pairs(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['yes-yes', 'yes-no', 'yes-maybe', 'no-yes', 'no-no', 'no-maybe', 'maybe-yes', 'maybe-no', 'maybe-maybe']\n".strip(), "Test: " + "L = ['yes', 'no', 'maybe']\nprint(get_pairs(L))")
-
+    lst = ['yes', 'no', 'maybe']
+    res = get_pairs(lst)
+    self.assertEqual(res, ['yes-yes', 'yes-no', 'yes-maybe', 'no-yes', 'no-no', 'no-maybe', 'maybe-yes', 'maybe-no', 'maybe-maybe'], "get_pairs(['yes', 'no', 'maybe'])")
 
   def test2(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    fish = ["angel", "gold", "cat", "puffer", "damsel"]
-    print(get_pairs(fish))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['angel-angel', 'angel-gold', 'angel-cat', 'angel-puffer', 'angel-damsel', 'gold-angel', 'gold-gold', 'gold-cat', 'gold-puffer', 'gold-damsel', 'cat-angel', 'cat-gold', 'cat-cat', 'cat-puffer', 'cat-damsel', 'puffer-angel', 'puffer-gold', 'puffer-cat', 'puffer-puffer', 'puffer-damsel', 'damsel-angel', 'damsel-gold', 'damsel-cat', 'damsel-puffer', 'damsel-damsel']\n".strip(), "Test: " + 'fish = ["angel", "gold", "cat", "puffer", "damsel"]\nprint(get_pairs(fish))')
-
+    lst = ['angel', 'gold', 'cat', 'puffer', 'damsel']
+    res = get_pairs(lst)
+    self.assertEqual(res, ['angel-angel', 'angel-gold', 'angel-cat', 'angel-puffer', 'angel-damsel', 'gold-angel', 'gold-gold', 'gold-cat', 'gold-puffer', 'gold-damsel', 'cat-angel', 'cat-gold', 'cat-cat', 'cat-puffer', 'cat-damsel', 'puffer-angel', 'puffer-gold', 'puffer-cat', 'puffer-puffer', 'puffer-damsel', 'damsel-angel', 'damsel-gold', 'damsel-cat', 'damsel-puffer', 'damsel-damsel'], "get_pairs(['angel', 'gold', 'cat', 'puffer', 'damsel'])")
 
   def test3(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    strlist = ["X", "x"]
-    print(get_pairs(strlist))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['X-X', 'X-x', 'x-X', 'x-x']\n".strip(), "Test: " + 'strlist = ["X", "x"]\nprint(get_pairs(strlist))')
-
+    lst = ['X', 'x']
+    res = get_pairs(lst)
+    self.assertEqual(res, ['X-X', 'X-x', 'x-X', 'x-x'], "get_pairs(['X', 'x'])")
 
   def test4(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    empty = []
-    print(get_pairs(empty))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]\n'.strip(), "Test: " + 'empty = []\nprint(get_pairs(empty))')
-
+    lst = []
+    res = get_pairs(lst)
+    self.assertEqual(res, [], "get_pairs([])")
 
   def test5(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = ["UNO"]
-    print(get_pairs(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['UNO-UNO']\n".strip(), "Test: " + 'L = ["UNO"]\nprint(get_pairs(L))')
-
+    lst = ['UNO']
+    res = get_pairs(lst)
+    self.assertEqual(res, ['UNO-UNO'], "get_pairs(['UNO'])")
 
   def test6(self):
-    resetMyStdOut()
-    setMyStdIn('')
+    lst = ['apple', 'cheese', 'bread']
+    res = get_pairs(lst)
+    self.assertEqual(res, ['apple-apple', 'apple-cheese', 'apple-bread', 'cheese-apple', 'cheese-cheese', 'cheese-bread', 'bread-apple', 'bread-cheese', 'bread-bread'], "get_pairs(['apple', 'cheese', 'bread'])")
 
-    food = ['apple', 'cheese', 'bread']
-    print(get_pairs(food))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['apple-apple', 'apple-cheese', 'apple-bread', 'cheese-apple', 'cheese-cheese', 'cheese-bread', 'bread-apple', 'bread-cheese', 'bread-bread']\n".strip(), "Test: " + "food = ['apple', 'cheese', 'bread']\nprint(get_pairs(food))")
-
-
-  def test7(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    instruments = ["Box drum", "Paixiao", "Saxophone", "Txistu", "Xalam", "Xaphoon", "Xun", "Xylophone"]
-    print(get_pairs(instruments))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['Box drum-Box drum', 'Box drum-Paixiao', 'Box drum-Saxophone', 'Box drum-Txistu', 'Box drum-Xalam', 'Box drum-Xaphoon', 'Box drum-Xun', 'Box drum-Xylophone', 'Paixiao-Box drum', 'Paixiao-Paixiao', 'Paixiao-Saxophone', 'Paixiao-Txistu', 'Paixiao-Xalam', 'Paixiao-Xaphoon', 'Paixiao-Xun', 'Paixiao-Xylophone', 'Saxophone-Box drum', 'Saxophone-Paixiao', 'Saxophone-Saxophone', 'Saxophone-Txistu', 'Saxophone-Xalam', 'Saxophone-Xaphoon', 'Saxophone-Xun', 'Saxophone-Xylophone', 'Txistu-Box drum', 'Txistu-Paixiao', 'Txistu-Saxophone', 'Txistu-Txistu', 'Txistu-Xalam', 'Txistu-Xaphoon', 'Txistu-Xun', 'Txistu-Xylophone', 'Xalam-Box drum', 'Xalam-Paixiao', 'Xalam-Saxophone', 'Xalam-Txistu', 'Xalam-Xalam', 'Xalam-Xaphoon', 'Xalam-Xun', 'Xalam-Xylophone', 'Xaphoon-Box drum', 'Xaphoon-Paixiao', 'Xaphoon-Saxophone', 'Xaphoon-Txistu', 'Xaphoon-Xalam', 'Xaphoon-Xaphoon', 'Xaphoon-Xun', 'Xaphoon-Xylophone', 'Xun-Box drum', 'Xun-Paixiao', 'Xun-Saxophone', 'Xun-Txistu', 'Xun-Xalam', 'Xun-Xaphoon', 'Xun-Xun', 'Xun-Xylophone', 'Xylophone-Box drum', 'Xylophone-Paixiao', 'Xylophone-Saxophone', 'Xylophone-Txistu', 'Xylophone-Xalam', 'Xylophone-Xaphoon', 'Xylophone-Xun', 'Xylophone-Xylophone']\n".strip(), "Test: " + 'instruments = ["Box drum", "Paixiao", "Saxophone", "Txistu", "Xalam", "Xaphoon", "Xun", "Xylophone"]\nprint(get_pairs(instruments))')
-
-
-  def test8(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = ['hearts', 'diamonds', 'clubs', 'spades']
-    print(get_pairs(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['hearts-hearts', 'hearts-diamonds', 'hearts-clubs', 'hearts-spades', 'diamonds-hearts', 'diamonds-diamonds', 'diamonds-clubs', 'diamonds-spades', 'clubs-hearts', 'clubs-diamonds', 'clubs-clubs', 'clubs-spades', 'spades-hearts', 'spades-diamonds', 'spades-clubs', 'spades-spades']\n".strip(), "Test: " + "L = ['hearts', 'diamonds', 'clubs', 'spades']\nprint(get_pairs(L))")
-
-
-
-myTests().main()        </tests>
+myTests().main()
+</tests>
       </program>
     </exercise>
     <exercise xml:id="exer-print_stars_grid_nested_loop-1" label="exe-sec-HW7-1-271584">
@@ -1076,165 +481,54 @@ myTests().main()        </tests>
         </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-None
-
-        </preamble>
         <code>
 
         </code>
-        <postamble visible="no">
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
+<tests>
 from unittest.gui import TestCaseGui
+import StringIO
+import sys
 
 class myTests(TestCaseGui):
 
 
-
   def test1(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    print_star_grid(2,3)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '* * *\n* * *\n'.strip(), "Test: " + 'print_star_grid(2,3)')
-
+    sys.stdout = StringIO.StringIO()
+    print_star_grid(2, 3)
+    res = sys.stdout.getvalue()
+    sys.stdout = sys.__stdout__
+    self.assertEqual(res, '* * * \n* * * \n', "print_star_grid(2, 3)")
 
   def test2(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    print_star_grid(1,1)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '*\n'.strip(), "Test: " + 'print_star_grid(1,1)')
-
+    sys.stdout = StringIO.StringIO()
+    print_star_grid(1, 1)
+    res = sys.stdout.getvalue()
+    sys.stdout = sys.__stdout__
+    self.assertEqual(res, '* \n', "print_star_grid(1, 1)")
 
   def test3(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    print_star_grid(5,5)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '* * * * *\n* * * * *\n* * * * *\n* * * * *\n* * * * *\n'.strip(), "Test: " + 'print_star_grid(5,5)')
-
+    sys.stdout = StringIO.StringIO()
+    print_star_grid(5, 5)
+    res = sys.stdout.getvalue()
+    sys.stdout = sys.__stdout__
+    self.assertEqual(res, '* * * * * \n* * * * * \n* * * * * \n* * * * * \n* * * * * \n', "print_star_grid(5, 5)")
 
   def test4(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    print_star_grid(3,2)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '* *\n* *\n* *\n'.strip(), "Test: " + 'print_star_grid(3,2)')
-
+    sys.stdout = StringIO.StringIO()
+    print_star_grid(3, 2)
+    res = sys.stdout.getvalue()
+    sys.stdout = sys.__stdout__
+    self.assertEqual(res, '* * \n* * \n* * \n', "print_star_grid(3, 2)")
 
   def test5(self):
-    resetMyStdOut()
-    setMyStdIn('')
+    sys.stdout = StringIO.StringIO()
+    print_star_grid(7, 3)
+    res = sys.stdout.getvalue()
+    sys.stdout = sys.__stdout__
+    self.assertEqual(res, '* * * \n* * * \n* * * \n* * * \n* * * \n* * * \n* * * \n', "print_star_grid(7, 3)")
 
-    print_star_grid(7,3)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '* * *\n* * *\n* * *\n* * *\n* * *\n* * *\n* * *\n'.strip(), "Test: " + 'print_star_grid(7,3)')
-
-
-
-myTests().main()        </tests>
+myTests().main()
+</tests>
       </program>
     </exercise>
     <exercise xml:id="exer-print_X_O_grid_nested_loop-1" label="exe-sec-HW7-1-103574">
@@ -1289,181 +583,61 @@ X O                </cd>
         </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-None
-
-        </preamble>
         <code>
 
         </code>
-        <postamble visible="no">
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
+<tests>
 from unittest.gui import TestCaseGui
+import StringIO
+import sys
 
 class myTests(TestCaseGui):
 
 
-
   def test1(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    print_XO_grid(2,3)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X O X\nO X O\n'.strip(), "Test: " + 'print_XO_grid(2,3)')
-
+    sys.stdout = StringIO.StringIO()
+    print_XO_grid(2, 3)
+    res = sys.stdout.getvalue()
+    sys.stdout = sys.__stdout__
+    self.assertEqual(res, 'X O X \nO X O \n', "print_XO_grid(2, 3)")
 
   def test2(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    print_XO_grid(3,2)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X O\nO X\nX O\n'.strip(), "Test: " + 'print_XO_grid(3,2)')
-
+    sys.stdout = StringIO.StringIO()
+    print_XO_grid(1, 1)
+    res = sys.stdout.getvalue()
+    sys.stdout = sys.__stdout__
+    self.assertEqual(res, 'X \n', "print_XO_grid(1, 1)")
 
   def test3(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    print_XO_grid(1, 5)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X O X O X\n'.strip(), "Test: " + 'print_XO_grid(1, 5)')
-
+    sys.stdout = StringIO.StringIO()
+    print_XO_grid(5, 5)
+    res = sys.stdout.getvalue()
+    sys.stdout = sys.__stdout__
+    self.assertEqual(res, 'X O X O X \nO X O X O \nX O X O X \nO X O X O \nX O X O X \n', "print_XO_grid(5, 5)")
 
   def test4(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    print_XO_grid(3,1)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X\nO\nX\n'.strip(), "Test: " + 'print_XO_grid(3,1)')
-
+    sys.stdout = StringIO.StringIO()
+    print_XO_grid(3, 2)
+    res = sys.stdout.getvalue()
+    sys.stdout = sys.__stdout__
+    self.assertEqual(res, 'X O \nO X \nX O \n', "print_XO_grid(3, 2)")
 
   def test5(self):
-    resetMyStdOut()
-    setMyStdIn('')
+    sys.stdout = StringIO.StringIO()
+    print_XO_grid(7, 3)
+    res = sys.stdout.getvalue()
+    sys.stdout = sys.__stdout__
+    self.assertEqual(res, 'X O X \nO X O \nX O X \nO X O \nX O X \nO X O \nX O X \n', "print_XO_grid(7, 3)")
 
-    print_XO_grid(5, 5)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X O X O X\nO X O X O\nX O X O X\nO X O X O\nX O X O X\n'.strip(), "Test: " + 'print_XO_grid(5, 5)')
-
-
-  def test6(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    print_XO_grid(8, 3)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'X O X\nO X O\nX O X\nO X O\nX O X\nO X O\nX O X\nO X O\n'.strip(), "Test: " + 'print_XO_grid(8, 3)')
-
-
-
-myTests().main()        </tests>
+myTests().main()
+</tests>
       </program>
     </exercise>
     <exercise xml:id="exer-nested_list_sum_up_all_items-1" label="exe-sec-HW7-1-31565">
       <title>Sum of Nested List Items</title>
       <statement>
         <p>Define the function <c>sum_nested(L)</c>, which takes parameter L (a list of lists of integers) and returns the sum of all the elements of all the inner lists of L.</p>
-        <p>For example, if L  = [[1, 2], [3, 3, 2], [7, -6]], then <c>sum_nested(L)</c> would return 1 + 2 + 3 + 3 + 2 + 7 + (-6) = 12.</p>
+        <p>For example, if <c>L = [[1, 2], [3, 3, 2], [7, -6]]</c>, then <c>sum_nested(L)</c> would return 1 + 2 + 3 + 3 + 2 + 7 + (-6) = 12.</p>
         <p>TO DO:</p>
         <p>Write a double for loop to accumulate the sum.</p>
         <p>For example:</p>
@@ -1477,8 +651,7 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L = [[5]]
-print(sum_nested(L))                </cd>
+                <cd>sum_nested([[5]])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -1490,8 +663,7 @@ print(sum_nested(L))                </cd>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L=[[1,2],[8,7,6]]
-print(sum_nested(L))                </cd>
+                <cd>sum_nested([[1,2],[8,7,6]])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -1503,8 +675,7 @@ print(sum_nested(L))                </cd>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L =  []
-print(sum_nested(L))                </cd>
+                <cd>sum_nested([])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -1516,180 +687,43 @@ print(sum_nested(L))                </cd>
         </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-None
-
-        </preamble>
         <code>
 
         </code>
-        <postamble visible="no">
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
+<tests>
 from unittest.gui import TestCaseGui
+import StringIO
+import sys
 
 class myTests(TestCaseGui):
 
 
-
   def test1(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [[5]]
-    print(sum_nested(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '5\n'.strip(), "Test: " + 'L = [[5]]\nprint(sum_nested(L))')
-
+    res = sum_nested([[5]])
+    self.assertEqual(res, 5, "sum_nested([[5]])")
 
   def test2(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L=[[1,2],[8,7,6]]
-    print(sum_nested(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '24\n'.strip(), "Test: " + 'L=[[1,2],[8,7,6]]\nprint(sum_nested(L))')
-
+    res = sum_nested([[1, 2], [8, 7, 6]])
+    self.assertEqual(res, 24, "sum_nested([[1, 2], [8, 7, 6]])")
 
   def test3(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L =  []
-    print(sum_nested(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n'.strip(), "Test: " + 'L =  []\nprint(sum_nested(L))')
-
+    res = sum_nested([])
+    self.assertEqual(res, 0, "sum_nested([])")
 
   def test4(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [[5,4],[3,1,1,1,10],[2],[4]]
-    print(sum_nested(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '31\n'.strip(), "Test: " + 'L = [[5,4],[3,1,1,1,10],[2],[4]]\nprint(sum_nested(L))')
-
+    res = sum_nested([[5, 4], [3, 1, 1, 1, 10], [2], [4]])
+    self.assertEqual(res, 31, "sum_nested([[5, 4], [3, 1, 1, 1, 10], [2], [4]])")
 
   def test5(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [[1],[2,3],[-3,-2,-1,0]]
-    print(sum_nested(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0\n'.strip(), "Test: " + 'L = [[1],[2,3],[-3,-2,-1,0]]\nprint(sum_nested(L))')
-
+    res = sum_nested([[1], [2, 3], [-3, -2, -1, 0]])
+    self.assertEqual(res, 0, "sum_nested([[1], [2, 3], [-3, -2, -1, 0]])")
 
   def test6(self):
-    resetMyStdOut()
-    setMyStdIn('')
+    res = sum_nested([[1, 1, 1], [2, 3, 2], [5, 5, 5], [10, 11, 12, 13, 14]])
+    self.assertEqual(res, 85, "sum_nested([[1, 1, 1], [2, 3, 2], [5, 5, 5], [10, 11, 12, 13, 14]])")
 
-    L = [[1,1,1],[2,3,2],[5,5,5],[10,11,12,13,14]]
-    print(sum_nested(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '85\n'.strip(), "Test: " + 'L = [[1,1,1],[2,3,2],[5,5,5],[10,11,12,13,14]]\nprint(sum_nested(L))')
-
-
-
-myTests().main()        </tests>
+myTests().main()
+</tests>
       </program>
     </exercise>
     <exercise xml:id="exer-gen_triples-1" label="exe-sec-HW7-1-103575">
@@ -1712,10 +746,7 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L = ['n', 'o']
-ans = gen_triples(L)
-ans.sort()
-print(ans)                </cd>
+                <cd>gen_triples(['n', 'o'])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -1727,10 +758,7 @@ print(ans)                </cd>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L = ['?']
-ans = gen_triples(L)
-ans.sort()
-print(ans)                </cd>
+                <cd>gen_triples(['?'])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -1742,10 +770,7 @@ print(ans)                </cd>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L = []
-ans = gen_triples(L)
-ans.sort()
-print(ans)                </cd>
+                <cd>gen_triples([])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -1757,180 +782,45 @@ print(ans)                </cd>
         </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-None
-
-        </preamble>
         <code>
 def gen_triples(L):
         </code>
-        <postamble visible="no">
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
+<tests>
 from unittest.gui import TestCaseGui
+import StringIO
+import sys
 
 class myTests(TestCaseGui):
 
 
-
   def test1(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = ['n', 'o']
-    ans = gen_triples(L)
-    ans.sort()
-    print(ans)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['nnn', 'nno', 'non', 'noo', 'onn', 'ono', 'oon', 'ooo']\n".strip(), "Test: " + "L = ['n', 'o']\nans = gen_triples(L)\nans.sort()\nprint(ans)")
-
+    res = gen_triples(['n', 'o'])
+    res.sort()
+    self.assertEqual(res, ['nnn', 'nno', 'non', 'noo', 'onn', 'ono', 'oon', 'ooo'], "gen_triples(['n', 'o'])")
 
   def test2(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = ['?']
-    ans = gen_triples(L)
-    ans.sort()
-    print(ans)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['???']\n".strip(), "Test: " + "L = ['?']\nans = gen_triples(L)\nans.sort()\nprint(ans)")
-
+    res = gen_triples(['?'])
+    res.sort()
+    self.assertEqual(res, ['???'], "gen_triples(['?'])")
 
   def test3(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = []
-    ans = gen_triples(L)
-    ans.sort()
-    print(ans)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '[]\n'.strip(), "Test: " + 'L = []\nans = gen_triples(L)\nans.sort()\nprint(ans)')
-
+    res = gen_triples([])
+    res.sort()
+    self.assertEqual(res, [], "gen_triples([])")
 
   def test4(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = ['x', 'y', 'z', 'w']
-    ans = gen_triples(L)
-    ans.sort()
-    print(ans)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['www', 'wwx', 'wwy', 'wwz', 'wxw', 'wxx', 'wxy', 'wxz', 'wyw', 'wyx', 'wyy', 'wyz', 'wzw', 'wzx', 'wzy', 'wzz', 'xww', 'xwx', 'xwy', 'xwz', 'xxw', 'xxx', 'xxy', 'xxz', 'xyw', 'xyx', 'xyy', 'xyz', 'xzw', 'xzx', 'xzy', 'xzz', 'yww', 'ywx', 'ywy', 'ywz', 'yxw', 'yxx', 'yxy', 'yxz', 'yyw', 'yyx', 'yyy', 'yyz', 'yzw', 'yzx', 'yzy', 'yzz', 'zww', 'zwx', 'zwy', 'zwz', 'zxw', 'zxx', 'zxy', 'zxz', 'zyw', 'zyx', 'zyy', 'zyz', 'zzw', 'zzx', 'zzy', 'zzz']\n".strip(), "Test: " + "L = ['x', 'y', 'z', 'w']\nans = gen_triples(L)\nans.sort()\nprint(ans)")
-
+    res = gen_triples(['x', 'y', 'z', 'w'])
+    res.sort()
+    self.assertEqual(res, ['www', 'wwx', 'wwy', 'wwz', 'wxw', 'wxx', 'wxy', 'wxz', 'wyw', 'wyx', 'wyy', 'wyz', 'wzw', 'wzx', 'wzy', 'wzz', 'xww', 'xwx', 'xwy', 'xwz', 'xxw', 'xxx', 'xxy', 'xxz', 'xyw', 'xyx', 'xyy', 'xyz', 'xzw', 'xzx', 'xzy', 'xzz', 'yww', 'ywx', 'ywy', 'ywz', 'yxw', 'yxx', 'yxy', 'yxz', 'yyw', 'yyx', 'yyy', 'yyz', 'yzw', 'yzx', 'yzy', 'yzz', 'zww', 'zwx', 'zwy', 'zwz', 'zxw', 'zxx', 'zxy', 'zxz', 'zyw', 'zyx', 'zyy', 'zyz', 'zzw', 'zzx', 'zzy', 'zzz'], "gen_triples(['x', 'y', 'z', 'w'])")
 
   def test5(self):
-    resetMyStdOut()
-    setMyStdIn('')
+    res = gen_triples(['d', 'o', 'g', 's'])
+    res.sort()
+    self.assertEqual(res, ['ddd', 'ddg', 'ddo', 'dds', 'dgd', 'dgg', 'dgo', 'dgs', 'dod', 'dog', 'doo', 'dos', 'dsd', 'dsg', 'dso', 'dss', 'gdd', 'gdg', 'gdo', 'gds', 'ggd', 'ggg', 'ggo', 'ggs', 'god', 'gog', 'goo', 'gos', 'gsd', 'gsg', 'gso', 'gss', 'odd', 'odg', 'odo', 'ods', 'ogd', 'ogg', 'ogo', 'ogs', 'ood', 'oog', 'ooo', 'oos', 'osd', 'osg', 'oso', 'oss', 'sdd', 'sdg', 'sdo', 'sds', 'sgd', 'sgg', 'sgo', 'sgs', 'sod', 'sog', 'soo', 'sos', 'ssd', 'ssg', 'sso', 'sss'], "gen_triples(['d', 'o', 'g', 's'])")
 
-    L = ['d', 'o', 'g', 's']
-    ans = gen_triples(L)
-    ans.sort()
-    print(ans)
+myTests().main()
+</tests>
 
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "['ddd', 'ddg', 'ddo', 'dds', 'dgd', 'dgg', 'dgo', 'dgs', 'dod', 'dog', 'doo', 'dos', 'dsd', 'dsg', 'dso', 'dss', 'gdd', 'gdg', 'gdo', 'gds', 'ggd', 'ggg', 'ggo', 'ggs', 'god', 'gog', 'goo', 'gos', 'gsd', 'gsg', 'gso', 'gss', 'odd', 'odg', 'odo', 'ods', 'ogd', 'ogg', 'ogo', 'ogs', 'ood', 'oog', 'ooo', 'oos', 'osd', 'osg', 'oso', 'oss', 'sdd', 'sdg', 'sdo', 'sds', 'sgd', 'sgg', 'sgo', 'sgs', 'sod', 'sog', 'soo', 'sos', 'ssd', 'ssg', 'sso', 'sss']\n".strip(), "Test: " + "L = ['d', 'o', 'g', 's']\nans = gen_triples(L)\nans.sort()\nprint(ans)")
-
-
-
-myTests().main()        </tests>
       </program>
     </exercise>
     <exercise xml:id="exer-add_entry_to_dictionary-1" label="exe-sec-HW7-1-32141">
@@ -1949,9 +839,13 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
-add_entry(D, 'Spikes', 42)
-check_answer(D, ('Spikes', 42), 5)                </cd>
+                <cd>D = {
+    'Hitting Percent': 0.174,
+    'Blocks': 5.0,
+    'Digs': 47,
+    'Aces': 7
+}
+add_entry(D, 'Spikes', 42)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -1964,8 +858,7 @@ check_answer(D, ('Spikes', 42), 5)                </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>D = {'wins': 9, 'losses': 2}
-add_entry(D, 'ties', 1)
-check_answer(D, ('ties', 1), 3)                </cd>
+add_entry(D, 'ties', 1)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -1977,201 +870,44 @@ check_answer(D, ('ties', 1), 3)                </cd>
         </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-def check_answer(D, new_pair, new_size):
-    if D[new_pair[0]] == new_pair[1] and len(D) == new_size:
-        print("correctly added", str(new_pair[0]) + ":" + str(new_pair[1]))
-    else:
-        print("error")
-
-
-
-        </preamble>
         <code>
 
         </code>
-        <postamble visible="no">
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
+<tests>
 from unittest.gui import TestCaseGui
+import StringIO
+import sys
 
 class myTests(TestCaseGui):
 
 
-
   def test1(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
     add_entry(D, 'Spikes', 42)
-    check_answer(D, ('Spikes', 42), 5)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'correctly added Spikes:42\n'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nadd_entry(D, 'Spikes', 42)\ncheck_answer(D, ('Spikes', 42), 5)")
-
+    self.assertEqual(D, {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7, 'Spikes': 42}, "&lt;pre&gt;D: {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nkey: 'Spikes'\nvalue: 42&lt;/pre&gt;")
 
   def test2(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {'wins': 9, 'losses': 2}
     add_entry(D, 'ties', 1)
-    check_answer(D, ('ties', 1), 3)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'correctly added ties:1\n'.strip(), "Test: " + "D = {'wins': 9, 'losses': 2}\nadd_entry(D, 'ties', 1)\ncheck_answer(D, ('ties', 1), 3)")
-
+    self.assertEqual(D, {'wins': 9, 'losses': 2, 'ties': 1}, "&lt;pre&gt;D: {'wins': 9, 'losses': 2}\nkey: 'ties'\nvalue: 1&lt;/pre&gt;")
 
   def test3(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
-    add_entry(D, 'minor', 'Counting Sheep')
-    check_answer(D, ('minor', 'Counting Sheep'), 5)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'correctly added minor:Counting Sheep\n'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nadd_entry(D, 'minor', 'Counting Sheep')\ncheck_answer(D, ('minor', 'Counting Sheep'), 5)")
-
+    add_entry(D, 'minor', "Counting sheep")
+    self.assertEqual(D, {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022, 'minor': 'Counting sheep'}, "&lt;pre&gt;D: {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nkey: 'minor'\nvalue: 'Counting sheep'&lt;/pre&gt;")
 
   def test4(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    D = {}
-    for i in range(11):
-        D[i] = i * i
+    D = {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}
     add_entry(D, 20, 400)
-    check_answer(D, (20, 400), 12)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'correctly added 20:400\n'.strip(), "Test: " + 'D = {}\nfor i in range(11):\n    D[i] = i * i\nadd_entry(D, 20, 400)\ncheck_answer(D, (20, 400), 12)')
-
+    self.assertEqual(D, {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100, 20: 400}, "&lt;pre&gt;D: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}\nkey: 20\nvalue: 400&lt;/pre&gt;")
 
   def test5(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
-                   ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
-                   ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4}
-    s = ('Felix', 'Dumezweni')
-    add_entry(student_ages, s, 6)
-    if student_ages[s] == 6 and len(student_ages) == 9:
-        print("Woohoo!")
-    else:
-        print("Oh, noes!")
-
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'Woohoo!\n'.strip(), "Test: " + 'student_ages = {(\'Steph\',\'Martin\'): 4, (\'Bobby\', \'Roo\'): 5, (\'Tiffany\', \'Roo\'): 5,\n               (\'Alex\', \'Oriole\'): 6, (\'Sandy\', \'Singh\'): 4, (\'Ida\', \'North-West\'): 6,\n               (\'Mihrimah\', \'Suleiman\'): 5, (\'Kat\', \'Mouse\'): 4}\ns = (\'Felix\', \'Dumezweni\')\nadd_entry(student_ages, s, 6)\nif student_ages[s] == 6 and len(student_ages) == 9:\n    print("Woohoo!")\nelse:\n    print("Oh, noes!")\n')
-
-
-  def test6(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {}
     add_entry(D, 'wins', 100)
-    check_answer(D, ('wins', 100), 1)
+    self.assertEqual(D, {'wins': 100}, "&lt;pre&gt;D: {}\nkey: 'wins'\nvalue: 100&lt;/pre&gt;")
 
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'correctly added wins:100\n'.strip(), "Test: " + "D = {}\nadd_entry(D, 'wins', 100)\ncheck_answer(D, ('wins', 100), 1)")
-
-
-
-myTests().main()        </tests>
+myTests().main()
+</tests>
       </program>
     </exercise>
     <exercise xml:id="exer-delete_entry_from_dictionary-1" label="exe-sec-HW7-1-32142">
@@ -2196,11 +932,13 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
-ans = delete_entry(D, 'Digs')
-print(ans)
-
-                </cd>
+                <cd>D = {
+    'Hitting Percent': 0.174,
+    'Blocks': 5.0,
+    'Digs': 47,
+    'Aces': 7
+}
+delete_entry(D, 'Digs')</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -2213,8 +951,7 @@ print(ans)
             <cell bottom="minor" right="minor">
               <p>
                 <cd>D = {'wins': 9, 'losses': 2}
-ans = delete_entry(D, 'ties')
-print(ans)                </cd>
+delete_entry(D, 'ties')</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -2226,201 +963,50 @@ print(ans)                </cd>
         </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-None
-
-        </preamble>
         <code>
 
         </code>
-        <postamble visible="no">
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
+<tests>
 from unittest.gui import TestCaseGui
+import StringIO
+import sys
 
 class myTests(TestCaseGui):
 
 
-
   def test1(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
-    ans = delete_entry(D, 'Digs')
-    print(ans)
-
-
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '47\n'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nans = delete_entry(D, 'Digs')\nprint(ans)\n\n")
-
+    v = delete_entry(D, 'Digs')
+    self.assertEqual(v, 47, "D: {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nkey: 'Digs'\nreturn value is correct")
+    self.assertEqual(D, {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Aces': 7}, "D: {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nkey: 'Digs'\nupdated dictionary")
 
   def test2(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {'wins': 9, 'losses': 2}
-    ans = delete_entry(D, 'ties')
-    print(ans)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'None\n'.strip(), "Test: " + "D = {'wins': 9, 'losses': 2}\nans = delete_entry(D, 'ties')\nprint(ans)")
-
+    v = delete_entry(D, 'ties')
+    self.assertEqual(v, None, "D: {'wins': 9, 'losses': 2}\nkey: 'ties'\nreturn value is correct")
+    self.assertEqual(D, {'wins': 9, 'losses': 2}, "D: {'wins': 9, 'losses': 2}\nkey: 'ties'\nupdated dictionary")
 
   def test3(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
-    ans = delete_entry(D, 'major2 gpa')
-    print(ans)
-
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3.4\n'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nans = delete_entry(D, 'major2 gpa')\nprint(ans)\n")
-
+    v = delete_entry(D, 'major2 gpa')
+    self.assertEqual(v, 3.4, "D: {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nkey: 'major2 gpa'\nreturn value is correct")
+    self.assertEqual(D, {'major1 gpa': 3.7, 'credits': 17, 'graduation year': 2022}, "D: {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nkey: 'major2 gpa'\nupdated dictionary")
 
   def test4(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    D = {}
-    for i in range(10): D[i] = i*i - 1
-    ans = delete_entry(D, 12)
-    print(ans)
-
-
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'None\n'.strip(), "Test: " + 'D = {}\nfor i in range(10): D[i] = i*i - 1\nans = delete_entry(D, 12)\nprint(ans)\n\n')
-
+    D = {0: -1, 1: 0, 2: 3, 3: 8, 4: 15, 5: 24, 6: 35, 7: 48, 8: 63, 9: 80, 10: 99}
+    v = delete_entry(D, 12)
+    self.assertEqual(v, None, "D: {0: -1, 1: 0, 2: 3, 3: 8, 4: 15, 5: 24, 6: 35, 7: 48, 8: 63, 9: 80, 10: 99}\nkey: 12\nreturn value is correct")
+    self.assertEqual(D, {0: -1, 1: 0, 2: 3, 3: 8, 4: 15, 5: 24, 6: 35, 7: 48, 8: 63, 9: 80, 10: 99}, "D: {0: -1, 1: 0, 2: 3, 3: 8, 4: 15, 5: 24, 6: 35, 7: 48, 8: 63, 9: 80, 10: 99}\nkey: 12\nupdated dictionary")
 
   def test5(self):
-    resetMyStdOut()
-    setMyStdIn('')
+    D = {}
+    v = delete_entry(D, 'wins')
+    self.assertEqual(v, None, "D: {}\nkey: 'wins'\nreturn value is correct")
+    self.assertEqual(D, {}, "D: {}\nkey: 'wins'\nupdated dictionary")
 
-    student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
-                   ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
-                   ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4}
-    student = ('Steph', 'Martin')
-    ans = delete_entry(student_ages, student)
-    print(ans)
+myTests().main()
+</tests>
 
-
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4\n'.strip(), "Test: " + "student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,\n               ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,\n               ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4}\nstudent = ('Steph', 'Martin')\nans = delete_entry(student_ages, student)\nprint(ans)\n\n")
-
-
-  def test6(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
-                   ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
-                   ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4}
-    student = ('Abe', 'Lincoln')
-    ans = delete_entry(student_ages, student)
-    print(ans)
-
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'None\n'.strip(), "Test: " + "student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,\n               ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,\n               ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4}\nstudent = ('Abe', 'Lincoln')\nans = delete_entry(student_ages, student)\nprint(ans)\n")
-
-
-
-myTests().main()        </tests>
       </program>
     </exercise>
     <exercise xml:id="exer-dictionary_has_key-1" label="exe-sec-HW7-1-32129">
@@ -2439,9 +1025,13 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
-print(has_key(D, 'Blocks') == True)
-                </cd>
+                <cd>D = {
+    'Hitting Percent': 0.174,
+    'Blocks': 5.0,
+    'Digs': 47,
+    'Aces': 7
+}
+has_key(D, 'Blocks')</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -2453,9 +1043,13 @@ print(has_key(D, 'Blocks') == True)
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
-print(has_key(D, 'Spikes') == True)
-                </cd>
+                <cd>D = {
+    'Hitting Percent': 0.174,
+    'Blocks': 5.0,
+    'Digs': 47,
+    'Aces': 7
+}
+has_key(D, 'Spikes')</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -2467,189 +1061,45 @@ print(has_key(D, 'Spikes') == True)
         </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-None
-
-        </preamble>
         <code>
 
         </code>
-        <postamble visible="no">
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
+<tests>
 from unittest.gui import TestCaseGui
+import StringIO
+import sys
 
 class myTests(TestCaseGui):
 
 
-
   def test1(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
-    print(has_key(D, 'Blocks') == True)
-
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nprint(has_key(D, 'Blocks') == True)\n")
-
+    res = has_key(D, 'Digs')
+    self.assertEqual(res, True, "D: {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nkey: 'Digs'")
 
   def test2(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
-    print(has_key(D, 'Spikes') == True)
-
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nprint(has_key(D, 'Spikes') == True)\n")
-
+    D = {'wins': 9, 'losses': 2}
+    res = has_key(D, 'ties')
+    self.assertEqual(res, False, "D: {'wins': 9, 'losses': 2}\nkey: 'ties'")
 
   def test3(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
-    print(has_key(D, 'credits') == True)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nprint(has_key(D, 'credits') == True)")
-
+    res = has_key(D, 'major2 gpa')
+    self.assertEqual(res, True, "D: {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nkey: 'major2 gpa'")
 
   def test4(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
-    print(has_key(D, 'gpa'))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nprint(has_key(D, 'gpa'))")
-
+    D = {0: -1, 1: 0, 2: 3, 3: 8, 4: 15, 5: 24, 6: 35, 7: 48, 8: 63, 9: 80, 10: 99}
+    res = has_key(D, 12)
+    self.assertEqual(res, False, "D: {0: -1, 1: 0, 2: 3, 3: 8, 4: 15, 5: 24, 6: 35, 7: 48, 8: 63, 9: 80, 10: 99}\nkey: 12")
 
   def test5(self):
-    resetMyStdOut()
-    setMyStdIn('')
+    D = {}
+    res = has_key(D, 'wins')
+    self.assertEqual(res, False, "D: {}\nkey: 'wins'")
 
-    student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
-                   ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
-                   ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}
-    student = ('Bobby', 'Roo')
-    print(has_key(student_ages, student) == True)
+myTests().main()
+</tests>
 
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,\n               ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,\n               ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}\nstudent = ('Bobby', 'Roo')\nprint(has_key(student_ages, student) == True)\n")
-
-
-  def test6(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
-                   ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
-                   ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}
-    student = ('Bobby', 'Nguyen')
-    print(has_key(student_ages, student) == True)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False'.strip(), "Test: " + "student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,\n               ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,\n               ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}\nstudent = ('Bobby', 'Nguyen')\nprint(has_key(student_ages, student) == True)")
-
-
-
-myTests().main()        </tests>
       </program>
     </exercise>
     <exercise xml:id="exer-dictionary_has_value-1" label="exe-sec-HW7-1-160598">
@@ -2668,9 +1118,13 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
-print(has_value(D, 47) == True)
-                </cd>
+                <cd>D = {
+    'Hitting Percent': 0.174,
+    'Blocks': 5.0,
+    'Digs': 47,
+    'Aces': 7
+}
+has_value(D, 47)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -2682,9 +1136,13 @@ print(has_value(D, 47) == True)
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
-print(has_value(D, 3047) == True)
-                </cd>
+                <cd>D = {
+    'Hitting Percent': 0.174,
+    'Blocks': 5.0,
+    'Digs': 47,
+    'Aces': 7
+}
+has_value(D, 3047)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -2696,172 +1154,45 @@ print(has_value(D, 3047) == True)
         </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-None
-
-        </preamble>
         <code>
 
         </code>
-        <postamble visible="no">
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
+<tests>
 from unittest.gui import TestCaseGui
+import StringIO
+import sys
 
 class myTests(TestCaseGui):
 
 
-
   def test1(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
-    print(has_value(D, 47) == True)
-
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nprint(has_value(D, 47) == True)\n")
-
+    res = has_value(D, 47)
+    self.assertEqual(res, True, "D: {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nnum: 47")
 
   def test2(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
-    print(has_value(D, 3047) == True)
-
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nprint(has_value(D, 3047) == True)\n")
-
+    res = has_value(D, 3047)
+    self.assertEqual(res, False, "D: {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nnum: 3047")
 
   def test3(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
-    print(has_value(D, 2022) == True)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nprint(has_value(D, 2022) == True)")
-
+    res = has_value(D, 2022)
+    self.assertEqual(res, True, "D: {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nnum: 2022")
 
   def test4(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
-    print(has_value(D, 2020) == True)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'False'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nprint(has_value(D, 2020) == True)")
-
+    res = has_value(D, 2020)
+    self.assertEqual(res, False, "D: {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nnum: 2020")
 
   def test5(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}
-    print(has_value(D, 3.7) == True)
+    res = has_value(D, 3.7)
+    self.assertEqual(res, True, "D: {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nnum: 3.7")
 
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), 'True'.strip(), "Test: " + "D = {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\nprint(has_value(D, 3.7) == True)")
+myTests().main()
+</tests>
 
-
-
-myTests().main()        </tests>
       </program>
     </exercise>
     <exercise xml:id="exer-dictionary_num_pairs-1" label="exe-sec-HW7-1-32126">
@@ -2880,8 +1211,7 @@ myTests().main()        </tests>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
-print(get_num_pairs(D))
-                </cd>
+get_num_pairs(D)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -2894,9 +1224,7 @@ print(get_num_pairs(D))
             <cell bottom="minor" right="minor">
               <p>
                 <cd>D = {'wins': 9, 'losses': 2}
-print(get_num_pairs(D))
-
-                </cd>
+get_num_pairs(D)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -2908,188 +1236,44 @@ print(get_num_pairs(D))
         </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-None
-
-        </preamble>
         <code>
 
         </code>
-        <postamble visible="no">
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
+<tests>
 from unittest.gui import TestCaseGui
+import StringIO
+import sys
 
 class myTests(TestCaseGui):
 
-
-
   def test1(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}
-    print(get_num_pairs(D))
-
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4'.strip(), "Test: " + "D = {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\nprint(get_num_pairs(D))\n")
-
+    res = get_num_pairs(D)
+    self.assertEqual(res, 4, "D: {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}")
 
   def test2(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {'wins': 9, 'losses': 2}
-    print(get_num_pairs(D))
-
-
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '2'.strip(), "Test: " + "D = {'wins': 9, 'losses': 2}\nprint(get_num_pairs(D))\n\n")
-
+    res = get_num_pairs(D)
+    self.assertEqual(res, 2, "D: {'wins': 9, 'losses': 2}")
 
   def test3(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    D = {'gpa': 3.7, 'credits': 17, 'graduation year': 2022}
-    print(get_num_pairs(D))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3'.strip(), "Test: " + "D = {'gpa': 3.7, 'credits': 17, 'graduation year': 2022}\nprint(get_num_pairs(D))")
-
+    D = {'major1 gpa': 3.7, 'credits': 17, 'graduation year': 2022}
+    res = get_num_pairs(D)
+    self.assertEqual(res, 3, "D: {'major1 gpa': 3.7, 'credits': 17, 'graduation year': 2022}")
 
   def test4(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
     D = {}
-    for i in range(50,101):
-        D[chr(i)] = i
-    print(get_num_pairs(D))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '51'.strip(), "Test: " + 'D = {}\nfor i in range(50,101):\n    D[chr(i)] = i\nprint(get_num_pairs(D))')
-
+    res = get_num_pairs(D)
+    self.assertEqual(res, 0, "D: {}")
 
   def test5(self):
-    resetMyStdOut()
-    setMyStdIn('')
+    D = { chr(i): i for i in range(50, 101) }
+    res = get_num_pairs(D)
+    self.assertEqual(res, 51, "Dictionary with many entries")
 
-    student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,
-                   ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,
-                   ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}
-    print(get_num_pairs(student_ages))
+myTests().main()
+</tests>
 
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '9'.strip(), "Test: " + "student_ages = {('Steph','Martin'): 4, ('Bobby', 'Roo'): 5, ('Tiffany', 'Roo'): 5,\n               ('Alex', 'Oriole'): 6, ('Sandy', 'Singh'): 4, ('Ida', 'North-West'): 6,\n               ('Mihrimah', 'Suleiman'): 5, ('Kat', 'Mouse'): 4, ('Felix', 'Dumezweni'): 6}\nprint(get_num_pairs(student_ages))\n")
-
-
-  def test6(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    D = {}
-    print(get_num_pairs(D))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '0'.strip(), "Test: " + 'D = {}\nprint(get_num_pairs(D))')
-
-
-
-myTests().main()        </tests>
       </program>
     </exercise>
     <exercise xml:id="exer-build_dictionary-1" label="exe-sec-HW7-1-161337">
@@ -3124,9 +1308,7 @@ myTests().main()        </tests>
               <p>
                 <cd>key_list = ['Hitting Percent', 'Blocks', 'Digs', 'Aces']
 value_list = [0.174, 5.0, 47, 7]
-D = build_dictionary(key_list, value_list)
-print(D)
-                </cd>
+build_dictionary(key_list, value_list)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -3140,8 +1322,7 @@ print(D)
               <p>
                 <cd>key_list = ['wins', 'losses']
 value_list = [9, 2]
-D = build_dictionary(key_list, value_list)
-print(D)                </cd>
+build_dictionary(key_list, value_list)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -3153,195 +1334,49 @@ print(D)                </cd>
         </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-None
-
-        </preamble>
         <code>
 
         </code>
-        <postamble visible="no">
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
+<tests>
 from unittest.gui import TestCaseGui
+import StringIO
+import sys
 
 class myTests(TestCaseGui):
 
 
-
   def test1(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    key_list = ['Hitting Percent', 'Blocks', 'Digs', 'Aces']
-    value_list = [0.174, 5.0, 47, 7]
-    D = build_dictionary(key_list, value_list)
-    print(D)
-
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "{'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}\n".strip(), "Test: " + "key_list = ['Hitting Percent', 'Blocks', 'Digs', 'Aces']\nvalue_list = [0.174, 5.0, 47, 7]\nD = build_dictionary(key_list, value_list)\nprint(D)\n")
-
+    keys = ['Hitting Percent', 'Blocks', 'Digs', 'Aces']
+    values = [0.174, 5.0, 47, 7]
+    D = build_dictionary(keys, values)
+    self.assertEqual(D, {'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}, "&lt;pre&gt;keys: ['Hitting Percent', 'Blocks', 'Digs', 'Aces']\nvalues: [0.174, 5.0, 47, 7]&lt;/pre&gt;")
 
   def test2(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    key_list = ['wins', 'losses']
-    value_list = [9, 2]
-    D = build_dictionary(key_list, value_list)
-    print(D)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "{'wins': 9, 'losses': 2}\n".strip(), "Test: " + "key_list = ['wins', 'losses']\nvalue_list = [9, 2]\nD = build_dictionary(key_list, value_list)\nprint(D)")
-
+    keys = ['wins', 'losses']
+    values = [9, 2]
+    D = build_dictionary(keys, values)
+    self.assertEqual(D, {'wins': 9, 'losses': 2}, "&lt;pre&gt;keys: ['wins', 'losses']\nvalues: [9, 2]&lt;/pre&gt;")
 
   def test3(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    key_list = ['major1 gpa', 'major2 gpa', 'credits', 'graduation year']
-    value_list = [3.7, 3.4, 17, 2022]
-    D = build_dictionary(key_list, value_list)
-    print(D)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "{'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}\n".strip(), "Test: " + "key_list = ['major1 gpa', 'major2 gpa', 'credits', 'graduation year']\nvalue_list = [3.7, 3.4, 17, 2022]\nD = build_dictionary(key_list, value_list)\nprint(D)")
-
+    keys = ['major1 gpa', 'major2 gpa', 'credits', 'graduation year']
+    values = [3.7, 3.4, 17, 2022]
+    D = build_dictionary(keys, values)
+    self.assertEqual(D, {'major1 gpa': 3.7, 'major2 gpa': 3.4, 'credits': 17, 'graduation year': 2022}, "&lt;pre&gt;keys: ['major1 gpa', 'major2 gpa', 'credits', 'graduation year']\nvalues: [3.7, 3.4, 17, 2022]&lt;/pre&gt;")
 
   def test4(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    key_list = ['First Years', 'Sophomores', 'Juniors', 'Seniors']
-    value_list = [135, 114, 109, 105]
-    D = build_dictionary(key_list, value_list)
-    print(D)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "{'First Years': 135, 'Sophomores': 114, 'Juniors': 109, 'Seniors': 105}\n".strip(), "Test: " + "key_list = ['First Years', 'Sophomores', 'Juniors', 'Seniors']\nvalue_list = [135, 114, 109, 105]\nD = build_dictionary(key_list, value_list)\nprint(D)")
-
+    keys = ['First Years', 'Sophomores', 'Juniors', 'Seniors']
+    values = [135, 114, 109, 105]
+    D = build_dictionary(keys, values)
+    self.assertEqual(D, {'First Years': 135, 'Sophomores': 114, 'Juniors': 109, 'Seniors': 105}, "&lt;pre&gt;keys: ['First Years', 'Sophomores', 'Juniors', 'Seniors']\nvalues: [135, 114, 109, 105]&lt;/pre&gt;")
 
   def test5(self):
-    resetMyStdOut()
-    setMyStdIn('')
+    keys = ['x', 'a', 'u', 't', 'ww']
+    values = ['pizza', 'steak', 'sushi', 'dim sum', 'tuna']
+    D = build_dictionary(keys, values)
+    self.assertEqual(D, {'x': 'pizza', 'a': 'steak', 'u': 'sushi', 't': 'dim sum', 'ww': 'tuna'}, "&lt;pre&gt;keys: ['x', 'a', 'u', 't', 'ww']\nvalues: ['pizza', 'steak', 'sushi', 'dim sum', 'tuna']&lt;/pre&gt;")
 
-    key_list = [('Steph','Martin'), ('Bobby', 'Roo'), ('Alex', 'Oriole'), ('Mihrimah', 'Suleiman'), ('Felix', 'Dumezweni')]
-    value_list = [4, 5, 6, 5, 6]
-    D = build_dictionary(key_list, value_list)
-    print(D)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "{('Steph', 'Martin'): 4, ('Bobby', 'Roo'): 5, ('Alex', 'Oriole'): 6, ('Mihrimah', 'Suleiman'): 5, ('Felix', 'Dumezweni'): 6}\n".strip(), "Test: " + "key_list = [('Steph','Martin'), ('Bobby', 'Roo'), ('Alex', 'Oriole'), ('Mihrimah', 'Suleiman'), ('Felix', 'Dumezweni')]\nvalue_list = [4, 5, 6, 5, 6]\nD = build_dictionary(key_list, value_list)\nprint(D)")
-
-
-  def test6(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    key_list = ['x', 'a', 'u', 't', 'ww']
-    value_list = ['pizza', 'steak', 'sushi', 'dim sum', 'tuna']
-    D = build_dictionary(key_list, value_list)
-    print(D)
-    print(type(D))
-    print(D['x'])
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), "{'x': 'pizza', 'a': 'steak', 'u': 'sushi', 't': 'dim sum', 'ww': 'tuna'}\n&lt;class 'dict'&gt;\npizza\n".strip(), "Test: " + "key_list = ['x', 'a', 'u', 't', 'ww']\nvalue_list = ['pizza', 'steak', 'sushi', 'dim sum', 'tuna']\nD = build_dictionary(key_list, value_list)\nprint(D)\nprint(type(D))\nprint(D['x'])")
-
-
-
-myTests().main()        </tests>
+myTests().main()
+</tests>
       </program>
     </exercise>
     <exercise xml:id="exer-find_frequencies_dictionary_of_list-1" label="exe-sec-HW7-1-103581">
@@ -3376,8 +1411,7 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L = [1, 5, 25, 5, 1]
-print(get_freq_dict(L))                </cd>
+                <cd>get_freq_dict([1, 5, 25, 5, 1])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -3389,8 +1423,7 @@ print(get_freq_dict(L))                </cd>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L = [17]
-print(get_freq_dict(L))                </cd>
+                <cd>get_freq_dict([17])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -3402,8 +1435,7 @@ print(get_freq_dict(L))                </cd>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L = [1, 1, 1, 1, 2, 2, 2, 3, 3, 4]
-print(get_freq_dict(L))                </cd>
+                <cd>get_freq_dict([1, 1, 1, 1, 2, 2, 2, 3, 3, 4])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -3415,199 +1447,47 @@ print(get_freq_dict(L))                </cd>
         </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-None
-
-        </preamble>
         <code>
 
         </code>
-        <postamble visible="no">
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
+<tests>
 from unittest.gui import TestCaseGui
+import StringIO
+import sys
 
 class myTests(TestCaseGui):
 
 
-
   def test1(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [1, 5, 25, 5, 1]
-    print(get_freq_dict(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{1: 2, 5: 2, 25: 1}\n'.strip(), "Test: " + 'L = [1, 5, 25, 5, 1]\nprint(get_freq_dict(L))')
-
+    D = get_freq_dict([1, 5, 25, 5, 1])
+    self.assertEqual(D, {1: 2, 5: 2, 25: 1}, "get_freq_dict([1, 5, 25, 5, 1])")
 
   def test2(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [5, 5, 5, 5, 5, 3]
-    print(get_freq_dict(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{5: 5, 3: 1}\n'.strip(), "Test: " + 'L = [5, 5, 5, 5, 5, 3]\nprint(get_freq_dict(L))')
-
+    D = get_freq_dict([5, 5, 5, 5, 5, 3])
+    self.assertEqual(D, {5: 5, 3: 1}, "get_freq_dict([5, 5, 5, 5, 5, 3])")
 
   def test3(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [17]
-    print(get_freq_dict(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{17: 1}\n'.strip(), "Test: " + 'L = [17]\nprint(get_freq_dict(L))')
-
+    D = get_freq_dict([17])
+    self.assertEqual(D, {17: 1}, "get_freq_dict([17])")
 
   def test4(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = list(range(5))
-    print(get_freq_dict(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{0: 1, 1: 1, 2: 1, 3: 1, 4: 1}\n'.strip(), "Test: " + 'L = list(range(5))\nprint(get_freq_dict(L))')
-
+    D = get_freq_dict([0, 1, 2, 3, 4])
+    self.assertEqual(D, {0: 1, 1: 1, 2: 1, 3: 1, 4: 1}, "get_freq_dict([0, 1, 2, 3, 4])")
 
   def test5(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = list(range(3))*2 + [3, 4]
-    print(get_freq_dict(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{0: 2, 1: 2, 2: 2, 3: 1, 4: 1}\n'.strip(), "Test: " + 'L = list(range(3))*2 + [3, 4]\nprint(get_freq_dict(L))')
-
+    D = get_freq_dict([0, 1, 2, 0, 1, 2, 3, 4])
+    self.assertEqual(D, {0: 2, 1: 2, 2: 2, 3: 1, 4: 1}, "get_freq_dict([0, 1, 2, 0, 1, 2, 3, 4])")
 
   def test6(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [1, 1, 1, 1, 2, 2, 2, 3, 3, 4]
-    print(get_freq_dict(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{1: 4, 2: 3, 3: 2, 4: 1}\n'.strip(), "Test: " + 'L = [1, 1, 1, 1, 2, 2, 2, 3, 3, 4]\nprint(get_freq_dict(L))')
-
+    D = get_freq_dict([1, 1, 1, 1, 2, 2, 2, 3, 3, 4])
+    self.assertEqual(D, {1: 4, 2: 3, 3: 2, 4: 1}, "get_freq_dict([1, 1, 1, 1, 2, 2, 2, 3, 3, 4])")
 
   def test7(self):
-    resetMyStdOut()
-    setMyStdIn('')
+    D = get_freq_dict([0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 2, 7, 8, 8])
+    self.assertEqual(D, {0: 3, 1: 4, 2: 4, 7: 1, 8: 2}, "get_freq_dict([0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 2, 7, 8, 8])")
 
-    print(get_freq_dict([]))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{}\n'.strip(), "Test: " + 'print(get_freq_dict([]))')
-
-
-  def test8(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = list(range(3))*3 + [1, 2] + [7, 8, 8]
-    print(get_freq_dict(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '{0: 3, 1: 4, 2: 4, 7: 1, 8: 2}\n'.strip(), "Test: " + 'L = list(range(3))*3 + [1, 2] + [7, 8, 8]\nprint(get_freq_dict(L))')
-
-
-
-myTests().main()        </tests>
+myTests().main()
+</tests>
       </program>
     </exercise>
     <exercise xml:id="exer-dict_find_mode_of_list-1" label="exe-sec-HW7-1-103582">
@@ -3636,8 +1516,7 @@ myTests().main()        </tests>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L = [3, 8, 5, 5, 8, 8]
-print(get_mode(L))                </cd>
+                <cd>get_mode([3, 8, 5, 5, 8, 8])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -3649,8 +1528,7 @@ print(get_mode(L))                </cd>
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>L = [3, 8, 5, 5, 8, 8, 3, 3, 5, 3, 3]
-print(get_mode(L))                </cd>
+                <cd>get_mode([3, 8, 5, 5, 8, 8, 3, 3, 5, 3, 3])</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -3662,180 +1540,39 @@ print(get_mode(L))                </cd>
         </tabular>
       </statement>
       <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-None
-
-        </preamble>
         <code>
 
         </code>
-        <postamble visible="no">
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
+<tests>
 from unittest.gui import TestCaseGui
+import StringIO
+import sys
 
 class myTests(TestCaseGui):
 
 
-
   def test1(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [3, 8, 5, 5, 8, 8]
-    print(get_mode(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '8\n'.strip(), "Test: " + 'L = [3, 8, 5, 5, 8, 8]\nprint(get_mode(L))')
-
+    k = get_mode([3, 8, 5, 5, 8, 8])
+    self.assertEqual(k, 8, "get_mode([3, 8, 5, 5, 8, 8])")
 
   def test2(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [3, 8, 5, 5, 8, 8, 3, 3, 5, 3, 3]
-    print(get_mode(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '3\n'.strip(), "Test: " + 'L = [3, 8, 5, 5, 8, 8, 3, 3, 5, 3, 3]\nprint(get_mode(L))')
-
+    k = get_mode([3, 8, 5, 5, 8, 8, 3, 3, 5, 3, 3])
+    self.assertEqual(k, 3, "get_mode([3, 8, 5, 5, 8, 8, 3, 3, 5, 3, 3])")
 
   def test3(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [-5, 10, -4, 10, -3]
-    print(get_mode(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '10'.strip(), "Test: " + 'L = [-5, 10, -4, 10, -3]\nprint(get_mode(L))')
-
+    k = get_mode([-5, 10, -4, 10, -3])
+    self.assertEqual(k, 10, "get_mode([-5, 10, -4, 10, -3])")
 
   def test4(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = [-5]
-    print(get_mode(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '-5\n'.strip(), "Test: " + 'L = [-5]\nprint(get_mode(L))')
-
+    k = get_mode([-5])
+    self.assertEqual(k, -5, "get_mode([-5])")
 
   def test5(self):
-    resetMyStdOut()
-    setMyStdIn('')
+    k = get_mode([4, 3, 4])
+    self.assertEqual(k, 4, "get_mode([4, 3, 4])")
 
-    L = [4, 3, 4]
-    print(get_mode(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '4\n'.strip(), "Test: " + 'L = [4, 3, 4]\nprint(get_mode(L))')
-
-
-  def test6(self):
-    resetMyStdOut()
-    setMyStdIn('')
-
-    L = list(range(20))+[17,17]+list(range(20))
-    print(get_mode(L))
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), '17\n'.strip(), "Test: " + 'L = list(range(20))+[17,17]+list(range(20))\nprint(get_mode(L))')
-
-
-
-myTests().main()        </tests>
+myTests().main()
+</tests>
       </program>
     </exercise>
     <exercise xml:id="exer-Counting-by-k-1" label="exe-sec-HW7-1-160712">
@@ -3873,152 +1610,54 @@ Counting by: 3
           </row>
         </tabular>
       </statement>
-      <program interactive="activecode" language="python">
-        <preamble visible="no">_my_out = ""
-_my_in = []
-_datafiles = {}
-
-# Start of FileLike
-class FileLike:
-  def __init__(self, contents):
-    self.contents = contents
-    self.cursor = 0
-
-  def __enter__(self):
-    return self
-
-  def __exit__(self, exc_type, exc_value, traceback):
-    self.close()
-
-  def tell(self):
-    return self.cursor
-
-  def seek(self, n):
-    self.cursor = n
-
-  def read(self):
-    n = self.cursor
-    self.cursor = max(n, len(self.contents))
-    return self.contents[n:]
-
-  def readline(self):
-    n = self.cursor
-    rest = self.contents[n:]
-    index = rest.find("\n")
-    if index == -1:
-      self.cursor = len(self.contents)
-      return rest
-    index += 1
-    self.cursor = n + index
-    return rest[:index]
-
-  def readlines(self):
-    results = []
-    while True:
-      line = self.readline()
-      if line == '':
-        return results
-      results.append(line)
-
-  def __iter__(self):
-    for l in self.readlines():
-      yield l
-
-
-  def close(self):
-    pass
-
-# End of FileLike
-
-def open(fname, mode = "r"):
-  """our own open"""
-  if fname in _datafiles:
-    return FileLike(_datafiles[fname])
-  raise BaseException(f"File not found: {fname}")
-
-
-def getMyStdOut():
-  global _my_out
-  return _my_out
-
-def setMyStdIn(s = None):
-  global _my_in
-  if s is None:
-    _my_in = []
-  else:
-    _my_in = s.split('\n')
-    _my_in.reverse()
-
-def resetMyStdOut():
-  global _my_out
-  _my_out = ''
-
-def print(*args, sep=' ', end='\n', file=None, flush=False):
-  global _my_out
-  if file is not None:
-    raise RuntimeError("Cannot use this version of print on files")
-  _my_out += sep.join(map(str, args)) + end
-
-def input(prompt=None):
-  global _my_in
-  if prompt is not None:
-    print(prompt, end='')
-  if _my_in == []:
-    raise RuntimeError()
-  return _my_in.pop()
-
-None
-
-
-_program = """
-        </preamble>
+      <program interactive="activecode" language="python3">
         <code>
 
         </code>
-        <postamble visible="no">
-
-"""
-        </postamble>
-        <tests>import re
-
-RIGHT_WHITESPACE_TRIMMER = re.compile("[ \\t]+?(?=\\n|$)")
-
-
-from unittest.gui import TestCaseGui
-
-class myTests(TestCaseGui):
-
-
-
-  def test1(self):
-    resetMyStdOut()
-    setMyStdIn('3\n')
-
-    exec(_program)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), RIGHT_WHITESPACE_TRIMMER.sub("",'Counting by: 0\n0 0 0 0 0 0 0\nCounting by: 1\n0 1 2 3 4 5 6 \nCounting by: 2\n0 2 4 6 8 10 12 \nCounting by: 3\n0 3 6 9 12 15 18 \n').strip(), "Input: " + '3\n')
-
-
-  def test2(self):
-    resetMyStdOut()
-    setMyStdIn('4')
-
-    exec(_program)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), RIGHT_WHITESPACE_TRIMMER.sub("",'Counting by: 0\n0 0 0 0 0 0 0 \nCounting by: 1\n0 1 2 3 4 5 6 \nCounting by: 2\n0 2 4 6 8 10 12 \nCounting by: 3\n0 3 6 9 12 15 18 \nCounting by: 4\n0 4 8 12 16 20 24 ').strip(), "Input: " + '4')
-
-
-  def test3(self):
-    resetMyStdOut()
-    setMyStdIn('5\n')
-
-    exec(_program)
-
-    self.assertEqual(RIGHT_WHITESPACE_TRIMMER.sub("", getMyStdOut().strip()), RIGHT_WHITESPACE_TRIMMER.sub("",'Counting by: 0\n0 0 0 0 0 0 0 \nCounting by: 1\n0 1 2 3 4 5 6 \nCounting by: 2\n0 2 4 6 8 10 12 \nCounting by: 3\n0 3 6 9 12 15 18 \nCounting by: 4\n0 4 8 12 16 20 24 \nCounting by: 5\n0 5 10 15 20 25 30 \n').strip(), "Input: " + '5\n')
-
-
-
-myTests().main()        </tests>
+<tests>
+<iotest>
+  <input>3</input>
+  <output>Counting by: 0
+0 0 0 0 0 0 0
+Counting by: 1
+0 1 2 3 4 5 6
+Counting by: 2
+0 2 4 6 8 10 12
+Counting by: 3
+0 3 6 9 12 15 18
+</output>
+</iotest>
+<iotest>
+  <input>4</input>
+  <output>Counting by: 0
+0 0 0 0 0 0 0
+Counting by: 1
+0 1 2 3 4 5 6
+Counting by: 2
+0 2 4 6 8 10 12
+Counting by: 3
+0 3 6 9 12 15 18
+Counting by: 4
+0 4 8 12 16 20 24
+</output>
+</iotest>
+<iotest>
+  <input>5</input>
+  <output>Counting by: 0
+0 0 0 0 0 0 0
+Counting by: 1
+0 1 2 3 4 5 6
+Counting by: 2
+0 2 4 6 8 10 12
+Counting by: 3
+0 3 6 9 12 15 18
+Counting by: 4
+0 4 8 12 16 20 24
+Counting by: 5
+0 5 10 15 20 25 30
+</output>
+</iotest>
+</tests>
       </program>
     </exercise>
   </exercises>
