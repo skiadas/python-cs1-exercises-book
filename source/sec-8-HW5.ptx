@@ -320,8 +320,8 @@ myTests().main()</tests>
         <p>Hint: Use a <alert>string method</alert> to help solve this problem (<c>count</c>).  You do not need an accumulator.</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="80%" />
+          <col top="minor" width="20%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -434,8 +434,8 @@ myTests().main()</tests>
         <p>Hint: Instead of using a for loop with a <c>range</c>, you can iterate directly over  the elements of L.</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="80%" />
+          <col top="minor" width="20%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -543,8 +543,8 @@ myTests().main()</tests>
         <p>- Inside the <alert>for</alert> loop, update the accumulator variable by concatenating it with the first character in the current word as well as a period.</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="70%" />
+          <col top="minor" width="30%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -630,8 +630,8 @@ myTests().main()
         <p>Hint: Use the accumulator pattern to accumulate the count.</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="80%" />
+          <col top="minor" width="20%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -864,8 +864,8 @@ myTests().main()
         <p>Note: ASCII was created in the 1960's so programmers could have a standard encoding for common keyboard characters as numbers. It was later expanded to create Unicode so that characters from languages  other than English, mathematical symbols, and many other symbols could also be represented by numerical codes.</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="80%" />
+          <col top="minor" width="20%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -943,8 +943,8 @@ myTests().main()
         <p>But <c>concatAltChars("HANOVER", False)</c> returns the string result <c>"AOE"</c>.</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="80%" />
+          <col top="minor" width="20%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -1270,8 +1270,8 @@ myTests().main()
         <p>Hint: Check the first three requirements with decision statements, then use a <alert>for</alert>loop to iterate over mystr and check the every character is a digit or a dot</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="80%" />
+          <col top="minor" width="20%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -1280,7 +1280,7 @@ myTests().main()
             <cell bottom="minor" right="minor">
               <p>
                 <cd>if not (is_numberlike("13.5") is True):
-    print("error")                </cd>
+    print("error")</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -1293,7 +1293,7 @@ myTests().main()
             <cell bottom="minor" right="minor">
               <p>
                 <cd>if not (is_numberlike("-5532") is False):
-    print("error")                </cd>
+    print("error")</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -1306,7 +1306,7 @@ myTests().main()
             <cell bottom="minor" right="minor">
               <p>
                 <cd>if not (is_numberlike("175") is True):
-    print("error")                </cd>
+    print("error")</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">

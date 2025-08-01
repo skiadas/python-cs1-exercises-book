@@ -191,7 +191,7 @@ print(list(range(1, m + 1)))
             <cell bottom="minor" right="minor">
               <p>
                 <cd>2
-5                </cd>
+5</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -204,7 +204,7 @@ print(list(range(1, m + 1)))
             <cell bottom="minor" right="minor">
               <p>
                 <cd>0
-0                </cd>
+0</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -218,7 +218,7 @@ print(list(range(1, m + 1)))
               <p>
                 <cd>-3
 3
-                </cd>
+</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -390,8 +390,8 @@ print(list(range(1, m + 1)))
         <p><alert>Hint:</alert> The first multiple of m is m. Then m + m, then m + m + m, etc.</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="70%" />
+          <col top="minor" width="30%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -400,7 +400,7 @@ print(list(range(1, m + 1)))
             <cell bottom="minor" right="minor">
               <p>
                 <cd>m = 25
-print_multiples(m)                </cd>
+print_multiples(m)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -408,7 +408,7 @@ print_multiples(m)                </cd>
                 <cd>25
 50
 75
-100                </cd>
+100</cd>
               </p>
             </cell>
           </row>
@@ -416,13 +416,13 @@ print_multiples(m)                </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>m = 45
-print_multiples(m)                </cd>
+print_multiples(m)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>45
-90                </cd>
+90</cd>
               </p>
             </cell>
           </row>
@@ -430,14 +430,14 @@ print_multiples(m)                </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>m = 32
-print_multiples(m)                </cd>
+print_multiples(m)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>32
 64
-96                </cd>
+96</cd>
               </p>
             </cell>
           </row>
@@ -520,7 +520,7 @@ myTests().main()        </tests>
               <p>
                 <cd>5
 18
-                </cd>
+</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -533,7 +533,7 @@ myTests().main()        </tests>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>2
-3                </cd>
+3</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -546,7 +546,7 @@ myTests().main()        </tests>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>7
-25                </cd>
+25</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -626,14 +626,14 @@ myTests().main()        </tests>
               <p>
                 <cd>2
 4
-                </cd>
+</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>2
 3
-4                </cd>
+4</cd>
               </p>
             </cell>
           </row>
@@ -641,7 +641,7 @@ myTests().main()        </tests>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>-3
-1                </cd>
+1</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -650,7 +650,7 @@ myTests().main()        </tests>
 -2
 -1
 0
-1                </cd>
+1</cd>
               </p>
             </cell>
           </row>
@@ -659,13 +659,13 @@ myTests().main()        </tests>
               <p>
                 <cd>5
 6
-                </cd>
+</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>5
-6                </cd>
+6</cd>
               </p>
             </cell>
           </row>
@@ -778,7 +778,7 @@ myTests().main()        </tests>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>4
-11                </cd>
+11</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -786,7 +786,7 @@ myTests().main()        </tests>
                 <cd>4
 6
 8
-10                </cd>
+10</cd>
               </p>
             </cell>
           </row>
@@ -794,14 +794,14 @@ myTests().main()        </tests>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>1
-5                </cd>
+5</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>1
 3
-5                </cd>
+5</cd>
               </p>
             </cell>
           </row>
@@ -810,7 +810,7 @@ myTests().main()        </tests>
               <p>
                 <cd>-3
 3
-                </cd>
+</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -818,7 +818,7 @@ myTests().main()        </tests>
                 <cd>-3
 -1
 1
-3                </cd>
+3</cd>
               </p>
             </cell>
           </row>
@@ -826,7 +826,7 @@ myTests().main()        </tests>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>8
-16                </cd>
+16</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -835,7 +835,7 @@ myTests().main()        </tests>
 10
 12
 14
-16                </cd>
+16</cd>
               </p>
             </cell>
           </row>
@@ -1219,7 +1219,7 @@ myTests().main()</tests>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>ans = partial_sum(3)
-print(ans)                </cd>
+print(ans)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -1232,7 +1232,7 @@ print(ans)                </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>ans = partial_sum(6)
-print(ans)                </cd>
+print(ans)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -1245,7 +1245,7 @@ print(ans)                </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>ans = partial_sum(9)
-print(ans)                </cd>
+print(ans)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">

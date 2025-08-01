@@ -610,7 +610,7 @@ num = float(input())
             <cell bottom="minor" right="minor">
               <p>
                 <cd>3
-5                </cd>
+5</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -623,7 +623,7 @@ num = float(input())
             <cell bottom="minor" right="minor">
               <p>
                 <cd>6
-2                </cd>
+2</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -636,7 +636,7 @@ num = float(input())
             <cell bottom="minor" right="minor">
               <p>
                 <cd>2.3
-3.5                </cd>
+3.5</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">

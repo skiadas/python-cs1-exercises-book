@@ -9,8 +9,8 @@
         <p>SPECIAL CASE: If the list L has length less than 2, then the function does nothing to L and returns <c>None</c>.</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
           <col top="minor" width="60%" />
+          <col top="minor" width="40%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -124,8 +124,8 @@ myTests().main()
         <p>For example, if <c>mylist</c> is <c>['cat', 'Dog', 'frOG']</c>, then the mutated list should  be <c>['CAT', 'DOG', 'FROG']</c>.</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
           <col top="minor" width="60%" />
+          <col top="minor" width="40%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -313,8 +313,8 @@ myTests().main()
         <p>Use a double for loop or list comprehension to accumulate the result.</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="50%" />
+          <col top="minor" width="50%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -327,7 +327,9 @@ myTests().main()
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>['yes-yes', 'yes-no', 'yes-maybe', 'no-yes', 'no-no', 'no-maybe', 'maybe-yes', 'maybe-no', 'maybe-maybe']</cd>
+                <cd>['yes-yes', 'yes-no', 'yes-maybe',
+ 'no-yes', 'no-no', 'no-maybe',
+ 'maybe-yes', 'maybe-no', 'maybe-maybe']</cd>
               </p>
             </cell>
           </row>
@@ -352,18 +354,6 @@ myTests().main()
             <cell bottom="minor" right="minor">
               <p>
                 <cd>[]</cd>
-              </p>
-            </cell>
-          </row>
-          <row header="no" left="minor">
-            <cell bottom="minor" right="minor">
-              <p>
-                <cd>get_pairs(['apple', 'cheese', 'bread'])</cd>
-              </p>
-            </cell>
-            <cell bottom="minor" right="minor">
-              <p>
-                <cd>['apple-apple', 'apple-cheese', 'apple-bread', 'cheese-apple', 'cheese-cheese', 'cheese-bread', 'bread-apple', 'bread-cheese', 'bread-bread']</cd>
               </p>
             </cell>
           </row>
@@ -446,7 +436,7 @@ myTests().main()
             <cell bottom="minor" right="minor">
               <p>
                 <cd>* * *
-* * *                </cd>
+* * *</cd>
               </p>
             </cell>
           </row>
@@ -474,7 +464,7 @@ myTests().main()
 * * * * *
 * * * * *
 * * * * *
-* * * * *                </cd>
+* * * * *</cd>
               </p>
             </cell>
           </row>
@@ -562,7 +552,7 @@ myTests().main()
             <cell bottom="minor" right="minor">
               <p>
                 <cd>X O X
-O X O                </cd>
+O X O</cd>
               </p>
             </cell>
           </row>
@@ -576,7 +566,7 @@ O X O                </cd>
               <p>
                 <cd>X O
 O X
-X O                </cd>
+X O</cd>
               </p>
             </cell>
           </row>
@@ -751,7 +741,8 @@ myTests().main()
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>['nnn', 'nno', 'non', 'noo', 'onn', 'ono', 'oon', 'ooo']</cd>
+                <cd>['nnn', 'nno', 'non', 'noo',
+ 'onn', 'ono', 'oon', 'ooo']</cd>
               </p>
             </cell>
           </row>
@@ -1201,8 +1192,8 @@ myTests().main()
         <p>The function <c>get_num_pairs</c> takes one parameter, <c>D</c>, which is a dictionary. The function returns the <alert>number</alert>of key-value pairs in <c>D</c>.</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="80%" />
+          <col top="minor" width="20%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -1297,8 +1288,8 @@ myTests().main()
         </p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="50%" />
+          <col top="minor" width="50%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -1306,14 +1297,14 @@ myTests().main()
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>key_list = ['Hitting Percent', 'Blocks', 'Digs', 'Aces']
-value_list = [0.174, 5.0, 47, 7]
+                <cd>key_list = ['Blocks', 'Digs', 'Aces']
+value_list = [5.0, 47, 7]
 build_dictionary(key_list, value_list)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>{'Hitting Percent': 0.174, 'Blocks': 5.0, 'Digs': 47, 'Aces': 7}</cd>
+                <cd>{'Blocks': 5.0, 'Digs': 47, 'Aces': 7}</cd>
               </p>
             </cell>
           </row>
@@ -1402,8 +1393,8 @@ myTests().main()
         </p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
           <col top="minor" width="60%" />
+          <col top="minor" width="40%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -1507,8 +1498,8 @@ myTests().main()
         <p>Tip: Suppose D is a dictionary with integer values. The following code will determine the maximum value in D: <c>max_value = max(D.values())</c></p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="80%" />
+          <col top="minor" width="20%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -1592,7 +1583,7 @@ myTests().main()
             <cell bottom="minor" right="minor">
               <p>
                 <cd>3
-                </cd>
+</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -1604,7 +1595,7 @@ Counting by: 1
 Counting by: 2
 0 2 4 6 8 10 12
 Counting by: 3
-0 3 6 9 12 15 18                </cd>
+0 3 6 9 12 15 18</cd>
               </p>
             </cell>
           </row>

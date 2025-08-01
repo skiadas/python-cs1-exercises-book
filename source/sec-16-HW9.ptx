@@ -647,7 +647,7 @@ Ace of Spades
 
 Ace of Clubs
 
-Ace of Diamonds                </cd>
+Ace of Diamonds</cd>
               </p>
             </cell>
           </row>
@@ -965,8 +965,8 @@ limes are green
         <p>then the list <c>["apples", "bananas", "limes"]</c> should be returned.NOTE: You may assume the file will contain no blank lines.BIG HINT: If <c>line</c>is a string representing a line of text (inside of a for loop!), then <c>L = line.split()</c> creates a list of the words in the line.</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="30%" />
-          <col top="minor" width="70%" />
+          <col top="minor" width="40%" />
+          <col top="minor" width="60%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -979,7 +979,8 @@ limes are green
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>['Cottonmouth', 'Timber', 'Black', 'Tiger', 'Copperhead', 'Eastern', 'Western', 'Eastern', 'Prairie', 'Mojave']</cd>
+                <cd>['Cottonmouth', 'Timber', 'Black', 'Tiger', 'Copperhead',
+ 'Eastern', 'Western', 'Eastern', 'Prairie', 'Mojave']</cd>
               </p>
             </cell>
           </row>
@@ -1111,7 +1112,7 @@ myTests().main()
               <p>
                 <cd>maudlin
 
-The file has 5 lines.                </cd>
+The file has 5 lines.</cd>
               </p>
             </cell>
           </row>
@@ -1265,7 +1266,8 @@ limes are green
             </cell>
             <cell bottom="minor" right="minor">
               <p>
-                <cd>['happy', 'sad', 'angsty', 'euphoric', 'maudlin']</cd>
+                <cd>['happy', 'sad', 'angsty',
+ 'euphoric', 'maudlin']</cd>
               </p>
             </cell>
           </row>

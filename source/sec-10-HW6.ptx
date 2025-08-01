@@ -122,8 +122,8 @@ myTests().main()
         <p>Note 3: You should NOT return anything from this function (let it return <c>None</c>by default).</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="70%" />
+          <col top="minor" width="30%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -138,7 +138,7 @@ myTests().main()
               <p>
                 <cd>cherry
 banana
-apple                </cd>
+apple</cd>
               </p>
             </cell>
           </row>
@@ -334,8 +334,8 @@ myTests().main()
         <p><alert>Hint</alert>: Use the sequence membership operator <alert>in</alert> to help you check for 'og' in the individual strings. Create a <alert>lower-cased</alert> version of the string (<c>lower</c>), then use the <c>in</c> operator.</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="80%" />
+          <col top="minor" width="20%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -432,8 +432,8 @@ myTests().main()
         <p>Note: if there are <alert>NO</alert> negative numbers in the list, the function returns the Python object <c>None</c>.</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="80%" />
+          <col top="minor" width="20%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -672,8 +672,8 @@ myTests().main()
         <p>For example, if <c>mylist</c> is <c>['cat', 'Dog', 'frOG']</c>, then the mutated list should  be <c>['CAT', 'DOG', 'FROG']</c>.</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
           <col top="minor" width="60%" />
+          <col top="minor" width="40%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -786,7 +786,7 @@ bring
 May
 flowers
 STOP
-                </cd>
+</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">

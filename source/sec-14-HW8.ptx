@@ -32,7 +32,7 @@
                 <cd>55
 20
 20
-0                </cd>
+0</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -51,7 +51,7 @@
               <p>
                 <cd>0
 1
-1                </cd>
+1</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -107,8 +107,8 @@ myTests().main()
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
-          <col top="minor" width="20%" />
           <col top="minor" width="40%" />
+          <col top="minor" width="20%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Input</cell>
@@ -130,7 +130,7 @@ myTests().main()
 25
 3
 -2
-                </cd>
+</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -148,7 +148,7 @@ myTests().main()
             <cell bottom="minor" right="minor">
               <p>
                 <cd>0
-12                </cd>
+12</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -209,8 +209,8 @@ myTests().main()
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
-          <col top="minor" width="20%" />
           <col top="minor" width="40%" />
+          <col top="minor" width="20%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Input</cell>
@@ -231,7 +231,7 @@ myTests().main()
 25
 3
 -2
-                </cd>
+</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -300,8 +300,8 @@ myTests().main()
         <p>For example:</p>
         <tabular>
           <col top="minor" width="40%" />
-          <col top="minor" width="20%" />
-          <col top="minor" width="40%" />
+          <col top="minor" width="30%" />
+          <col top="minor" width="30%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Input</cell>
@@ -321,7 +321,7 @@ myTests().main()
 3
 -23482498.5
 stop
-                </cd>
+</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -425,7 +425,7 @@ myTests().main()
 9
 84
 83
-99                </cd>
+99</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -449,7 +449,7 @@ Returns: 3</cd>
 7
 6
 5
-4                </cd>
+4</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -925,13 +925,13 @@ myTests().main()
             <cell bottom="minor" right="minor">
               <p>
                 <cd>pizzzzzza
-piizzaaaa                </cd>
+piizzaaaa</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>pizzzzzza and piizzaaaa are NOT anagrams.
-They do not have the same character frequencies.                </cd>
+They do not have the same character frequencies.</cd>
               </p>
             </cell>
           </row>
@@ -939,13 +939,13 @@ They do not have the same character frequencies.                </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>pizza
-pasta                </cd>
+pasta</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>pizza and pasta are NOT anagrams.
-They do not have the same character sets.                </cd>
+They do not have the same character sets.</cd>
               </p>
             </cell>
           </row>
@@ -954,7 +954,7 @@ They do not have the same character sets.                </cd>
               <p>
                 <cd>maps
 spam
-                </cd>
+</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">

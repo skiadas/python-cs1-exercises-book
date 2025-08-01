@@ -11,8 +11,8 @@
         <p>Hint: Do not return the strings "True", "False". Boolean values are not quoted.</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="70%" />
+          <col top="minor" width="30%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -20,7 +20,7 @@
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>print(between_zero_and_one(0.5))</cd>
+                <cd>between_zero_and_one(0.5)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -32,7 +32,7 @@
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>print(between_zero_and_one(1.0))</cd>
+                <cd>between_zero_and_one(1.0)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -44,7 +44,7 @@
           <row header="no" left="minor">
             <cell bottom="minor" right="minor">
               <p>
-                <cd>print(between_zero_and_one(-2.2))</cd>
+                <cd>between_zero_and_one(-2.2)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -113,8 +113,8 @@ myTests().main()
         <p>Hint 2: Do not return the strings "True", "False". Return a Boolean constant, either <alert>True</alert> or <alert>False</alert> (no quotes)</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
           <col top="minor" width="60%" />
+          <col top="minor" width="40%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -123,13 +123,13 @@ myTests().main()
             <cell bottom="minor" right="minor">
               <p>
                 <cd>result = divides(12, 2)
-print("Return value is", result)                </cd>
+print("Return value is", result)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>12 is divisible by 2
-Return value is True                </cd>
+Return value is True</cd>
               </p>
             </cell>
           </row>
@@ -137,13 +137,13 @@ Return value is True                </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>result = divides(12, 5)
-print("Return value is", result)                </cd>
+print("Return value is", result)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>12 is not divisible by 5
-Return value is False                </cd>
+Return value is False</cd>
               </p>
             </cell>
           </row>
@@ -354,7 +354,7 @@ myTests().main()
             <cell bottom="minor" right="minor">
               <p>
                 <cd>35 is positive
-True                </cd>
+True</cd>
               </p>
             </cell>
           </row>
@@ -367,7 +367,7 @@ True                </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>0 is zero
-False                </cd>
+False</cd>
               </p>
             </cell>
           </row>
@@ -380,7 +380,7 @@ False                </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>-0.1 is negative
-False                </cd>
+False</cd>
               </p>
             </cell>
           </row>
@@ -485,7 +485,7 @@ myTests().main()
             <cell bottom="minor" right="minor">
               <p>
                 <cd>60
-                </cd>
+</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -668,7 +668,7 @@ myTests().main()</tests>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>L = [9, 6, 8, 5, 7]
-list_sum(L)                </cd>
+list_sum(L)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -681,7 +681,7 @@ list_sum(L)                </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>L = [15, 7, -1, 11, 19, 3, -5]
-list_sum(L)                </cd>
+list_sum(L)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -694,7 +694,7 @@ list_sum(L)                </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>L = []
-list_sum(L)                </cd>
+list_sum(L)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -760,7 +760,7 @@ myTests().main()</tests>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>L = [3, 2, 7, -1, 4]
-list_product(L)                </cd>
+list_product(L)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -773,7 +773,7 @@ list_product(L)                </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>L = [55]
-list_product(L)                </cd>
+list_product(L)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -829,8 +829,8 @@ myTests().main()</tests>
         <p>- Return the accumulator</p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="80%" />
+          <col top="minor" width="20%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -852,7 +852,7 @@ count_negatives(L)               </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>L = [0, 6, 4]
-count_negatives(L)                </cd>
+count_negatives(L)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -865,7 +865,7 @@ count_negatives(L)                </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>L = [-10, -4, -6, -2, 6, 4]
-count_negatives(L)                </cd>
+count_negatives(L)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -925,8 +925,8 @@ myTests().main()</tests>
         <p><em>See the examples for the expected format of the output.</em></p>
         <p>For example:</p>
         <tabular>
-          <col top="minor" width="40%" />
-          <col top="minor" width="60%" />
+          <col top="minor" width="80%" />
+          <col top="minor" width="20%" />
           <row header="yes" left="minor">
             <cell bottom="minor" right="minor">Test</cell>
             <cell bottom="minor" right="minor">Result</cell>
@@ -935,7 +935,7 @@ myTests().main()</tests>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>L  = ["SPAM", "banana", "apple", "SPAM", "tuna"]
-count_SPAM(L)                </cd>
+count_SPAM(L)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -948,7 +948,7 @@ count_SPAM(L)                </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>L = ["a", "stitch", "in", "time"]
-count_SPAM(L)                </cd>
+count_SPAM(L)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -961,7 +961,7 @@ count_SPAM(L)                </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>L = ["SPAM", "SPAM", "SPAM", "egg", "and", "SPAM"]
-count_SPAM(L)                </cd>
+count_SPAM(L)</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
@@ -1050,7 +1050,7 @@ myTests().main()</tests>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>3 has 2 divisors
-That number is prime!                </cd>
+That number is prime!</cd>
               </p>
             </cell>
           </row>
@@ -1058,7 +1058,7 @@ That number is prime!                </cd>
             <cell bottom="minor" right="minor">
               <p>
                 <cd>6
-                </cd>
+</cd>
               </p>
             </cell>
             <cell bottom="minor" right="minor">
