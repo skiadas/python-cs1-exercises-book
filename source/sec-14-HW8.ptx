@@ -678,7 +678,7 @@ class myTests(TestCaseGui):
     self.assertEqual(n, 3, "num_distinct_elements([1, 2, 3, 2, 2, 2, 1, 1, 1, 1])")
 
   def test2(self):
-    n = num_distinct_elements(She sells sea shells by the sea shore.)
+    n = num_distinct_elements("She sells sea shells by the sea shore.")
     self.assertEqual(n, 13, "num_distinct_elements(She sells sea shells by the sea shore.)")
 
   def test3(self):
@@ -694,7 +694,7 @@ class myTests(TestCaseGui):
     self.assertEqual(n, 0, "num_distinct_elements([])")
 
   def test6(self):
-    n = num_distinct_elements(aaaaaaaaaaaaaaaa)
+    n = num_distinct_elements("aaaaaaaaaaaaaaaa")
     self.assertEqual(n, 1, "num_distinct_elements(aaaaaaaaaaaaaaaa)")
 
   def test7(self):
@@ -702,7 +702,7 @@ class myTests(TestCaseGui):
     self.assertEqual(n, 8, "num_distinct_elements(['m', 'i', 's', 's', 'i', 's', 's', 'i', 's', 's', 'i', 'p', 'p', 'i', ' ', 'r', 'i', 'v', 'e', 'r'])")
 
   def test8(self):
-    n = num_distinct_elements(Hanover College Panthers!)
+    n = num_distinct_elements("Hanover College Panthers!")
     self.assertEqual(n, 16, "num_distinct_elements(Hanover College Panthers!)")
 
 myTests().main()
